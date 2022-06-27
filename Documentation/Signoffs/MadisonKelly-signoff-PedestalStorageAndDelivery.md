@@ -30,6 +30,12 @@ The electrical schematic is shown below.
 ![image](https://user-images.githubusercontent.com/112424739/216230166-2ee72d46-860f-45da-af1e-fa78c745370b.png)
 ![image](https://user-images.githubusercontent.com/112424739/216230204-73e37f0f-681a-40a1-8120-c79857bd24f4.png)
 
+Shown with sensors inside.
+
+![thumbnail_proxsensors](https://user-images.githubusercontent.com/112424739/217644541-c84f7a6e-9c59-4be8-9f62-03776397133a.png)
+![thumbnail_sideangle_proxsensors](https://user-images.githubusercontent.com/112424739/217644559-e3783b41-5d36-41b6-a64d-e0a362df918b.png)
+![thumbnail_top_proxsensors](https://user-images.githubusercontent.com/112424739/217644586-106840ef-931e-411e-a08d-3087157807ae.png)
+
 Below is the rough layout of the chassis showing the major subsystems and their placement within the robot. This subsystem is in the block labeled "pedestals".
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216861688-57e85d61-c0b9-467b-85f4-2b73cdc1b0f9.png)
@@ -71,13 +77,21 @@ Silo Volume > Pedestal Volume. The diameter of the pedestals are 2 inches and th
 
 ### Distance From Sensors
 
-$P_{silo} = 2.25 \ast 4 = 9 in^{2}$
+Because of the nature of what the team is wanting from the distance sensor, it must be such that it will not detect the walls of the silo, but will detect the presence of a pedestal.
 
-$C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
+#### Pedestal Not Present
 
-$D_{max} = C_{silo} - C_{pedestal} = 9 - 6.28 = 2.72 in = 0.0691 m$
+$Silo\ Wall\ Distance\ from\ sensor = 2.25 in$
 
-The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
+$Max\ sensor\ range = 5cm = 1.9685 in$
+
+Since 2.25 in > 1.97 in, the sensor will not detect the walls of the silo itself. 
+
+#### Pedestal Present
+
+$D_{max} = L_{silo} - D_{pedestal} = 2.25in - 2in = 0.25 in = 0.635 cm$
+
+The max distance calculated is less than the maximum distance the sensor can detect which is 5 cm. The distance between the wall of the silo and the sensor is more than its maximum range. Therefore, the sensors will be able to detect the pedestals when they enter the silo and will not detect the walls of the silo when there is no pedestal present.
 
 ### Weight Calculations
 
