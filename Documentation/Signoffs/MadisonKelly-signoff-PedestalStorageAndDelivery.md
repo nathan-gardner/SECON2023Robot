@@ -22,7 +22,7 @@ This subsystem’s main function is to ensure that the pedestals have a place to
 ## Electrical Schematic
 The electrical schematic is shown below.
 
-![image](https://user-images.githubusercontent.com/112428353/217618905-f538c249-26e4-4584-8ebf-6ae89320262c.png)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MadisonKelly-signoff-PedestalStorageAndDelivery/Documentation/Images/updated%20schematic.png)
 
 ## Buildable Schematic
 
