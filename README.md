@@ -34,7 +34,7 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specific).
 
-![Nathan Gardner](https://avatars.githubusercontent.com/u/30758520?v=4 'Nathan Gardner')
+![](https://avatars.githubusercontent.com/u/30758520?v=4  =100x100)
 
 Nathan Gardner is an undergraduate Computer Engineering student and is currently a Junior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team.
 
@@ -70,16 +70,17 @@ In the reports section of this repository information about the individual expec
 
 Reports are attached in the Reports folder, linked below, and are named "Team2_(NameOfDocument)".
 
-[/Reports/] (Link: Reports)
+[Reports] (Link: Reports)
+[Reports](/Reports/)
 
 ### Documentation
 
 In the documentaion section information regarding the documentation that is required and how it should be organized is given.
 
-[/Documentation/] (Link: Documentation)
+[Documentation] (/Documentation/)
 
 ### Software
 
 In the software directory of the repo information regarding how each team is expected to document software can be found.
 
-[/Software/] (Link: Software)
+[Software](/Software/)
