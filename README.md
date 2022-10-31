@@ -34,7 +34,7 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specific).
 
-<img src="[image.pn](https://avatars.githubusercontent.com/u/30758520?v=4)" width="200" height="100">
+![Nathan Gardner](https://avatars.githubusercontent.com/u/30758520?v=4 width="100" height="100")
 
 Nathan Gardner is an undergraduate Computer Engineering student and is currently a Junior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team.
 
