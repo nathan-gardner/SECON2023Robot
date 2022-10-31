@@ -70,7 +70,6 @@ In the reports section of this repository information about the individual expec
 
 Reports are attached in the Reports folder, linked below, and are named "Team2_(NameOfDocument)".
 
-[Reports] (Link: Reports)
 [Reports](/Reports/)
 
 ### Documentation
