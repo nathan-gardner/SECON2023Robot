@@ -71,5 +71,5 @@ A complete list of all components needed for the design must be given with the c
 
 The bill of materials for the consumption mechanism is below. This includes all parts that are needed for design and manufacture of the robot. 
 
-![image](https://user-images.githubusercontent.com/30758520/200998038-c6328544-5f6c-4817-b0a3-7494fdb9333a.png)
+![image](https://user-images.githubusercontent.com/30758520/201002485-b2cc754a-2fcc-4ee5-9257-ba2f22b33b48.png)
 
