@@ -39,6 +39,8 @@ Shown below is our buildable schematic design made in SOLIDWORKS. The spokes wil
 ### Intake Mechanism Side
 ![IntakeMechanismSide2](https://user-images.githubusercontent.com/30758520/201001860-1a9735b8-17e1-4fd6-9f2a-2def6dbd8cc9.png)
 
+CAD Files for Object Consumption Mechanism: * [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/ConsumptionSystem/Intake_Assembly_11-9-222)
+
 ## Analysis
 
 ### Motor Torque
