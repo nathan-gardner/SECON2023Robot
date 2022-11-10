@@ -20,6 +20,8 @@ Ethics: The consumption mechanism will be designed such that no one that comes i
 
 Socioeconomic: This subsystem will help Tennessee Tech make a good impression on the stage of the SoutheastCon hardware competition. This will improve the public image of Tennessee Tech and will potentially attract new students.
 
+Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
+
 ## Buildable schematic 
 
 Shown below is our buildable schematic design made in SOLIDWORKS. The spokes will rotate and intake any duck or pedestal in the robot’s path. The consumption mechanism will have three rows of spokes that will direct the objects upwards and inwards up a ramped wall to the beginning of the sorting mechanism. The back wall will have the ability to be adjusted within the testing phase in order to ensure that the spokes are close enough to the wall to properly intake each item. The spokes will be made of TPU and the rotating shafts will be made of pvc pipes for prototyping, but carbon steel for the final product. The ramp will be made of some kind of printed plastic for prototypes and aluminum for the final product. All calculations and analysis were done for the final product, not the prototype. All measurements shown on the 3D model are in inches. 
@@ -39,7 +41,7 @@ Shown below is our buildable schematic design made in SOLIDWORKS. The spokes wil
 ### Intake Mechanism Side
 ![IntakeMechanismSide2](https://user-images.githubusercontent.com/30758520/201001860-1a9735b8-17e1-4fd6-9f2a-2def6dbd8cc9.png)
 
-CAD Files for Object Consumption Mechanism: * [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/ConsumptionSystem/Intake_Assembly_11-9-222)
+CAD Files for Object Consumption Mechanism: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/ConsumptionSystem/Intake_Assembly_11-9-222)
 
 ## Analysis
 
@@ -52,6 +54,8 @@ The DC brushed motor chosen is part number #4805 from Pololu. The motor is consi
 ![image](https://user-images.githubusercontent.com/30758520/201001401-8d3bfba7-8820-4853-a2f6-23a22c52e0e4.png)
 
 Assuming all three shafts are lifting a single duck, the maximum possible weight the motor will need to move would be 212.4 g. The acceleration of gravity (9.8 m/s2), the friction constant of rubber against the aluminum side of the robot (0.64), and the weight of the ducks (0.0708 kg) combined was used to find the force. Once the force needed based on the weight of the duck and the friction on the body of the robot was found, the force, the length of the spokes, and sine of the angle in which the items will be traveling were multiplied to find the torque needed to lift multiple ducks. The safety factor for motor selection was two times the needed torque based on simulations. 
+
+Motor torque Simulink Model: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Software/matlab-sim/ConsumptionSystem)
 
 ### Maximum Torsional Shear Strength 
 
