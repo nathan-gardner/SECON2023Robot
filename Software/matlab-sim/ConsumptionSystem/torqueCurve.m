@@ -1,6 +1,6 @@
 %{
     Description: Torque Motor Graph Script
-    
+    Authors: Nathan Gardner, Madison Kelly, Fatima Al-Heji, Luke McGill, Mark Beech
 %}
 
 stallTorque = input('What is the stall torque (kg-cm)? '); % stallTorque is the y intercept
@@ -25,7 +25,7 @@ set(gca, 'XLim', [0,400])
 set(gca, 'YLim', [0,max(power_y_vector)])
 title('Power Curve')
 xlabel('rotational velocity - rad/s')
-ylabel('torque - N-m')
+ylabel('Power - watt')
 
 % function to calculate power curve
 function[power_x_vector,power_y_vector] = powerCurve1(torque_x_vector,torque_y_vector)
