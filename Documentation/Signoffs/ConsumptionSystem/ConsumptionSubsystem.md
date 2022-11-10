@@ -49,7 +49,7 @@ CAD Files for Object Consumption Mechanism: [here](https://github.com/nathan-gar
 
 ![image](https://user-images.githubusercontent.com/30758520/201001312-4429694b-1b6a-4fd6-977f-bc88206feb7e.png)
 
-The DC brushed motor chosen is part number #4805 from Pololu. The motor is considered high power and runs off of 6 V. The torque needed for the motor to supply in the worst case is 0.2168 N-m (or 22.11 kg*mm). This torque value was found using a Simulink simulation shown below. The target rpm we want to run the motor at is 120 rpm, motor #4805 produces a torque of about 40 kg*mm, which is more than enough for the worst case scenario. The power needed for 120 rpm is about 4 W and will draw close to 2.75 A. The power subsystem will be designed to deliver adequate power to the motor used in this subsystem.
+The DC brushed motor chosen is part number #4805 from Pololu. The motor is considered high power and runs off of 6 V. The torque needed for the motor to supply in the worst case is 0.2168 N-m (or 22.11 kg\*mm). This torque value was found using a Simulink simulation shown below. The target rpm we want to run the motor at is 120 rpm, motor #4805 produces a torque of about 40 kg*mm, which is more than enough for the worst case scenario. The power needed for 120 rpm is about 4 W and will draw close to 2.75 A. The power subsystem will be designed to deliver adequate power to the motor used in this subsystem.
 
 ![image](https://user-images.githubusercontent.com/30758520/201001401-8d3bfba7-8820-4853-a2f6-23a22c52e0e4.png)
 
