@@ -1,4 +1,4 @@
-** Consumption Subsystem Signoff
+### Consumption Subsystem Signoff
 
 ## Function of the Subsystem
 
