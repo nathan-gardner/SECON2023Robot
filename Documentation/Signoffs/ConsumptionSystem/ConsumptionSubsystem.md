@@ -28,3 +28,22 @@ A complete and relevant analysis of the design showing that it **should** meet t
 ## BOM
 
 A complete list of all components needed for the design must be given with the cost of each component and the total cost of the subsystem. The BOM should be a markdown table (excel tables can be copied and pasted directly into the markdown file and they will be automatically converted).
+
+Name of Item	Description	Used in which subsystem(s)	Part Number	Manufacturer	Quantity	Price	Total
+D Profile Shaft	D-Profile rotary shaft, D-profile ends, 1045 Carbon steel, 3/8'' Diameter, 12'' Long	Consumption	3832T1	McMaster-Carr	3	11.67	35.01
+Bushing/Bearing	Ball bearing, Shielded, Trade Number R6-2Z for 3/8'' Shaft diameter	Consumption	60355K45	McMaster-Carr	6	6.25	37.5
+Shaft Collar	Set Screw Shaft Collar for 3/8" Diameter, Black-Oxide 1215 Carbon Steel	Consumption	9414T8	McMaster-Carr	6	1.75	10.5
+Shaft Pulley	Corrosion-Resistant Timing Belt Pulley, XL, 3/8" Maximum Width, Hub, 2 Flange, 1.75" OD, 3/8" Shaft	Consumption	1277N28	McMaster-Carr	3	16.65	49.95
+Motor Pulley	Corrosion-Resistant Timing Belt Pulley, XL Series, 3/8" Maximum Belt Width, with Hub, 2 Flanges, 7/8" OD	Consumption	1277N41	McMaster-Carr	1	10.2	10.2
+Timing Belt	XL Series Timing Belt, Trade No. 210xL025	Consumption	6484K219	McMaster-Carr	1	6.97	6.97
+Motor 	47:1 Metal gearmotor 25Dx67L mm HP 6V with 48 CPR Encoder	Consumption	4805	Pololu	1	48.95	48.95
+Washer Pack	316 Stainless Steel Washer for 3/8" Screw Size, 0.406" ID, 0.75" OD	Consumption	90107A127	McMaster-Carr	1	9.5	9.5
+Corner Bracket	Corner Machine Bracket, Finish-Your-Own, 6061 Aluminum, 1" x 1" x 1-1/4"	Consumption	2313N36	McMaster-Carr	1	7.24	7.24
+Side Profile	Fabricated by 3D printer	Consumption			2	0	0
+Ramp Element	Fabricated by 3D printer	Consumption			1	0	0
+TPU Spoke	Fabricated by 3D printer	Consumption			12	0	0
+Forward Ejection	Fabricated by 3D printer	Consumption			1	0	0
+Motor Mount	Fabricated by 3D printer	Consumption			1	0	0
+Total				Total Components	40	Total Cost	215.82
+![image](https://user-images.githubusercontent.com/30758520/201000765-1a53d3d8-f0fb-40a5-bc14-65480382e3b7.png)
+
