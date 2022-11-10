@@ -1,8 +1,10 @@
-### Consumption Subsystem Signoff
+# Consumption Subsystem Signoff
 
 ## Function of the Subsystem
 
-You must explain clearly what role the subsystem will play in the first section. This should clearly explain what the system is expected to do (ie. its atomic purpose from the conceptual design).
+The consumption subsystem’s main goal is to pick up any duck and pedestal that is in the predetermined path of the robot. Throughout the competition, the robot will make a complete path through the entire playing field that will be predetermined and designed by the team and come in contact with all of the ducks and pedestals that are present. The robot will need to pick these items up in order to later sort them and place them in their proper locations that are discussed within other subsystems. 
+The consumption subsystem will intake the object via three rows of spinning spokes. The spokes will rotate against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot. The spokes will need to be a flexible material that can bend against the robot’s body. in order to save some space and ensure each item collected is taken upwards. The spokes will be held in place by PVC and will be spun by a DC brushed motor. A DC brushed motor was chosen because we will be supplying this subsystem with DC power, and these motors are less expensive than the alternative options. 
+
 
 ## Constraints
 
