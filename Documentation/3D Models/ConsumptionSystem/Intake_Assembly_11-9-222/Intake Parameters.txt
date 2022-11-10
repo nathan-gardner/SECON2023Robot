@@ -1,0 +1,9 @@
+﻿"ShaftDistance" = 2.5in
+"SpokeDistance" = 1.75in
+"D_Bearing" = 7 / 8in
+"NumShaft" = 3
+"Tol_Bearing" = 0.05in
+"BearingHole" = "D_Bearing"+"Tol_Bearing"
+"IntakeOpening" = "SpokeDistance"+1.75in
+"SpokeLength" = 2in
+"TempVariable"= 72
