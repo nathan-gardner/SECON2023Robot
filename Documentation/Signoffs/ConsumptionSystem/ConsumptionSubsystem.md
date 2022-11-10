@@ -4,7 +4,7 @@
 
 The consumption subsystem’s main goal is to pick up any duck and pedestal that is in the predetermined path of the robot. Throughout the competition, the robot will make a complete path through the entire playing field that will be predetermined and designed by the team and come in contact with all of the ducks and pedestals that are present. The robot will need to pick these items up in order to later sort them and place them in their proper locations that are discussed within other subsystems. 
 
-The consumption subsystem will intake the object via three rows of spinning spokes. The spokes will rotate against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot. The spokes will need to be a flexible material that can bend against the robot’s body. in order to save some space and ensure each item collected is taken upwards. The spokes will be held in place by PVC and will be spun by a DC brushed motor. A DC brushed motor was chosen because we will be supplying this subsystem with DC power, and these motors are less expensive than the alternative options. 
+The consumption subsystem will intake the object via three rows of spinning shafts with spokes. The spokes will push objects against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot. The spokes will be a flexible material that can slightly contour to the shape of the duck’s body in order to ensure each item collected is taken upwards. The spokes will be held in place by set screws on a D-profile carbon steel shaft and will be spun by a DC brushed motor. A DC brushed motor was chosen because the motor will be supplied with DC power, and these motors are less expensive than the alternative options. The exact motor that will be used and the explanation will be stated in the analysis section.
 
 ## Constraints
 
@@ -66,8 +66,6 @@ d = 0.00635  m (shaft diameter)
 Normal carbon steel ranges between 260 - 500 MPa. Thus, the material chosen for the design will be sufficient. 
 
 ## BOM
-
-A complete list of all components needed for the design must be given with the cost of each component and the total cost of the subsystem. The BOM should be a markdown table (excel tables can be copied and pasted directly into the markdown file and they will be automatically converted).
 
 The bill of materials for the consumption mechanism is below. This includes all parts that are needed for design and manufacture of the robot. 
 
