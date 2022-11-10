@@ -56,9 +56,13 @@ Assuming all three shafts are lifting a single duck, the maximum possible weight
 ![image](https://user-images.githubusercontent.com/30758520/201001499-2f0068d9-8bb0-4432-b3ba-53a41303c4c5.png)
 
 T = 0.441 N-m (torque at the top of the power peak)
+
 d = 0.00635  m (shaft diameter)
+
 = 8,771,775.8 Pa
+
 = 8.77 MPa
+
 Normal carbon steel ranges between 260 - 500 MPa. Thus, the material chosen for the design will be sufficient. 
 
 ## BOM
