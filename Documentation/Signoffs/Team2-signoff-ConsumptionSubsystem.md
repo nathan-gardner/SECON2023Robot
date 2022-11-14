@@ -12,7 +12,7 @@ The consumption subsystem has a few constraints that it must abide by in order t
 
 Taking the weight of the ducks into consideration, this places a constraint on the team’s decision of which material to use for the design. TPU will be used to build the spokes for the intake mechanism and use set screws on a D-profile carbon steel shaft to hold the spokes in place. The calculations used to determine these materials are shown below in the analysis portion of the document. The weight of the duck (70.8 g) had to be taken into consideration as well as the rigidity we need for both materials. The ducks weigh much more than the pedestals, so the duck’s weight was used for all calculations. The set screws that hold the spokes in place need to be rigid enough to securely hold all them while supporting multiple ducks in the worst case scenario.  
 
-The next constraint that was considered was fitting the system within the size of the robot. The robot must fit in a 1’x1’x1’ area, so this adds the constraint of fitting each subsystem of this robot within the available space. The size of the consumption subsystem had to be such that the ducks would be accommodated. The duck’s size was considered more so than the pedestal because the duck has much larger measurements than the pedestal. The team’s object consumption design takes up 600 inch3 including the motor. The analysis to find this value is shown below in the team’s 3D model of the system. 
+The next constraint that was considered was fitting the system within the size of the robot. The robot must fit in a 1’x1’x1’ area, so this adds the constraint of fitting each subsystem of this robot within the available space. The size of the consumption subsystem had to be such that the ducks would be accommodated. The duck’s size was considered more so than the pedestal because the duck has much larger measurements than the pedestal. The team’s object consumption design takes up 600 $inch^3$ including the motor. The analysis to find this value is shown below in the team’s 3D model of the system. 
 
 Standard: OSHA Standard 1910.212(a)(1) states that guards are needed around moving parts. The robot’s consumption mechanism will be surrounded by walls on three of the four sides to account for this guard.
 
@@ -59,17 +59,19 @@ Motor torque Simulink Model: [here](https://github.com/nathan-gardner/CapstoneRe
 
 ### Maximum Torsional Shear Strength 
 
-![image](https://user-images.githubusercontent.com/30758520/201001499-2f0068d9-8bb0-4432-b3ba-53a41303c4c5.png)
+$\tau_{max}=\frac{16T}{\pi t^{3}}$
 
-T = 0.441 N-m (torque at the top of the power peak)
+$T = 0.441 N \ast m$
+(torque at the top of the power peak)
 
-d = 0.00635  m (shaft diameter)
+$d = 0.00635 m$
+(shaft diameter)
 
-= 8,771,775.8 Pa
+$= 8,771,775.8 Pa$
 
-= 8.77 MPa
+$= 8.77 MPa$
 
-Normal carbon steel ranges between 260 - 500 MPa. Thus, the material chosen for the design will be sufficient. 
+Normal carbon steel ranges between $260 - 500 MPa$. Thus, the material chosen for the design will be sufficient. 
 
 ## BOM
 
