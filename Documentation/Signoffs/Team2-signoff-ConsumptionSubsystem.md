@@ -18,7 +18,7 @@ Standard: OSHA Standard 1910.212(a)(1) states that guards are needed around movi
 
 Ethics: The consumption mechanism will be designed such that no one that comes into contact with the rotating spokes of the robot will be harmed. We will do this by making the spokes out of a soft, flexible material that will not cause physical damage to any object or person in its path.
 
-Socioeconomic: This subsystem will help Tennessee Tech make a good impression on the stage of the SoutheastCon hardware competition. This will improve the public image of Tennessee Tech and will potentially attract new students.
+Socioeconomic: The consumption subsystem has been designed to be fairly cost-effective by using some 3d printed parts and some more inexpensive materials, especially when it comes to prototyping.
 
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
 
@@ -49,7 +49,7 @@ CAD Files for Object Consumption Mechanism: [here](https://github.com/nathan-gar
 
 ![image](https://user-images.githubusercontent.com/30758520/201001312-4429694b-1b6a-4fd6-977f-bc88206feb7e.png)
 
-The DC brushed motor chosen is part number #4805 from Pololu. The motor is considered high power and runs off of $6\ V$. The torque needed for the motor to supply in the worst case is $0.2168\ N \ast m$ (or $22.11\ kg \ast mm$). This torque value was found using a Simulink simulation shown below. The target rpm we want to run the motor at is $120\ rpm$, motor #4805 produces a torque of about $40\ kg \ast mm$, which is more than enough for the worst case scenario. The power needed for $120\ rpm$ is about $4\ W$ and will draw close to $2.75\ A$. The power subsystem will be designed to deliver adequate power to the motor used in this subsystem.
+The DC brushed motor chosen is part number #4805 from Pololu. The motor is considered high power and runs off of $6\ V$. The torque needed for the motor to supply in the worst case is $0.2168\ N \ast m$ (or $22.11\ kg \ast mm$). This torque value was found using a Simulink simulation shown below. The target rpm we want to run the motor at is $120\ rpm$, motor #4805 produces a torque of about $40\ kg \ast mm$, which is more than enough for the worst case scenario. The power needed for $120\ rpm$ is about $4\ W$ and will draw close to $2.75\ A$. The power subsystem will be designed to deliver adequate power to the motor used in this subsystem. The motor's gear ratio is 46.85:1 and uses a metal spur gear box internal to the motor. 
 
 ![image](https://user-images.githubusercontent.com/30758520/201001401-8d3bfba7-8820-4853-a2f6-23a22c52e0e4.png)
 
@@ -62,7 +62,7 @@ Motor torque Simulink Model: [here](https://github.com/nathan-gardner/CapstoneRe
 $\tau_{max}=\frac{16T}{\pi t^{3}}$
 
 $T = 0.441\ N \ast m$
-(torque at the top of the power peak)
+(torque at the top of the power peak considering gear ratio internal to the motor)
 
 $d = 0.00635\ m$
 (shaft diameter)
