@@ -41,6 +41,8 @@ Shown below is our buildable schematic design made in SOLIDWORKS. The spokes wil
 ### Intake Mechanism Side
 ![IntakeMechanismSide2](https://user-images.githubusercontent.com/30758520/201001860-1a9735b8-17e1-4fd6-9f2a-2def6dbd8cc9.png)
 
+### Intake Mechanism inside box of robot (guards in place according to safety standard)
+
 CAD Files for Object Consumption Mechanism: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/ConsumptionSystem/Intake_Assembly_11-9-222)
 
 ## Analysis
@@ -51,7 +53,9 @@ CAD Files for Object Consumption Mechanism: [here](https://github.com/nathan-gar
 
 The DC brushed motor chosen is part number #4805 from Pololu. The motor is considered high power and runs off of $6\ V$. The torque needed for the motor to supply in the worst case is $0.2168\ N \ast m$ (or $22.11\ kg \ast mm$). This torque value was found using a Simulink simulation shown below. The target rpm we want to run the motor at is $120\ rpm$, motor #4805 produces a torque of about $40\ kg \ast mm$, which is more than enough for the worst case scenario. The power needed for $120\ rpm$ is about $4\ W$ and will draw close to $2.75\ A$. The power subsystem will be designed to deliver adequate power to the motor used in this subsystem. The motor's gear ratio is 46.85:1 and uses a metal spur gear box internal to the motor. 
 
-![image](https://user-images.githubusercontent.com/30758520/201001401-8d3bfba7-8820-4853-a2f6-23a22c52e0e4.png)
+![image](https://user-images.githubusercontent.com/30758520/202034744-5f73f82d-9cde-43f5-84db-367644be47fe.png)
+
+![image](https://user-images.githubusercontent.com/30758520/202034267-9fc5a4aa-4298-4bf2-a65b-7186fc19af5c.png)
 
 Assuming all three shafts are lifting a single duck, the maximum possible weight the motor will need to move would be $212.4\ g$. The acceleration of gravity ($9.8\ m/s^2$), the friction constant of rubber against the aluminum side of the robot ($0.64$), and the weight of the ducks ($0.0708\ kg$) combined was used to find the force. Once the force needed based on the weight of the duck and the friction on the body of the robot was found, the force, the length of the spokes, and sine of the angle in which the items will be traveling were multiplied to find the torque needed to lift multiple ducks. The safety factor for motor selection was two times the needed torque based on simulations. 
 
