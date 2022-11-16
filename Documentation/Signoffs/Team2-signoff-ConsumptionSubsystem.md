@@ -81,7 +81,7 @@ $\tau_{shaft} = 0.222\ N \ast m$
 
 ### Torsional Shear Strength Calculation
 
-$\tau_{max}=\frac{16T}{\pi t^{3}}$
+$\tau_{max}=\frac{16T}{\pi d^{3}}$
 
 $T_{shaft} = 0.222\ N \ast m$
 (torque at the top of the power peak considering gear ratio internal to the motor)
