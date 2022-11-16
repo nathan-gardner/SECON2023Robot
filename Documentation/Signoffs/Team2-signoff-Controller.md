@@ -32,4 +32,16 @@ Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRep
 
 ## Analysis
 
+Number of motors that need to be driven by the main controller and what purpose those motor serve are listed below
+
+Feeding subsystem - two motor that need to be driven by the main microcontroller
+
+Fireworks subsystem - zero or one motor to flip the switch for the fireworks
+
+Locomotion subsystem - four motors driven independantly
+
+Object Sorting and Storage - belt motor and motor which will poke the objects off of the belt
+
+
+
 ## BOM
