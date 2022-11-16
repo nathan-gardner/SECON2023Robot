@@ -73,7 +73,7 @@ $\frac{ \tau_{shaft} }{ \tau_{drive} } = \frac{F \ast r_{shaft} \ast sin(\theta)
 
 $\frac{ \tau_{shaft} }{ \tau_{drive} } = \frac{r_{shaft}}{r_{drive}}$
 
-$\tau_{shaft} = \frac{r_{drive} \ast \tau_{shaft}}{r_{drive}}$
+$\tau_{shaft} = \frac{r_{shaft} \ast \tau_{drive}}{r_{drive}}$
 
 $\tau_{shaft} = 1.988 \ast \tau_{drive}$
 
