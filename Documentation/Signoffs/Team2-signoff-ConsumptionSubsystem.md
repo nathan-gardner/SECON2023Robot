@@ -67,7 +67,7 @@ Motor torque Simulink Model: [here](https://github.com/nathan-gardner/CapstoneRe
 
 $\tau_{max}=\frac{16T}{\pi t^{3}}$
 
-The ratio of the torque for each shaft is proportional to the ratio of the diameter of the two wheels either driving or being driven by the belt. The diameter of the driving wheel on the motor is 0.88 inches and the diameter of the three wheels being turned is 1.75 inches. That means the ratio is 0.5029. The torque for the three shafts being driven would therefore need to be 0.5029 times what the datasheet says the torque of the motor is, or $0.441 \ast 0.5029$, which equals $0.222\ N \ast m$
+The ratio of the torque for each shaft is proportional to the ratio of the diameter of the two wheels either driving or being driven by the belt. The diameter of the driving wheel on the motor is 0.88 inches and the diameter of the three wheels being turned is 1.75 inches. That means the ratio is 0.5029. The torque for the three shafts being driven would therefore need to be 0.5029 times what the datasheet says the torque of the motor is, or $0.441 \ast 0.5029$, which equals $0.222\ N \ast m$.
 
 $T_{shaft} = 0.222\ N \ast m$
 (torque at the top of the power peak considering gear ratio internal to the motor)
