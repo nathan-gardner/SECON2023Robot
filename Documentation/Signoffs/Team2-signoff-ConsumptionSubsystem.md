@@ -69,15 +69,15 @@ The ratio of the torque for each shaft is proportional to the ratio of the diame
 
 ### Torque ratio calculation
 
-$\frac{ \tau_{drive} }{ \tau_{driven} } = \frac{F \ast r_{drive} \ast sin(\theta)}{F \ast r_{driven} \ast sin(\theta)}$
+$\frac{ \tau_{drive} }{ \tau_{shaft} } = \frac{F \ast r_{drive} \ast sin(\theta)}{F \ast r_{shaft} \ast sin(\theta)}$
 
-$\frac{ \tau_{drive} }{ \tau_{driven} } = \frac{r_{drive}}{r_{driven}}$
+$\frac{ \tau_{drive} }{ \tau_{shaft} } = \frac{r_{drive}}{r_{shaft}}$
 
-$\tau_{driven} = \frac{r_{drive} \ast \tau_{drive}}{r_{driven}}$
+$\tau_{shaft} = \frac{r_{drive} \ast \tau_{drive}}{r_{shaft}}$
 
-$\tau_{driven} = 0.5029 \ast \tau_{drive}$
+$\tau_{shaft} = 0.5029 \ast \tau_{drive}$
 
-$\tau_{driven} = 0.222\ N \ast m$
+$\tau_{shaft} = 0.222\ N \ast m$
 
 ### Torsional Shear Strength Calculation
 
