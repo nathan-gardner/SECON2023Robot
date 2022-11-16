@@ -65,33 +65,33 @@ Motor torque Simulink Model: [here](https://github.com/nathan-gardner/CapstoneRe
 
 ### Maximum Torsional Shear Strength 
 
-The ratio of the torque for each shaft is proportional to the ratio of the diameter of the two wheels either driving or being driven by the belt. The diameter of the driving wheel on the motor is 0.88 inches and the diameter of the three wheels being turned is 1.75 inches. That means the ratio is 0.5029. The torque for the three shafts being driven would therefore need to be 0.5029 times what the datasheet says the torque of the motor is, or $0.441 \ast 0.5029$, which equals $0.222\ N \ast m$.
+The ratio of the torque for each shaft is proportional to the ratio of the diameter of the two wheels either driving or being driven by the belt. The diameter of the driving wheel on the motor is 0.88 inches and the diameter of the three wheels being turned is 1.75 inches. That means the ratio is 0.5029. The torque for the three shafts being driven would therefore need to be 0.5029 times what the datasheet says the torque of the motor is, or $0.441 \ast 1.988$, which equals $0.222\ N \ast m$.
 
 ### Torque ratio calculation
 
-$\frac{ \tau_{drive} }{ \tau_{shaft} } = \frac{F \ast r_{drive} \ast sin(\theta)}{F \ast r_{shaft} \ast sin(\theta)}$
+$\frac{ \tau_{shaft} }{ \tau_{drive} } = \frac{F \ast r_{shaft} \ast sin(\theta)}{F \ast r_{drive} \ast sin(\theta)}$
 
-$\frac{ \tau_{drive} }{ \tau_{shaft} } = \frac{r_{drive}}{r_{shaft}}$
+$\frac{ \tau_{shaft} }{ \tau_{drive} } = \frac{r_{shaft}}{r_{drive}}$
 
-$\tau_{shaft} = \frac{r_{drive} \ast \tau_{drive}}{r_{shaft}}$
+$\tau_{shaft} = \frac{r_{drive} \ast \tau_{shaft}}{r_{drive}}$
 
-$\tau_{shaft} = 0.5029 \ast \tau_{drive}$
+$\tau_{shaft} = 1.988 \ast \tau_{drive}$
 
-$\tau_{shaft} = 0.222\ N \ast m$
+$\tau_{shaft} = 0.877\ N \ast m$
 
 ### Torsional Shear Strength Calculation
 
 $\tau_{max}=\frac{16T}{\pi d^{3}}$
 
-$T_{shaft} = 0.222\ N \ast m$
+$T_{shaft} = 0.877\ N \ast m$
 (torque at the top of the power peak considering gear ratio internal to the motor)
 
 $d = 0.00635\ m$
 (shaft diameter)
 
-$= 4,415,720\ Pa$
+$= 17,444,100\ Pa$
 
-$= 4.42\ MPa$
+$= 17.44\ MPa$
 
 Normal carbon steel ranges between $260 - 500\ MPa$. Thus, the material chosen for the design will be sufficient. 
 
