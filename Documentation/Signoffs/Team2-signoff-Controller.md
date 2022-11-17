@@ -40,16 +40,13 @@ Fireworks subsystem - zero or one motor to flip the switch for the fireworks
 
 Locomotion subsystem - This subsystem will require four motors driven independantly. We will need to use both encoder output A and B on all four motors to show direction of rotation. The table of the motor inputs that need to be driven by the motor are below:
 
-| Color  | Pin Type    |
-|--------|-------------|
-| Red    | PWM pin     |
-| Black  | Common      |
-| Green  | Common      |
-| Blue   | Power - Vcc |
-| Yellow | Digital Pin |
-| White  | Digital Pin |
+| Motor Driver       | Pin Type |
+| ------------------ | -------- |
+| Speed              | PWM      |
+| Forward Direction  | Digital  |
+| Backward Direction | Digital  |
 
-This means that the number of pins required to be actively driven for all four motors are four PWM pins and eight digital pins. 
+This means that four PWM pins will be needed and eight digital pins will be needed for the locomotion subsystem. 
 
 Object Sorting and Storage - belt motor and motor which will poke the objects off of the belt
 
