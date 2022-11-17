@@ -28,7 +28,7 @@ Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRep
 
 ## Electronic Schematic 
 
-
+The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
 
 ## Analysis
 
@@ -48,6 +48,10 @@ Locomotion subsystem - This subsystem will require four motors driven independan
 
 This means that four PWM pins will be needed and eight digital pins will be needed for the locomotion subsystem. 
 
-Object Sorting and Storage - belt motor and motor which will poke the objects off of the belt
+Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a seperate area. 
+
+Object Storage
+
+
 
 ## BOM
