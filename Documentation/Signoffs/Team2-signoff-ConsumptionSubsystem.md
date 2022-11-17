@@ -69,8 +69,6 @@ The ratio of the torque for each shaft is proportional to the ratio of the diame
 
 ### Torque ratio calculation
 
-$\frac{ \tau_{shaft} }{ \tau_{drive} } = \frac{F \ast r_{shaft} \ast sin(\theta)}{F \ast r_{drive} \ast sin(\theta)}$
-
 $\frac{ \tau_{shaft} }{ \tau_{drive} } = \frac{r_{shaft}}{r_{drive}}$
 
 $\tau_{shaft} = \frac{r_{shaft} \ast \tau_{drive}}{r_{drive}}$
