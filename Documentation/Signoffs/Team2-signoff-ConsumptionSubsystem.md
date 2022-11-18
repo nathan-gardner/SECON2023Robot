@@ -16,10 +16,6 @@ The next constraint that was considered was fitting the system within the size o
 
 Standard: OSHA Standard 1910.212(a)(1) states that guards are needed around moving parts. The robot’s consumption mechanism will be surrounded by walls on three of the four sides to account for this guard.
 
-Ethics: The design for the consumption subsystem will be the team's own work and not infringe on anyone else's design to the best of our knowledge.
-
-Socioeconomic: The consumption subsystem has been designed to be fairly cost-effective by using some 3d printed parts and some more inexpensive materials, especially when it comes to prototyping.
-
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
 
 ## Buildable schematic 
