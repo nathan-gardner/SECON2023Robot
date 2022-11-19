@@ -12,7 +12,7 @@ The controller subsystem has constraints that it must abide by the be successful
 
 The direct interfaces between the controller and other subsystems are as follows:
 
-1. Serial communication input/output to the vision microcontroller. This will be a general digital I/O pin. 
+1. Serial communication input/output to the vision microcontroller. This will be a general digital I/O pin used to communcate objects which describe enviroment.
 2. An input from the power system which triggers the microcontroller to start initializing code. This will be a digital input pin with hardware interrupt capabilities. 
 3. Serial communication as an input to the object storage subsystem. This will be a digital output pin in terms of the microcontroller. 
 4. Serial communication as an input to the object consumption subsystem. This will be a digital output pin in terms of the microcontroller.
@@ -20,11 +20,72 @@ The direct interfaces between the controller and other subsystems are as follows
 
 Standard: IEEE 1118.1-1990 describes standards related to interdevicehtrabuilding as well as interconnection of microcontrollers. This stardard will be reference and adhered to in terms of system controller interconnect design, which is part of the controller subsystem. 
 
-Ethics: Consideration will be taken for other people design which are contoller design will be specifically analyzed for safety in terms of automation. 
-
-Socioeconomic: Economic consideration will need to be made when selecting a microcontroller, because microcontrollers can be very expensive to purchase.
-
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
+
+Number of motors that need to be driven by the main controller and what purpose those motor serve are listed below
+
+### Main Controller
+
+Feeding subsystem - one motor that needs to be driven by the main microcontroller
+
+| Motor Driver       | Pin Type | Count |             |   |
+|--------------------|----------|-------|-------------|---|
+| Speed              | PWM      | 1     |             |   |
+| Forward Direction  | Digital  | 1     |             |   |
+| Backward Direction | Digital  | 1     |             |   |
+|                    |          |       | Total Pins: | 3 |
+
+_Interfaces needed:_ 
+1. Motor for the rack and pinion subsystem
+
+Fireworks subsystem - zero or one motor to flip the switch for the fireworks
+
+Still undesigned, in the worst case this will need s control signal for a servo
+
+| Servo   | Pin Type | Count |             |   |
+|---------|----------|-------|-------------|---|
+| Power   | Power    | 1     |             |   |
+| Ground  | Power    | 1     |             |   |
+| Control | PWM      | 1     |             |   |
+|         |          |       | Total Pins: | 3 |
+
+_Interfaces needed:_ 
+1. Servo control signal for flipping a switch if needed, will design to that need 
+
+Locomotion subsystem - This subsystem will require four motors driven independantly. We will need to use both encoder output A and B on all four motors to show direction of rotation. The table of the motor inputs that need to be driven by the motor are below:
+
+| Motor Driver       | Pin Type | Count |             |    |
+|--------------------|----------|-------|-------------|----|
+| Speed              | PWM      | 4     |             |    |
+| Forward Direction  | Digital  | 4     |             |    |
+| Backward Direction | Digital  | 4     |             |    |
+|                    |          |       | Total Pins: | 12 |
+
+This means that four PWM pins will be needed and eight digital pins will be needed for the locomotion subsystem. 
+
+_Interfaces needed:_ 
+1. Control signal for four wheels, one PWM signal for speed, one for forward and one for backward direction, or twelve pins in total
+
+### Object Sorting and Storage Controller
+
+Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a seperate area.
+
+INSERT TABLE
+
+_Interfaces needed:_ 
+1. Motor to drive conveyor 
+2. Color sensor
+3. Vibration motor
+4. Linear actuator
+
+Object Storage - 
+
+INSERT TABLE
+
+_Interfaces needed:_ 
+1. Motor for rack and pinion
+2. two proximity sensors
+3. some motor for opening the silo
 
 ## Electronic Schematic 
 
@@ -32,26 +93,6 @@ The electronic schematic for the controller subsystem is attached below. It incl
 
 ## Analysis
 
-Number of motors that need to be driven by the main controller and what purpose those motor serve are listed below
-
-Feeding subsystem - two motor that need to be driven by the main microcontroller
-
-Fireworks subsystem - zero or one motor to flip the switch for the fireworks
-
-Locomotion subsystem - This subsystem will require four motors driven independantly. We will need to use both encoder output A and B on all four motors to show direction of rotation. The table of the motor inputs that need to be driven by the motor are below:
-
-| Motor Driver       | Pin Type |
-| ------------------ | -------- |
-| Speed              | PWM      |
-| Forward Direction  | Digital  |
-| Backward Direction | Digital  |
-
-This means that four PWM pins will be needed and eight digital pins will be needed for the locomotion subsystem. 
-
-Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a seperate area. 
-
-Object Storage
-
-
+The analysis below is used to show that the XXXXXX microcontroller is going to be be used for the main controller subssytem.
 
 ## BOM
