@@ -22,7 +22,7 @@ The size of the robot will lead to another constraint that will need to be taken
 
 The motor selected for the trailer design should be able to push the weight of the ducks and the trailer itself when ejecting the trailer at the duck pond location. At worst case, the trailer will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + XX (the weight of the trailer). The friction coefficient of rubber on steel is approximately 0.8.
 
-The motor selected for the silo extension and pedestal drop off should be able to withstand the weigh of at most three pedestals and the weight of the silo itself. At worst case, the motor will have 0.0618 kg (the weight of three pedestals) + XX (the weight of the silo). 
+The motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + XX (the weight of the silo). 
 
 ## Electrical Schematic
 
