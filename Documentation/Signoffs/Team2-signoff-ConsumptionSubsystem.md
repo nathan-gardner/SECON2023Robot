@@ -21,6 +21,10 @@ Assuming all three shafts are lifting a single duck, the maximum weight the moto
 
 The next constraint that was considered was fitting the system within the size of the robot. The robot must fit in a 1’x1’x1’ area, so this adds the constraint of fitting each subsystem of this robot within the available space. The size of the consumption subsystem had to be such that the ducks would be accommodated. The duck’s size was considered more so than the pedestal because the duck has much larger measurements than the pedestal. The team’s object consumption design takes up $600\ inch^3$ including the motor. The analysis to find this value is shown below in the team’s 3D model of the system. 
 
+Another constraint is that the robot must pick up all the objects in its path in a specific and constrained amount of time. This is essential to the robot's proper function because the round length is three minutes. Object consumption cannot take a large majority of the time because we need to allow for time to move the ducks to the pond and to activate the fireworks. Two minutes was determined as the maximum possible time that the robot will be allowed to consume objects around the arena and this means that the robot will need to move six inches per second. Two minutes was selected because it is the optimal balance which allows for time to transverse the arena at a reasonable speed ( $6\ \frac{inches}{sec}$ ) and allows for another minute to complete the duck delivery and firework activation. 
+
+The maximum shear strength calculations are below and were used in the selection of materials for the construction of the object consumption subsystem. The shear is the strain on a structure caused by pressure when its layers are laterally shifted in relation to each other. The maximum shear strength is of carbon steel is analyzed in the analysis portion below.  
+
 Standard: OSHA Standard 1910.212(a)(1) states that guards are needed around moving parts. The robot’s consumption mechanism will be surrounded by walls on three of the four sides to account for this guard.
 
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
@@ -97,6 +101,14 @@ $= 17,444,100\ Pa$
 $= 17.44\ MPa$
 
 Normal carbon steel ranges between $260 - 500\ MPa$. Thus, the material chosen for the design will be sufficient. 
+
+### Velocity Analysis
+
+The predetermined path distance is 480 inches, and the time allow to complete the path is 120 seconds, with 20 seconds allowed for turns and 20 second allowed to drop off the pedestals. 
+
+$v = \frac{480\ inches}{120 - 20 - 20\ sec}$
+
+$v = 6\ \frac{inches}{sec}$
 
 ## BOM
 
