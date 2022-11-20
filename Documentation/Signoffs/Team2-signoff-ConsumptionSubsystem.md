@@ -9,8 +9,6 @@ The consumption subsystem’s main goal is to pick up any duck and pedestal that
 - Spokes (flexible material held in place with set screws on a D-profile carbon steel shaft) will push objects against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot with motion from a DC brushed motor
 - Worst case scenerio of three ducks analyzed below
 
-~~The consumption subsystem will intake the object via three rows of spinning shafts with spokes. The spokes will push objects against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot. The spokes will be a flexible material that can slightly contour to the shape of the duck’s body in order to ensure each item collected is taken upwards. The spokes will be held in place by set screws on a D-profile carbon steel shaft and will be spun by a DC brushed motor. A DC brushed motor was chosen because the motor will be supplied with DC power, and these motors are less expensive than the alternative options. The exact motor that will be used and the explanation will be stated in the analysis section. The motor specifications are based on the weight of three ducks as a worst case scenario. The pedestals are considerably lighter than the ducks, so the duck weight will be used in all calculations.~~
-
 ## Constraints
 
 The consumption subsystem has a few constraints that it must abide by in order to be successful. The first constraint is that it must have a motor that has a minimum torque of $0.2168\ N \ast m$. The calculations used to find this minimum torque are laid out in the analysis portion of this document. The torque was determined based on the weight of the ducks on the spokes of the intake mechanism as well as the anticipated friction of the spokes pushing the ducks against the body of the robot and the floor. We found the weight of the ducks to be $70.8\ g$ and the friction constant of the rubber duck on the aluminum body of the robot to be $0.64$. The weight of the duck was considered because the weight of the pedestals is much less than that of the duck.
@@ -30,6 +28,8 @@ Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRep
 ## Buildable schematic 
 
 Shown below is our buildable schematic design made in SOLIDWORKS. The spokes will rotate and intake any duck or pedestal in the robot’s path. The consumption mechanism will have three rows of spokes that will direct the objects upwards and inwards up a ramped wall to the beginning of the sorting mechanism. The back wall will have the ability to be adjusted within the testing phase in order to ensure that the spokes are close enough to the wall to properly intake each item. The spokes will be made of TPU and the rotating shafts will be made of pvc pipes for prototyping, but carbon steel for the final product. The ramp will be made of some kind of printed plastic for prototypes and aluminum for the final product. All calculations and analysis were done for the final product, not the prototype. All measurements shown on the 3D model are in inches. 
+
+**ADD AN ELECTRICAL SCHEMATIC**
 
 ### Intake Mechanism Back
 ![IntakeMechanismBack](https://user-images.githubusercontent.com/30758520/201001784-44b5ea8e-67ed-4592-b330-f094e41a86d7.png)
