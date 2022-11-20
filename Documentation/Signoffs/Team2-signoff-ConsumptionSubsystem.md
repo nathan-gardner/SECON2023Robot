@@ -104,13 +104,15 @@ $= 17.44\ MPa$
 
 Normal carbon steel ranges between $260 - 500\ MPa$. Thus, the material chosen for the design will be sufficient. 
 
-### Velocity Analysis
+### Object Frequency Analysis
 
-The predetermined path distance is 480 inches, and the time allow to complete the path is 120 seconds, with 20 seconds allowed for turns and 20 second allowed to drop off the pedestals. 
+Stated in the contraints section, we are assuming the robot will transverse a 480 inch path in 120 seconds, and of that time, 80 seconds will be used for actual robot forward motion. Calculations for time per object consumed is below:
 
-$v = \frac{480\ inches}{120 - 20 - 20\ sec}$
+$f_{duck} = \frac{80\ sec}{10\ ducks} = 8 \frac{sec}{duck}$
 
-$v = 6\ \frac{inches}{sec}$
+$f_{pedestal} = \frac{80\ sec}{7\ pedestals} = 11.4 \frac{sec}{pedestals}$
+
+$f_{object} = \frac{80\ sec}{17\ objects} = 4.7 \frac{sec}{object}$
 
 ## BOM
 
