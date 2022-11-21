@@ -38,7 +38,7 @@ The electrical schematic for the object storage subsystem is shown below.
 
 To find the Torque needed for the Servo Motor for the Rack and Pinion the following calculations were completed. Using 90&deg; as a worst case scenario.
 
-Total Mass = 0.708 kg + XXX kg (trailer) + XXX kg (omni-wheel)
+$Total Mass = m_{ducks} + m_{trailer} + m_{onmi-wheel} = 0.708 + XXX + XXX$
 
 $F = m \ast 9.81 \ast 0.76 = XXX \ast 9.81 \ast 0.76$
 
@@ -58,7 +58,15 @@ $Duck Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
 
 $Corral Volume = XXX in^{3}$
   
-Corral Volume > Duck Volume
+Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
+
+### Size Calculations for Pedestal Silo
+
+$Pedestal Volume = \pi \ast r^{2} \ast h = \pi \ast 2^{2} \ast 1.8 = 22.62 in^{3}$
+
+$Silo Volume = \pi \ast r^{2} \ast h = \pi \ast XX^{2} \ast XX$
+
+Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
   
 ### Rotation Calculation for Corral 
 
@@ -86,11 +94,17 @@ $Rotations = \frac{ distance }{ C } = \frac{ XX }{ XX }$
 
 $Degrees = rotations \ast 360 = XX \ast 360$
 
+### Distance From Sensors
+
+$C_{silo} = \pi \ast d = \pi \ast XX in^{2}$
+
+$C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
+
+$D_{max} = C_{silo} - C_{pedestal} = XX - 6.28 = XX in$
+
+The max distance calculated is less than the maximum distance the sensor can detect. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
+
 ## Buildable Schematic
-
-![FunnelSideView](https://user-images.githubusercontent.com/112424739/202914982-efbea400-4a37-4475-895f-5980e5515300.png)
-
-![FunnelTopView](https://user-images.githubusercontent.com/112424739/202914995-e1fec3a0-3223-471c-90d9-91331fba9701.png)
 
 
 ## BOM
