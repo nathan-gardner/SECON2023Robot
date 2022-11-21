@@ -157,6 +157,12 @@ _Total pins needed:_
 | Interrupt:                            | 1  |
 | Total:                                | 24 |
 
+The Arduino Mega 2560 Rev3 was analyzed for selection as the main controller and the object sorting and storage controller. The board has 54 digital pins, 15 of which can be used as PWM outputs, 16 analog inputs, 4 UARTS, and a USB connection.
+
+The Arduino Mega can integrate ROS, and ROS will definitely be used in this project. ROS libraries will be used for hardware abstraction, low-level device control, and package management.
+
+The Arduino Mega was selected for these two microcontrollers because it has a comfortable cushion for the I/O constraint, and allows us to seperate and design the controller system modularly. 
+
 ## Electronic Schematic 
 
 The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
