@@ -79,29 +79,42 @@ Vision Subsystem - Requires communication to exchange sensor data structures thr
 
 The vision subsystem will not have any direct pin requirements, but it will use USB communcation to exchange data between the main microcontroller and the vision microcontroller. 
 
+_Total pins needed:_
+| Locomotion, Fireworks, and Feeding Controller |    |
+|-----------------------------------------------|----|
+| Power:                                        | 2  |
+| Digital:                                      | 10 |
+| PWM:                                          | 6  |
+| Total:                                        | 18 |
+
 ### Object Sorting and Storage Controller
 
 Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a seperate area.
 
-**INCOMPLETE TABLE, WAITING ON MARKS PARTS**
-| Object Sorting     |           |       |
-|--------------------|-----------|-------|
-| Motor Driver       | Pin Type  | Count |
-| Speed              | PWM       | 1     |
-| Forward Direction  | Digital   | 1     |
-| Backward Direction | Digital   | 1     |
-| Color Sensor       |           |       |
-| Ground             | Power     | 1     |
-| Interrupt          | Interrupt | 1     |
-| SCL                | Digital   | 1     |
-| SDA                | Digital   | 1     |
-| VDD                | Power     | 1     |
-| Vibration Motor    |           |       |
-|                    |           |       |
-|                    |           |       |
-|                    |           |       |
-|                    |           |       |
-| Linear Actuator    |
+| Object Sorting     |           |       |             |    |
+|--------------------|-----------|-------|-------------|----|
+| Motor Driver       | Pin Type  | Count |             |    |
+| Speed              | PWM       | 1     |             |    |
+| Forward Direction  | Digital   | 1     |             |    |
+| Backward Direction | Digital   | 1     |             |    |
+| Color Sensor       |           |       |             |    |
+| Ground             | Power     | 1     |             |    |
+| Interrupt          | Interrupt | 1     |             |    |
+| SCL                | Digital   | 1     |             |    |
+| SDA                | Digital   | 1     |             |    |
+| VDD                | Power     | 1     |             |    |
+| Vibration Motor    |           |       |             |    |
+| Positive           | Power     | 1     |             |    |
+| Negitive           | Power     | 1     |             |    |
+| Activation         | Digital   | 1     |             |    |
+| Linear Actuator    |           |       |             |    |
+| Retract            | Digital   | 1     |             |    |
+| Extend             | Digital   | 1     |             |    |
+|                    |           |       | Interrupt:  | 1  |
+|                    |           |       | PWM:        | 1  |
+|                    |           |       | Power:      | 4  |
+|                    |           |       | Digital:    | 7  |
+|                    |           |       | Total Pins: | 13 |
 
 _Interfaces needed:_ 
 1. Motor to drive conveyor 
@@ -134,6 +147,15 @@ _Interfaces needed:_
 1. Motor for rack and pinion
 2. two proximity sensors
 3. some motor for opening the silo
+
+_Total pins needed:_
+| Object Storage and Sorting Controller |    |
+|---------------------------------------|----|
+| Power:                                | 10 |
+| Digital:                              | 12 |
+| PWM:                                  | 1  |
+| Interrupt:                            | 1  |
+| Total:                                | 24 |
 
 ## Electronic Schematic 
 
