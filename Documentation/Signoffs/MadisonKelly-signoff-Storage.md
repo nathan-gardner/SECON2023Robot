@@ -28,6 +28,8 @@ The servo motor selected for the silo extension and pedestal drop off should be 
 
 Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is XX which will require XX rotations or XX&deg;. For the final drop off, it will need to travel XX in whcih will require XX rotations or XX&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
 
+The final constraint comes from OSHA 1910.212(a)(3)(iii) which relates to the safety of placing and removing material safely. The constraint states that the handling of the material should be easy and without placing a hand in the danger zone. This standard is revlevant because of the removal and replacement of the corral on the rack and pinion. The team will meet this constraint by ensuring the gear on the rack and pinion is within the robot away from hands, and ensure that the motors are turned off when the corral is replaced at the end of the competition.
+
 ## Electrical Schematic
 
 The electrical schematic for the object storage subsystem is shown below.
