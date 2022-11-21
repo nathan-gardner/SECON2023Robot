@@ -34,6 +34,10 @@ The final constraint comes from OSHA 1910.212(a)(3)(iii) which relates to the sa
 
 The electrical schematic for the object storage subsystem is shown below.
 
+First is the schematic of the sensor that will be used for this subsystem.
+![image](https://user-images.githubusercontent.com/112424739/203145073-4e3c14db-d35a-4060-9899-bf702abc38ae.png)
+
+
 ## Analysis
 
 ### Torque Ratio Calculations
