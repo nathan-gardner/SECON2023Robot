@@ -26,7 +26,7 @@ The microcontroller will supply the speed and direction signal to the motor driv
 
 ![image](https://user-images.githubusercontent.com/112428353/203179672-5b30a1bc-0743-4b93-b92e-3bebf214f00a.png)
 
-Each motor driver can output the speed and direction two motors.
+Each motor driver will supply the current and voltage for two motors.
 
 
 ## Analysis
