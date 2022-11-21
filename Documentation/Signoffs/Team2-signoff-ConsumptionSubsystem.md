@@ -90,9 +90,7 @@ $\tau_{shaft} = \frac{r_{shaft} \ast \tau_{drive}}{r_{drive}}$
 
 $\tau_{shaft} = 1.988 \ast \tau_{drive}$
 
-$\tau_{shaft} = 0.877\ N \ast m$
-
-$\tau_{shaft} = 8.94 kg \ast cm$
+$\tau_{shaft} = 0.877\ kg \ast cm$
 
 Since the motor we selected is rated for up to $9.1 kg \ast cm$, it will meet the needs of the team since it exceeds the maximum rating of the motor. 
 
@@ -100,15 +98,15 @@ Since the motor we selected is rated for up to $9.1 kg \ast cm$, it will meet th
 
 $\tau_{max}=\frac{16T}{\pi d^{3}}$
 
-$T_{shaft} = 0.877\ N \ast m$
+$T_{shaft} = 0.877\ kg \ast cm = 0.086\ N \ast m$
 (torque at the top of the power peak considering gear ratio internal to the motor)
 
 $d = 0.00635\ m$
 (shaft diameter)
 
-$= 17,444,100\ Pa$
+$= 1,710,600\ Pa$
 
-$= 17.44\ MPa$
+$= 1.71\ MPa$
 
 Normal carbon steel ranges between $260 - 500\ MPa$. Thus, the material chosen for the design will be sufficient. 
 
