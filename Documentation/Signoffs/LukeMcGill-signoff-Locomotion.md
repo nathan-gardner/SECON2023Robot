@@ -29,7 +29,7 @@ Each motor driver can output the speed and direction two motors.
 
 ## Analysis
 ### Acceleration
-$v = 0.2023\ m/s2$ (worst case of 8 inch/second)
+$v = 0.2023\ m/s$ (worst case of 8 inch/second)
 
 $a = \frac{v - v_{o}}{t}$
 
@@ -48,7 +48,7 @@ $F_n = mg$
 
 $\Sigma F_x = F - (\mu_{s}F_n)$
 
-$ma_x = F - (\mu_{s}F_n)$
+$ma_x = F - (\mu_{s}mg)$
 
 $0.362 * 0.2023 = F - (0.95 * 0.362 * 9.8)$
 
