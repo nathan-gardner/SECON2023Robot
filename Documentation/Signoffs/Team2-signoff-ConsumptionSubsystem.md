@@ -41,7 +41,7 @@ Shown below is our buildable schematic design made in SOLIDWORKS. The spokes wil
 
 ### Electrical Schematic
 
-![image](https://user-images.githubusercontent.com/30758520/202877035-846c0463-4225-456b-9196-1ac7036141d2.png)
+![image](https://user-images.githubusercontent.com/30758520/203175685-67f42ebe-d1e7-49e1-8921-d0e7ecb27b12.png)
 
 ### Intake Mechanism Back
 ![IntakeMechanismBack](https://user-images.githubusercontent.com/30758520/201001784-44b5ea8e-67ed-4592-b330-f094e41a86d7.png)
