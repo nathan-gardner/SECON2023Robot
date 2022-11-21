@@ -181,6 +181,12 @@ The Arduino Mega can integrate ROS, and ROS will definitely be used in this proj
 
 The Arduino Mega was selected for these two microcontrollers because it has a comfortable cushion for the I/O constraint, and allows us to seperate and design the controller system modularly. 
 
+Two microcontrollers are being used so that the design is modular and can be split up in a way that makes sense. The controllers are mostly driving motor controller, with PWM and digital outputs, and those actions are not computationally expensive.
+
+The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroler is 16 MHz and with the prescale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{kbits}{sec}$. The the 128 prescale can be changed, so this can be updated to our requirements.
+
+The object storage subsystem has proximaty sensors which outputs at 145 Hz, which will be sufficient for out use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed.  
+
 ## Electronic Schematic 
 
 The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
@@ -193,6 +199,50 @@ The analysis below is used to show that the Arduino Mega microcontroller is goin
 
 Tables are shown in the constraints section and contain pin count analysis. The pins are one of the major constraints on the design for this subsystem. 
 
-Two microcontrollers are being used so that the design is modular and can be slip up in a way that makes sense. 
+### Color Sensor in Object Sorting
+
+The belt will be moving at $2 \frac{inches}{sec}$
+
+The calculations for the samples per unit distance are below:
+
+$v_{belt} = 2\ \frac{inches}{sec}$
+
+$f_{color\ sensor} = 400\ \frac{ksamples}{sec}$
+
+$f_{arduino} = 150\ \frac{ksamples}{sec}$
+
+$f_{effective} = 75\ \frac{ksamples}{sec}$
+
+$\frac{samples}{inch} = \frac{1\ sec}{2\ inches} \ast \frac{75\ ksamples}{1\ sec} = 37.5\ \frac{ksamples}{sec}$
+
+Calculations for the frequency of objects recieved:
+
+$f_{duck} = \frac{80\ sec}{10\ ducks} = 8 \frac{sec}{duck}$
+
+$f_{pedestal} = \frac{80\ sec}{7\ pedestals} = 11.4 \frac{sec}{pedestals}$
+
+$f_{object} = \frac{80\ sec}{17\ objects} = 4.7 \frac{sec}{object}$
+
+$f_{objects\ received\ on\ belt} = \frac{17\ objects}{80\ sec} =  0.2125\ Hz
+
+This means that the sample rate of $37.5\ \frac{ksamples}{sec}$ is more than enough for sampling the the color of the objects coming in on the belt. The robot will actually be able to sample a pedestal many times, the calculations for that is below:
+
+$\frac{samples}{L_{pedestal}} = 75\ \frac{ksamples}{sec} \ast \frac{1 sec}{2 inches} \ast \frac{2 inches}{1\ L_{pedestal}}$
+
+Nyquists for the color sensor sampling:
+
+$f_{color\ sample} = 2 \ast 2\ Hz = 4\ Hz$
+
+### Proximity Sensor in Object Storage
+
+The silo will need to sampled twice a second, so the actual sampling will be happening at 4 Hz, by Nyquists Theorem.
+
+$f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquists Theorem.
 
 ## BOM
+
+| Name of Item               | Description                                          | Used in which subsystem(s) | Part Number           | Manufacturer     | Quantity | Price      | Total  |
+|----------------------------|------------------------------------------------------|----------------------------|-----------------------|------------------|----------|------------|--------|
+| Arduino Mega 2560 Rev3     | Microcontrollers selected for controller subsystem   | Controller                 | A000067/7630049200067 | Arduino          | 2        | 48.4       | 96.8   |
+| Jumper Wires ELEGOO 120pcs | Jumper wires to connnect board to sensors and motors | Controller                 | B01EV70C78            | ELEGOO           | 1        | 9.99       | 9.99   |
+| Total                      |                                                      |                            |                       | Total Components | 3        | Total Cost | 106.79 |
