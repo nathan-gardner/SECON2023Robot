@@ -167,7 +167,7 @@ The Arduino Mega was selected for these two microcontrollers because it has a co
 
 The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
 
-
+![image](https://user-images.githubusercontent.com/30758520/203140719-002f5893-237c-4fe0-b7f0-078e57ca984a.png)
 
 ## Analysis
 
