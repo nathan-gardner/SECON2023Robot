@@ -34,6 +34,8 @@ Feeding subsystem - one motor that needs to be driven by the main microcontrolle
 | Speed              | PWM      | 1     |             |   |
 | Forward Direction  | Digital  | 1     |             |   |
 | Backward Direction | Digital  | 1     |             |   |
+|                    |          |       | Digital:    | 2 |
+|                    |          |       | PWM:        | 1 |
 |                    |          |       | Total Pins: | 3 |
 
 _Interfaces needed:_ 
@@ -49,6 +51,8 @@ Still undesigned, in the worst case this will need s control signal for a servo
 | Power     | Power    | 1     |             |   |
 | Ground    | Power    | 1     |             |   |
 | Control   | PWM      | 1     |             |   |
+|           |          |       | Power:      | 2 |
+|           |          |       | PWM:        | 1 |
 |           |          |       | Total Pins: | 3 |
 
 _Interfaces needed:_ 
@@ -62,12 +66,18 @@ Locomotion subsystem - This subsystem will require four motors driven independan
 | Speed              | PWM      | 4     |             |    |
 | Forward Direction  | Digital  | 4     |             |    |
 | Backward Direction | Digital  | 4     |             |    |
+|                    |          |       | PWM:        | 4  |
+|                    |          |       | Digital:    | 8  |
 |                    |          |       | Total Pins: | 12 |
 
 This means that four PWM pins will be needed and eight digital pins will be needed for the locomotion subsystem. 
 
 _Interfaces needed:_ 
 1. Control signal for four wheels, one PWM signal for speed, one for forward and one for backward direction, or twelve pins in total
+
+Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communcation. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communcate with the main controller subsystem lower level controllers, which will execute commands to drive motors and drive actuators. 
+
+The vision subsystem will not have any direct pin requirements, but it will use USB communcation to exchange data between the main microcontroller and the vision microcontroller. 
 
 ### Object Sorting and Storage Controller
 
@@ -106,7 +116,7 @@ The pins for the object sorting subsystem are listed below in tabular form. The 
 | Object Storage   |           |   |             |    |
 |------------------|-----------|---|-------------|----|
 | Servo Controller |           |   |             |    |
-| Communcation     | Micro-USB | 1 |             |    |
+| Communcation     | Micro-USB | 0 |             |    |
 | Ground           | Power     | 1 |             |    |
 | Vin              | Power     | 1 |             |    |
 | Rx               | Digital   | 1 |             |    |
@@ -116,7 +126,9 @@ The pins for the object sorting subsystem are listed below in tabular form. The 
 | Vin              | Power     | 2 |             |    |
 | Ground           | Power     | 2 |             |    |
 | Out              | Digital   | 2 |             |    |
-|                  |           |   | Total Pins: | 12 |
+|                  |           |   | Power:      | 6  |
+|                  |           |   | Digital:    | 5  |
+|                  |           |   | Total Pins: | 11 |
 
 _Interfaces needed:_ 
 1. Motor for rack and pinion
@@ -126,6 +138,8 @@ _Interfaces needed:_
 ## Electronic Schematic 
 
 The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
+
+
 
 ## Analysis
 
