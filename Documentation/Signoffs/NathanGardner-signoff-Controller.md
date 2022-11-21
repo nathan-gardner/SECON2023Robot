@@ -28,8 +28,9 @@ Number of motors that need to be driven by the main controller and what purpose 
 
 Feeding subsystem - one motor that needs to be driven by the main microcontroller
 
-| Motor Driver       | Pin Type | Count |             |   |
+| Feeding            |          |       |             |   |
 |--------------------|----------|-------|-------------|---|
+| Motor Driver       | Pin Type | Count |             |   |
 | Speed              | PWM      | 1     |             |   |
 | Forward Direction  | Digital  | 1     |             |   |
 | Backward Direction | Digital  | 1     |             |   |
@@ -42,20 +43,22 @@ Fireworks subsystem - zero or one motor to flip the switch for the fireworks
 
 Still undesigned, in the worst case this will need s control signal for a servo
 
-| Servo   | Pin Type | Count |             |   |
-|---------|----------|-------|-------------|---|
-| Power   | Power    | 1     |             |   |
-| Ground  | Power    | 1     |             |   |
-| Control | PWM      | 1     |             |   |
-|         |          |       | Total Pins: | 3 |
+| Fireworks |          |       |             |   |
+|-----------|----------|-------|-------------|---|
+| Servo     | Pin Type | Count |             |   |
+| Power     | Power    | 1     |             |   |
+| Ground    | Power    | 1     |             |   |
+| Control   | PWM      | 1     |             |   |
+|           |          |       | Total Pins: | 3 |
 
 _Interfaces needed:_ 
 1. Servo control signal for flipping a switch if needed, will design to that need 
 
 Locomotion subsystem - This subsystem will require four motors driven independantly. We will need to use both encoder output A and B on all four motors to show direction of rotation. The table of the motor inputs that need to be driven by the motor are below:
 
-| Motor Driver       | Pin Type | Count |             |    |
+| Locomotion         |          |       |             |    |
 |--------------------|----------|-------|-------------|----|
+| Motor Driver       | Pin Type | Count |             |    |
 | Speed              | PWM      | 4     |             |    |
 | Forward Direction  | Digital  | 4     |             |    |
 | Backward Direction | Digital  | 4     |             |    |
@@ -70,7 +73,25 @@ _Interfaces needed:_
 
 Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a seperate area.
 
-INSERT TABLE
+**INCOMPLETE TABLE, WAITING ON MARKS PARTS**
+| Object Sorting     |           |       |
+|--------------------|-----------|-------|
+| Motor Driver       | Pin Type  | Count |
+| Speed              | PWM       | 1     |
+| Forward Direction  | Digital   | 1     |
+| Backward Direction | Digital   | 1     |
+| Color Sensor       |           |       |
+| Ground             | Power     | 1     |
+| Interrupt          | Interrupt | 1     |
+| SCL                | Digital   | 1     |
+| SDA                | Digital   | 1     |
+| VDD                | Power     | 1     |
+| Vibration Motor    |           |       |
+|                    |           |       |
+|                    |           |       |
+|                    |           |       |
+|                    |           |       |
+| Linear Actuator    |
 
 _Interfaces needed:_ 
 1. Motor to drive conveyor 
@@ -80,7 +101,22 @@ _Interfaces needed:_
 
 Object Storage - 
 
-INSERT TABLE
+The pins for the object sorting subsystem are listed below in tabular form. The first motor driver is for the rack and pinion system, and two proximity sensors will be in the silos and will determine when they are full. Finally, the last motor driver inputs will be for the mechanism to open the silos when a statue needs to be dropped off. 
+
+| Object Storage   |           |   |             |    |
+|------------------|-----------|---|-------------|----|
+| Servo Controller |           |   |             |    |
+| Communcation     | Micro-USB | 1 |             |    |
+| Ground           | Power     | 1 |             |    |
+| Vin              | Power     | 1 |             |    |
+| Rx               | Digital   | 1 |             |    |
+| Tx               | Digital   | 1 |             |    |
+| Reset            | Digital   | 1 |             |    |
+| Proximity Sensor |           |   |             |    |
+| Vin              | Power     | 2 |             |    |
+| Ground           | Power     | 2 |             |    |
+| Out              | Digital   | 2 |             |    |
+|                  |           |   | Total Pins: | 12 |
 
 _Interfaces needed:_ 
 1. Motor for rack and pinion
@@ -93,6 +129,8 @@ The electronic schematic for the controller subsystem is attached below. It incl
 
 ## Analysis
 
-The analysis below is used to show that the XXXXXX microcontroller is going to be be used for the main controller subssytem.
+The analysis below is used to show that the Arduino Mega microcontroller is going to be be used for the main controller subsystem.
+
+Tables are shown in the constraints section and contain pin count analysis. 
 
 ## BOM
