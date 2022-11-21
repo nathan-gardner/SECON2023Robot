@@ -90,6 +90,10 @@ $\tau_{shaft} = 1.988 \ast \tau_{drive}$
 
 $\tau_{shaft} = 0.877\ N \ast m$
 
+$\tau_{shaft} = 8.94 kg \ast cm$
+
+Since the motor we selected is rated for up to $9.1 kg \ast cm$, it will meet the needs of the team since it exceeds the maximum rating of the motor. 
+
 ### Torsional Shear Strength Calculation
 
 $\tau_{max}=\frac{16T}{\pi d^{3}}$
