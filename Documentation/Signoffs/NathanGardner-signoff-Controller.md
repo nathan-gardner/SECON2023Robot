@@ -173,6 +173,8 @@ The electronic schematic for the controller subsystem is attached below. It incl
 
 The analysis below is used to show that the Arduino Mega microcontroller is going to be be used for the main controller subsystem.
 
-Tables are shown in the constraints section and contain pin count analysis. 
+Tables are shown in the constraints section and contain pin count analysis. The pins are one of the major constraints on the design for this subsystem. 
+
+Two microcontrollers are being used so that the design is modular and can be slip up in a way that makes sense. 
 
 ## BOM
