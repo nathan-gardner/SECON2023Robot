@@ -75,17 +75,35 @@ This means that four PWM pins will be needed and eight digital pins will be need
 _Interfaces needed:_ 
 1. Control signal for four wheels, one PWM signal for speed, one for forward and one for backward direction, or twelve pins in total
 
+Consumption Subsystem - Subsystem which will consume objects around the arena. Will be required to drive the motor driver for the object consumption subsystem. 
+
+| Consumption  |          |       |             |   |
+| ------------ | -------- | ----- | ----------- | - |
+| Motor Driver | Pin Type | Count |             |   |
+|              | Digital  | 2     |             |   |
+|              | PWM      | 1     |             |   |
+| Motor Driver |          |       |             |   |
+|              | Digital  | 2     |             |   |
+|              |          |       | Digital:    | 4 |
+|              |          |       | PWM:        | 1 |
+|              |          |       | Total Pins: | 5 |
+
+_Interfaces needed:_ 
+1. PWM to controll the speed of the motor that drives the object consumption system
+2. Two digital pins to Forward and Backward Directions
+3. Two digital pins to read the encoder outputs to get accurate measurments for speed and direction
+
 Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communcation. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communcate with the main controller subsystem lower level controllers, which will execute commands to drive motors and drive actuators. 
 
 The vision subsystem will not have any direct pin requirements, but it will use USB communcation to exchange data between the main microcontroller and the vision microcontroller. 
 
 _Total pins needed:_
-| Locomotion, Fireworks, and Feeding Controller |    |
-|-----------------------------------------------|----|
-| Power:                                        | 2  |
-| Digital:                                      | 10 |
-| PWM:                                          | 6  |
-| Total:                                        | 18 |
+| Locomotion, Fireworks, and Feeding, Consumption Controller |    |
+|------------------------------------------------------------|----|
+| Power:                                                     | 2  |
+| Digital:                                                   | 14 |
+| PWM:                                                       | 7  |
+| Total:                                                     | 18 |
 
 ### Object Sorting and Storage Controller
 
