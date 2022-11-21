@@ -26,7 +26,7 @@ The servo motor selected for the corral design should be able to push the weight
 
 The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + XX (the weight of the silo). For simplicity, the servo selected for the silo opening will be the same one as used in the rack and pinion mechanism. Since the weight of ten ducks plus the weight of the corral plus the weight of the omni-wheel greatly outweighs three pedestals and the silo, the servo motor selected for the rack and pinion will have sufficient torque to open and close the silo.
 
-Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is XX which will require XX rotations or XX&deg;. For the final drop off, it will need to travel XX in whcih will require XX rotations or XX&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
+Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 10 inches which will require XX rotations or XX&deg;. For the final drop off, it will need to travel 1 inch which will require XX rotations or XX&deg;. The silo will need to open XX inches whcih will require XX rotations or XX&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
 
 The final constraint comes from OSHA 1910.212(a)(3)(iii) which relates to the safety of placing and removing material safely. The constraint states that the handling of the material should be easy and without placing a hand in the danger zone. This standard is revlevant because of the removal and replacement of the corral on the rack and pinion. The team will meet this constraint by ensuring the gear on the rack and pinion is within the robot away from hands, and ensure that the motors are turned off when the corral is replaced at the end of the competition.
 
@@ -44,11 +44,11 @@ First is the schematic of the sensor that will be used for this subsystem.
 
 To find the Torque needed for the Servo Motor for the Rack and Pinion the following calculations were completed. Using 90&deg; as a worst case scenario.
 
-$Total Mass = m_{ducks} + m_{trailer} + m_{onmi-wheel} = 0.708 + XXX + XXX$
+$Total Mass = m_{ducks} + m_{trailer} = 0.708 + 1.04 = 1.748$
 
-$F = m \ast 9.81 \ast 0.76 = XXX \ast 9.81 \ast 0.76$
+$F = m \ast 9.81 \ast 0.76 = 1.748 \ast 9.81 \ast 0.76 = 13.03 N$
 
-$\tau = F \ast r \ast sin(\theta) = XX \ast XX \ast sin(90&deg;)$
+$\tau = F \ast r \ast sin(\theta) = 13.03 \ast XX \ast sin(90&deg;)$
 
 Assuming about a 1:1 gear ratio,
 
@@ -62,15 +62,19 @@ $\tau_{gear} = \tau_{arm} = XX N \ast m = XX kg \ast cm$
 
 $Duck Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
 
-$Corral Volume = XXX in^{3}$
+$DuckVolume_{Total} = 31.5 \ast 10 = 315 in^{3}$
+
+$Corral Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
   
 Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
 
 ### Size Calculations for Pedestal Silo
 
-$Pedestal Volume = \pi \ast r^{2} \ast h = \pi \ast 2^{2} \ast 1.8 = 22.62 in^{3}$
+$Pedestal Volume = \pi \ast r^{2} \ast h = \pi \ast 1^{2} \ast 1.8 = 5.65 in^{3}$
 
-$Silo Volume = \pi \ast r^{2} \ast h = \pi \ast XX^{2} \ast XX$
+$PedestalVolume_{Total} = 5.65 \ast 3 = 16.96 in^{3}$
+
+$Silo Volume = \pi \ast r^{2} \ast h = \pi \ast 1.083^{2} \ast 6 = 22.108 in^{3}$
 
 Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
   
@@ -78,9 +82,9 @@ Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
 
 #### Initial Roll Back
 
-$C = \pi \ast d = \pi \ast XX$
+$C = \pi \ast d = \pi \ast 9$
 
-$Rotations = \frac{ distance }{ C } = \frac{ XX }{ XX }$
+$Rotations = \frac{ distance }{ C } = \frac{ 9 }{ XX } = $
 
 $Degrees = rotations \ast 360 = XX \ast 360$
 
@@ -88,7 +92,7 @@ $Degrees = rotations \ast 360 = XX \ast 360$
 
 $C = \pi \ast d = \pi \ast XX$
 
-$Rotations = \frac{ distance }{ C } = \frac{ XX }{ XX }$
+$Rotations = \frac{ distance }{ C } = \frac{ 1 }{ XX }$
 
 $Degrees = rotations \ast 360 = XX \ast 360$
 
@@ -102,13 +106,13 @@ $Degrees = rotations \ast 360 = XX \ast 360$
 
 ### Distance From Sensors
 
-$C_{silo} = \pi \ast d = \pi \ast XX in^{2}$
+$C_{silo} = \pi \ast d = \pi \ast 2.165 in^{2} = 6.80 in^{2}$
 
 $C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
 
-$D_{max} = C_{silo} - C_{pedestal} = XX - 6.28 = XX in$
+$D_{max} = C_{silo} - C_{pedestal} = 6.80 - 6.28 = 0.52 in = 0.0133 m$
 
-The max distance calculated is less than the maximum distance the sensor can detect. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
+The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
 
 ## Buildable Schematic
 
