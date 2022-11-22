@@ -132,6 +132,8 @@ The max distance calculated is less than the maximum distance the sensor can det
 
 ![image](https://user-images.githubusercontent.com/112424739/203200638-825835a0-f643-4568-865a-1910c58f7c34.png)
 
+You can find the 3D models for all Components here: https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/3D%20Models
+
 ## BOM
 
 | Name of Item           | Description                                                                                   | Used in which subsystem(s) | Part Number    | Manufacturer     | Quantity | Price      | Total  |
