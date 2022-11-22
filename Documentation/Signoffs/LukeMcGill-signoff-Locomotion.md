@@ -81,3 +81,4 @@ The chosen motor is the Pololu #4865. The required motor torque is 8.43 kg-mm. T
 | Motor         | The motors will drive the wheels allowing the robot to move                | Locomotion                 | 4865        | Polulu           | 4        | 49.95      | 199.8  |
 | Motor Driver  | The motor drivers supply the voltage and current requirements of the motor | Locomotion                 | L298N       | ST               | 2        | 7.41       | 14.82  |
 | Total         |                                                                            |                            |             | Total Components | 10       | Total Cost | 281.62 |
+
