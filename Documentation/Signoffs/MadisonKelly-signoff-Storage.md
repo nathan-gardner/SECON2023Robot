@@ -36,6 +36,7 @@ The electrical schematic for the object storage subsystem is shown below.
 
 ![image](https://user-images.githubusercontent.com/112424739/203210837-6efa8021-ff65-49b0-981e-cfd7684371c9.png)
 
+The link to the Schematic Document is found here: https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/Electrical/Schematics/Sources/ElectricalSchematicforStorage
 
 ## Analysis
 
