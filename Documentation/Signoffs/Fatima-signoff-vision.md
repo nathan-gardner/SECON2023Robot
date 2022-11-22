@@ -27,7 +27,7 @@ $Resolution = 2 \ast ( \frac{Field of View}{Smallest Feature})$
 
 Where the field of view is the arena which has 4 x 8 feet (where the x-axis is 8 feet x 12) and the smallest feature, is the size of the smallest spot in the arena which is the inner circle of radius 2. 
 This calculation is considered the worst case:
-Resolution = $2 \ast ((8 \ast 12 )\frac  2 ) = 48 pixels$
+Resolution = $2 \ast (8 \ast 12 ) \frac 2  = 48 pixels$
 the wanted minimal sensor decision is forty eight pixels.  
 A camera with a resolution of 3280x2464 will work because 48 is much less than the smallest dimension which is 2464.
 
