@@ -11,7 +11,7 @@
 
 ## Buildable Schematic
 
-### **Cad Model for the subsystem:**
+### **CAD Model for the subsystem:**
 
 ![image](https://user-images.githubusercontent.com/112428796/203214411-7822e98e-555d-492a-9ce3-bfae94a87829.png)
 
