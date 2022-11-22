@@ -60,11 +60,11 @@ We know that the servo motor that was selected can supply this amount of rpm, so
 
 ### Size Calculations for Duck Corral
 
-$Duck Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
+$Duck\ Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
 
-$DuckVolume_{Total} = 31.5 \ast 10 = 315 in^{3}$
+$Duck\ Volume_{Total} = 31.5 \ast 10 = 315 in^{3}$
 
-$Corral Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
+$Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
   
 Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
 
