@@ -37,6 +37,10 @@ The electrical schematic for the object storage subsystem is shown below.
 First is the schematic of the sensor that will be used for this subsystem.
 ![image](https://user-images.githubusercontent.com/112424739/203145073-4e3c14db-d35a-4060-9899-bf702abc38ae.png)
 
+The Electrical Schematic for the entire subsystem is shown below.
+
+![image](https://user-images.githubusercontent.com/112424739/203210837-6efa8021-ff65-49b0-981e-cfd7684371c9.png)
+
 
 ## Analysis
 
