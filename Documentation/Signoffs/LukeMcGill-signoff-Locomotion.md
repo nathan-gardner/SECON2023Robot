@@ -7,12 +7,12 @@
 - Motor torque required
 
 ## Buildable Schematic
+### Mecanum Wheels
+![image](https://user-images.githubusercontent.com/112428353/203180680-b35ef0c3-77bb-44f2-8acd-951273914abb.png)
+
 ### CAD Model For Motor
 The CAD model for the motors can be found here:
 https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/25d-metal-gearmotor-34-47-encoder.step
-
-### Mecanum Wheels
-![image](https://user-images.githubusercontent.com/112428353/203180680-b35ef0c3-77bb-44f2-8acd-951273914abb.png)
 
 ### Motor Pinout
 ![image](https://user-images.githubusercontent.com/112428353/203175771-01a94bf9-d55d-4ecd-9e12-75bcc7caf23c.png)
