@@ -1,19 +1,37 @@
 # Sorting Subsystem
 ## Function of The Subsystem 
-- Take ducks and pedestals from the comsumption susbsytem to proper storage locations via a conveyor belt
+- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper
 - Actively sort pedestals while passively sorting ducks 
 
 
 ## Constraints
 - The sorting system must be designed to be space efficient due to the robot having a size contraint of 1 cubic foot.
-- The rate at which items come into the sorting subsystem
-- The speed of the conveyor will constrain the speed of the flipper that will push pedestals
-- The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5''.
-- With a object freqency of  1 item every 5 seconds decided upon in the consumption subsystem, The flipper should be able to hit a pedestal and reset to resting position in half that time in order to ensure the flipper does not interfere with any other object.
+- The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5$\ in$.
+- With a object freqency of 1 item every 5 seconds decided upon in the consumption subsystem, The flipper should be able to hit a pedestal and reset to resting position in half that time in order to ensure the flipper does not interfere with any other object.
 
 ## Buildable Schematic
 
-there is nothing here rn lol hahah
+### **Cad Model for the subsystem:**
+
+![image](https://user-images.githubusercontent.com/112428796/203214411-7822e98e-555d-492a-9ce3-bfae94a87829.png)
+
+![image](https://user-images.githubusercontent.com/112428796/203214451-758f40d0-eb9d-43b1-9ca9-24e6db49db30.png)
+
+![image](https://user-images.githubusercontent.com/112428796/203214470-0e758ce9-b856-4eec-923e-32410e9d9563.png)
+
+![image](https://user-images.githubusercontent.com/112428796/203214491-ff77c0a5-24d4-42c6-9161-67491ab186df.png)
+
+![image](https://user-images.githubusercontent.com/112428796/203214515-7af0d62c-5a34-484e-a266-4728f000bd4a.png)
+
+### **Electrical Schematics:**
+
+![image](https://user-images.githubusercontent.com/112428796/203215313-85ff081d-fb19-4ab0-b8c6-72a5adc10ec5.png)
+
+Above is the circuit schematic for the color sensor PCB chosen from Adafruit
+
+![image](https://user-images.githubusercontent.com/112428796/203216260-575a3c3f-c26e-4205-bc9b-af41570a12e8.png)
+
+Above shows the connection to the Arduino MEGA from the controller subsystem. The digital pins and PWM pins will be used to control the carious electrical components for the system. The PWM pin will be used to control the motor for the conveyor belt. The digital pins will be used for the servo and the the color sensor.
 
 ## Analysis
 ### **Conveyor Belt**:
@@ -147,6 +165,12 @@ The servo chosen meets all above requirements.
 
 $\ $
 ### **Color Sensor:**
+
+![image](https://user-images.githubusercontent.com/112428796/203215313-85ff081d-fb19-4ab0-b8c6-72a5adc10ec5.png)
+
+Above is the circuit schematic for the color sensor PCB chosen from Adafruit
+
+
 Electrical Specifications:
 
 $V_{DD} = 3\ V$ 
@@ -165,9 +189,9 @@ Speed:
 
 Clock Frequency: $\ \ 0-400kHz$
 
-**INSERT IMAGE FROM DATASHEET FOR STATE MACHINE**
+![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
 
-Detection will take a maximum of 616.4 ms.
+Above is the state machine representation for the sensor circuit showing the times each of the states will take. Most of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
 
 Minimum flipper distance from sensor $=(0.6164\ ms)(2\ in/s) = 1.2328 \ in$
 
@@ -176,9 +200,10 @@ Flipper distance will be $1.5\ in$ for simplicity.
 Wait about $250\ ms$ then activate flipper
 
 
+
 $\ $
 
-## BOMgit
+## BOM
 
 
 
