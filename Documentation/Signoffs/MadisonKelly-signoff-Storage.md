@@ -26,7 +26,7 @@ The servo motor selected for the corral design should be able to push the weight
 
 The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo). For simplicity, the servo selected for the silo opening will be the same one as used in the rack and pinion mechanism. Since the weight of ten ducks plus the weight of the corral plus the weight of the omni-wheel greatly outweighs three pedestals and the silo, the servo motor selected for the rack and pinion will have sufficient torque to open and close the silo.
 
-Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;. The silo will need to open XX inches whcih will require XX rotations or XX&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
+Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;. The silo will need to open 2 inches which will require 1 rotations or 360&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
 
 The final constraint comes from OSHA 1910.212(a)(3)(iii) which relates to the safety of placing and removing material safely. The constraint states that the handling of the material should be easy and without placing a hand in the danger zone. This standard is revlevant because of the removal and replacement of the corral on the rack and pinion. The team will meet this constraint by ensuring the gear on the rack and pinion is within the robot away from hands, and ensure that the motors are turned off when the corral is replaced at the end of the competition.
 
@@ -98,11 +98,11 @@ $Degrees = rotations \ast 360 = 1 \ast 360 = 360 &deg;$
 
 ### Rotation Calculation for Statue Delivery
 
-$C = \pi \ast d = \pi \ast XX$
+$C = \pi \ast d = \pi \ast 2$
 
-$Rotations = \frac{ distance }{ C } = \frac{ XX }{ XX }$
+$Rotations = \frac{ 2 }{ 2 } = \frac{ 2 }{ 2 }$
 
-$Degrees = rotations \ast 360 = XX \ast 360$
+$Degrees = rotations \ast 360 = 2 \ast 360 = 360&deg;$
 
 ### Distance From Sensors
 
@@ -116,7 +116,35 @@ The max distance calculated is less than the maximum distance the sensor can det
 
 ## Buildable Schematic
 
+![image](https://user-images.githubusercontent.com/112424739/203194135-34b73e28-fe2f-450b-8afe-6c91816f216c.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203194286-09d109c4-49ef-47ed-850c-6da6ccd6d95f.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203194417-bcac0ef0-fdde-430a-8116-afd4ed4b782a.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203194486-e8f25d12-fddf-4722-b17f-729f1d32bdeb.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203200427-77989ab9-03cf-4e1c-acdb-3548e8475b77.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203200477-d116ce78-2898-495a-a3b7-2a283c9bc04a.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203200507-a2234107-e77c-49c0-beaa-3a6755cb5598.png)
+
+![image](https://user-images.githubusercontent.com/112424739/203200638-825835a0-f643-4568-865a-1910c58f7c34.png)
 
 ## BOM
 
+| Name of Item           | Description                                                                                   | Used in which subsystem(s) | Part Number    | Manufacturer     | Quantity | Price      | Total  |
+|------------------------|-----------------------------------------------------------------------------------------------|----------------------------|----------------|------------------|----------|------------|--------|
+| Proximity Sensor       | Pololu Digital Sensor 5cm                                                                     | Object Storage             | 4050           | Pololu           | 2        | 12.95      | 25.9   |
+| Servo Motor            | 2000 Series Dual-Mode Servo (25-2, Torque)                                                    | Object Storage             | 2000-0025-0002 | Servo City       | 2        | 23.99      | 47.98  |
+| Servo Motor Controller | Micro Maestro 6-channel USB Servo Controller                                                  | Object Storage             | 1350           | Pololu           | 1        | 34.95      | 34.95  |
+| Silo                   | Silo to hold pedestals                                                                        | Object Storage             |                |                  | 1        | 0          | 0      |
+| Servo Mount            | Print                                                                                         | Object Storage             | N/A            | N/A              | 2        | 0          | 0      |
+| Corner Bracket         | Print                                                                                         | Object Storage             | N/A            | N/A              | 4        | 0          | 0      |
+| Rack                   | 14-1/2 Degree Pressure Angle Gear Rack, 32 Pitch (1ft) Nylon Plastic                          | Object Storage             | 57655K62       | McMaster Carr    | 2        | 8.94       | 17.88  |
+| Servo-Mounted Pinions  | 32P, 32 Tooth, 25T 3F Spline Servo Mount Gear (Acetyl)                                        | Object Storage             | RSA32-2FS-32   | Servo City       | 2        | 3.94       | 7.88   |
+| Steel Ball Transfer    | Steel Ball Transfer(21 mm Height)                                                             | Object Storage             | 1619-001-001   | Servo City       | 1        | 2.99       | 2.99   |
+| Aluminum Sheet         | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12'' | Object Storage             | 6061           | McMaster Carr    | 3        | 24.28      | 72.84  |
+| Total                  |                                                                                               |                            |                | Total Components | 20       | Total Cost | 210.42 |
 
