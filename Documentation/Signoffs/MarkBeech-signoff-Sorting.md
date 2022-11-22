@@ -103,7 +103,7 @@ $\rightarrow  RPM = \frac{s}{(0.2618)(1.021)(D)} = \frac{10}{(0.2618)(1.021)(1)}
 
 
 $\ $
-#### **Power Required: **
+#### **Power Required:**
 
 Approximate weight of rubber = $24.94\ g/cm^3 = 0.05498\ lbs/cm^3$
 
