@@ -43,8 +43,6 @@ _Interfaces needed:_
 
 Fireworks subsystem - zero or one motor to flip the switch for the fireworks
 
-Still undesigned, in the worst case this will need s control signal for a servo
-
 | Fireworks |          |       |             |   |
 |-----------|----------|-------|-------------|---|
 | Servo     | Pin Type | Count |             |   |
@@ -58,7 +56,7 @@ Still undesigned, in the worst case this will need s control signal for a servo
 _Interfaces needed:_ 
 1. Servo control signal for flipping a switch if needed, will design to that need 
 
-Locomotion subsystem - This subsystem will require four motors driven independantly. We will need to use both encoder output A and B on all four motors to show direction of rotation. The table of the motor inputs that need to be driven by the motor are below:
+Locomotion subsystem - This subsystem will require four motors driven independently. We will need to use both encoder output A and B on all four motors to show direction of rotation. The table of the motor inputs that need to be driven by the motor are below.
 
 | Locomotion         |          |       |             |    |
 |--------------------|----------|-------|-------------|----|
@@ -91,11 +89,11 @@ Consumption Subsystem - Subsystem which will consume objects around the arena. W
 _Interfaces needed:_ 
 1. PWM to controll the speed of the motor that drives the object consumption system
 2. Two digital pins to Forward and Backward Directions
-3. Two digital pins to read the encoder outputs to get accurate measurments for speed and direction
+3. Two digital pins to read the encoder outputs to get accurate measurements for speed and direction
 
-Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communcation. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communcate with the main controller subsystem lower level controllers, which will execute commands to drive motors and drive actuators. 
+Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communication. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communicate with the main controller subsystem lower level controllers, which will execute commands to drive motors and drive actuators. 
 
-The vision subsystem will not have any direct pin requirements, but it will use USB communcation to exchange data between the main microcontroller and the vision microcontroller. 
+The vision subsystem will not have any direct pin requirements, but it will use USB communication to exchange data between the main microcontroller and the vision microcontroller. 
 
 _Total pins needed:_
 | Locomotion, Fireworks, and Feeding, Consumption Controller |    |
@@ -185,7 +183,7 @@ Two microcontrollers are being used so that the design is modular and can be spl
 
 The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroler is 16 MHz and with the prescale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{kbits}{sec}$. The the 128 prescale can be changed, so this can be updated to our requirements. Analysis is shown below.
 
-The object storage subsystem has proximaty sensors which outputs at 145 Hz, which will be sufficient for our use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed. Analysis is shown below. 
+The object storage subsystem has proximity sensors which outputs at 145 Hz, which will be sufficient for our use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed. Analysis is shown below. 
 
 ## Electronic Schematic 
 
@@ -227,11 +225,11 @@ $f_{object} = \frac{80\ sec}{17\ objects} = 4.7 \frac{sec}{object}$
 
 $f_{objects\ received\ on\ belt} = \frac{17\ objects}{80\ sec} =  0.2125\ Hz
 
-This means that the sample rate of $37.5\ \frac{ksamples}{sec}$ is more than enough for sampling the the color of the objects coming in on the belt. The robot will actually be able to sample a pedestal many times, the calculations for that is below:
+This means that the sample rate of $37.5\ \frac{ksamples}{sec}$ is more than enough for sampling the the color of the objects coming in on the belt. The robot will actually be able to sample a pedestal many times, the calculations for that are below:
 
 $\frac{samples}{L_{pedestal}} = 75\ \frac{ksamples}{sec} \ast \frac{1 sec}{2 inches} \ast \frac{2 inches}{1\ L_{pedestal}}$
 
-Nyquists for the color sensor sampling:
+Nyquist rate for the color sensor sampling:
 
 $f_{color\ sample} = 2 \ast 2\ Hz = 4\ Hz$
 
