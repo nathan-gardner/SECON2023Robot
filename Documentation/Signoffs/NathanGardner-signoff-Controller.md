@@ -2,7 +2,7 @@
 
 ## Function of the Subsystem
 
-The robot will be controlled via a microcontroller (MCU). The main constraints on the microcontroller subsystem are general purpose input/output (GPIO) constraints as well as computational constraints for location, vision communication, and object manipulation logic constraints. The microcontroller will generate Pulse-Width Modulation (PWM), digital, and interrupt signals to the various motor drivers contained within the locomotion subsystem. 
+The robot will be controlled via a microcontroller (MCU). The main constraints on the microcontroller subsystem are general purpose input/output (GPIO) constraints as well as computational constraints for location, vision communication, and object manipulation logic constraints. The microcontroller will generate Pulse-Width Modulation (PWM), digital, and interrupt signals to the various motor drivers and systems contained within the locomotion subsystem. 
 
 The microcontroller subsystem is essentially the brains of the robot, and consideration is taken below for how fast the robot needs to "think" or retrieve, process, and store data. In most cases in this implementation, this will be designed to mitigate issues with the real-time requirements of the robot. Issues could arise from not being able to gather and process information quickly enough from GPIO that is driven by a peripheral sensor. This subsystem is dependant on the sensors chosen for the design, but worst case constraints will be assumed in many cases (more GPIO than required, higher processing speed then required, etc.) so that the requirements are met in the final design. 
 
