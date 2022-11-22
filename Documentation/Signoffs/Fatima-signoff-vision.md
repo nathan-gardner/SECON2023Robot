@@ -4,10 +4,13 @@ The robot need to move in a predetermined path from the start point to the end p
 
 ## Function
 
-- Move in a predetermined path from the start point to the end point 
-- using Camera, infrared Sensor, and color sensor to detect the desire spots
+- The robot Moving in a predetermined path from the start.
+- While it moving in predetermined path without stopping, the objects are entering into the robot mouth.
+- The robot arrive the end point and stopped.
+- The robot identfying and detecting the desired spots using Camera, infrared Sensor, and color sensor.
+- move to all desired spots and release the desired objects. 
 
-#Constraints
+# Constraints
 
 
 #Electrical schematic
