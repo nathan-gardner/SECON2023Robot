@@ -23,7 +23,7 @@ The team choose the camera IMX219-160 8MP Camera with 160° FOV - Compatible wit
 ## Sensor Resolution: 
 The resolution is the number of pixels present in the camera sensor; the team selects the appropriate resolution using the following simple formula: 
 
-$Resolution = 2 \ast ( \frac{Field of View}{Smallest Feature})  
+$Resolution = 2 \ast ( \frac{Field of View}{Smallest Feature})$
 
 Where the field of view is the arena which has 4 x 8 feet (where the x-axis is 8 feet x 12) and the smallest feature, is the size of the smallest spot in the arena which is the inner circle of radius 2. 
 This calculation is considered the worst case:
@@ -38,12 +38,12 @@ The camera has a pixel size of 1.12µm x1.12µm and a resolution of 3280x2464 pi
 The sensor size is then 1.12µm x 3280 by 1.12µm x 2464 = 3.6736 x 2.7596 mm 
 
 
-#Buildable 
+# Buildable 
 
 ![image](https://user-images.githubusercontent.com/112426690/203221044-db8d1f5c-1036-4ce3-a675-8dc6f646756e.jpeg)
 
 
-#BOM
+# BOM
 
 | Name of Item          | Description                                                                        | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
 |-----------------------|------------------------------------------------------------------------------------|----------------------------|-------------|------------------|----------|------------|--------|
