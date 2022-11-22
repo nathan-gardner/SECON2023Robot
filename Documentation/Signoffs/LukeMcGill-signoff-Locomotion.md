@@ -23,7 +23,7 @@ The motor driver will be connected to a 12V power supply.
 
 ![image](https://user-images.githubusercontent.com/112428353/203175321-f5006cdd-4413-49f9-ba61-92b5a5842278.png)
 
-The microcontroller will supply the speed and direction signals to the motor driver. Each motor driver drives two motors.
+The microcontroller will supply the PWM speed signal and forward and reverse direction signals to the motor driver. Each motor driver drives two motors.
 
 ![image](https://user-images.githubusercontent.com/112428353/203179672-5b30a1bc-0743-4b93-b92e-3bebf214f00a.png)
 
