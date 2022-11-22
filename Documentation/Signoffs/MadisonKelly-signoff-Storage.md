@@ -44,7 +44,7 @@ The link to the Schematic Document is found ![here](https://github.com/nathan-ga
 
 To find the Torque needed for the Servo Motor for the Rack and Pinion the following calculations were completed. Using 90&deg; as a worst case scenario.
 
-$Total Mass = m_{ducks} + m_{trailer} = 0.708 + 1.04 = 1.748$
+$Total\ Mass = m_{ducks} + m_{trailer} = 0.708 + 1.04 = 1.748$
 
 $F = m \ast 9.81 \ast 0.76 = 1.748 \ast 9.81 \ast 0.76 = 13.03 N$
 
