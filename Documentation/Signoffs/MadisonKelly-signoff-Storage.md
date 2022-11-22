@@ -102,7 +102,7 @@ $C = \pi \ast d = \pi \ast 2$
 
 $Rotations = \frac{ 2 }{ 2 } = \frac{ 2 }{ 2 }$
 
-$Degrees = rotations \ast 360 = 2 \ast 360 = 360&deg;$
+$Degrees = rotations \ast 360 = 1 \ast 360 = 360&deg;$
 
 ### Distance From Sensors
 
