@@ -8,7 +8,7 @@ The microcontroller subsystem is essentially the brains of the robot, and consid
 
 ## Constraints
 
-The controller subsystem has constraints that it must abide by the be successful. The first and foremost is GPIO limitations, we will need enough GPIO to drive all the motors and to interface with any other microcontrollers in the design. Power consumption will also be a constraint because the power system of the robot cannot be unnecessarily stressed in terms of power drawn from the controller. 
+The controller subsystem has constraints that it must abide by to be successful. The first and foremost is GPIO limitations, we will need enough GPIO to drive all the motors and read sensors and to interface with any other microcontrollers in the design. Power consumption will also be a constraint because the power system of the robot cannot be unnecessarily stressed in terms of power drawn from the controller. 
 
 The direct interfaces between the controller and other subsystems are as follows:
 
@@ -22,7 +22,7 @@ Standard: IEEE 1118.1-1990 describes standards related to interdevicehtrabuildin
 
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
 
-Number of motors that need to be driven by the main controller and what purpose those motor serve are listed below
+Number of motors that need to be driven and sensors that need to be read by the main controller and what purpose they serve are listed below
 
 ### Main Controller
 
@@ -181,11 +181,11 @@ The Arduino Mega can integrate ROS, and ROS will definitely be used in this proj
 
 The Arduino Mega was selected for these two microcontrollers because it has a comfortable cushion for the I/O constraint, and allows us to seperate and design the controller system modularly. 
 
-Two microcontrollers are being used so that the design is modular and can be split up in a way that makes sense. The controllers are mostly driving motor controller, with PWM and digital outputs, and those actions are not computationally expensive.
+Two microcontrollers are being used so that the design is modular and can be split up in a way that makes sense. The controllers are mostly driving motor controllers with PWM and digital outputs, and those actions are not computationally expensive.
 
-The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroler is 16 MHz and with the prescale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{kbits}{sec}$. The the 128 prescale can be changed, so this can be updated to our requirements.
+The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroler is 16 MHz and with the prescale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{kbits}{sec}$. The the 128 prescale can be changed, so this can be updated to our requirements. Analysis is shown below.
 
-The object storage subsystem has proximaty sensors which outputs at 145 Hz, which will be sufficient for out use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed.  
+The object storage subsystem has proximaty sensors which outputs at 145 Hz, which will be sufficient for our use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed. Analysis is shown below. 
 
 ## Electronic Schematic 
 
@@ -193,9 +193,11 @@ The electronic schematic for the controller subsystem is attached below. It incl
 
 ![image](https://user-images.githubusercontent.com/30758520/203182166-b2f8a488-171c-4eee-b01a-84e9ea9c25ab.png)
 
+Electronic Schematic Files: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/NathanGardner-signoff-Controller/Documentation/Electrical/Schematics/Sources)
+
 ## Analysis
 
-The analysis below is used to show that the Arduino Mega microcontroller is going to be be used for the main controller subsystem.
+The analysis below is used to show why the Arduino Mega microcontroller is going to be be used for the main controller subsystem.
 
 Tables are shown in the constraints section and contain pin count analysis. The pins are one of the major constraints on the design for this subsystem. 
 
