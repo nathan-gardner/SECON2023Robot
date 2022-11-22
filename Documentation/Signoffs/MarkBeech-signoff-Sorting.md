@@ -204,6 +204,16 @@ Wait about $250\ ms$ then activate flipper
 $\ $
 
 ## BOM
+| Name of Item | Description                                                                                                            | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total |
+|--------------|------------------------------------------------------------------------------------------------------------------------|----------------------------|-------------|------------------|----------|------------|-------|
+| Color Sensor | RGB Color Snesor with IR filter and White LED                                                                          | Sorting                    | TCS34725    | Adafruit         | 1        | $7.95      | 7.95  |
+| Servo Motor  | closed loop servo motor                                                                                                | Sorting                    | HS-40       | Hitec            | 1        | $10.72     | 10.72 |
+| Motor        | 99:1 Metal Gearmotor 25Dx69L mm LP 6V with 48 CPR Encoder                                                              | Sorting                    | 4827        | Pololu           | 1        | $45.95     | 45.95 |
+| Funnel       | 3d printed                                                                                                             | Sorting                    | N/A         | N/A              | 1        |            | 0     |
+| Flipper      | 3d printed                                                                                                             | Sorting                    | N/A         | N/A              | 1        |            | 0     |
+| Rubber Belt  | "Rubber-Cal Heavy Black Conveyor Belt - Rubber Sheet - .30(2Ply) Thick x 10"""" Width x 4"""" Length - Black (3 Pack)" | Sorting                    | N/A         | Rubber-cal       | 1        | $56        |       |
+| Rollers      | 3d printed                                                                                                             | Sorting                    | N/A         | N/A              | 2        |            |       |
+| Total        |                                                                                                                        |                            |             | Total Components | 8        | Total Cost | 64.62 |
 
 
 
