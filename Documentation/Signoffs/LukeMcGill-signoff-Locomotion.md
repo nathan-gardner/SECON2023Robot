@@ -65,13 +65,15 @@ $\tau = rFsin(\theta)$
 
 $\tau = 0.024 * 3.445*sin(90^\degree)$
 
-$\tau = 0.0827\ Nm$
+$\tau = 0.0827\ Nm$ (per motor)
+
+$0.0827\ Nm = 8.43\ kgmm$
 
 $\ $
 
 ![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
 
-Chosen motor is Pololu #4865. The required motor torque is 8.43 kg-mm. The motor has max efficiency at 8.6 kg-mm, so this will be very efficient. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough.
+The chosen motor is the Pololu #4865. The required motor torque is 8.43 kg-mm. The motor has max efficiency at 8.6 kg-mm, so this will be very efficient while meeting the torque requirements. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough.
 
 ## BOM
 | Name of Item  | Description                                                                | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
