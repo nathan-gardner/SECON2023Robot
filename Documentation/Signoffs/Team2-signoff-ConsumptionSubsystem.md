@@ -19,7 +19,7 @@ Assuming all three shafts are lifting a single duck, the maximum weight the moto
 
 The ratio of the torque for each shaft is proportional to the ratio of the diameter of the two wheels either driving or being driven by the belt. The diameter of the driving wheel on the motor is 0.88 inches and the diameter of the three wheels being turned is 1.75 inches. That means the multiplication constant is 1.998. The torque for the three shafts being driven would therefore need to be 1.988 times what our calculations for the needed torque of the motor is, or $0.441 \ast 1.988$, which equals $0.877\ kg \ast cm$. This calculation is in the maximum torsional sheer strength calculation later in this report.
 
-Additionally, the team needs to analyze whether or not the motor will meet the speed needed to pick up the items within the allotted amount of time. As previously mentioned, the motor will need to have a torque of $0.877\ kg \ast cm$. 
+Additionally, the team needs to analyze whether or not the motor will meet the speed needed to pick up the items within the allotted amount of time. As previously mentioned, the motor will need to have a torque of $0.877\ kg \ast cm$. Assuming the motor provides 60 rpm as a worst-case scenario and the ducks are in full contact with the spokes for the entire rotation, the upwards velocity of the ducks would be approximately $11 \frac{ in }{ sec }$. Assuming the ducks need to travel 10 inches to make it to the conveyor belt, the ducks will make it to the top of the robot in 1.1 second. This value displays that even at a worst case, the spokes will be able to intake the objects at the speed necessary.
 
 The next constraint that was considered was fitting the system within the size of the robot. The robot must fit in a 1’x1’x1’ area, so this adds the constraint of fitting each subsystem of this robot within the available space. The size of the consumption subsystem had to be such that the ducks would be accommodated. The duck’s size was considered more so than the pedestal because the duck has much larger measurements than the pedestal. The team’s object consumption design takes up $600\ inch^3$ including the motor. The analysis to find this value is shown below in the team’s 3D model of the system. 
 
@@ -119,6 +119,16 @@ $f_{duck} = \frac{80\ sec}{10\ ducks} = 8 \frac{sec}{duck}$
 $f_{pedestal} = \frac{80\ sec}{7\ pedestals} = 11.4 \frac{sec}{pedestals}$
 
 $f_{object} = \frac{80\ sec}{17\ objects} = 4.7 \frac{sec}{object}$
+
+### Motor Speed Intake Analysis
+
+Assuming a worst case scenario of 60 rpm and each item staying in full contact with the spokes for the entire ride up the intake, the following calculations were made.
+
+$\omega = 60 rpm = 2 \ast \pi \frac{ rad }{ sec }$
+
+$v = r \ast \omega = 1.75 \ast 2 \ast \pi = 10.996 \frac{ in }{ sec }$
+
+Since we need to pick up items at a rate of $4.7 \frac{sec}{object}$, this expected and absolute worst case scenario will still be enough to push the items up at a rate in which the robot will be able to collect all the items. 
 
 ## BOM
 
