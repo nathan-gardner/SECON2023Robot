@@ -223,7 +223,7 @@ $f_{pedestal} = \frac{80\ sec}{7\ pedestals} = 11.4 \frac{sec}{pedestals}$
 
 $f_{object} = \frac{80\ sec}{17\ objects} = 4.7 \frac{sec}{object}$
 
-$f_{objects\ received\ on\ belt} = \frac{17\ objects}{80\ sec} =  0.2125\ Hz
+$f_{objects\ received\ on\ belt} = \frac{17\ objects}{80\ sec} =  0.2125\ Hz$
 
 This means that the sample rate of $37.5\ \frac{ksamples}{sec}$ is more than enough for sampling the the color of the objects coming in on the belt. The robot will actually be able to sample a pedestal many times, the calculations for that are below:
 
