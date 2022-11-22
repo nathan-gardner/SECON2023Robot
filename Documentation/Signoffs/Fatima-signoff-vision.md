@@ -24,14 +24,14 @@ The resolution is the number of pixels present in the camera sensor; the team se
 <img width="147" alt="image" src="https://user-images.githubusercontent.com/112426690/203200930-eb0476dd-e64b-4e4f-b0f6-2fafe4743d8d.png">
 
 Where the field of view is the arena which has 4 x 8 feet (where the x-axis is 8 feet x 12) and the smallest feature is the size of the smallest spot in the arena which is the inner circle of radius 2. This calculation is considered the worst case:
-Resolution = 2 ((8 x 12 )/2)= 48 pixels , the wanted minimal sensor decision is forty eight pixels.  
+$Resolution = 2 ((8 \ast 12 )/2)= 48 pixels , the wanted minimal sensor decision is forty eight pixels.  
 A camera with a resolution of 3280x2464 will work because 48 is much less than the smallest dimension which is 2464.
 
 <img width="389" alt="image" src="https://user-images.githubusercontent.com/112426690/203201133-8d6a9e50-2918-44fe-aebc-3fe7c1250a9f.png">
 
 ## Sensor size: 
-The camera has a pixel size of 1.12µm x1.12µm and a resolution of 3280x2464 pixels. 
-The sensor size is then 1.12µm x 3280 by 1.12µm x 2464 = 3.6736 x 2.7596 mm 
+The camera has a pixel size of 1.12µmx1.12µm and a resolution of 3280x2464 pixels. 
+The sensor size is then 1.12µm \ast 3280 by 1.12µm \ast 2464 = 3.6736 x 2.7596 mm 
 
 #Buildable 
 
