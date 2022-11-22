@@ -70,11 +70,11 @@ Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
 
 ### Size Calculations for Pedestal Silo
 
-$Pedestal Volume = \pi \ast r^{2} \ast h = \pi \ast 1^{2} \ast 1.8 = 5.65 in^{3}$
+$Pedestal\ Volume = \pi \ast r^{2} \ast h = \pi \ast 1^{2} \ast 1.8 = 5.65 in^{3}$
 
-$PedestalVolume_{Total} = 5.65 \ast 3 = 16.96 in^{3}$
+$Pedestal\ Volume_{Total} = 5.65 \ast 3 = 16.96 in^{3}$
 
-$Silo Volume = \pi \ast r^{2} \ast h = \pi \ast 1.083^{2} \ast 6 = 22.108 in^{3}$
+$Silo\ Volume = \pi \ast r^{2} \ast h = \pi \ast 1.083^{2} \ast 6 = 22.108 in^{3}$
 
 Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
   
@@ -132,7 +132,7 @@ The max distance calculated is less than the maximum distance the sensor can det
 
 ![image](https://user-images.githubusercontent.com/112424739/203200638-825835a0-f643-4568-865a-1910c58f7c34.png)
 
-You can find the 3D models for all Components here: https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/3D%20Models
+You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/3D%20Models).
 
 ## BOM
 
