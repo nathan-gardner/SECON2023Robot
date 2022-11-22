@@ -6,7 +6,7 @@
 - Travel speed required
 - Motor torque required
 
-## Buildable Schematic
+## Buildable Schematics
 ### Mecanum Wheels
 ![image](https://user-images.githubusercontent.com/112428353/203180680-b35ef0c3-77bb-44f2-8acd-951273914abb.png)
 
