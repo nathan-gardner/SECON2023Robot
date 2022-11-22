@@ -5,8 +5,8 @@
 
 
 ## Constraints
-- The sorting system must be designed to be space efficient due to the robot having a size contraint of 1 cubic foot.
-- The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5$\ in$.
+- The sorting system must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot.
+- The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
 - With a object freqency of 1 item every 5 seconds decided upon in the consumption subsystem, The flipper should be able to hit a pedestal and reset to resting position in half that time in order to ensure the flipper does not interfere with any other object.
 
 ## Buildable Schematic
@@ -39,11 +39,7 @@ Above shows the connection to the Arduino MEGA from the controller subsystem. Th
 #### **Belt length**:
 Conveyor length $L = 9in$ (Chosen)
 
-$C$ is the 
-
-center to center distance $C = 9 - 2(0.5) = 8\ in$
-
-of the drive pulley $D$ (chosen to be 1 in)
+$C$ is the center to center distance $C = 9 - 2(0.5) = 8\ in$ of the drive pulley $D$ (chosen to be 1 in)
 
 Belt Length ($l$)
 
@@ -89,9 +85,9 @@ Efficiency: $\eta$ Assumed to be 50%
 
 Assuming worst case of three ducks:
 
-$F =F_{fduck} + 3m_{duck}(g)(sin(\theta) +kcos(\theta)$
+$F = F_{fduck} + 3m_{duck}(g)(sin(\theta) + kcos(\theta)$
 
-$F =0.7979 + 0.0708(9.8)(sin(0) +1.15cos(0)) =1.4917\ N$
+$F = 0.7979 + 0.0708(9.8)(sin(0) + 1.15cos(0)) = 1.4917\ N$
 
 $T_{L} = \frac{FD}{2\eta } =\frac{(1.4917)(0.0254)}{2(0.5)} = 0.03789 \ Nm$
 
@@ -101,13 +97,14 @@ Chosen speed to be at least $2\  in/s = 10\ ft/min$
 
 Speed of conveyor $s$
 
-$s=D(RPM)(0.2618)(1.021)$
+$s = D(RPM)(0.2618)(1.021)$
 
 $\rightarrow  RPM = \frac{s}{(0.2618)(1.021)(D)} = \frac{10}{(0.2618)(1.021)(1)} = 37.5\  RPM$
 
 
 $\ $
-#### **Power Required: (may remove idk what all this mean)**
+#### **Power Required: **
+
 Approximate weight of rubber = $24.94\ g/cm^3 = 0.05498\ lbs/cm^3$
 
 Belt Dimensions in inches = 19.1416 in X 3.75 in X 0.0625 in 
@@ -130,7 +127,7 @@ $Torque > 0.03789 Nm$ or $3.86\ kgmm$
 
 $RPM = 37.5$
 
-The motor chosen meets all specifications.
+Therefore, the motor chosen meets all specifications.
 
 $\ $
 ### **Flipper:**
@@ -153,13 +150,13 @@ $f_{items} = \frac{1 \ item}{5 \ second}$
 
 $s_{belt}=\frac{2\ in}{second}$
 
-time to hit pedestal and return to resting position:
+Time required to hit pedestal and return to resting position:
 
 $t \le 2.5 \ second $
 
 $speed \ge 180\degree /2.5s$
 
-The servo chosen meets all above requirements.
+Therefore, the servo chosen meets all above requirements.
 
 
 
@@ -181,7 +178,7 @@ $I_{DD} = 65\ \mu A \ \ (Wait)$
 
 $I_{DD} = 2.5\ \mu A \ \ (Sleep)$ 
 
-The above voltages and currents will be provided by the power subsystem
+Therefore, the above voltages and currents will be provided by the power subsystem
 
 $\ $
 
@@ -191,7 +188,7 @@ Clock Frequency: $\ \ 0-400kHz$
 
 ![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
 
-Above is the state machine representation for the sensor circuit showing the times each of the states will take. Most of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
+Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
 
 Minimum flipper distance from sensor $=(0.6164\ ms)(2\ in/s) = 1.2328 \ in$
 
