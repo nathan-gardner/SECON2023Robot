@@ -22,11 +22,11 @@ The corral will drag behind the robot for the entirety for the competition until
 
 The size of the robot will lead to another constraint that will need to be taken into consideration which is the size of the silo for storing the pedestals. There will only be one silo. In order to save as much space as possible, the silo will only be tall enough to store three pedestals at once. Because of this constraint, there will need to be a “full” sensor that will tell the main controller to drop the pedestals as soon as possible. The plan is to drop them wherever the robot is located when three pedestals are collected. This way there is not a clog within the robot when more than three pedestals are collected. 
 
-The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + XX (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
+The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + 1.04 kg (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
 
-The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + XX (the weight of the silo). For simplicity, the servo selected for the silo opening will be the same one as used in the rack and pinion mechanism. Since the weight of ten ducks plus the weight of the corral plus the weight of the omni-wheel greatly outweighs three pedestals and the silo, the servo motor selected for the rack and pinion will have sufficient torque to open and close the silo.
+The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo). For simplicity, the servo selected for the silo opening will be the same one as used in the rack and pinion mechanism. Since the weight of ten ducks plus the weight of the corral plus the weight of the omni-wheel greatly outweighs three pedestals and the silo, the servo motor selected for the rack and pinion will have sufficient torque to open and close the silo.
 
-Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 10 inches which will require XX rotations or XX&deg;. For the final drop off, it will need to travel 1 inch which will require XX rotations or XX&deg;. The silo will need to open XX inches whcih will require XX rotations or XX&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
+Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;. The silo will need to open XX inches whcih will require XX rotations or XX&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue that it just placed.
 
 The final constraint comes from OSHA 1910.212(a)(3)(iii) which relates to the safety of placing and removing material safely. The constraint states that the handling of the material should be easy and without placing a hand in the danger zone. This standard is revlevant because of the removal and replacement of the corral on the rack and pinion. The team will meet this constraint by ensuring the gear on the rack and pinion is within the robot away from hands, and ensure that the motors are turned off when the corral is replaced at the end of the competition.
 
@@ -48,15 +48,15 @@ $Total Mass = m_{ducks} + m_{trailer} = 0.708 + 1.04 = 1.748$
 
 $F = m \ast 9.81 \ast 0.76 = 1.748 \ast 9.81 \ast 0.76 = 13.03 N$
 
-$\tau = F \ast r \ast sin(\theta) = 13.03 \ast XX \ast sin(90&deg;)$
+$\tau = F \ast r \ast sin(\theta) = 13.03 \ast 0.0127 \ast sin(90&deg;) = 1.65 N \ast m$
 
-Assuming about a 1:1 gear ratio,
+$\tau = 1.65 N \ast m = 16.83 kg \ast cm$
 
-$\frac{ \tau_{gear} }{ \tau_{arm} } = \frac{r_{gear}}{r_{arm}}$
+Assuming a worst case velocity of spinning out the entire corral in 4 seconds, the velocity would need to be $2.5 \frac{in}{sec}$
 
-$\tau_{gear} = \frac{r_{gear} \ast \tau_{arm}}{r_{arm}}$
+$\omega = \frac{v}{r} = \frac{2.5}{05} = 5 \frac{rad}{sec} = 47.75 rpm$
 
-$\tau_{gear} = \tau_{arm} = XX N \ast m = XX kg \ast cm$
+We know that the servo motor that was selected can supply this amount of rpm, so it should be able to spin the corral out at the speed necessary.
 
 ### Size Calculations for Duck Corral
 
@@ -82,19 +82,19 @@ Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
 
 #### Initial Roll Back
 
-$C = \pi \ast d = \pi \ast 9$
+$C = \pi \ast d = \pi \ast 1$
 
-$Rotations = \frac{ distance }{ C } = \frac{ 9 }{ XX } = $
+$Rotations = \frac{ distance }{ C } = \frac{ 9 }{ 1 } = 9$
 
-$Degrees = rotations \ast 360 = XX \ast 360$
+$Degrees = rotations \ast 360 = 9 \ast 360 = 3240 &deg;$
 
 #### Final Delivery
 
-$C = \pi \ast d = \pi \ast XX$
+$C = \pi \ast d = \pi \ast 1$
 
-$Rotations = \frac{ distance }{ C } = \frac{ 1 }{ XX }$
+$Rotations = \frac{ distance }{ C } = \frac{ 1 }{ 1 }$
 
-$Degrees = rotations \ast 360 = XX \ast 360$
+$Degrees = rotations \ast 360 = 1 \ast 360 = 360 &deg;$
 
 ### Rotation Calculation for Statue Delivery
 
