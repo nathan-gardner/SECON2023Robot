@@ -115,7 +115,7 @@ Belt Volume $=(48.57)(9.525)(0.15875) = 73.44\ cm^3$
 
 Weight of Belt $W_{belt} = (0.05498)(73.44) =4.0377 \ lbs $
 
-Friction coefficient of rubber: $\ $ $k = 1.15$
+Friction coefficient of rubber: $k = 1.15$
 
 $P = \frac{ks(W_{ducks}+W_{Belt})(745.7)}{33000}$
 
