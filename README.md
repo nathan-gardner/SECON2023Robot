@@ -40,7 +40,7 @@ Madison Kelly
 
 Fatima Al-Heji
 
-Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude.
+Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude. I like chickfila and long walks on the beach.
 
 Mark Beech
 
