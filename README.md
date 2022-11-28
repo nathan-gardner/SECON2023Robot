@@ -38,7 +38,7 @@ Nathan Gardner is an undergraduate Computer Engineering student and is currently
 
 Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team.
 
-Fatima Al-Heji
+Fatima Al-Heji is an undergraduate Computer Engineering student and is currently a senior at Tennessee Technological University.
 
 Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude. He like chickfila and long walks on the beach.
 
@@ -57,7 +57,7 @@ Tell a bit about the customer for the project. Also discuss any other groups (sp
 
 The Institute of Electrical and Electronics Engineers (IEEE) is the organization that is hosting the competition in Orlando, Florida on April 13-16th, 2023.
 
-At the competition, the team will represent the Tennessee Tech ECE Department by showing the skills aquired over most of the ECE curriculum.
+Tennessee Tech ECE Department
 
 ## Repo Organization
 
