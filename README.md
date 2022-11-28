@@ -57,7 +57,7 @@ Tell a bit about the customer for the project. Also discuss any other groups (sp
 
 The Institute of Electrical and Electronics Engineers (IEEE) is the organization that is hosting the competition in Orlando, Florida on April 13-16th, 2023.
 
-Tennessee Tech ECE Department
+At the competition, the team will represent the Tennessee Tech ECE Department by showing the skills aquired over most of the ECE curriculum.
 
 ## Repo Organization
 
