@@ -34,13 +34,13 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specific).
 
-Nathan Gardner is an undergraduate Computer Engineering student and is currently a Junior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team.
+Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team.
 
 Madison Kelly
 
 Fatima Al-Heji
 
-Luke McGill
+Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude.
 
 Mark Beech
 
