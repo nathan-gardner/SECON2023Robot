@@ -42,7 +42,7 @@ Fatima Al-Heji
 
 Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude. He like chickfila and long walks on the beach.
 
-Mark Beech
+Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University.
 
 
 ### Faculty Supervisor
@@ -55,7 +55,9 @@ Mr. Jesse Roberts -
 
 Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
 
+IEEE
 
+Tennessee Tech ECE Department
 
 ## Repo Organization
 
