@@ -4,7 +4,7 @@
 
 Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
 
-The purpose of this project is to build a robot that will be sent to the SoutheastCon student competition in Orlando, Florida. This robot will represent Tennessee Technological University to schools around the Southeastern United States. This document will include further details on the team’s conceptual design for the project. 
+The purpose of this project is to build a robot that will be sent to the SoutheastCon student competition in Orlando, Florida. This robot will represent Tennessee Technological University to schools around the Southeastern United States. This document will include further details on the team’s conceptual design for the project.
 
 ## Capabilities
 
@@ -40,7 +40,7 @@ Madison Kelly is an undergraduate Electrical Engineering students and is current
 
 Fatima Al-Heji is an undergraduate Computer Engineering student and is currently a senior at Tennessee Technological University.
 
-Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude. He like chickfila and long walks on the beach.
+Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke is just a guy being a dude. He likes chickfila and long walks on the beach.
 
 Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University.
 
