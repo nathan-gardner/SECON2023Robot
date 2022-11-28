@@ -84,6 +84,6 @@ The [Images](/Documentation/Images) folder contains images of the subsystems.
 
 ### **Software**
 
-In the software directory of the repo information regarding how each team is expected to document software can be found.
+We will use language standard coding practices when writing software. We will document our code using Doxygen markdown and commenting style for readability. 
 
 [Software](/Software/) contains software.
