@@ -49,13 +49,13 @@ Mark Beech is an undergraduate Electrical Engineering student and is currently a
 
 Tell who the faculty supervisor was for the project
 
-Mr. Jesse Roberts - 
+Mr. Jesse Roberts
 
 ### Stakeholders
 
 Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
 
-IEEE
+The Institute of Electrical and Electronics Engineers (IEEE) is the organization that is hosting the competition in Orlando, Florida on April 13-16th, 2023.
 
 Tennessee Tech ECE Department
 
