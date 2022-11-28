@@ -36,7 +36,7 @@ Give a brief bio for each team member and their broad contribution to the projec
 
 Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team.
 
-Madison Kelly
+Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team.
 
 Fatima Al-Heji
 
