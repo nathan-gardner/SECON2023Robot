@@ -47,8 +47,6 @@ Mark Beech is an undergraduate Electrical Engineering student and is currently a
 
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
-
 Mr. Jesse Roberts
 
 ### Stakeholders
