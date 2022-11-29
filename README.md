@@ -23,6 +23,8 @@ Below are some images that show the team's progress so far on the project.
 ### **Playing Field**
 ![image](https://user-images.githubusercontent.com/30758520/202878257-abfdcb97-adcb-41a7-911d-a3a19630d73c.png)
 
+## **Consumption Subsystem:**
+
 ### **Electrical Schematic for Consumpion Schematic**
 ![image](https://user-images.githubusercontent.com/30758520/203184746-a586aec1-197b-4342-a30f-c6afef5b303f.png)
 
