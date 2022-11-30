@@ -12,9 +12,14 @@ This conceptual design is meant to fit into the larger process of engineering de
 
 The signoffs include function of the subsystem, constraints, buildable schematics, analysis, and bill of materials.
 
-## **Salient Outcomes**
+## **Salient Outcomes (updated 11/30/2022)**
 
-*Not available yet*
+* The team has been able to submit a detailed project proposal which defined the scope, constraints, and stakeholders for the project
+* The team created a conceptual design document which laid out how the team will conceptually approach design and led the team into detailed design signoffs. 
+* The team has been able to successfully get a signoff approved on the most critical subsystem for the project
+  * This is a sort of vertical vacuum cleaner that has been implemented previously in vex robot competitions. It is a very interesting design and has been proven to work. [Demonstration Link](https://youtu.be/RCfMzZY3lC0?t=230)
+  
+We are just now completing Capstone I and we have not begun manufacturing or experiementation. Most of the salient outcomes 
 
 ## **Project Demonstration & Images**
 
