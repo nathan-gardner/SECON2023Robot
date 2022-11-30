@@ -93,4 +93,4 @@ The [Images](/Documentation/Images) folder contains images of the subsystems.
 
 We will use language standard coding practices when writing software. We will document our code using Doxygen markdown and commenting style for readability. 
 
-[Software](/Software/) contains software.
+[Software](/Software/)
