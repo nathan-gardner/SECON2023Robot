@@ -4,7 +4,7 @@
 
 The purpose of this project is to build a robot that will be sent to the SoutheastCon student competition in Orlando, Florida. This robot will represent Tennessee Technological University to schools around the Southeastern United States. This document will include further details on the team’s design for the project.
 
-The robot's tasks include feeding the manatees and alligators, relocating the ducks to the pond, rebuilding the statues, or a stack of pedestals, depositing any unused objects, if there are any, in the recycling bins, and shooting animated fireworks for the finale after round completion. The robot must do all of these tasks fully autonomously.
+The autonomous tasks the robot may attempt include the following: Feed manatees and alligators the correct food chips, relocate ducks to the duck pond, rebuild pedestals into statues, deposit any unused objects into the recycle bin, and play an animated fireworks video at the end of the round.
 
 ## **Capabilities**
 
@@ -19,7 +19,7 @@ The signoffs include function of the subsystem, constraints, buildable schematic
 * The team has been able to successfully get a signoff approved on the most critical subsystem for the project
   * This is a sort of vertical vacuum cleaner that has been implemented previously in vex robot competitions. It is a very interesting design and has been proven to work. [Demonstration Link](https://youtu.be/RCfMzZY3lC0?t=230)
   
-We are just now completing Capstone I and we have not begun manufacturing or experiementation. Most of the salient outcomes 
+We are just now completing Capstone I and have not begun any implementation or experimentation at this time. Salient outcomes will be updated when notable progress has been made.
 
 ## **Project Demonstration & Images**
 
@@ -42,7 +42,7 @@ Below are some images that show the team's progress so far on the project.
 
 ### **IEEE Hardware Team**
 
-Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team.
+Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team. Nathan is working on the main controller subsystem and will be working on software implementation for the robot. 
 
 Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team.
 
@@ -50,7 +50,7 @@ Fatima Al-Heji is an undergraduate Computer Engineering student and is currently
 
 Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. He likes Chick-fil-a and long walks on the beach.
 
-Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University. Mark is a member of the Southeastcon Robotics Competition Hardware Team. Mark was responsible for the Sorting subsystem signoff.
+Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University. Mark is a member of the Southeastcon Robotics Competition Hardware Team. Mark was responsible for the Sorting subsystem signoff. Mark is responsible for the sorting subsystem at this time.
 
 
 ### **Faculty Supervisor**
