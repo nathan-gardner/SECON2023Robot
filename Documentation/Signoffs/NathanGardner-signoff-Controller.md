@@ -239,6 +239,16 @@ The silo will need to sampled twice a second, so the actual sampling will be hap
 
 $f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquists Theorem.
 
+## Software Analysis
+
+Auriuno public C++ libraries will be used for these microcontrollers. We will use the built in Aurduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries avaliable foe the devices. Public libraries that will very likely be used in this controller implementation are below.
+
+[Servo](https://github.com/arduino-libraries/Servo)
+
+[Digital Read/Write](https://github.com/arduino/ArduinoCore-megaavr/blob/master/cores/arduino/wiring_digital.c)
+
+[PWM](https://github.com/arduino/ArduinoCore-megaavr/blob/master/cores/arduino/wiring_digital.c)
+
 ## BOM
 
 | Name of Item               | Description                                          | Used in which subsystem(s) | Part Number           | Manufacturer     | Quantity | Price      | Total  |
