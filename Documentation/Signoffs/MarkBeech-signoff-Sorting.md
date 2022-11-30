@@ -7,7 +7,9 @@
 ## Constraints
 - The sorting system must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot.
 - The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
-- With a object freqency of 1 item every 5 seconds decided upon in the consumption subsystem, The flipper should be able to hit a pedestal and reset to resting position in half that time in order to ensure the flipper does not interfere with any other object.
+- With a object freqency of 1 item every 5 seconds decided upon in the consumption subsystem as the worst case scenario, The flipper should be able to hit a pedestal and reset to resting position in half that time in order to ensure the flipper does not interfere with any other object. This ensures that the flipper will be out of the way even if the object frequency is nearly double the worst case as predicted in the consumption subsystem design.
+- Flipper must provide enough force to move the pedestals ( $F_{flipper} \gt F_{fped}= 0.2322 \ N$ )
+- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper.
 
 ## Buildable Schematic
 
@@ -190,7 +192,7 @@ Clock Frequency: $\ \ 0-400kHz$
 
 Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
 
-Minimum flipper distance from sensor $=(0.6164\ ms)(2\ in/s) = 1.2328 \ in$
+Minimum flipper distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
 
 Flipper distance will be $1.5\ in$ for simplicity.
 
