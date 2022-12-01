@@ -2,6 +2,8 @@
 
 ## Function of the Subsystem
 
+The specific function of the microcontroller network described in this sign off is operating as the main level hardware access controller. This means that this device is responsible controlling the logic to drive subsystem motors across the subsystem. The main top-level microcontroller, which will be designed later and is not this subsystem, is what will be responsible for vision, robot path plan storage and logic to follow path, and most importantly be the ROS controlling device. 
+
 The robot will be controlled via a microcontroller (MCU). The main constraints on the microcontroller subsystem are general purpose input/output (GPIO) constraints as well as computational constraints for location, vision communication, and object manipulation logic constraints. The microcontroller will generate Pulse-Width Modulation (PWM), digital, and interrupt signals to the various motor drivers and systems contained within the locomotion subsystem. 
 
 The microcontroller subsystem is essentially the brains of the robot, and consideration is taken below for how fast the robot needs to "think" or retrieve, process, and store data. In most cases in this implementation, this will be designed to mitigate issues with the real-time requirements of the robot. Issues could arise from not being able to gather and process information quickly enough from GPIO that is driven by a peripheral sensor. This subsystem is dependant on the sensors chosen for the design, but worst case constraints will be assumed in many cases (more GPIO than required, higher processing speed then required, etc.) so that the requirements are met in the final design. 
@@ -259,7 +261,7 @@ The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/
 
 [PWM](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/wiring_analog.c) will be implemented using the analog read and write functions in the public Arduino library.
 
-
+The Arduino Mega 2560 Rev3's clock runs are 16 MHz using the ATmega2560 microcontroller onboard. The board has 256 KB of flash memory, 8 KB of SRAM, and 4 KB of EEPROM memory. Using the design outlined, be are using a small percentage of the GPIO on the Arduino Mega, because of the modular, design. This also allows the team to be comfortable that we will not reach computational limitations due to to many peripheral devices connected to a single device. 
 
 ## BOM
 
