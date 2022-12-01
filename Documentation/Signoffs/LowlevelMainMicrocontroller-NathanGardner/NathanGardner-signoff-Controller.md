@@ -241,13 +241,13 @@ The silo will need to sampled twice a second, so the actual sampling will be hap
 
 $f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquist Theorem.
 
-## Software Analysis
+## Software Analysis - Processing Capabilities and Possible/Probable Software Analysis
 
 Arduino public C++ libraries will be used for these microcontrollers. We will use the built in Arduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries available for the devices. Public libraries that will very likely be used in this controller implementation are below.
 
 The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/ArduinoCore-avr)** will be necessary for this project, as it is the functions provided by Arduino and in the IDE and is what most peripheral libraries have dependencies on. 
 
-***Some* Specific Implementations:**
+***Some* Specific Software Implementations:**
 
 [Servo](https://github.com/arduino-libraries/Servo/tree/master/src/avr) will be used to drive servo motors and is a public library provided by Arduino. 
 
@@ -261,7 +261,9 @@ The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/
 
 [PWM](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/wiring_analog.c) will be implemented using the analog read and write functions in the public Arduino library.
 
-The Arduino Mega 2560 Rev3's clock runs are 16 MHz using the ATmega2560 microcontroller onboard. The board has 256 KB of flash memory, 8 KB of SRAM, and 4 KB of EEPROM memory. Using the design outlined, be are using a small percentage of the GPIO on the Arduino Mega, because of the modular, design. This also allows the team to be comfortable that we will not reach computational limitations due to to many peripheral devices connected to a single device. 
+The Arduino Mega 2560 Rev3's clock runs are 16 MHz using the ATmega2560 microcontroller onboard. The board has 256 KB of flash memory, 8 KB of SRAM, and 4 KB of EEPROM memory. Using the design outlined, be are using a small percentage of the GPIO on the Arduino Mega, because of the modular design. The source code for each project will be compiled so it will be lightweight on flash memory for the Arduino Mega 2560 Rev3. The modular design allows the team to be comfortable that we will not reach computational limitations due to to many peripheral devices connected to a single device. 
+
+The Arduino will not run a dedicated OS, but instead has a basic bootloader that performs hardware and software initialization and then jump to the main method in the code. PlatformIO will likely be used as the IDE for this project because of its extra functionality in importing dependencies and integration into VScode as an extension. PlatformIO has 650 boards available including the Arduino Mega 2560 Rev3 so it has been chosen for is versatility. 
 
 ## BOM
 
