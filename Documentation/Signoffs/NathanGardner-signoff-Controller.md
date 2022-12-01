@@ -1,4 +1,4 @@
-# Controller Subsystem Signoff
+# Low-level Controller Subsystem Signoff
 
 ## Function of the Subsystem
 
@@ -241,13 +241,25 @@ $f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquists Theorem.
 
 ## Software Analysis
 
-Auriuno public C++ libraries will be used for these microcontrollers. We will use the built in Aurduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries avaliable foe the devices. Public libraries that will very likely be used in this controller implementation are below.
+Auriuno public C++ libraries will be used for these microcontrollers. We will use the built in Aurduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries avaliable for the devices. Public libraries that will very likely be used in this controller implementation are below.
 
-[Servo](https://github.com/arduino-libraries/Servo)
+**[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/ArduinoCore-avr)**
 
-[Digital Read/Write](https://github.com/arduino/ArduinoCore-megaavr/blob/master/cores/arduino/wiring_digital.c)
+**Specific Functions:**
 
-[PWM](https://github.com/arduino/ArduinoCore-megaavr/blob/master/cores/arduino/wiring_digital.c)
+[Servo](https://github.com/arduino-libraries/Servo/tree/master/src/avr) will be used to drive servo motors and is a public library provided by Arduino. 
+
+[Digital Read](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_digital.c#L165)
+
+[Digital Write](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_digital.c#L138)
+
+[Analog Read](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_analog.c#L38)
+
+[Analog Write](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_analog.c#L96)
+
+[PWM](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/wiring_digital.c)
+
+
 
 ## BOM
 
