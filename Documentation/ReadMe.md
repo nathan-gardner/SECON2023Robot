@@ -3,72 +3,45 @@
 
 ## Signoffs
 
-An important part of engineering is analysis. Designs must be analyzed to show that the subsystem is **likely** to function (sometimes things still don't work). This reduces the overall risk that a client or firm will have wasted money on a solution that was destined to fail. For information about what must be included in each signof file, refer to the readme file in the signoff directory. 
-
-A signoff must be completed and approved for each subsystem before the components for the subsystem may be ordered. Each of the signoff documents should be an appropriately named markdown file in the signoff directory. 
+Signoffs are the detailed design documents for the project. They include detailed specification, buildable pdf schematic, analysis, and the bill of materials. Analysis is performed on components to prove that they are sufficient and will likely work. The signoffs that are in main have been approved by the supervisor, Mr. Jesse Roberts. Signoffs are included in a marddown file [here](/Documentation/Signoffs/). 
 
 
 ## Final set of prints (final design artifacts)
 
-All schematics and artifacts should be in an appropriate file type. 
+Coming in Capstone II...
 
 ### 3D Models
 
-Required format: 
-- .stl
+3D models are included [here](/Documentation/3D%20Models/).
 
-3D models should be stored in the proper file type to facilitate editing, viewing, and printing. The best filetype for this is .stl, so all 3d models should be pushed to the repo as stl files. Stl files can be converted to solidworks models or autocad 3d models as necessary, can be 3d printed easily, and are 3d viewable natively in github. File (Documentation/3D Models)
-
-Every constructed system of the project must have a complete (buildable) 3d model schematic.
-
+The 3D models section will be updated throughout the project to reflect what has been signed off and designed. 
 
 ### Wiring Schematics
 
-Required software: 
-- autocad or autocad electrical
+Electrical wiring schematics avaliable [here](/Documentation/Electrical/Schematics/).
 
-For wiring schematics, use autocad or autocad electrical. All the source files must be included in the github repo along with pdf versions of all schematics. File (Documentation/Electrical/Schematics/Sources)
-
-Every electrical system must have a complete (buildable) pdf circuit schematic. File (Documentation/Electrical/Schematics)
-
-Autocad is freely available to students with versions for mac, windows, and linux.
+The wiring schematics section will be updated throughout the project to reflect what has been signed off and designed. 
 
 #### PCB files
 
-Required Software:
-- kicad 
+Electrical wiring PCBs avaliable [here](/Documentation/Electrical/PCB/).
 
-KiCad should be used for all PCB design. All source files must be deposited in the repo. File (Documentation/Electrical/PCB/Sources)
-
-Along with the source files, a complete set of gerber files for each PCB must also be included in the repo. These should be included in a folder called gerber files. File (Documentation/Electrical/PCB)
-
-kiCad is a free and open source software.
-
+The PCB files section will be updated throughout the project to reflect what has been signed off and designed. 
 
 ## Final BOM
 
-The final version of the BOM should be uploaded as a pdf output of the excel BOM file. The excel BOM file should also be included.
-
+Coming in Capstone II...
 
 ## Datasheet 
 
-This must give all the information necessary for other systems to interface with your project in the intended manner. This must include the power expectations, interfacing, and compliance.
-	
-This must also include the results from all experimentation and the interpretation of the results.
-  
-  
-  
-  
+Each subsystems datasheet is essentially the signoff for that subsystem. The final datasheet will be created near the end of the project when the design is complete.
+
+Final Datasheet Coming in Capstone II...
+
 ## The project poster
 
-Include the project poster
-
+Coming in Capstone II...
 
 ## Detailed photos of the project
 
-Include a folder of a set of detailed photos of the project. File (Documentation/Images)
-
-
-## Any additional documents that are appropriate to include
-
-If there are additional items that are important to understanding and working on or with the project, include them as well. 
+Detailed photos for the project are available [here](/Documentation/Images/)
