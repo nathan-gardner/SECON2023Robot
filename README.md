@@ -44,7 +44,7 @@ Below are some images that show the team's progress so far on the project.
 
 Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead for the Southeastcon Robotics Competition Hardware Team. Nathan is working on the main controller subsystem and will be working on software implementation for the robot. 
 
-Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team.
+Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team. Madison is working on the Storage subsystem at this time.
 
 Fatima Al-Heji is an undergraduate Computer Engineering student and is currently a senior at Tennessee Technological University.
 
