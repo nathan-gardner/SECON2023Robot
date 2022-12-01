@@ -12,13 +12,13 @@ The controller subsystem has constraints that it must abide by to be successful.
 
 The direct interfaces between the controller and other subsystems are as follows:
 
-1. Serial communication input/output to the vision microcontroller. This will be a general digital I/O pin used to communcate objects which describe enviroment.
+1. Serial communication input/output to the vision microcontroller. This will be a general digital I/O pin used to communicate objects which describe environment.
 2. An input from the power system which triggers the microcontroller to start initializing code. This will be a digital input pin with hardware interrupt capabilities. 
 3. Serial communication as an input to the object storage subsystem. This will be a digital output pin in terms of the microcontroller. 
 4. Serial communication as an input to the object consumption subsystem. This will be a digital output pin in terms of the microcontroller.
 5. The power input to the microcontroller, which will come from the power regulator in the power subsystem.  
 
-Standard: IEEE 1118.1-1990 describes standards related to interdevicehtrabuilding as well as interconnection of microcontrollers. This stardard will be reference and adhered to in terms of system controller interconnect design, which is part of the controller subsystem. 
+Standard: IEEE 1118.1-1990 describes standards related to interdevicehtrabuilding as well as interconnection of microcontrollers. This standard will be reference and adhered to in terms of system controller interconnect design, which is part of the controller subsystem. 
 
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
 
@@ -87,7 +87,7 @@ Consumption Subsystem - Subsystem which will consume objects around the arena. W
 |              |          |       | Total Pins: | 5 |
 
 _Interfaces needed:_ 
-1. PWM to controll the speed of the motor that drives the object consumption system
+1. PWM to control the speed of the motor that drives the object consumption system
 2. Two digital pins to Forward and Backward Directions
 3. Two digital pins to read the encoder outputs to get accurate measurements for speed and direction
 
@@ -105,7 +105,7 @@ _Total pins needed:_
 
 ### Object Sorting and Storage Controller
 
-Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a seperate area.
+Object Sorting - belt motor and a motor or pressurized air which will poke the pedestals off of the belt and into a separate area.
 
 | Object Sorting     |           |       |             |    |
 |--------------------|-----------|-------|-------------|----|
@@ -177,11 +177,11 @@ The Arduino Mega 2560 Rev3 was analyzed for selection as the main controller and
 
 The Arduino Mega can integrate ROS, and ROS will definitely be used in this project. ROS libraries will be used for hardware abstraction, low-level device control, and package management.
 
-The Arduino Mega was selected for these two microcontrollers because it has a comfortable cushion for the I/O constraint, and allows us to seperate and design the controller system modularly. 
+The Arduino Mega was selected for these two microcontrollers because it has a comfortable cushion for the I/O constraint, and allows us to separate and design the controller system modularly. 
 
 Two microcontrollers are being used so that the design is modular and can be split up in a way that makes sense. The controllers are mostly driving motor controllers with PWM and digital outputs, and those actions are not computationally expensive.
 
-The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroler is 16 MHz and with the prescale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{kbits}{sec}$. The the 128 prescale can be changed, so this can be updated to our requirements. Analysis is shown below.
+The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroller is 16 MHz and with the pre-scale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{k-bits}{sec}$. The the 128 pre-scale can be changed, so this can be updated to our requirements. Analysis is shown below.
 
 The object storage subsystem has proximity sensors which outputs at 145 Hz, which will be sufficient for our use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed. Analysis is shown below. 
 
@@ -237,27 +237,27 @@ $f_{color\ sample} = 2 \ast 2\ Hz = 4\ Hz$
 
 The silo will need to sampled twice a second, so the actual sampling will be happening at 4 Hz, by Nyquists Theorem.
 
-$f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquists Theorem.
+$f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquist Theorem.
 
 ## Software Analysis
 
-Auriuno public C++ libraries will be used for these microcontrollers. We will use the built in Aurduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries avaliable for the devices. Public libraries that will very likely be used in this controller implementation are below.
+Arduino public C++ libraries will be used for these microcontrollers. We will use the built in Arduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries available for the devices. Public libraries that will very likely be used in this controller implementation are below.
 
-**[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/ArduinoCore-avr)**
+The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/ArduinoCore-avr)** will be necessary for this project, as it is the functions provided by Arduino and in the IDE and is what most peripheral libraries have dependencies on. 
 
-**Specific Functions:**
+***Some* Specific Implementations:**
 
 [Servo](https://github.com/arduino-libraries/Servo/tree/master/src/avr) will be used to drive servo motors and is a public library provided by Arduino. 
 
-[Digital Read](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_digital.c#L165)
+[Digital Read](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_digital.c#L165) will read pins and determine if they are logic high or low. 
 
-[Digital Write](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_digital.c#L138)
+[Digital Write](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_digital.c#L138) will set output pins as logic high or low.
 
-[Analog Read](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_analog.c#L38)
+[Analog Read](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_analog.c#L38) will be used to read PWM coming from the encoder, which will return the speed to the main microcontroller. 
 
-[Analog Write](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_analog.c#L96)
+[Analog Write](https://github.com/arduino/ArduinoCore-avr/blob/42fa4a1ea1b1b11d1cc0a60298e529d37f9d14bd/cores/arduino/wiring_analog.c#L96) will be used to write analog values and to implement PWM functionality to drive DC motors in various subsystems.
 
-[PWM](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/wiring_digital.c)
+[PWM](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/wiring_analog.c) will be implemented using the analog read and write functions in the public Arduino library.
 
 
 
@@ -266,5 +266,5 @@ Auriuno public C++ libraries will be used for these microcontrollers. We will us
 | Name of Item               | Description                                          | Used in which subsystem(s) | Part Number           | Manufacturer     | Quantity | Price      | Total  |
 |----------------------------|------------------------------------------------------|----------------------------|-----------------------|------------------|----------|------------|--------|
 | Arduino Mega 2560 Rev3     | Microcontrollers selected for controller subsystem   | Controller                 | A000067/7630049200067 | Arduino          | 2        | 48.4       | 96.8   |
-| Jumper Wires ELEGOO 120pcs | Jumper wires to connnect board to sensors and motors | Controller                 | B01EV70C78            | ELEGOO           | 1        | 9.99       | 9.99   |
+| Jumper Wires ELEGOO 120pcs | Jumper wires to connect board to sensors and motors | Controller                 | B01EV70C78            | ELEGOO           | 1        | 9.99       | 9.99   |
 | Total                      |                                                      |                            |                       | Total Components | 3        | Total Cost | 106.79 |
