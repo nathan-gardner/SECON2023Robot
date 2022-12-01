@@ -1,5 +1,4 @@
-# What should be in the documentation folder
-
+# Documentation README
 
 ## Signoffs
 
@@ -44,4 +43,4 @@ Coming in Capstone II...
 
 ## Detailed photos of the project
 
-Detailed photos for the project are available [here](/Documentation/Images/)
+Detailed photos for the project are available [here](/Documentation/Images/).
