@@ -48,7 +48,7 @@ Madison Kelly is an undergraduate Electrical Engineering students and is current
 
 Fatima Al-Heji is an undergraduate Computer Engineering student and is currently a senior at Tennessee Technological University.
 
-Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. He likes Chick-fil-a and long walks on the beach.
+Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University.
 
 Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University. Mark is a member of the Southeastcon Robotics Competition Hardware Team. Mark was responsible for the Sorting subsystem signoff. Mark is responsible for the sorting subsystem at this time.
 
