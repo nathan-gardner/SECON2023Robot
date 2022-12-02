@@ -2,15 +2,15 @@
 
 ## Function of the Subsystem
 
-The specific function of the microcontroller network described in this sign off is operating as the main level hardware access controller. This means that this device is responsible controlling the logic to drive subsystem motors across the subsystem. The main top-level microcontroller, which will be designed later and is not this subsystem, is what will be responsible for vision, robot path plan storage and logic to follow path, and most importantly be the ROS controlling device. 
+The specific function of the microcontroller network described in this signoff is its operation as the main hardware access controller. This means that this device is responsible controlling the logic to drive subsystem motors across the subsystem, but can be commanded directly by higher level systems. The main top-level microcontroller will be designed later and is not included in this subsystem. This top-level controller will be responsible for vision, robot path plan storage and logic to follow path, and most importantly be the ROS master controller device. 
 
-The robot will be controlled via a microcontroller (MCU). The main constraints on the microcontroller subsystem are general purpose input/output (GPIO) constraints as well as computational constraints for location, vision communication, and object manipulation logic constraints. The microcontroller will generate Pulse-Width Modulation (PWM), digital, and interrupt signals to the various motor drivers and systems contained within the locomotion subsystem. 
+The robot will be controlled via a microcontroller (MCU). The main constraints on the low-level main microcontroller subsystem are general purpose input/output (GPIO) constraints as well as computational constraints for general communication, vision communication, and object manipulation logic constraints. The microcontroller will generate Pulse-Width Modulation (PWM), digital, and interrupt signals to the various motor drivers and systems contained within the peripheral subsystems. 
 
-The microcontroller subsystem is essentially the brains of the robot, and consideration is taken below for how fast the robot needs to "think" or retrieve, process, and store data. In most cases in this implementation, this will be designed to mitigate issues with the real-time requirements of the robot. Issues could arise from not being able to gather and process information quickly enough from GPIO that is driven by a peripheral sensor. This subsystem is dependant on the sensors chosen for the design, but worst case constraints will be assumed in many cases (more GPIO than required, higher processing speed then required, etc.) so that the requirements are met in the final design. 
+The low-level microcontroller subsystem is essentially the low level nervous system of the robot, and the top-level controller (designed later) is like the brain of the robot. Consideration is taken below for how fast the robot needs to "react" or retrieve, process, and store data. In most cases in this implementation, this will be designed to mitigate issues with the real-time requirements of the robot. Issues could arise from not being able to gather and process information quickly enough from GPIO that is driven by a peripheral sensor. This subsystem is dependant on the sensors chosen for the design, but worst case constraints will be assumed in many cases (more GPIO than required, higher processing speed then required, etc.) so that the requirements are met in the final design. 
 
 ## Constraints
 
-The controller subsystem has constraints that it must abide by to be successful. The first and foremost is GPIO limitations, we will need enough GPIO to drive all the motors and read sensors and to interface with any other microcontrollers in the design. Power consumption will also be a constraint because the power system of the robot cannot be unnecessarily stressed in terms of power drawn from the controller. 
+The low-level controller subsystem has constraints that it must abide by to be successful. The first and foremost is GPIO limitations, we will need enough GPIO to drive all the motors and read sensors and to interface with any other microcontrollers in the design. Power consumption will also be a constraint because the power system of the robot cannot be unnecessarily stressed in terms of power drawn from the controller. Available software will also be a constraint on the low-level microcontroller. All of these constraints are analyzed in the analysis portion of this signoff.
 
 The direct interfaces between the controller and other subsystems are as follows:
 
@@ -24,11 +24,11 @@ Standard: IEEE 1118.1-1990 describes standards related to interdevice/intrabuild
 
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
 
-Number of motors that need to be driven and sensors that need to be read by the main controller and what purpose they serve are listed below
+Number of motors that need to be driven and sensors that need to be read by the main controller and what purpose they serve are listed below.
 
 ### Two Low-level Mega Controllers (Locomotion, Fireworks, Feeding, Consumption and Sorting, Storage)
 
-A design with two Arduino Mega 2560 Rev3 microcontrollers were selected in order to create a modular design and to all for parallelization of the design amongst the team members. This design also allows up to come in well above the general IO requirement for each controller, which is covered in great detail below. 
+A design with two Arduino Mega 2560 Rev3 microcontrollers was selected in order to create a modular design and to allow for parallelization of the design amongst team members. This design also allows the design to come in well above the general IO requirement for each controller, which is covered in great detail below. 
 
 Feeding subsystem - one motor that needs to be driven by the main microcontroller
 
@@ -94,9 +94,9 @@ _Interfaces needed:_
 2. Two digital pins to Forward and Backward Directions
 3. Two digital pins to read the encoder outputs to get accurate measurements for speed and direction
 
-Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communication. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communicate with the main controller subsystem lower level controllers, designed in this signoff, which will execute commands to drive motors and drive actuators. 
+Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communication. The top-level microcontroller is designed to abstract away the complication of the sensor data and perform path planning and communicate with the main low-level controller subsystem, designed in this signoff, which will execute commands to drive motors and drive actuators. 
 
-The vision system will house all of the sensor for data acquisition for the robot and will communicate with the top-level main microcontroller. The top-level main microcontroller will communicate with the low-level main microcontroller via serial USB. The top-level microcontroller will have a dedicated operating system (likely some Linux distribution) and will act as the master where the two low-level microcontrollers, designed in this sign off, will act as the slaves. The USB will allow master and slave to communicate with each other serially with universal asynchronous transmitter receiver (UART). 
+The vision system will house all of the sensor for data acquisition (micro and macro location) for the robot and will communicate with the top-level main microcontroller. The top-level main microcontroller will communicate with the low-level main microcontroller via serial USB. The top-level microcontroller will have a dedicated operating system (likely some Linux distribution) and will act as the master where the two low-level microcontrollers, designed in this signoff, will act as the slaves. The USB will allow master and slave to communicate with each other serially with universal asynchronous transmitter receiver (UART) and can be software defined consistantly across master and slave. 
 
 _Total pins needed:_
 | Locomotion, Fireworks, and Feeding, Consumption Controller |    |
@@ -177,13 +177,13 @@ _Total pins needed:_
 | Interrupt:                            | 1  |
 | Total:                                | 24 |
 
-The Arduino Mega 2560 Rev3 was analyzed for selection as the main controller and the object sorting and storage controller. The board has 54 digital pins, 15 of which can be used as PWM outputs, 16 analog inputs, 4 UARTS, and a USB connection.
+The Arduino Mega 2560 Rev3 was analyzed for selection as the main low-level controller and the object sorting and storage controller. The board has 54 digital pins, 15 of which can be used as PWM outputs, 16 analog inputs, 4 UARTS, and a USB connection.
 
 The Arduino Mega can integrate ROS, and ROS will definitely be used in this project. ROS libraries will be used for hardware abstraction, low-level device control, and package management.
 
 The Arduino Mega was selected for these two microcontrollers because it has a comfortable cushion for the I/O constraint, and allows us to separate and design the controller system modularly. 
 
-Two microcontrollers are being used so that the design is modular and can be split up in a way that makes sense. The controllers are mostly driving motor controllers with PWM and digital outputs, and those actions are not computationally expensive.
+Two microcontrollers are being used so that the design is modular and can be split up in a way that makes sense. The low-level controllers are mostly driving motor controllers with PWM and digital outputs, and those actions are generally not computationally expensive.
 
 The object sorting has a color sensor which will send data at $400\ \frac{kbits}{sec}$, and the Arduino Mega, and the clock of the microcontroller is 16 MHz and with the pre-scale set to 128 by default, this means that the digital pins can be sampled at $150\ \frac{k-bits}{sec}$. The the 128 pre-scale can be changed, so this can be updated to our requirements. Analysis is shown below.
 
@@ -247,7 +247,7 @@ $f_{proximity\ sample} = 2 \ast 2\ Hz = 4\ Hz$ by Nyquist Theorem.
 
 Arduino public C++ libraries will be used for these microcontrollers. We will use the built in Arduino PWM functionality in this library to interface with the motors (PWM) and read and write digital pins on the Arduino Mega. Part of the reason why Arduino was chosen as the low level microcontroller is the amount of public libraries available for the devices. Public libraries that will very likely be used in this controller implementation are below.
 
-The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/ArduinoCore-avr)** will be necessary for this project, as it is the functions provided by Arduino and in the IDE and is what most peripheral libraries have dependencies on. 
+The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/ArduinoCore-avr)** will be necessary for the low-level microcontrollers in this project, as it is the functions provided by Arduino and in the IDE and is what most peripheral libraries have dependencies on. 
 
 ***Some* Specific Software Implementations:**
 
@@ -265,7 +265,7 @@ The **[Core Library Used for Arduino Mega 2560 Rev3](https://github.com/arduino/
 
 The Arduino Mega 2560 Rev3's clock runs are 16 MHz using the ATmega2560 microcontroller onboard. The board has 256 KB of flash memory, 8 KB of SRAM, and 4 KB of EEPROM memory. Using the design outlined, be are using a small percentage of the GPIO on the Arduino Mega, because of the modular design. The source code for each project will be compiled so it will be lightweight on flash memory for the Arduino Mega 2560 Rev3. The modular design allows the team to be comfortable that we will not reach computational limitations due to to many peripheral devices connected to a single device. 
 
-The Arduino will not run a dedicated OS, but instead has a basic bootloader that performs hardware and software initialization and then jump to the main method in the code. PlatformIO will likely be used as the IDE for this project because of its extra functionality in importing dependencies and integration into VScode as an extension. PlatformIO has 650 boards available including the Arduino Mega 2560 Rev3 so it has been chosen for is versatility. 
+The Arduino will not run a dedicated OS, but instead has a basic bootloader that performs hardware and software initialization and then jump to the main method in the code. PlatformIO will likely be used as the IDE for this project because of its extra functionality in importing dependencies and integration into VScode as an extension. PlatformIO has 650 boards available including the Arduino Mega 2560 Rev3 so PlatformIO has been chosen for is versatility. 
 
 ## BOM
 
