@@ -14,13 +14,13 @@ The controller subsystem has constraints that it must abide by to be successful.
 
 The direct interfaces between the controller and other subsystems are as follows:
 
-1. Serial communication input/output to the vision microcontroller. This will be a general digital I/O pin used to communicate objects which describe environment.
+1. Serial USB communication to the vision microcontroller. This will be a general digital I/O pin used to communicate objects which describe environment.
 2. An input from the power system which triggers the microcontroller to start initializing code. This will be a digital input pin with hardware interrupt capabilities. 
-3. Serial communication as an input to the object storage subsystem. This will be a digital output pin in terms of the microcontroller. 
-4. Serial communication as an input to the object consumption subsystem. This will be a digital output pin in terms of the microcontroller.
+3. Serial USB communication as an input to the object storage subsystem. This will be a output in terms of the microcontroller. 
+4. PWM and digital logic high/low communication as an input to the object consumption subsystem. This will be a digital output pin in terms of the microcontroller.
 5. The power input to the microcontroller, which will come from the power regulator in the power subsystem.  
 
-Standard: IEEE 1118.1-1990 describes standards related to interdevicehtrabuilding as well as interconnection of microcontrollers. This standard will be reference and adhered to in terms of system controller interconnect design, which is part of the controller subsystem. 
+Standard: IEEE 1118.1-1990 describes standards related to interdevice/intrabuilding as well as interconnection of microcontrollers. This standard will be reference and adhered to in terms of system controller interconnect design, which is part of the controller subsystem. 
 
 Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Reports/Team2_ConceptualDesignandPlanningFinal.pdf)
 
@@ -78,8 +78,9 @@ Consumption Subsystem - Subsystem which will consume objects around the arena. W
 |              | PWM      | 1     |             |   |
 | Motor Driver |          |       |             |   |
 |              | Digital  | 2     |             |   |
+|              | PWM      | 1     |             |   |
 |              |          |       | Digital:    | 4 |
-|              |          |       | PWM:        | 1 |
+|              |          |       | PWM:        | 2 |
 |              |          |       | Total Pins: | 5 |
 
 _Interfaces needed:_ 
@@ -96,7 +97,7 @@ _Total pins needed:_
 |------------------------------------------------------------|----|
 | Power:                                                     | 2  |
 | Digital:                                                   | 12 |
-| PWM:                                                       | 6  |
+| PWM:                                                       | 7  |
 | Interrupt:                                                 | 2  |
 | Total:                                                     | 17 |
 
