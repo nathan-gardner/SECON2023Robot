@@ -189,11 +189,11 @@ The object sorting has a color sensor which will send data at $400\ \frac{kbits}
 
 The object storage subsystem has proximity sensors which outputs at 145 Hz, which will be sufficient for our use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed. Analysis is shown below. 
 
-## Electronic Schematic (this is out of date because of fireworks and feeding pin changes)
+## Electronic Schematic
 
 The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
 
-![image](https://user-images.githubusercontent.com/30758520/203182166-b2f8a488-171c-4eee-b01a-84e9ea9c25ab.png)
+![image](https://user-images.githubusercontent.com/30758520/205386333-307d3d5e-cace-4cad-994e-097fc7fba361.png)
 
 Electronic Schematic Files: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/NathanGardner-signoff-Controller/Documentation/Electrical/Schematics/Sources)
 
