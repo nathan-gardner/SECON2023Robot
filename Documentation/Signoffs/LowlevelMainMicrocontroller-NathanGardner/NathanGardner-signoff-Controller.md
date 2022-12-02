@@ -30,30 +30,24 @@ Number of motors that need to be driven and sensors that need to be read by the 
 
 Feeding subsystem - one motor that needs to be driven by the main microcontroller
 
-| Feeding            |          |       |             |   |
-|--------------------|----------|-------|-------------|---|
-| Motor Driver       | Pin Type | Count |             |   |
-| Speed              | PWM      | 1     |             |   |
-| Forward Direction  | Digital  | 1     |             |   |
-| Backward Direction | Digital  | 1     |             |   |
-|                    |          |       | Digital:    | 2 |
-|                    |          |       | PWM:        | 1 |
-|                    |          |       | Total Pins: | 3 |
+| Feeding                     |           |       |             |   |
+|-----------------------------|-----------|-------|-------------|---|
+|                             | Pin Type  | Count |             |   |
+| Activation for Arduino Nano | Interrupt | 1     |             |   |
+|                             |           |       | Interrupt:  | 1 |
+|                             |           |       | Total Pins: | 1 |
 
 _Interfaces needed:_ 
 1. Motor for the rack and pinion subsystem
 
 Fireworks subsystem - zero or one motor to flip the switch for the fireworks
 
-| Fireworks |          |       |             |   |
-|-----------|----------|-------|-------------|---|
-| Servo     | Pin Type | Count |             |   |
-| Power     | Power    | 1     |             |   |
-| Ground    | Power    | 1     |             |   |
-| Control   | PWM      | 1     |             |   |
-|           |          |       | Power:      | 2 |
-|           |          |       | PWM:        | 1 |
-|           |          |       | Total Pins: | 3 |
+| Fireworks                   |           |       |             |   |
+|-----------------------------|-----------|-------|-------------|---|
+|                             | Pin Type  | Count |             |   |
+| Activation for Arduino Nano | Interrupt | 1     |             |   |
+|                             |           |       | Interrupt:  | 1 |
+|                             |           |       | Total Pins: | 1 |
 
 _Interfaces needed:_ 
 1. Servo control signal for flipping a switch if needed, will design to that need 
@@ -101,9 +95,10 @@ _Total pins needed:_
 | Locomotion, Fireworks, and Feeding, Consumption Controller |    |
 |------------------------------------------------------------|----|
 | Power:                                                     | 2  |
-| Digital:                                                   | 14 |
-| PWM:                                                       | 7  |
-| Total:                                                     | 18 |
+| Digital:                                                   | 12 |
+| PWM:                                                       | 6  |
+| Interrupt:                                                 | 2  |
+| Total:                                                     | 17 |
 
 ### Object Sorting and Storage Controller
 
@@ -123,7 +118,7 @@ Object Sorting - belt motor and a motor or pressurized air which will poke the p
 | VDD                | Power     | 1     |             |    |
 | Vibration Motor    |           |       |             |    |
 | Positive           | Power     | 1     |             |    |
-| Negitive           | Power     | 1     |             |    |
+| Negative           | Power     | 1     |             |    |
 | Activation         | Digital   | 1     |             |    |
 | Linear Actuator    |           |       |             |    |
 | Retract            | Digital   | 1     |             |    |
@@ -147,7 +142,7 @@ The pins for the object sorting subsystem are listed below in tabular form. The 
 | Object Storage   |           |   |             |    |
 |------------------|-----------|---|-------------|----|
 | Servo Controller |           |   |             |    |
-| Communcation     | Micro-USB | 0 |             |    |
+| Communication    | Micro-USB | 0 |             |    |
 | Ground           | Power     | 1 |             |    |
 | Vin              | Power     | 1 |             |    |
 | Rx               | Digital   | 1 |             |    |
@@ -187,7 +182,7 @@ The object sorting has a color sensor which will send data at $400\ \frac{kbits}
 
 The object storage subsystem has proximity sensors which outputs at 145 Hz, which will be sufficient for our use case of only needing to know when the silos are full. This is not something that needs to be sampled at an extremely high speed. Analysis is shown below. 
 
-## Electronic Schematic 
+## Electronic Schematic (this is out of date because of fireworks and feeding pin changes)
 
 The electronic schematic for the controller subsystem is attached below. It includes the main microcontroller and the interface to each of the subsystems which they require to drive actuators. 
 
