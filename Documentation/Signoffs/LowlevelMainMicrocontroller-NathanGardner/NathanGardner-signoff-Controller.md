@@ -14,7 +14,7 @@ The controller subsystem has constraints that it must abide by to be successful.
 
 The direct interfaces between the controller and other subsystems are as follows:
 
-1. Serial USB communication to the vision microcontroller. This will be a general digital I/O pin used to communicate objects which describe environment.
+1. Serial USB communication to the vision microcontroller. This will be a general USB port used to communicate objects which describe environment.
 2. An input from the power system which triggers the microcontroller to start initializing code. This will be a digital input pin with hardware interrupt capabilities. 
 3. Serial USB communication as an input to the object storage subsystem. This will be a output in terms of the microcontroller. 
 4. PWM and digital logic high/low communication as an input to the object consumption subsystem. This will be a digital output pin in terms of the microcontroller.
@@ -26,7 +26,9 @@ Conceptual Design Document: [here](https://github.com/nathan-gardner/CapstoneRep
 
 Number of motors that need to be driven and sensors that need to be read by the main controller and what purpose they serve are listed below
 
-### Main Controller
+### Two Low-level Mega Controllers (Locomotion, Fireworks, Feeding, Consumption and Sorting, Storage)
+
+A design with two Arduino Mega 2560 Rev3 microcontrollers were selected in order to create a modular design and to all for parallelization of the design amongst the team members. This design also allows up to come in well above the general IO requirement for each controller, which is covered in great detail below. 
 
 Feeding subsystem - one motor that needs to be driven by the main microcontroller
 
@@ -36,6 +38,8 @@ Feeding subsystem - one motor that needs to be driven by the main microcontrolle
 | Activation for Arduino Nano | Interrupt | 1     |             |   |
 |                             |           |       | Interrupt:  | 1 |
 |                             |           |       | Total Pins: | 1 |
+
+_Note: This Arduino Nano will need to be designed as part of the microcontroller network but will not be designed until the Feeding Subsystem is designed and will reflect the specific requirements of the Feeding Subsystem. It will be part of the Feeding signoff but will be part of the low-level controller network. This subsystem is standalone and a lower priority portion of the design. Right now all that is known is that the main Mega controller will generate a hardware interrupt which will invoke an interrupt service routine on the Nano._
 
 _Interfaces needed:_ 
 1. Motor for the rack and pinion subsystem
@@ -48,6 +52,8 @@ Fireworks subsystem - zero or one motor to flip the switch for the fireworks
 | Activation for Arduino Nano | Interrupt | 1     |             |   |
 |                             |           |       | Interrupt:  | 1 |
 |                             |           |       | Total Pins: | 1 |
+
+_Note: This Arduino Nano will need to be designed as part of the microcontroller network but will not be designed until the Fireworks Subsystem is designed and will reflect the specific requirements of the Fireworks Subsystem. It will be part of the Fireworks signoff but will be part of the low-level controller network. This subsystem is standalone and a lower priority portion of the design. Right now all that is known is that the main Mega controller will generate a hardware interrupt which will invoke an interrupt service routine on the Nano._
 
 _Interfaces needed:_ 
 1. Servo control signal for flipping a switch if needed, will design to that need 
@@ -88,9 +94,9 @@ _Interfaces needed:_
 2. Two digital pins to Forward and Backward Directions
 3. Two digital pins to read the encoder outputs to get accurate measurements for speed and direction
 
-Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communication. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communicate with the main controller subsystem lower level controllers, which will execute commands to drive motors and drive actuators. 
+Vision Subsystem - Requires communication to exchange sensor data structures through serial USB communication. The vision subsystem is designed to abstract away the complication of the sensor data and path planning and communicate with the main controller subsystem lower level controllers, designed in this signoff, which will execute commands to drive motors and drive actuators. 
 
-The vision subsystem will not have any direct pin requirements, but it will use USB communication to exchange data between the main microcontroller and the vision microcontroller. 
+The vision system will house all of the sensor for data acquisition for the robot and will communicate with the top-level main microcontroller. The top-level main microcontroller will communicate with the low-level main microcontroller via serial USB. The top-level microcontroller will have a dedicated operating system (likely some Linux distribution) and will act as the master where the two low-level microcontrollers, designed in this sign off, will act as the slaves. The USB will allow master and slave to communicate with each other serially with universal asynchronous transmitter receiver (UART). 
 
 _Total pins needed:_
 | Locomotion, Fireworks, and Feeding, Consumption Controller |    |
