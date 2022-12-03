@@ -46,7 +46,7 @@ Above is the circuit schematic for the color sensor PCB chosen from Adafruit
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-signoff-Sorting/Documentation/Images/SortingSubsystem/Low_level_controller.png)
 
-Above shows the connection to the Arduino MEGA from the controller subsystem. The digital pins and PWM pins will be used to control the carious electrical components for the system. The PWM pin will be used to control the motor for the conveyor belt. The digital pins will be used for the servo and the the color sensor.
+Above shows the connection to the Arduino MEGA from the low level controller subsystem. The digital pins and PWM pins will be used to control the various electrical components for the system. The PWM pin will be used to control the motor for the conveyor belt. The digital pins will be used for the servo and the the color sensor.
 
 ## **Analysis**
 ### **Conveyor Belt**:
