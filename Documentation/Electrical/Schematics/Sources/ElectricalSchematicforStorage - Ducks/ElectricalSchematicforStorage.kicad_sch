@@ -776,7 +776,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0f1bf175-b8a6-4de0-b01d-9ba788bcef95)
   )
-  (text "Micro Masetro 6-Channel\nUSB Servo Controller\n" (at 60.96 71.12 0)
+  (text "Micro Maestro 6-Channel\nUSB Servo Controller\n" (at 60.96 71.12 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4a37caab-a102-43fe-b289-0fffb8825a17)
   )

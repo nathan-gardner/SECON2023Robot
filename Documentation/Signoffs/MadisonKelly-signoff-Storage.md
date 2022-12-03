@@ -6,27 +6,27 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 ### Function:
 
-- Store all collected pedestals in the silos in the correct orientation	
-- “Full” sensor will detect when there are two or three pedestals present 
-- Drop the statues off whenever they are collected (first a statue that is three pedestals tall and after that, a statue that is two pedestals tall)
 - Store the ducks in a bottomless corral that drags behind the robot
+- Have a locking mechanism that will ensure the corral is not lost when being dragged behind the robot
 - Drop the ducks and corral off in the duck pond via a rack and pinion mechanism
-- Worst case scenario of all ten ducks and three pedestals at a time is analyzed below
+- Worst case scenario of all ten ducks at a time is analyzed below
 
 
 ## Constraints
 
 The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the team plans to have the ducks held in an outside corral. The corral, as previously mentioned, will surround part of the robot before the competition, and then as soon as the robot starts its path, it will extend from the back of the robot via a rack and pinion mechanism. The ducks are approximately 3 inches x 3 inches x 3.5 inches, so the corral will need to be a sufficient size to hold all ten ducks. They ducks can sit on top of each other, so the corral shown in the buildable schematic will be sufficient to hold all ten ducks.
 
-The corral will drag behind the robot for the entirety for the competition until the robot reaches its final destination at the duck pond. Once the robot reaches the duck pond, it will drop the corral off with all of the ducks inside and leave them behind by spinning the gear from the rack and pinion which will eject the corral and ducks. The corral will be bottomless so the ducks can be counted as touching the duck pond when they are dropped off. This will save much needed space within the robot and save time when depositing the ducks at their duck pond location.
-
-The size of the robot will lead to another constraint that will need to be taken into consideration which is the size of the silo for storing the pedestals. There will only be one silo. In order to save as much space as possible, the silo will only be tall enough to store three pedestals at once. Because of this constraint, there will need to be a “full” sensor that will tell the main controller to drop the pedestals as soon as possible. The plan is to drop them wherever the robot is located when three pedestals are collected. This way there is not a clog within the robot when more than three pedestals are collected. 
+The corral will roll behind the robot for the entirety for the competition until the robot reaches its final destination at the duck pond. Once the robot reaches the duck pond, it will drop the corral off with all of the ducks inside and leave them behind by spinning the gear from the rack and pinion which will eject the corral and ducks. The corral will be bottomless so the ducks can be counted as touching the duck pond when they are dropped off. This will save much needed space within the robot and save time when depositing the ducks at their duck pond location.
 
 The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + 1.04 kg (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
 
+<<<<<<< Updated upstream
 The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo). For simplicity, the servo selected for the silo opening will be the same one as used in the rack and pinion mechanism. Since the weight of ten ducks plus the weight of the corral greatly outweighs three pedestals and the silo, the servo motor selected for the rack and pinion will have sufficient torque to open and close the silo.
 
 Both of these motors will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back and the pedestals are not trapped within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be traveled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;. The silo will need to open 2 inches which will require 1 rotations or 360&deg;. The silo will remain open until enough time has elapsed that it can close again without trapping the statue was just placed.
+=======
+This motor will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral for duck drop off. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;.
+>>>>>>> Stashed changes
 
 The final constraint come from the ethical consideration of a pinching hazard near the rack and pinion system. We will design the rack and pinion so that the gear is not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the gear for the rack and pinion system.
 
@@ -48,7 +48,7 @@ $Total\ Mass = m_{ducks} + m_{trailer} = 0.708 + 1.04 = 1.748$
 
 $F = m \ast 9.81 \ast 0.76 = 1.748 \ast 9.81 \ast 0.76 = 13.03 N$
 
-$\tau = F \ast r \ast sin(\theta) = 13.03 \ast 0.0127 \ast sin(90&deg;) = 1.65 N \ast m$
+$\tau = F \ast r \ast sin(\theta) = 13.03 \ast 0.0127 \ast sin(90) = 1.65 N \ast m$
 
 $\tau = 1.65 N \ast m = 16.83 kg \ast cm$
 
@@ -67,16 +67,6 @@ $Duck\ Volume_{Total} = 31.5 \ast 10 = 315 in^{3}$
 $Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
   
 Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
-
-### Size Calculations for Pedestal Silo
-
-$Pedestal\ Volume = \pi \ast r^{2} \ast h = \pi \ast 1^{2} \ast 1.8 = 5.65 in^{3}$
-
-$Pedestal\ Volume_{Total} = 5.65 \ast 3 = 16.96 in^{3}$
-
-$Silo\ Volume = \pi \ast r^{2} \ast h = \pi \ast 1.083^{2} \ast 6 = 22.108 in^{3}$
-
-Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
   
 ### Rotation Calculation for Corral 
 
@@ -96,24 +86,6 @@ $Rotations = \frac{ distance }{ C } = \frac{ 1 }{ 1 }$
 
 $Degrees = rotations \ast 360 = 1 \ast 360 = 360 &deg;$
 
-### Rotation Calculation for Statue Delivery
-
-$C = \pi \ast d = \pi \ast 2$
-
-$Rotations = \frac{ 2 }{ 2 } = \frac{ 2 }{ 2 }$
-
-$Degrees = rotations \ast 360 = 1 \ast 360 = 360&deg;$
-
-### Distance From Sensors
-
-$C_{silo} = \pi \ast d = \pi \ast 2.165 in^{2} = 6.80 in^{2}$
-
-$C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
-
-$D_{max} = C_{silo} - C_{pedestal} = 6.80 - 6.28 = 0.52 in = 0.0133 m$
-
-The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
-
 ## Buildable Schematic
 
 ![image](https://user-images.githubusercontent.com/112424739/203194135-34b73e28-fe2f-450b-8afe-6c91816f216c.png)
@@ -123,14 +95,6 @@ The max distance calculated is less than the maximum distance the sensor can det
 ![image](https://user-images.githubusercontent.com/112424739/203194417-bcac0ef0-fdde-430a-8116-afd4ed4b782a.png)
 
 ![image](https://user-images.githubusercontent.com/112424739/203194486-e8f25d12-fddf-4722-b17f-729f1d32bdeb.png)
-
-![image](https://user-images.githubusercontent.com/112424739/203200427-77989ab9-03cf-4e1c-acdb-3548e8475b77.png)
-
-![image](https://user-images.githubusercontent.com/112424739/203200477-d116ce78-2898-495a-a3b7-2a283c9bc04a.png)
-
-![image](https://user-images.githubusercontent.com/112424739/203200507-a2234107-e77c-49c0-beaa-3a6755cb5598.png)
-
-![image](https://user-images.githubusercontent.com/112424739/203200638-825835a0-f643-4568-865a-1910c58f7c34.png)
 
 You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/3D%20Models).
 
