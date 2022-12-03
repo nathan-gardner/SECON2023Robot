@@ -1,17 +1,26 @@
-# Sorting Subsystem
-## Function of The Subsystem 
-- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper
-- Actively sort pedestals while passively sorting ducks 
+# **Sorting Subsystem**
+## **Function of The Subsystem** 
+- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper.
+- Actively sort pedestals while passively sorting ducks. 
 
 
-## Constraints
+## **Constraints**
+### **Size:**
 - The sorting system must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot.
+### **Conveyor:**
 - The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
-- With a object freqency of 1 item every 5 seconds decided upon in the consumption subsystem as the worst case scenario, The flipper should be able to hit a pedestal and reset to resting position in half that time in order to ensure the flipper does not interfere with any other object. This ensures that the flipper will be out of the way even if the object frequency is nearly double the worst case as predicted in the consumption subsystem design.
-- Flipper must provide enough force to move the pedestals ( $F_{flipper} \gt F_{fped}= 0.2322 \ N$ )
-- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper.
+- The conveyor belt must effectively move ducks and pedestals at $2\ in/s$ and support the weight of at least three ducks ( $F_{ducks} = 2.08152\  N$ ).
+- The length of the conveyor must be no more than $7 \ in$ to make room for the consumption subsystem (the consumption subsystem is $5\ in$ deep into the robot).
+### **Flipper:**
+- Assuming the worst case scenario of a pedestal being right in front of another object on the conveyor, the flipper must hit the pedestal and return to resting position fast enough to disturb the other object as little as possible. The maximum length of a pedestal is about $2\ in$. The flipper will be $1\ in$ wide.Assuming the flipper hits the pedestal in the middle, the flipper must reset to resting position in less than $250\ ms$ (this is the time required for an object to move $0.5 in$ on the conveyor at $2\ in/s$ ). The next object would be in the way of the flipper at this time.
+- Flipper must provide enough force to move the pedestals ( $F_{flipper} \gt F_{fped}= 0.2322 \ N$ ).
+### **Sensor:**
+- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
+- The color sensor must be able to distinguish between pink, yellow, red, green, and white.
+- Color sensor must work well with the Arduino architecture.
 
-## Buildable Schematic
+
+## **Buildable Schematic**
 
 ### **CAD Model for the subsystem:**
 
@@ -35,17 +44,17 @@ Above is the circuit schematic for the color sensor PCB chosen from Adafruit
 
 Above shows the connection to the Arduino MEGA from the controller subsystem. The digital pins and PWM pins will be used to control the carious electrical components for the system. The PWM pin will be used to control the motor for the conveyor belt. The digital pins will be used for the servo and the the color sensor.
 
-## Analysis
+## **Analysis**
 ### **Conveyor Belt**:
 
 #### **Belt length**:
-Conveyor length $L = 9in$ (Chosen)
+Conveyor length $L = 7in$ (Chosen)
 
-$C$ is the center to center distance $C = 9 - 2(0.5) = 8\ in$ of the drive pulley $D$ (chosen to be 1 in)
+$C$ is the center to center distance $C = 7 - 2(0.5) = 6\ in$ of the drive pulley $D$ (chosen to be 1 in)
 
 Belt Length ($l$)
 
-$l = D\pi + 2C = 1\pi +2(8) = 19.1416\ in$
+$l = D\pi + 2C = 1\pi +2(6) = 15.1416\ in$
 
 $\ $
 #### **Normal and Frictional Forces**:
@@ -109,19 +118,19 @@ $\ $
 
 Approximate weight of rubber = $24.94\ g/cm^3 = 0.05498\ lbs/cm^3$
 
-Belt Dimensions in inches = 19.1416 in X 3.75 in X 0.0625 in 
+Belt Dimensions in inches = 15.1416 in X 3.75 in X 0.0625 in 
 
-Belt Dimensions in cm = 48.57 cm X 9.525 cm X 0.15875 cm
+Belt Dimensions in cm = 38.46 cm X 9.525 cm X 0.15875 cm
 
-Belt Volume $=(48.57)(9.525)(0.15875) = 73.44\ cm^3$
+Belt Volume $=(38.46)(9.525)(0.15875) = 58.155\ cm^3$
 
-Weight of Belt $W_{belt} = (0.05498)(73.44) =4.0377 \ lbs $
+Weight of Belt $W_{belt} = (0.05498)(58.155) = 3.1974 \ lbs $
 
 Friction coefficient of rubber: $k = 1.15$
 
 $P = \frac{ks(W_{ducks}+W_{Belt})(745.7)}{33000}$
 
-$P = \frac{(1.15)(5)(0.4683+4.0377)(745.7)}{33000} = 0.5855 \ W$
+$P = \frac{(1.15)(5)(0.4683+3.1974)(745.7)}{33000} = 0.5855 \ W$
 
 $\ $
 #### **Conveyor Motor Requirements Summarized:**
@@ -154,9 +163,11 @@ $s_{belt}=\frac{2\ in}{second}$
 
 Time required to hit pedestal and return to resting position:
 
-$t \le 2.5 \ second $
+$t \le 250 \ ms $
 
-$speed \ge 180\degree /2.5s$
+$speed \ge \frac{180\degree}{250\ ms} $
+
+The HS-10 servo motor from ServoCity has a speed of $\frac{0.104\degree}{1\ \mu s} = \frac{180\degree}{1.73\ ms}$
 
 Therefore, the servo chosen meets all above requirements.
 
@@ -164,11 +175,6 @@ Therefore, the servo chosen meets all above requirements.
 
 $\ $
 ### **Color Sensor:**
-
-![image](https://user-images.githubusercontent.com/112428796/203215313-85ff081d-fb19-4ab0-b8c6-72a5adc10ec5.png)
-
-Above is the circuit schematic for the color sensor PCB chosen from Adafruit
-
 
 Electrical Specifications:
 
@@ -180,7 +186,7 @@ $I_{DD} = 65\ \mu A \ \ (Wait)$
 
 $I_{DD} = 2.5\ \mu A \ \ (Sleep)$ 
 
-Therefore, the above voltages and currents will be provided by the power subsystem
+The above voltages and currents will be provided by the power subsystem
 
 $\ $
 
@@ -196,24 +202,21 @@ Minimum flipper distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
 
 Flipper distance will be $1.5\ in$ for simplicity.
 
-Wait about $250\ ms$ then activate flipper
-
 
 
 $\ $
 
-## BOM
-| Name of Item | Description                                                                                                            | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total |
-|--------------|------------------------------------------------------------------------------------------------------------------------|----------------------------|-------------|------------------|----------|------------|-------|
-| Color Sensor | RGB Color Snesor with IR filter and White LED                                                                          | Sorting                    | TCS34725    | Adafruit         | 1        | $7.95      | 7.95  |
-| Servo Motor  | closed loop servo motor                                                                                                | Sorting                    | HS-40       | Hitec            | 1        | $10.72     | 10.72 |
-| Motor        | 99:1 Metal Gearmotor 25Dx69L mm LP 6V with 48 CPR Encoder                                                              | Sorting                    | 4827        | Pololu           | 1        | $45.95     | 45.95 |
-| Funnel       | 3d printed                                                                                                             | Sorting                    | N/A         | N/A              | 1        |            | 0     |
-| Flipper      | 3d printed                                                                                                             | Sorting                    | N/A         | N/A              | 1        |            | 0     |
-| Rubber Belt  | "Rubber-Cal Heavy Black Conveyor Belt - Rubber Sheet - .30(2Ply) Thick x 10"""" Width x 4"""" Length - Black (3 Pack)" | Sorting                    | N/A         | Rubber-cal       | 1        | $56        |       |
-| Rollers      | 3d printed                                                                                                             | Sorting                    | N/A         | N/A              | 2        |            |       |
-| Total        |                                                                                                                        |                            |             | Total Components | 8        | Total Cost | 64.62 |
+## **BOM**
 
-
-
-
+| Name of Item    | Description                                                                                                      | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------- | ---------------- | -------- | ---------- | ------ |
+| Color Sensor    | RGB Color Snesor with IR filter and White LED                                                                    | Sorting                    | TCS34725    | Adafruit         | 1        | $7.95      | 7.95   |
+| Servo Motor     | closed loop servo motor                                                                                          | Sorting                    | HS-40       | Hitec            | 1        | $10.72     | 10.72  |
+| Motor           | 99:1 Metal Gearmotor 25Dx69L mm LP 6V with 48 CPR Encoder                                                        | Sorting                    | 4827        | Pololu           | 1        | $45.95     | 45.95  |
+| Funnel          | 3d printed                                                                                                       | Sorting                    | N/A         | N/A              | 1        |            | 0      |
+| Flipper         | 3d printed                                                                                                       | Sorting                    | N/A         | N/A              | 1        |            | 0      |
+| Rubber Belt     | Rubber-Cal Heavy Black Conveyor Belt - Rubber Sheet - .30(2Ply) Thick x 10"" Width x 4"" Length - Black (3 Pack) | Sorting                    | N/A         | Rubber-cal       | 1        | $56        | 55.65  |
+| Rollers         | 3d printed                                                                                                       | Sorting                    | N/A         | N/A              | 2        |            | 0      |
+| DC Motor Driver | TB9051FTG Single Brushed DC Motor Driver Carrier                                                                 | Sorting                    | 2997        | Pololu           | 1        | $11.95     | 11.95  |
+| Motor Mount     | Pololu 25D mm Metal Gearmotor Bracket Pair                                                                       | Sorting                    | 2676        | Pololu           | 1        | $7.95      | 7.95   |
+| Total           |                                                                                                                  |                            |             | Total Components | 10       | Total Cost | 140.17 |
