@@ -37,7 +37,7 @@ The camera has a pixel size of 1.12µm x1.12µm and a resolution of 3280x2464 pi
 The sensor size is then 1.12µm x 3280 by 1.12µm x 2464 = 3.6736 x 2.7596 mm 
 
 
-# Buildable 
+# Buildable Schematics 
 
 ![image](https://user-images.githubusercontent.com/112426690/203221044-db8d1f5c-1036-4ce3-a675-8dc6f646756e.jpeg)
 
