@@ -1,6 +1,6 @@
 # Function of the subsystem 
 
-The robot need to detect specific position in the arena on a near or far scale. To detect position, the sensor network for micro and macro measurements are needed. The subsystem has a separate microprocessor for processing sensor data and so that the main microcontroller unit in the main controller system can read them more readily. The sensors are communicate with top level microcontroller. And the internal communication between the sensor networks and location microcontroller will need to be a very high speed analog signal. 
+The robot will to detect specific position in the arena on a near or far scale. To detect position, the sensor network for micro and macro measurements are needed. The subsystem has a separate microprocessor for processing sensor data and so that the main microcontroller unit in the main controller system can read them more readily. The sensors are communicate with top level microcontroller. And the internal communication between the sensor networks and location microcontroller will to be a very high speed analog signal. 
 
 ## Function
 
