@@ -12,9 +12,6 @@
 ## Buildable Schematics
 
 ### Motor
-The CAD model for the motors can be found here:
-https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/25d-metal-gearmotor-34-47-encoder.step
-
 ![image](https://user-images.githubusercontent.com/112428353/203175771-01a94bf9-d55d-4ecd-9e12-75bcc7caf23c.png)
 
 ### Electrical Schematic
@@ -28,7 +25,7 @@ https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotio
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_whole_view.jpg)
 
 The CAD model for the motors can be found here:
-https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem/Motor_Wheel_Assembly.SLDASM
+https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem
 
 
 ## Analysis
