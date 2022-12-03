@@ -2,6 +2,9 @@
 ## **Function of The Subsystem** 
 - Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper.
 - Actively sort pedestals while passively sorting ducks. 
+- Objects will be passed from the consumption subsystem to the sorting subsystem. The sorting subsystem will then send the ducks to the duck storage and delivery subsystem while sending the pedestals to the pedestal storage and delivery subsystem.
+- The motor driver for the DC motor will be controlled via the low-level controller subsystem.
+- The driver for the servo motor is a part of the duck storage and delivery subsystem which will be controlled by the low-level controller subsystem.
 
 
 ## **Constraints**
@@ -18,7 +21,8 @@
 - Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
 - Color sensor must work well with the Arduino architecture.
-
+### **Socioeconomic:**
+- Some parts were chosen to be 3D-printed instead of purchased in order to save cost.
 
 ## **Buildable Schematic**
 
@@ -138,7 +142,13 @@ $Torque > 0.03789 Nm$ or $3.86\ kgmm$
 
 $RPM = 37.5$
 
+Below is the torque curve for the motor chosen from Pololu.
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-signoff-Sorting/Documentation/Images/SortingSubsystem/Motor%20graph.png)
+
 Therefore, the motor chosen meets all specifications.
+
+
 
 $\ $
 ### **Flipper:**
