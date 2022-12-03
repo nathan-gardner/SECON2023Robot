@@ -4,10 +4,15 @@
 
 - Ensure that the predetermined path can be traversed in the allotted time of three minutes
 
+- The top level controller communicates with the low level controller through USB. The low controller will then send a PWM signal to the motor driver that will control the motor's speed. The low level controller will also send a digital signal to the motor driver that will control the direction of the motor.
+
 ## Constraints
 - Weight of the robot ( $\approx$ 12 kg)
 - Maximum travel speed required (0.2032 m/s)
 - Motor torque required (0.0715 Nm per motor)
+
+### Socioeconomic Consideration
+- Motor chosen will operate at $\approx$ 90% of it's maximum efficiency. This will help conserve power and reduce battery charging costs.
 
 ## Buildable Schematics
 
@@ -24,7 +29,7 @@
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_whole_view.jpg)
 
-The CAD model for the motors can be found here:
+The CAD model for the motor and wheel assembly can be found here:
 https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem
 
 
@@ -78,7 +83,7 @@ $\ $
 
 ![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
 
-The chosen motor is the Pololu #4865. The required motor torque is 7.291 kg-mm. This motor has a max efficiency at 8.6 kg-mm. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
+The chosen motor is the Pololu #4865. The required motor torque is 7.291 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 7.291 kg-mm of torque, the motor will operate at $\approx$ 90% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
 
 ## BOM
 | Name of Item   | Description                                                                                 | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
