@@ -18,6 +18,8 @@ The first constraint for this subsystem is the space available within the robot.
 
 The corral will roll behind the robot for the entirety for the competition until the robot reaches its final destination at the duck pond. Once the robot reaches the duck pond, it will drop the corral off with all of the ducks inside and leave them behind by spinning the gear from the rack and pinion which will eject the corral and ducks. The corral will be bottomless so the ducks can be counted as touching the duck pond when they are dropped off. This will save much needed space within the robot and save time when depositing the ducks at their duck pond location.
 
+The gear on the rack and pinion will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add a linear solenoid actuator to extend and "lock" the rack in place to discourage any motion.
+
 The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + 1.04 kg (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
 
 The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo). For simplicity, the servo selected for the silo opening will be the same one as used in the rack and pinion mechanism. Since the weight of ten ducks plus the weight of the corral greatly outweighs three pedestals and the silo, the servo motor selected for the rack and pinion will have sufficient torque to open and close the silo.
@@ -30,7 +32,7 @@ The final constraint come from the ethical consideration of a pinching hazard ne
 
 The electrical schematic for the object storage subsystem is shown below.
 
-![image](https://user-images.githubusercontent.com/112424739/203210837-6efa8021-ff65-49b0-981e-cfd7684371c9.png)
+![Schematic](https://user-images.githubusercontent.com/112424739/205463019-8c94ddb5-c460-4f63-b9dd-ea77fe6c233b.PNG)
 
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/Electrical/Schematics/Sources/ElectricalSchematicforStorage).
 
