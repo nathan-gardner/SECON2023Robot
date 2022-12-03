@@ -2,10 +2,10 @@
 ## Function of the Subsystem
 - Transport the robot at a maximum of 0.2032 m/s
 
-- Ensure that the predetermined path can be traversed in the alloted time of three minutes
+- Ensure that the predetermined path can be traversed in the allotted time of three minutes
 
 ## Constraints
-- Weight of the robot ($\approx$ 12 kg)
+- Weight of the robot ( $\approx$ 12 kg)
 - Maximum travel speed required (0.2032 m/s)
 - Motor torque required (0.0715 Nm per motor)
 
