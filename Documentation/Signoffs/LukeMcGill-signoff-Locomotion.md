@@ -1,14 +1,15 @@
 # Locomotion Subsystem
 ## Function of the Subsystem
-- Transport the robot
+- Transport the robot at a maximum of 0.2032 m/s
+
+- Ensure that the predetermined path can be traversed in the alloted time of three minutes
+
 ## Constraints
-- Weight of the robot
-- Travel speed required
-- Motor torque required
+- Weight of the robot ($\approx$ 12 kg)
+- Maximum travel speed required (0.2032 m/s)
+- Motor torque required (0.0715 Nm per motor)
 
 ## Buildable Schematics
-### Mecanum Wheels
-![image](https://user-images.githubusercontent.com/112428353/203180680-b35ef0c3-77bb-44f2-8acd-951273914abb.png)
 
 ### Motor
 The CAD model for the motors can be found here:
@@ -16,29 +17,29 @@ https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotio
 
 ![image](https://user-images.githubusercontent.com/112428353/203175771-01a94bf9-d55d-4ecd-9e12-75bcc7caf23c.png)
 
-### L298N Motor Driver
-![image](https://user-images.githubusercontent.com/112428353/203175077-d53a8b7e-b3cd-4a24-98c4-44fec2bd8d40.png)
+### Electrical Schematic
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/circuit_schematic.jpg)
 
-The motor driver will be connected to a 12V power supply.
+### Locomotion Assembly
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
 
-![image](https://user-images.githubusercontent.com/112428353/203175321-f5006cdd-4413-49f9-ba61-92b5a5842278.png)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_top_view.jpg)
 
-The microcontroller will supply the PWM speed signal and forward and reverse direction signals to the motor driver. Each motor driver drives two motors.
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_whole_view.jpg)
 
-![image](https://user-images.githubusercontent.com/112428353/203179672-5b30a1bc-0743-4b93-b92e-3bebf214f00a.png)
-
-The motor driver will supply the current and voltage to the motors.
+The CAD model for the motors can be found here:
+https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem/Motor_Wheel_Assembly.SLDASM
 
 
 ## Analysis
 ### Acceleration
-$v = 0.2023\ m/s$ (worst case of 8 inch/second)
+$v = 0.2023\ m/s$ (worst case)
 
 $a = \frac{v - v_{o}}{t}$
 
 $a = \frac{0.2023 - 0}{1}$
 
-$= 0.2032\ m/s^2$
+$a = 0.2032\ m/s^2$
 
 ### Force
 $W_{wheel} = 56 g_f$ (Weight of the wheel)
@@ -59,7 +60,7 @@ $F_n = mg = W_T$
 
 $\Sigma F_x = F - (\mu_{s}F_n)$
 
-$ma_x = F - (\mu_{s}mg)$
+$ma_x = F - (\mu_{s}F_n)$
 
 $0.3132 * 0.2023 = F - (0.95 * 3.0695)$
 
@@ -80,14 +81,15 @@ $\ $
 
 ![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
 
-The chosen motor is the Pololu #4865. The required motor torque is 7.291 kg-mm. This motor has a max efficiency at 8.6 kg-mm, so this will be efficient while also meeting the torque requirements. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough.
+The chosen motor is the Pololu #4865. The required motor torque is 7.291 kg-mm. This motor has a max efficiency at 8.6 kg-mm. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
 
 ## BOM
 | Name of Item   | Description                                                                                 | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
-| -------------- | ------------------------------------------------------------------------------------------- | -------------------------- | ----------- | ---------------- | -------- | ---------- | ------ |
+|----------------|---------------------------------------------------------------------------------------------|----------------------------|-------------|------------------|----------|------------|--------|
 | Mecanum Wheel  | Mecanum wheels will allow the robot to move and turn in any direction (pack of four wheels) | Locomotion                 | 14209       | ozrobotics       | 1        | 41.48      | 41.48  |
 | Wheel Coupling | The wheel couping attaches the wheel to the motor                                           | Locomotion                 | 18077       | ozrobotics       | 4        | 2.34       | 9.36   |
 | Motor          | The motors will drive the wheels allowing the robot to move                                 | Locomotion                 | 4865        | Pololu           | 4        | 49.95      | 199.8  |
-| Motor Mount    | The motor mount will secure the motor to the chassis (pack of two mounts)                   | Locomotion                 | 2627        | Pololu           | 2        | 7.95       | 15.9   |
+| Motor Mount    | The motor mount will secure the motor to the chassis (pack of two mounts)                   | Locomotion                 | 2676        | Pololu           | 2        | 7.95       | 15.9   |
 | Motor Driver   | The motor drivers supply the voltage and current requirements of the motor                  | Locomotion                 | L298N       | ST               | 2        | 7.41       | 14.82  |
 | Total          |                                                                                             |                            |             | Total Components | 13       | Total Cost | 281.36 |
+
