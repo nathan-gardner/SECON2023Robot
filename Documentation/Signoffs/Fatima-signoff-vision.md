@@ -14,7 +14,8 @@ The camera IMX219-160 8MP Camera with 160° FOV has resolution 3280 x 2464, pixe
 
 # Electrical schematic
 
-![image](https://user-images.githubusercontent.com/112426690/203215204-39f99983-1e6c-442c-93ef-867bd4c56353.jpeg)
+![image](https://user-images.githubusercontent.com/112426690/205468942-25415667-2eaf-475b-8df1-1502408113aa.png)
+
 
 # Analysis 
 
