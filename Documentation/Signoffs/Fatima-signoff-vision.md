@@ -31,8 +31,7 @@ The robot will detect specific position in the arena on a near or far scale. To 
 
 # Electrical schematic
 
-![image](https://user-images.githubusercontent.com/112426690/205468942-25415667-2eaf-475b-8df1-1502408113aa.png)
-
+![image](https://user-images.githubusercontent.com/112426690/205516721-73f02af5-e97e-4ee8-87d5-9937dc982b57.png)
 
 # Analysis 
 
