@@ -42,7 +42,7 @@
 
 Sorting Subsystem Schematic:
 
-![image](https://user-images.githubusercontent.com/30758520/205470369-7720ec40-0432-46b0-95ee-2760a0951ddb.png)
+![image](https://user-images.githubusercontent.com/30758520/205470620-8f525419-8f01-48a8-b775-f67ca29675b9.png)
 
 ![image](https://user-images.githubusercontent.com/112428796/203215313-85ff081d-fb19-4ab0-b8c6-72a5adc10ec5.png)
 
