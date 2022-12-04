@@ -40,7 +40,7 @@ The sensor size is then 1.12µm x 3280 by 1.12µm x 2464 = 3.6736 x 2.7596 mm
 
 # Buildable Schematics 
 
-![image](https://user-images.githubusercontent.com/112426690/203221044-db8d1f5c-1036-4ce3-a675-8dc6f646756e.jpeg)
+![image](https://user-images.githubusercontent.com/112426690/205469036-c2495e03-7620-4bf3-a2aa-b7e5d7ffc44b.jpeg)
 
 
 # BOM
