@@ -31,7 +31,7 @@ The robot will detect specific position in the arena on a near or far scale. To 
 
 # Electrical schematic
 
-![image](https://user-images.githubusercontent.com/112426690/205516721-73f02af5-e97e-4ee8-87d5-9937dc982b57.png)
+![image](https://user-images.githubusercontent.com/112426690/206012268-de87b7f5-e74b-4b6b-a0f0-57fd8a6225c6.png)
 
 # Analysis 
 
@@ -56,8 +56,7 @@ The sensor size is then 1.12µm x 3280 by 1.12µm x 2464 = 3.6736 x 2.7596 mm
 
 # Buildable Schematics 
 
-![image](https://user-images.githubusercontent.com/112426690/205469036-c2495e03-7620-4bf3-a2aa-b7e5d7ffc44b.jpeg)
-
+![image](https://user-images.githubusercontent.com/112426690/206012248-b4077c5a-735d-4008-9b8c-3614c5440930.png)
 
 # BOM
 
