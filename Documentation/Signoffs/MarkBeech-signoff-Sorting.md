@@ -9,7 +9,7 @@
 
 ## **Constraints**
 ### **Size:**
-- The sorting system must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot.
+- The sorting subsystem must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot. The consumption subsystem takes up $5 \ in$ of depth, so the sorting subsystem must be no longer than $7 \ in$ deep. The sorting subsystem must be at the top of the robot due to the consumption susbsytem feeding objects out to the top of the robot. There must be sufficient space for a pedestal silo and funnel under the sorting subsystem. The silo will hold three pedestals, which are $2 \ in$ each, thus making the silo $6 \ in$ tall. The funnel has been designed to be $2.75 \ in$ tall, thus making the funnel and silo $8.75 \ in$ tall. The conveyor will be above the funnel with a height of $1 \ in$. The color sensor board is approximately $0.8 \ in$ tall. The flipper will be no greater than $2 \ in$ tall. This makes the total height of the sorting subsystem $11.75 \ in$. This number was fund by adding the height of the funnel and silo with the height of the conveyor and maximum height of the flipper.
 ### **Conveyor:**
 - The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
 - The conveyor belt must effectively move ducks and pedestals at $2\ in/s$ and support the weight of at least three ducks ( $F_{ducks} = 2.08152\  N$ ).
