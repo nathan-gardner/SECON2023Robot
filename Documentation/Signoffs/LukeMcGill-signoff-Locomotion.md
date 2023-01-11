@@ -22,6 +22,9 @@
 ### Electrical Schematic
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_schematic.jpg)
 
+The electrical schematic can be found here:
+https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/Electrical/Schematics/Sources/Locomotion
+
 ### Locomotion Assembly
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
 
