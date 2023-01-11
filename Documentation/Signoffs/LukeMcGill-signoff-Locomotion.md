@@ -1,6 +1,6 @@
 # Locomotion Subsystem
 ## Function of the Subsystem
-- Transport the robot no less than 0.2032 m/s
+- Transport the robot no less than 0.0677 m/s
 
 - Ensure that the predetermined path can be traversed in the allotted time of three minutes
 
@@ -8,7 +8,7 @@
 
 ## Constraints
 - Weight of the robot ( $\approx$ 10.376 kg)
-- Maximum travel speed required (0.2032 m/s)
+- Minimum travel speed required (0.0677 m/s)
 - Motor torque required (0.0604 Nm per motor)
 
 ### Socioeconomic Consideration
@@ -35,6 +35,9 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 
 ## Analysis
 ### Acceleration
+
+In order to traverse the entire playing field within the three minute time limit, the robot needs to move no slower than 0.0677 m\s. Howver, to allow for two minutes to complete the other tasks, the fastest velocity needed will be 0.2023 m/s.
+
 $v = 0.2023\ m/s$ 
 
 $a = \frac{v - v_{o}}{t}$
