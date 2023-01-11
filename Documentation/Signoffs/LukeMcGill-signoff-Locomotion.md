@@ -1,15 +1,15 @@
 # Locomotion Subsystem
 ## Function of the Subsystem
-- Transport the robot at a maximum of 0.2032 m/s
+- Transport the robot no less than 0.2032 m/s
 
 - Ensure that the predetermined path can be traversed in the allotted time of three minutes
 
 - The top level controller communicates with the low level controller through USB. The low controller will then send a PWM signal to the motor driver that will control the motor's speed. The low level controller will also send a digital signal to the motor driver that will control the direction of the motor.
 
 ## Constraints
-- Weight of the robot ( $\approx$ 12 kg)
+- Weight of the robot ( $\approx$ 10.376 kg)
 - Maximum travel speed required (0.2032 m/s)
-- Motor torque required (0.0715 Nm per motor)
+- Motor torque required (0.0604 Nm per motor)
 
 ### Socioeconomic Consideration
 - Motor chosen will operate at $\approx$ 90% of it's maximum efficiency. This will help conserve power and reduce battery charging costs.
@@ -20,7 +20,7 @@
 ![image](https://user-images.githubusercontent.com/112428353/203175771-01a94bf9-d55d-4ecd-9e12-75bcc7caf23c.png)
 
 ### Electrical Schematic
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/circuit_schematic.jpg)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion.jpg)
 
 ### Locomotion Assembly
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
@@ -35,7 +35,7 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 
 ## Analysis
 ### Acceleration
-$v = 0.2023\ m/s$ (worst case)
+$v = 0.2023\ m/s$ 
 
 $a = \frac{v - v_{o}}{t}$
 
@@ -44,15 +44,39 @@ $a = \frac{0.2023 - 0}{1}$
 $a = 0.2032\ m/s^2$
 
 ### Force
-$W_{wheel} = 56 g_f$ (Weight of the wheel)
+#### Main Robot Weight
+$W_{Motors} = 0.606\ kg_f$
 
-$W_{capacity} = 3 kg_f$ (Weight capacity of the wheel)
+$W_{ConsumptionParts} \approx  1.128\ kg_f$
 
-$W_{coupling} = 13.5 g_f$ (Weight of the wheel coupling)
+$W_{Controllers} \approx 0.129\ kg_f$
 
-$W_T = 3.0695 kg_f$ (Total weight)
+$W_{Bolts} \approx 0.366\ kg_f$
 
-$M_T = 0.3132 kg_m$ (Total mass)
+$W_{Walls} \approx 1.669\ kg_f$
+
+$W_{Power Supply} \approx 1\ kg_f$
+
+$W_{Miscelaneous} \approx 4\ kg_f$
+
+$\ $
+
+#### Robot Caboose Weight
+$W_{Ducks} = 0.708\ kg_f$
+
+$W_{Pedestals} = 0.1442\ kg_f$
+
+$W_{Walls} \approx 0.626\ kg_f$
+
+$\ $
+
+#### Total Weight
+
+$W_{Total} \approx 10.376\ kg_f$
+
+$M_{Total} \approx 1.0588\ kg_m$
+
+$\ $
 
 $\mu_{s} = 0.95$ (wood on rubber)
 
@@ -64,26 +88,30 @@ $\Sigma F_x = F - (\mu_{s}F_n)$
 
 $ma_x = F - (\mu_{s}F_n)$
 
-$0.3132 * 0.2023 = F - (0.95 * 3.0695)$
+$1.0588 * 0.2023 = F - (0.95 * 10.3762)$
 
-$F = 2.9797\ N$
+$F = 10.07\ N$
 
 ### Torque
 $r = 0.024\ m$
 
-$\tau = rFsin(\theta)$
+$\tau_{Total} = rFsin(\theta)$
 
-$\tau = 0.024 * 2.9797*sin(90^\degree)$
+$\tau_{Total} = 0.024 * 10.07*sin(90^\degree)$
 
-$\tau = 0.0715\ Nm$ (per motor)
+$\tau_{Total} = 0.2417\ Nm$
 
-$0.0715\ Nm = 7.291\ kgmm$
+$\tau_{Motor} = \tau_{Total} / 4 $
+
+$\tau_{Motor} = 0.0604 \ Nm$
+
+$0.0604\ Nm = 6.149\ kgmm$
 
 $\ $
 
 ![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
 
-The chosen motor is the Pololu #4865. The required motor torque is 7.291 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 7.291 kg-mm of torque, the motor will operate at $\approx$ 90% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
+The chosen motor is the Pololu #4865. The required motor torque is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 90% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
 
 ## BOM
 | Name of Item   | Description                                                                                 | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
