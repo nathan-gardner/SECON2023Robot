@@ -119,7 +119,7 @@ $\ $
 
 ![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
 
-The chosen motor is the Pololu #4865. The required motor torque is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 90% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
+The chosen motor is the Pololu #4865. It is a 12 V medium power motor. The required motor torque is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 90% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
 
 ## BOM
 | Name of Item   | Description                                                                                 | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
