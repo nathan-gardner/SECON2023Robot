@@ -17,7 +17,7 @@
 ### **Pusher:**
 - The pusher must extend greater than $1.5 \ in$ in order to touch the pedestal. 
 - The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
- - Pusher must provide enough force to move the pedestals ( $F_{flipper} \gt F_{fped}= 0.2322 \ N$ ).
+ - Pusher must provide enough force to move the pedestals ( $F_{pusher} \gt F_{fped}= 0.2322 \ N$ ).
 ### **Sensor:**
 - Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
