@@ -14,9 +14,10 @@
 - The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
 - The conveyor belt must effectively move ducks and pedestals at $2\ in/s$ and support the weight of at least three ducks ( $F_{ducks} = 2.08152\  N$ ).
 - The length of the conveyor must be no more than $7 \ in$ to make room for the consumption subsystem (the consumption subsystem is $5\ in$ deep into the robot).
-### **Flipper:**
-- Assuming the worst case scenario of a pedestal being right in front of another object on the conveyor, the flipper must hit the pedestal and return to resting position fast enough to disturb the other object as little as possible. The maximum length of a pedestal is about $2\ in$. The flipper will be $1\ in$ wide.Assuming the flipper hits the pedestal in the middle, the flipper must reset to resting position in less than $250\ ms$ (this is the time required for an object to move $0.5 in$ on the conveyor at $2\ in/s$ ). The next object would be in the way of the flipper at this time.
-- Flipper must provide enough force to move the pedestals ( $F_{flipper} \gt F_{fped}= 0.2322 \ N$ ).
+### **Pusher:**
+- The pusher must extend greater than $1.5 \ in$ in order to touch the pedestal. 
+- The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
+ - Pusher must provide enough force to move the pedestals ( $F_{flipper} \gt F_{fped}= 0.2322 \ N$ ).
 ### **Sensor:**
 - Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
@@ -155,35 +156,17 @@ Therefore, the motor chosen meets all specifications.
 
 
 $\ $
-### **Flipper:**
+### **Pusher:**
 
 Force needed to push the pedestal on rubber:
 
 $F_{fped}= 0.2322 \ N$
 
-The flipper must apply more force than this in order to push the pedestal into the funnel.
+The pusher must apply more force than this in order to push the pedestal into the funnel.
 
-$r = 2\ in =0.0508 \ m$
+The actuator will be 
 
-$\tau = rFsin(\theta)$
-
-$\tau_{max} = (0.0508)(0.2322)(sin(\pi)) = 0.0118 \ Nm = 1.202\  kgmm$
-
-
-
-$f_{items} = \frac{1 \ item}{5 \ second}$
-
-$s_{belt}=\frac{2\ in}{second}$
-
-Time required to hit pedestal and return to resting position:
-
-$t \le 250 \ ms $
-
-$speed \ge \frac{180\degree}{250\ ms} $
-
-The HS-10 servo motor from ServoCity has a speed of $\frac{0.104\degree}{1\ \mu s} = \frac{180\degree}{1.73\ ms}$
-
-Therefore, the servo chosen meets all above requirements.
+The actuator chosen has a force rating of 19.2 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $1.97 \  \frac{in}{s} $. These meet the constraints mentioned above.
 
 
 
