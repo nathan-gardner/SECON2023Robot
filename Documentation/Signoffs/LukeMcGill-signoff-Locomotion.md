@@ -12,7 +12,7 @@
 - Motor torque required (0.0604 Nm per motor)
 
 ### Socioeconomic Consideration
-- Motor chosen will operate at $\approx$ 90% of it's maximum efficiency. This will help conserve power and reduce battery charging costs.
+- Motor chosen will operate at $\approx$ 70% of it's maximum efficiency. This will help conserve power and reduce battery charging costs.
 
 ## Buildable Schematics
 
@@ -34,7 +34,7 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_whole_view.png)
 
-Each motor will have a motor mount. The mount will attach to the motor by two screws. The motor and mount assembly will attach to the chasis by four screws. Please note that the chasis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
+Each motor will have a motor mount. The mount will attach to the motor by two screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
 
 The CAD model for the motor and wheel assembly can be found here:
 https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem
@@ -43,7 +43,7 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 ## Analysis
 ### Acceleration
 
-In order to traverse the entire playing field within the three minute time limit, the robot needs to move no slower than 0.0677 m\s. However, to allow for two minutes to complete the other tasks, the fastest velocity needed will be 0.2023 m/s.
+In order to traverse the entire playing field within the three minute time limit, the robot needs to move no slower than 0.0677 m\s. However, to allow for two minutes to complete the other tasks, the fastest velocity needed will be 0.2023 m/s. This would be the worst case scenario.
 
 $v = 0.2023\ m/s$ 
 
@@ -102,18 +102,20 @@ $1.0588 * 0.2023 = F - (0.95 * 10.3762)$
 
 $F = 10.07\ N$
 
+$\ $
+
 ### Torque
 $r = 0.024\ m$
 
-$\tau_{Total} = rFsin(\theta)$
+$\tau_{total} = rFsin(\theta)$
 
-$\tau_{Total} = 0.024 * 10.07*sin(90^\degree)$
+$\tau_{total} = 0.024 * 10.07*sin(90^\degree)$
 
-$\tau_{Total} = 0.2417\ Nm$
+$\tau_{total} = 0.2417\ Nm$
 
-$\tau_{Motor} = \tau_{Total} / 4 $
+$\tau_{motor} = \tau_{total} / 4 $
 
-$\tau_{Motor} = 0.0604 \ Nm$
+$\tau_{motor} = 0.0604 \ Nm$
 
 $0.0604\ Nm = 6.149\ kgmm$
 
@@ -121,7 +123,7 @@ $\ $
 
 ![image](https://user-images.githubusercontent.com/112428353/203174595-19bb7e9c-7a0c-4a4a-93ec-1e5f7feb3a6f.png)
 
-The chosen motor is the Pololu #4865. It is a 12 V medium power motor. The required motor torque is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 90% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
+The chosen motor is the Pololu #4865. It is a 12 V medium power motor. The required motor torque is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 70% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2 A which is more than enough for this motor.
 
 ## BOM
 | Name of Item   | Description                                                                                 | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
