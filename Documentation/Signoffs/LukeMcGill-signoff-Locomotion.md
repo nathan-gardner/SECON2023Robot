@@ -34,6 +34,8 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_whole_view.png)
 
+Each motor will have a motor mount. The mount will attach to the motor by two screws. The motor and mount assembly will attach to the chasis by four screws. Please note that the chasis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
+
 The CAD model for the motor and wheel assembly can be found here:
 https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem
 
@@ -41,7 +43,7 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 ## Analysis
 ### Acceleration
 
-In order to traverse the entire playing field within the three minute time limit, the robot needs to move no slower than 0.0677 m\s. Howver, to allow for two minutes to complete the other tasks, the fastest velocity needed will be 0.2023 m/s.
+In order to traverse the entire playing field within the three minute time limit, the robot needs to move no slower than 0.0677 m\s. However, to allow for two minutes to complete the other tasks, the fastest velocity needed will be 0.2023 m/s.
 
 $v = 0.2023\ m/s$ 
 
