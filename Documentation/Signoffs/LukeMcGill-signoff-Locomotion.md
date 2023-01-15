@@ -4,7 +4,7 @@
 
 - Ensure that the predetermined path can be traversed in the allotted time of three minutes
 
-- The top level controller communicates with the low level controller through USB. The low controller will then send a PWM signal to the motor driver that will control the motor's speed. The low level controller will also send a digital signal to the motor driver that will control the direction of the motor.
+- The top level controller communicates with the low level controller through USB. The low level controller will then send a PWM signal to the motor driver, which will control the motor's speed. The low level controller will also send a digital signal to the motor driver that will control the direction of the motor.
 
 ## Constraints
 - Weight of the robot ( $\approx$ 10.376 kg)
