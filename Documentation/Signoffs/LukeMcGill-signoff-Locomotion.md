@@ -30,9 +30,9 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotio
 ### Locomotion Assembly
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_top_view.jpg)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_top_view.png)
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_whole_view.jpg)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_whole_view.png)
 
 The CAD model for the motor and wheel assembly can be found here:
 https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem
