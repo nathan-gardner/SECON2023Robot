@@ -33,8 +33,29 @@ In summary, these constraints are as follows:
 
 ## Electronic Schematic
 
+
+
 ## Analysis
+
+The top-level controller will need to be analyzed in terms of the constraints: speed, size, and GPIO. 
+
 
 ## Software Analysis - Processing Capabilities and Possible/Probable Software Analysis
 
+
+
 ## BOM
+
+NVIDIA Jetson Nano Developer Kit - $149.99
+
+Notes:
+
+ROS key concepts
+
+topics - Communication bus/ datatype that is used to communicate across the robot what is seen in the environment. Best for instantaneous message requirements.
+nodes - Main computation object in ROS. Node represent and atomic action, like reading a sensor or actuating motors. 
+parameters - 
+
+services - 
+action -
+
