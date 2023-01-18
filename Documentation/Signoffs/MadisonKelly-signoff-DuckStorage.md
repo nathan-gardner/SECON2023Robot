@@ -2,35 +2,33 @@
 
 ## Function of the Subsystem
 
-Throughout each round of the competition, the robot will need to intake up to 17 items, 10 of which are ducks, via the consumption subsystem. These ducks that are collected will need to be sorted and stored until they are dropped off at their proper location on the playing board. The storage subsystem’s main function is to take in the ducks from the sorting subsystem, store them in their respective location, and drop them off at their proper location on the playing board. The ducks will be held in a corral connected to the back of the robot. When the predetermined path is completed, the robot will go to the duck pond and eject the corral via a rack and pinion mechanism.
+Throughout each round of the competition, the robot will need to intake up to 17 items, 10 of which are ducks, via the consumption subsystem. These ducks that are collected will need to be sorted and stored until they are dropped off at their proper location on the playing board. The storage subsystem’s main function is to take in the ducks from the sorting subsystem, store them in their respective location, and drop them off at their proper location on the playing board. The ducks will be held in a corral connected to the back of the robot. When the predetermined path is completed, the robot will go to the duck pond and eject the corral via a drawer slide and electromagnetic solenoid mechanism.
 
 ### Function:
 
 - Store the ducks in a bottomless corral that drags behind the robot
 - Have a locking mechanism that will ensure the corral is not lost when being dragged behind the robot
-- Drop the ducks and corral off in the duck pond via a rack and pinion mechanism
+- Drop the ducks and corral off in the duck pond via a drawer and electromagnetic solenoid mechanism
 - Worst case scenario of all ten ducks at a time is analyzed below
 
 
 ## Constraints
 
-The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the team plans to have the ducks held in an outside corral. The corral, as previously mentioned, will surround part of the robot before the competition, and then as soon as the robot starts its path, it will extend from the back of the robot via a rack and pinion mechanism. The ducks are approximately 3 inches x 3 inches x 3.5 inches, so the corral will need to be a sufficient size to hold all ten ducks. They ducks can sit on top of each other, so the corral shown in the buildable schematic will be sufficient to hold all ten ducks.
+The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the team plans to have the ducks held in a corral that is outside of the robot. The corral, as previously mentioned, will surround part of the robot before the competition, and then as soon as the robot starts its path, it will extend from the back of the robot via a drawer-like mechanism. The drawer slides will be mounted on an angle so gravity will work on the corral causing it to roll back when the locks are not in place. There will be two sets of solenoid locks on the drawer slides in order to prevent the corral from rolling back and off of the robot before it reaches its final destination. The ducks are approximately 3 inches x 3 inches x 3.5 inches, so the corral will need to be a sufficient size to hold all ten ducks. The ducks can sit on top of each other, so the corral shown in the buildable schematic will be sufficient to hold all ten ducks.
 
-The corral will roll behind the robot for the entirety for the competition until the robot reaches its final destination at the duck pond. Once the robot reaches the duck pond, it will drop the corral off with all of the ducks inside and leave them behind by spinning the gear from the rack and pinion which will eject the corral and ducks. The corral will be bottomless so the ducks can be counted as touching the duck pond when they are dropped off. This will save much needed space within the robot and save time when depositing the ducks at their duck pond location.
+The corral will roll behind the robot for the entirety for the competition until the robot reaches its final destination at the duck pond. Once the robot reaches the duck pond, it will drop the corral off with all of the ducks inside and leave them behind by dropping the "locks" within the drawer slides which will eject the corral and ducks. The corral will be bottomless so the ducks can be counted as touching the duck pond when they are dropped off. This will save much needed space within the robot and save time when depositing the ducks at their duck pond location.
 
-The gear on the rack and pinion will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add a linear solenoid actuator to extend and "lock" the rack in place to discourage any motion.
+The duck trailer will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add four lock-style solenoids and lock the trailer in place to stop any unwanted motion.
 
 The trailer for the ducks should be large enough to ensure all ten ducks fit within the area of the trailer. The approximate area of a duck is 3'x 3'x 3.5', so the trailer must be at least 315 cubic inches. 
 
 The duck trailer should be bottomless so that at the end of each competition round when the ducks are delivered to the duck pond, the ducks will touch the surface of the pond and not just the bottom of the trailer. This constraint ensures that we will get the points rewarded for delivering all ducks present in the trailer to the duck pond. 
 
-Next, the omni-wheel on the back of the trailer should be attached such that the gap between the bottom of the back wall of the trailer and the playing field is not large enough that a duck or part of a duck could get jammed in the space and cause extra resistance on the robot's locomotion subsystem. To ensure that this is not an issue, the wheel will be adjustable so that the team can change the placement of the wheel to allow as much or as little of a gap as possible.
+Next, the omni-wheel on the back of the trailer should be attached such that the gap between the bottom of the back wall of the trailer and the playing field is not large enough that a duck or part of a duck could get jammed in the space and cause extra resistance on the robot's locomotion subsystem. To ensure that this is not an issue, the wheel will be adjustable so that the team can change the placement of the wheel to allow as much or as little of a gap as possible. The omni-wheel will also allow the trailer to follow any motion that the main body of the robot performs.
 
-The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + 1.04 kg (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
+This system is also constrained by the path that the robot must take to get to each destination. Throughout the course of the competition, the robot will have to navigate tight corners and travel in every and all directions. To mitigate this constraint, the trailer will have an omni-wheel on the back as well as have two connection points to the robot. This will allow the trailer to closely follow the robot and move in any direction it needs. Also, the size and shape of the trailer will be such that it can minimize its affect on the navigation system.
 
-This motor will need to be controlled in order to determine how many rotations the motor needs to make to extend the corral for duck drop off. The use of a continuous rotation servo motor will help ensure that the rotations are performed accurately. The angle that the servo motors need to rotate will need to be precisely measured so that the corral is not lost in the initial roll back. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be traveled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;. 
-
-The final constraint come from the ethical consideration of a pinching hazard near the rack and pinion system. We will design the rack and pinion so that the gear is not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the gear for the rack and pinion system.
+The final constraint come from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the system.
 
 ## Electrical Schematic
 
@@ -38,27 +36,22 @@ The electrical schematic for the object storage subsystem is shown below.
 
 ![Schematic](https://user-images.githubusercontent.com/112424739/205463019-8c94ddb5-c460-4f63-b9dd-ea77fe6c233b.PNG)
 
+![solenoid_driver_CircuitSchematic](https://user-images.githubusercontent.com/112424739/213058171-ef56f114-a1b0-4ffe-9fc8-b8976627a40b.jpg)
+
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/Electrical/Schematics/Sources/ElectricalSchematicforStorage).
 
 ## Analysis
 
-### Torque Ratio Calculations
+### Lock-Style Solenoid Analysis
 
-To find the Torque needed for the Servo Motor for the Rack and Pinion the following calculations were completed. Using 90&deg; as a worst case scenario.
+The lock is normally active, so it will not require power while in the locked state. It is designed for a 1-10 second activation time.
 
-$Total\ Mass = m_{ducks} + m_{trailer} = 0.708 + 1.04 = 1.748$
+Assuming the wheel on the drawer slide will need to move 1 inch and the slides are installed at a $20 &deg;,$
 
-$F = m \ast 9.81 \ast 0.76 = 1.748 \ast 9.81 \ast 0.76 = 13.03 N$
+Trailer Acceleration $= g \ast sin(\theta) = 386.09 \ast sin(20) = 132.05 \frac{in}{sec^{2}}$
 
-$\tau = F \ast r \ast sin(\theta) = 13.03 \ast 0.0127 \ast sin(90) = 1.65 N \ast m$
+Since the lock can remain open for up to 10 seconds, this will be more than adequate for allowing the trailer to roll past when necessary.
 
-$\tau = 1.65 N \ast m = 16.83 kg \ast cm$
-
-Assuming a worst case velocity of spinning out the entire corral in 4 seconds, the velocity would need to be $2.5 \frac{in}{sec}$
-
-$\omega = \frac{v}{r} = \frac{2.5}{05} = 5 \frac{rad}{sec} = 47.75 rpm$
-
-We know that the servo motor that was selected can supply this amount of rpm, so it should be able to spin the corral out at the speed necessary.
 
 ### Size Calculations for Duck Corral
 
@@ -70,23 +63,7 @@ $Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
   
 Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
   
-### Rotation Calculation for Corral 
 
-#### Initial Roll Back
-
-$C = \pi \ast d = \pi \ast 1$
-
-$Rotations = \frac{ distance }{ C } = \frac{ 9 }{ 1 } = 9$
-
-$Degrees = rotations \ast 360 = 9 \ast 360 = 3240 &deg;$
-
-#### Final Delivery
-
-$C = \pi \ast d = \pi \ast 1$
-
-$Rotations = \frac{ distance }{ C } = \frac{ 1 }{ 1 }$
-
-$Degrees = rotations \ast 360 = 1 \ast 360 = 360 &deg;$
 
 ## Buildable Schematic
 
