@@ -61,7 +61,7 @@ Conveyor length $L = 7in$ (Chosen)
 
 $C$ is the center to center distance $C = 7 - 2(0.5) = 6\ in$ of the drive pulley $D$ (chosen to be 1 in)
 
-Belt Length ($l$)
+Belt Length ( $ l $ )
 
 $l = D\pi + 2C = 1\pi +2(6) = 15.1416\ in$
 
@@ -163,8 +163,6 @@ Force needed to push the pedestal on rubber:
 $F_{fped}= 0.2322 \ N$
 
 The pusher must apply more force than this in order to push the pedestal into the funnel.
-
-The actuator will be 
 
 The actuator chosen has a force rating of 19.2 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $1.97 \  \frac{in}{s} $. These meet the constraints mentioned above.
 
