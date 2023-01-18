@@ -34,9 +34,7 @@ The final constraint come from the ethical consideration of a pinching hazard ne
 
 The electrical schematic for the object storage subsystem is shown below.
 
-![Schematic](https://user-images.githubusercontent.com/112424739/205463019-8c94ddb5-c460-4f63-b9dd-ea77fe6c233b.PNG)
-
-![solenoid_driver_CircuitSchematic](https://user-images.githubusercontent.com/112424739/213058171-ef56f114-a1b0-4ffe-9fc8-b8976627a40b.jpg)
+![image](https://user-images.githubusercontent.com/112424739/213255596-c33bc34b-75c8-4e97-854c-119196ea2d17.png)
 
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/Electrical/Schematics/Sources/ElectricalSchematicforStorage).
 
