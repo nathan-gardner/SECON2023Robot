@@ -21,7 +21,15 @@ Another constraint that needs to be considered for this subsystem is the silo pl
 
 ## Electrical Schematic
 
+
 ## Buildable Schematic
+
+![image](https://user-images.githubusercontent.com/112424739/213576212-9a67606e-6bfd-4f47-9b77-9e765276380f.png)
+
+![image](https://user-images.githubusercontent.com/112424739/213576274-2bf06847-a65c-4937-8941-d07af3cfdbbf.png)
+
+![image](https://user-images.githubusercontent.com/112424739/213576352-f804ddae-cf98-4ab0-96b0-ac3213059855.png)
+
 
 ## Analysis
 ### Size Calculations for Pedestal Silo
