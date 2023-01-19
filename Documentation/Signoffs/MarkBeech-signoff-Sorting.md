@@ -166,6 +166,9 @@ The pusher must apply more force than this in order to push the pedestal into th
 
 The actuator chosen has a force rating of 19.2 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $1.97 \  \frac{in}{s} $. These meet the constraints mentioned above.
 
+Edit this part: 
+The pusher has a period to start and end pushing the desired object. The pusher senses the desired object to start pushing using color sensor and Arduino. After the pusher senses the desired object the pusher going to up with a force (0.2332 N) to push the desired object. The maximum speed is 3.3 in/s and the full length is 2 in.
+
 
 
 $\ $
