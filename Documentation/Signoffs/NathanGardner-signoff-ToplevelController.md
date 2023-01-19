@@ -22,7 +22,7 @@ Devices, namely the two low level controllers, will host nodes that are dedicate
 
 ## Constraints
 
-The top-level controller must have two USB type A ports that will be used to connect the the two low-level controllers. THe controller must also communicate with the vision sensor network and retrieve data, process that data, and send commands to actuators around the robot, which will perform actions in the arena.
+The top-level controller must have two USB type A ports that will be used to connect the two low-level controllers. The controller must also communicate with the vision sensor network and retrieve data, process that data, and send commands to actuators around the robot, which will perform actions in the arena.
 
 The controller has a size constraint as does the robot. The top-level controller cannot get too hot and require a large fan to cool, because of the power and space constraints. 
 
