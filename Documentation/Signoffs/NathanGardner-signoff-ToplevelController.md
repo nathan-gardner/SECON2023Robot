@@ -24,7 +24,7 @@ Devices, namely the two low level controllers, will host nodes that are dedicate
 
 The top-level controller must have two USB type A ports that will be used to connect the two low-level controllers. The controller must also communicate with the vision sensor network and retrieve data, process that data, and send commands to actuators around the robot, which will perform actions in the arena.
 
-The controller has a size constraint as does the robot. The top-level controller cannot get too hot and require a large fan to cool, because of the power and space constraints. 
+The controller has a size constraint as does the robot. The top-level controller cannot get too hot and cannot require a large fan to cool, because of the power and space constraints. 
 
 In summary, these constraints are as follows:
 - Power
@@ -38,7 +38,7 @@ In summary, these constraints are as follows:
 
 ## Analysis
 
-The top-level controller will need to be analyzed in terms of the constraints: speed, size, and GPIO. 
+The top-level controller will need to be analyzed in terms of the constraints: power, size, and GPIO. 
 
 The actual power consumption of a fully equipped Nano running at maximum clock speed sits between 15 - 25 Watts. To power the Nano along with the necessary peripherals through the Micro USB or USB C port, using a 5V adapter that can output 2.5 Amps or higher. If the team uses a 5V DC barrel jack adapter, the outputs must be at least 4 Amps.
 
