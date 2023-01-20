@@ -77,12 +77,13 @@ You can find the 3D models for all Components ![here](https://github.com/nathan-
 
 ## BOM
 
-| Solenoid Mount       | Print                                                                                         | Duck Storage | N/A          | N/A              | 1  | 0          | 0      |
-|----------------------|-----------------------------------------------------------------------------------------------|--------------|--------------|------------------|----|------------|--------|
-| Corner Bracket       | Print                                                                                         | Duck Storage | N/A          | N/A              | 4  | 0          | 0      |
-| Steel Ball Transfer  | Steel Ball Transfer(21 mm Height)                                                             | Duck Storage | 1619-001-001 | Servo City       | 1  | 2.99       | 2.99   |
-| Lock-Style Solenoids | 12 V-DC                                                                                       | Duck Storage | 1512         | Adafruit         | 4  | 14.95      | 59.8   |
-| Aluminum Sheet       | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12'' | Duck Storage | 6061         | McMaster Carr    | 3  | 24.28      | 72.84  |
-| Total                |                                                                                               |              |              | Total Components | 13 | Total Cost | 135.63 |
+| Name of Item         | Description                                                                                   | Used in which subsystem(s) | Part Number  | Manufacturer     | Quantity | Price      | Total  |
+|----------------------|-----------------------------------------------------------------------------------------------|----------------------------|--------------|------------------|----------|------------|--------|
+| Solenoid Mount       | Print                                                                                         | Duck Storage               | N/A          | N/A              | 1        | 0          | 0      |
+| Corner Bracket       | Print                                                                                         | Duck Storage               | N/A          | N/A              | 4        | 0          | 0      |
+| Steel Ball Transfer  | Steel Ball Transfer(21 mm Height)                                                             | Duck Storage               | 1619-001-001 | Servo City       | 1        | 2.99       | 2.99   |
+| Lock-Style Solenoids | 12 V-DC                                                                                       | Duck Storage               | 1512         | Adafruit         | 4        | 14.95      | 59.8   |
+| Aluminum Sheet       | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12'' | Duck Storage               | 6061         | McMaster Carr    | 3        | 24.28      | 72.84  |
+| Total                |                                                                                               |                            |              | Total Components | 13       | Total Cost | 135.63 |
 
 
