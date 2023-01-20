@@ -75,7 +75,7 @@ If ROS is able to be established, it has a large amount of community support and
 
 | Name of Item                              | Description                                  | Used in which subsystem(s) | Part Number        | Manufacturer     | Quantity | Price      | Total  |
 |-------------------------------------------|----------------------------------------------|----------------------------|--------------------|------------------|----------|------------|--------|
-| Nvidia Jetson Nano                        | Top level controller                         | Top-level controller       | 945-13450-0000-100 | Nvidia           | 1        | 149.99     | 149.99 |
+| Nvidia Jetson Nano Developer Kit                       | Top level controller                         | Top-level controller       | 945-13450-0000-100 | Nvidia           | 1        | 149.99     | 149.99 |
 | 16 GB or larger UHS-1 microSD card        | Storage device with the Jetson Nano (256 GB) | Top-level controller       | LMSESXX256G-BNAEU  | Lexar            | 1        | 24.99      | 24.99  |
 | 5V DC barrel jack power input cable       | Standard barrel jack connector               | Top-level controller       | B07JGR7JJQ         | SIOCEN           | 1        | 9.99       | 9.99   |
 | iClever DK03 Bluetooth Keyboard and Mouse | USB connection with a bluetooth chip         | Top-level controller       | B08KZXLTM6         | iClever          | 1        | 39.99      | 39.99  |
