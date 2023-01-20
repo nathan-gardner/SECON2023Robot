@@ -1,16 +1,16 @@
 # Top-level Controller Subsystem Signoff
 
-The top-level controller for the robot is the controller that is used as the top level for the ROS network on the robot. All other controllers besides the top level will be Arduino or some other microcontroller, and not have a dedicated full operating system.
+The top-level controller for the robot is the controller that is used as the master for the ROS network on the robot. All other controllers besides the top-level will be Arduino or some other microcontroller, and not have a dedicated full operating system.
 
 ## Brief overview of the controller network as a whole
 
-The top level controller will be connected via USB to the two low-level controllers, which will be both Arduino Mega 2560. These two controllers where designed in a previous signoff, one of which is dedicated to locomotion, feeding, fireworks, and consumption. The other low level controller is responsible for sorting and storage of the objects around the arena. 
+The top-level controller will be connected via USB to the two low-level controllers, which will both be an Arduino Mega 2560. These two controllers where designed in a previous signoff, one of which is dedicated to locomotion, feeding, fireworks, and consumption. The other low level controller is responsible for sorting and storage of the objects around the arena. 
 
-The first low-level controller will have two peripheral Arduino Nano for flipping the switch for the fireworks and the other for spinning the wheel up to place the food chips in the correct feeding area. 
+The first low-level controller will have two peripheral Arduino Nano for flipping the switch for the fireworks and the other for controller the actuator that will place the food chips in the correct feeding area. 
 
 It will also send the control signals to the motors for the arena locomotion system. It will send PWM signals to the motor drivers to the control its position in the arena. 
 
-The second microcontroller will be used for the sorting and storage subsystem for the pedestals and ducks for the competition. This will include reading a color sensor for which will in turn actuate a solenoid that will push pedestals off the conveyor and will allow the ducks to pass, and read a proximity sensor which will initiate a sequence that will drop off a stack of pedestals, a statue, onto the playing field. 
+The second microcontroller will be used for the sorting and storage subsystem for the pedestals and ducks for the competition. This will include reading a color sensor for which will in turn actuate a linear actuator that will push pedestals off the conveyor and will allow the ducks to pass, and read a proximity sensor which will initiate a sequence that will drop off a stack of pedestals, a statue, onto the playing field. 
 
 ## Function of the Top-level Controller Subsystem
 
@@ -75,7 +75,7 @@ If ROS is able to be established, it has a large amount of community support and
 
 | Name of Item                              | Description                                  | Used in which subsystem(s) | Part Number        | Manufacturer     | Quantity | Price      | Total  |
 |-------------------------------------------|----------------------------------------------|----------------------------|--------------------|------------------|----------|------------|--------|
-| Nvidia Jetson Nano Developer Kit                       | Top level controller                         | Top-level controller       | 945-13450-0000-100 | Nvidia           | 1        | 149.99     | 149.99 |
+| Nvidia Jetson Nano Developer Kit                       | Top-level controller                         | Top-level controller       | 945-13450-0000-100 | Nvidia           | 1        | 149.99     | 149.99 |
 | 16 GB or larger UHS-1 microSD card        | Storage device with the Jetson Nano (256 GB) | Top-level controller       | LMSESXX256G-BNAEU  | Lexar            | 1        | 24.99      | 24.99  |
 | 5V DC barrel jack power input cable       | Standard barrel jack connector               | Top-level controller       | B07JGR7JJQ         | SIOCEN           | 1        | 9.99       | 9.99   |
 | iClever DK03 Bluetooth Keyboard and Mouse | USB connection with a bluetooth chip         | Top-level controller       | B08KZXLTM6         | iClever          | 1        | 39.99      | 39.99  |
