@@ -1,6 +1,6 @@
 # **Sorting Subsystem**
 ## **Function of The Subsystem** 
-- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper.
+- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and pusher.
 - Actively sort pedestals while passively sorting ducks. 
 - Objects will be passed from the consumption subsystem to the sorting subsystem. The sorting subsystem will then send the ducks to the duck storage and delivery subsystem while sending the pedestals to the pedestal storage and delivery subsystem.
 - The motor driver for the DC motor will be controlled via the low-level controller subsystem.
@@ -9,7 +9,7 @@
 
 ## **Constraints**
 ### **Size:**
-- The sorting subsystem must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot. The consumption subsystem takes up $5 \ in$ of depth, so the sorting subsystem must be no longer than $7 \ in$ deep. The sorting subsystem must be at the top of the robot due to the consumption susbsytem feeding objects out to the top of the robot. There must be sufficient space for a pedestal silo and funnel under the sorting subsystem. The silo will hold three pedestals, which are $2 \ in$ each, thus making the silo $6 \ in$ tall. The funnel has been designed to be $2.75 \ in$ tall, thus making the funnel and silo $8.75 \ in$ tall. The conveyor will be above the funnel with a height of $1 \ in$. The color sensor board is approximately $0.8 \ in$ tall. The flipper will be no greater than $2 \ in$ tall. This makes the total height of the sorting subsystem $11.75 \ in$. This number was found by adding the height of the funnel and silo with the height of the conveyor and maximum height of the flipper.
+- The sorting subsystem must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot. The consumption subsystem takes up $5 \ in$ of depth, so the sorting subsystem must be no longer than $7 \ in$ deep. The sorting subsystem must be at the top of the robot due to the consumption susbsytem feeding objects out to the top of the robot. There must be sufficient space for a pedestal silo and funnel under the sorting subsystem. The silo will hold three pedestals, which are $2 \ in$ each, thus making the silo $6 \ in$ tall. The funnel has been designed to be $2.75 \ in$ tall, thus making the funnel and silo $8.75 \ in$ tall. The conveyor will be above the funnel with a height of $1 \ in$. The color sensor board is approximately $0.8 \ in$ tall. The pusher will be no greater than $2 \ in$ tall. This makes the total height of the sorting subsystem $11.75 \ in$. This number was found by adding the height of the funnel and silo with the height of the conveyor and maximum height of the pusher.
 ### **Conveyor:**
 - The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
 - The conveyor belt must effectively move ducks and pedestals at $2\ in/s$ and support the weight of at least three ducks ( $F_{ducks} = 2.08152\  N$ ).
@@ -19,7 +19,7 @@
 - The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
  - The linear actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
 ### **Sensor:**
-- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
+- Color sensor and pusher must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the pusher. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
 - Color sensor must work well with the Arduino architecture.
 ### **Socioeconomic:**
