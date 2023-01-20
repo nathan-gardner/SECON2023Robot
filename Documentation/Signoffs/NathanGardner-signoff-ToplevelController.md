@@ -33,7 +33,7 @@ In summary, these constraints are as follows:
 
 ## Electrical Schematic
 
-![image](https://user-images.githubusercontent.com/112424739/213816262-390fab31-4a3b-446d-b25d-0fb628c24728.png)
+![image](https://user-images.githubusercontent.com/112424739/213819382-0b3b04ac-6564-4466-a17c-074a57101b0d.png)
 
 ## Analysis
 
