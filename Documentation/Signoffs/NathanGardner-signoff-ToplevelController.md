@@ -46,16 +46,10 @@ The top-level controller will need to be analyzed in terms of the constraints: s
 
 ## BOM
 
-NVIDIA Jetson Nano Developer Kit - $149.99
-
-Notes:
-
-ROS key concepts
-
-topics - Communication bus/ datatype that is used to communicate across the robot what is seen in the environment. Best for instantaneous message requirements.
-nodes - Main computation object in ROS. Node represent and atomic action, like reading a sensor or actuating motors. 
-parameters - 
-
-services - 
-action -
-
+| Name of Item                              | Description                                  | Used in which subsystem(s) | Part Number        | Manufacturer     | Quantity | Price      | Total  |
+|-------------------------------------------|----------------------------------------------|----------------------------|--------------------|------------------|----------|------------|--------|
+| Nvidia Jetson Nano                        | Top level controller                         | Top-level controller       | 945-13450-0000-100 | Nvidia           | 1        | 149.99     | 149.99 |
+| 16 GB or larger UHS-1 microSD card        | Storage device with the Jetson Nano (256 GB) | Top-level controller       | LMSESXX256G-BNAEU  | Lexar            | 1        | 24.99      | 24.99  |
+| 5V DC barrel jack power input cable       | Standard barrel jack connector               | Top-level controller       | B07JGR7JJQ         | SIOCEN           | 1        | 9.99       | 9.99   |
+| iClever DK03 Bluetooth Keyboard and Mouse | USB connection with a bluetooth chip         | Top-level controller       | B08KZXLTM6         | iClever          | 1        | 39.99      | 39.99  |
+| Total                                     |                                              |                            |                    | Total Components | 4        | Total Cost | 224.96 |
