@@ -214,9 +214,9 @@ Clock Frequency: $\ \ 0-400kHz$
 
 Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
 
-Minimum flipper distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
+Minimum pusher distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
 
-Flipper distance will be $1.5\ in$ for simplicity.
+Pusher distance will be $1.5\ in$ for simplicity.
 
 
 
