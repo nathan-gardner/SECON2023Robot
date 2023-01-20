@@ -31,8 +31,9 @@ In summary, these constraints are as follows:
 - Size
 - GPIO
 
-## Electronic Schematic
+## Electrical Schematic
 
+![image](https://user-images.githubusercontent.com/112424739/213816262-390fab31-4a3b-446d-b25d-0fb628c24728.png)
 
 
 ## Analysis
