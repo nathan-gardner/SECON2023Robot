@@ -17,7 +17,7 @@
 ### **Pusher:**
 - The pusher must extend greater than $1.5 \ in$ in order to touch the pedestal. 
 - The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
- - Pusher must provide enough force to move the pedestals ( $F_{pusher} \gt F_{fped}= 0.2322 \ N$ ).
+ - The linear actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
 ### **Sensor:**
 - Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
@@ -157,17 +157,35 @@ Therefore, the motor chosen meets all specifications.
 
 $\ $
 ### **Pusher:**
+The pusher consists of a linear actuator that will be pushing a $ 2in $ x $ 2in $ x $ 2in $ block made of ABS printed plastic with a weight of $0.13503 \ kg$.
+
+
+weight of ABS $ 1.03 \frac{g}{cm^3} $
+
+ $ 2in $ x $ 2in $ x $ 2in $ = $ 8 \ in^3 $ = $ 131.097 \ cm^3$
+
+ $W_{block} = (1.03 \frac{g}{cm^3})(131.097 \ cm^3) = 135.03 \ g = 0.13503 \ kg$
+
+$ (0.13503 \ kg)(9.81) = 1.325 N$
+
+Force needed to push block attached to linear actuator:
+
+$F_{fblock}= 1.325 \ N$
+
 
 Force needed to push the pedestal on rubber:
 
 $F_{fped}= 0.2322 \ N$
 
+Total force needed to be applied by the linear actuator:
+
+$F_{fpusher}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
+
 The pusher must apply more force than this in order to push the pedestal into the funnel.
 
-The actuator chosen has a force rating of 19.2 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $1.97 \  \frac{in}{s} $. These meet the constraints mentioned above.
+The actuator chosen has a force rating of 19.2 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $3.3 \  \frac{in}{s} $. These meet the constraints mentioned above.
 
-Edit this part: 
-The pusher has a period to start and end pushing the desired object. The pusher senses the desired object to start pushing using color sensor and Arduino. After the pusher senses the desired object the pusher going to up with a force (0.2332 N) to push the desired object. The maximum speed is 3.3 in/s and the full length is 2 in.
+
 
 
 
