@@ -45,12 +45,23 @@ The size of Nvidia Jetson Nano is 70 x 45 mm. The team compared this size to the
 
 The total number of GPIO pin headers is 40. The spreadsheet with the GPIO breakdown is below: 
 
-| Nvidia Jetson Nano | Count |
-|--------------------|-------|
-| USB 3              | 4     |
-| Ethernet           | 1     |
-| UART               | 2     |
-| SPI                | 2     |
+| Type                  | Count |
+|-----------------------|-------|
+| USB 3                 | 4     |
+| Ethernet              | 1     |
+| UART                  | 2     |
+| SPI                   | 2     |
+| HDMI Output Port      | 1     |
+| DisplayPort Connector | 1     |
+| I2C                   | 2     |
+| I2S                   | 1     |
+| PWM                   | 2     |
+| AUDIO_MCLK            | 1     |
+| LCD_TE                | 1     |
+| CAM_AF_EN             | 1     |
+| GPIO_PZO              | 1     |
+| GPIO_PE6              | 1     |
+| LCD_BL_PWM            | 1     |
 
 ## Software Analysis - Processing Capabilities and Possible/Probable Software Analysis
 
