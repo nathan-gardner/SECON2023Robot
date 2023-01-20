@@ -21,6 +21,8 @@ Another constraint that needs to be considered for this subsystem is the silo pl
 
 ## Electrical Schematic
 
+![image](https://user-images.githubusercontent.com/112424739/213763728-cefd6d52-0207-4277-8a8a-7375e14ff809.png)
+
 
 ## Buildable Schematic
 
