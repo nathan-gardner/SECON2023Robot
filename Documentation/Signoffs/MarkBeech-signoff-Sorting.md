@@ -61,7 +61,7 @@ Conveyor length $L = 7in$ (Chosen)
 
 $C$ is the center to center distance $C = 7 - 2(0.5) = 6\ in$ of the drive pulley $D$ (chosen to be 1 in)
 
-Belt Length ( $ l $ )
+Belt Length ( $l$ )
 
 $l = D\pi + 2C = 1\pi +2(6) = 15.1416\ in$
 
@@ -157,16 +157,16 @@ Therefore, the motor chosen meets all specifications.
 
 $\ $
 ### **Pusher:**
-The pusher consists of a linear actuator that will be pushing a $ 2in $ x $ 2in $ x $ 2in $ block made of ABS printed plastic with a weight of $0.13503 \ kg$.
+The pusher consists of a linear actuator that will be pushing a $2in$ x $2in$ x $2in$ block made of ABS printed plastic with a weight of $0.13503 \ kg$.
 
 
-weight of ABS $ 1.03 \frac{g}{cm^3} $
+weight of ABS $1.03 \frac{g}{cm^3}$
 
- $ 2in $ x $ 2in $ x $ 2in $ = $ 8 \ in^3 $ = $ 131.097 \ cm^3$
+ $2in$ x $2in$ x $2in$ = $8 \ in^3$ = $131.097 \ cm^3$
 
  $W_{block} = (1.03 \frac{g}{cm^3})(131.097 \ cm^3) = 135.03 \ g = 0.13503 \ kg$
 
-$ (0.13503 \ kg)(9.81) = 1.325 N$
+$(0.13503 \ kg)(9.81) = 1.325 N$
 
 Force needed to push block attached to linear actuator:
 
