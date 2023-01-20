@@ -6,8 +6,8 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 ### Function:
 
-- Store the ducks in a bottomless corral that drags behind the robot
-- Have a locking mechanism that will ensure the corral is not lost when being dragged behind the robot
+- Store the ducks in a bottomless corral that rolls behind the robot
+- Have a locking mechanism that will ensure the corral is not lost when being rolled behind the robot
 - Drop the ducks and corral off in the duck pond via a drawer and electromagnetic solenoid mechanism
 - Worst case scenario of all ten ducks at a time is analyzed below
 
