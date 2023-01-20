@@ -20,7 +20,7 @@ The corral will roll behind the robot for the entirety for the competition until
 
 The duck trailer will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add four lock-style solenoids and lock the trailer in place to stop any unwanted motion.
 
-The trailer for the ducks should be large enough to ensure all ten ducks fit within the area of the trailer. The approximate area of a duck is 3'x 3'x 3.5', so the trailer must be at least 315 cubic inches. 
+The trailer for the ducks should be large enough to ensure all ten ducks fit within the volume of the trailer. The approximate volume of a duck is 3'x 3'x 3.5', so the trailer must be at least 315 cubic inches. 
 
 The duck trailer should be bottomless so that at the end of each competition round when the ducks are delivered to the duck pond, the ducks will touch the surface of the pond and not just the bottom of the trailer. This constraint ensures that we will get the points rewarded for delivering all ducks present in the trailer to the duck pond. 
 
@@ -28,7 +28,7 @@ Next, the omni-wheel on the back of the trailer should be attached such that the
 
 This system is also constrained by the path that the robot must take to get to each destination. Throughout the course of the competition, the robot will have to navigate tight corners and travel in every and all directions. To mitigate this constraint, the trailer will have an omni-wheel on the back as well as have two connection points to the robot. This will allow the trailer to closely follow the robot and move in any direction it needs. Also, the size and shape of the trailer will be such that it can minimize its affect on the navigation system.
 
-The final constraint come from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the system.
+The final constraint comes from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the system.
 
 ## Electrical Schematic
 
