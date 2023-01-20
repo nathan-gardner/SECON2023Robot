@@ -77,17 +77,12 @@ You can find the 3D models for all Components ![here](https://github.com/nathan-
 
 ## BOM
 
-| Name of Item           | Description                                                                                   | Used in which subsystem(s) | Part Number    | Manufacturer     | Quantity | Price      | Total  |
-|------------------------|-----------------------------------------------------------------------------------------------|----------------------------|----------------|------------------|----------|------------|--------|
-| Proximity Sensor       | Pololu Digital Sensor 5cm                                                                     | Object Storage             | 4050           | Pololu           | 2        | 12.95      | 25.9   |
-| Servo Motor            | 2000 Series Dual-Mode Servo (25-2, Torque)                                                    | Object Storage             | 2000-0025-0002 | Servo City       | 2        | 23.99      | 47.98  |
-| Servo Motor Controller | Micro Maestro 6-channel USB Servo Controller                                                  | Object Storage             | 1350           | Pololu           | 1        | 34.95      | 34.95  |
-| Silo                   | Silo to hold pedestals                                                                        | Object Storage             |                |                  | 1        | 0          | 0      |
-| Servo Mount            | Print                                                                                         | Object Storage             | N/A            | N/A              | 2        | 0          | 0      |
-| Corner Bracket         | Print                                                                                         | Object Storage             | N/A            | N/A              | 4        | 0          | 0      |
-| Rack                   | 14-1/2 Degree Pressure Angle Gear Rack, 32 Pitch (1ft) Nylon Plastic                          | Object Storage             | 57655K62       | McMaster Carr    | 2        | 8.94       | 17.88  |
-| Servo-Mounted Pinions  | 32P, 32 Tooth, 25T 3F Spline Servo Mount Gear (Acetyl)                                        | Object Storage             | RSA32-2FS-32   | Servo City       | 2        | 3.94       | 7.88   |
-| Steel Ball Transfer    | Steel Ball Transfer(21 mm Height)                                                             | Object Storage             | 1619-001-001   | Servo City       | 1        | 2.99       | 2.99   |
-| Aluminum Sheet         | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12'' | Object Storage             | 6061           | McMaster Carr    | 3        | 24.28      | 72.84  |
-| Total                  |                                                                                               |                            |                | Total Components | 20       | Total Cost | 210.42 |
+| Solenoid Mount       | Print                                                                                         | Duck Storage | N/A          | N/A              | 1  | 0          | 0      |
+|----------------------|-----------------------------------------------------------------------------------------------|--------------|--------------|------------------|----|------------|--------|
+| Corner Bracket       | Print                                                                                         | Duck Storage | N/A          | N/A              | 4  | 0          | 0      |
+| Steel Ball Transfer  | Steel Ball Transfer(21 mm Height)                                                             | Duck Storage | 1619-001-001 | Servo City       | 1  | 2.99       | 2.99   |
+| Lock-Style Solenoids | 12 V-DC                                                                                       | Duck Storage | 1512         | Adafruit         | 4  | 14.95      | 59.8   |
+| Aluminum Sheet       | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12'' | Duck Storage | 6061         | McMaster Carr    | 3  | 24.28      | 72.84  |
+| Total                |                                                                                               |              |              | Total Components | 13 | Total Cost | 135.63 |
+
 
