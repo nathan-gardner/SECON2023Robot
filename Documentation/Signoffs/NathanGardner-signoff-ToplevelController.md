@@ -35,14 +35,13 @@ In summary, these constraints are as follows:
 
 ![image](https://user-images.githubusercontent.com/112424739/213816262-390fab31-4a3b-446d-b25d-0fb628c24728.png)
 
-
 ## Analysis
 
 The top-level controller will need to be analyzed in terms of the constraints: power, size, and GPIO. 
 
 The actual power consumption of a fully equipped Nano running at maximum clock speed sits between 15 - 25 Watts. To power the Nano along with the necessary peripherals through the Micro USB or USB C port, using a 5V adapter that can output 2.5 Amps or higher. If the team uses a 5V DC barrel jack adapter, the outputs must be at least 4 Amps.
 
-The size of Nvidia Jetson Nano is 70 x 45 mm. The team compared this size to the Arduino Mega 2560, which is 53.3 x 101.52. This is a reasonable footprint and the Jetson Nano has mounting holes so that it can be mounted to the robot. 
+The size of Nvidia Jetson Nano Developer Kit 100 x 80 x 29 mm. The team compared this size to the Arduino Mega 2560, which is 53.3 x 101.52. This is a reasonable footprint and the Jetson Nano Dev Kit has mounting holes so that it can be mounted to the robot. 
 
 The total number of GPIO pin headers is 40. The spreadsheet with the GPIO breakdown is below: 
 
