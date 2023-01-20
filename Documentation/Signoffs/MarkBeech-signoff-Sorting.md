@@ -183,7 +183,7 @@ $F_{fpusher}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
 
 The pusher must apply more force than this in order to push the pedestal into the funnel.
 
-The actuator chosen has a force rating of 19.2 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $3.3 \  \frac{in}{s} $. These meet the constraints mentioned above.
+The actuator chosen has a force rating of about 20 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $2 \  \frac{in}{s} $. These meet the constraints mentioned above.
 
 
 
