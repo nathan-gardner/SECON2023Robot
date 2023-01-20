@@ -14,7 +14,7 @@ The second microcontroller will be used for the sorting and storage subsystem fo
 
 ## Function of the Top-level Controller Subsystem
 
-The top-level controller will serve as the master the the two aforementioned Arduino Mega controllers, and will serve as the hub for the vision subsystem of the robot. The vision subsystem, which will be a network of sensors, will interface with the top-level controller. The vision subsystem is yet to be designed for this project. 
+The top-level controller will serve as the master the two aforementioned Arduino Mega controllers, and will serve as the hub for the vision subsystem of the robot. The vision subsystem, which will be a network of sensors, will interface with the top-level controller. The vision subsystem is yet to be designed for this project. 
 
 The top-level controller will host the dedicated OS which is required to orchestrate robot operating system (ROS) connections by serving as the master and providing name registration and lookup for the computation graph. The top-level controller will also have a parameter server which is like a large C struct that will be updated by the nodes when values change in the system. 
 
