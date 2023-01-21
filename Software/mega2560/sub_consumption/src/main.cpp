@@ -15,28 +15,28 @@
 #include <Arduino.h>
 #include <ros.h>
 #include <std_msgs/Bool.h>
+#include <std_msgs/UInt8.h>
 
 #define PWM1 2
-#define consumptionMotorOn analogWrite(PWM1, 255)
 #define consumptionMotorOff analogWrite(PWM1, 0)
 
 // Prototypes
-void consumptionCallback(const std_msgs::Bool& msg);
+void consumptionCallback(const std_msgs::UInt8& msg);
 
 ros::NodeHandle nh;
-std_msgs::Bool b_stateConsumption;
+std_msgs::UInt8 u8_stateConsumption;
 
-ros::Publisher consumption_pub("stateConsumption", &b_stateConsumption);
-ros::Subscriber<std_msgs::Bool> consumption_sub("consumption_sub", &consumptionCallback);
+ros::Publisher consumption_pub("stateConsumption", &u8_stateConsumption);
+ros::Subscriber<std_msgs::UInt8> consumption_sub("consumption_sub", &consumptionCallback);
 
-void consumptionCallback(const std_msgs::Bool& msg){
-  if(msg.data == true){
-    b_stateConsumption.data = true;
-    consumptionMotorOn;
+void consumptionCallback(const std_msgs::UInt8& msg){
+  if(msg.data > 0){
+    u8_stateConsumption.data = msg.data;
+    analogWrite(PWM1, msg.data);
   }
   else{
-    b_stateConsumption.data = false;
-    consumptionMotorOff;
+    u8_stateConsumption.data = msg.data; // msg.data = 0
+    analogWrite(PWM1, msg.data);
   }
 }
 
@@ -49,13 +49,13 @@ void setup()
   nh.subscribe(consumption_sub);
 
   // initialize motor state to false and motor state to off
-  b_stateConsumption.data = false;
+  u8_stateConsumption.data = 0;
   consumptionMotorOff;
 }
 
 void loop()
 {
-  consumption_pub.publish( &b_stateConsumption );
+  consumption_pub.publish( &u8_stateConsumption );
   nh.spinOnce();
   delay(1000);
 }
