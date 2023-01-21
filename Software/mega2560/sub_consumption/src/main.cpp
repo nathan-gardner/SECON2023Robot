@@ -14,7 +14,6 @@
 
 #include <Arduino.h>
 #include <ros.h>
-#include <std_msgs/Bool.h>
 #include <std_msgs/UInt8.h>
 
 #define PWM1 2
@@ -30,14 +29,9 @@ ros::Publisher consumption_pub("stateConsumption", &u8_stateConsumption);
 ros::Subscriber<std_msgs::UInt8> consumption_sub("consumption_sub", &consumptionCallback);
 
 void consumptionCallback(const std_msgs::UInt8& msg){
-  if(msg.data > 0){
-    u8_stateConsumption.data = msg.data;
-    analogWrite(PWM1, msg.data);
-  }
-  else{
-    u8_stateConsumption.data = msg.data; // msg.data = 0
-    analogWrite(PWM1, msg.data);
-  }
+  // update motor state and analog pin
+  u8_stateConsumption.data = msg.data;
+  analogWrite(PWM1, msg.data);
 }
 
 void setup()
