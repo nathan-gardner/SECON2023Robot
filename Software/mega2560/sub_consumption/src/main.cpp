@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  * @author Nathan Gardner
- * @brief ROS node P/S to /consumption/motorState for motor remote control
+ * @brief ROS node P/S to /consumption/motorState and consumption/cmdMotorState for motor remote control
  * @version 0.1
  * @date 2023-01-21
  * 
