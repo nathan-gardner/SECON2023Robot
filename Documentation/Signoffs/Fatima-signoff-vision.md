@@ -24,18 +24,23 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 
 # Electrical schematic
 
-![image](https://user-images.githubusercontent.com/112426690/206012268-de87b7f5-e74b-4b6b-a0f0-57fd8a6225c6.png)
 
 # Analysis 
+In vision subsystem, the team is going to use two sensors:
 
-## Sensor Resolution: 
+## RGB Color Snesor with IR filter and White LED:
+![image](https://user-images.githubusercontent.com/112426690/214433432-a4f3ab95-68f4-47b0-84d3-601dc85e328e.png)
 
-*Note:*
-*How close do we need to be?? We need to find tolerances which are +/- a specific distance for the distance time of flight lidar sensor.*
+- The power is from 3.3 volt to 5 volts.
+- This is a I2C device, it has SCL (pin 2) and SDL (pin 6) and they will be connected to the arduino (pin A4 and pin A5).
+- VDD (pin 1) connected to the power and GND (pin 3) connected to the ground. 
+- The team is going to read the power value to attempt to turn it into a value to the RBG LED. 
+    - the team might use common cathod and want to put resistors on these pins.
+    - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
 
-## Sensor size: 
+## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
 
-The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the bottom of the robot with light so that the color is illuminated and is easiest for the sensor to read. The time of flight LIDAR sensor is 17.78 mm x 25.4 mm. These sensors are both very negligible in size and compared to the rest of the sensors on the robot. 
+
 
 # Buildable Schematics 
 
