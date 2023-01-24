@@ -39,7 +39,16 @@ In vision subsystem, the team is going to use two sensors:
     - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
+![image](https://user-images.githubusercontent.com/112426690/214435410-1bc00b1f-eef6-4e69-a1e0-1d54df3665ea.png)
 
+- The chip uses 2.8 VDC, the team will included a voltage regulator on board that will take 3 VDC to 5 VDC.
+- This is a I2C device, it has SCL and SDL and they will be connected to the microcontrollers I2C clock and data line.
+- The GPIO pin used to indicate that data.
+- SHDN pin is the shutdown pin for the sensor.
+    - When the SHDN pin is pulled low then the sensor will be in shutdown mode.
+- Vin is connected to the power supply from 3 volt to 5 volt (red wire).
+- GND is connected to the common power ground (black wire).
+- The digital 3 is connected to the SDA pin to the I2C data SDA pin on the Arduino.
 
 
 # Buildable Schematics 
