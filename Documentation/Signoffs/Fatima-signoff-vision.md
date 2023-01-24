@@ -53,7 +53,7 @@ In vision subsystem, the team is going to use two sensors:
 
 # Buildable Schematics 
 
-![image](https://user-images.githubusercontent.com/112426690/206012248-b4077c5a-735d-4008-9b8c-3614c5440930.png)
+![image](https://user-images.githubusercontent.com/112426690/214441225-97e1e8bf-85c6-4d6e-854e-49de336f3563.png)
 
 # BOM
 
