@@ -63,7 +63,7 @@ The total number of GPIO pin headers is 40. The spreadsheet with the GPIO breakd
 | GPIO_PE6              | 1     |
 | LCD_BL_PWM            | 1     |
 
-## Software Analysis - Processing Capabilities and Possible/Probable Software Analysis
+## Software Analysis - Processing Capabilities and Possible/Probable Software Solutions
 
 This section covers using ROS as a communication framework, and not using the SLAM packages which are available within ROS. This uses a [publish/subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) architecture. 
 
