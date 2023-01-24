@@ -1,25 +1,26 @@
-# Function of the subsystem 
+# Function of the subsystem
 
-The robot will detect specific position in the arena on a near or far scale. To detect position, the sensor network for micro and macro measurements are needed. The subsystem has a separate microprocessor for processing sensor data and so that the main microcontroller unit in the main controller system can read them more readily. The sensors are communicate with top level microcontroller. And the internal communication between the sensor networks and location microcontroller will be a very high speed analog signal. 
+The vision subsystem for this robot includes the sensor network that will be used for localization within the arena. This is any sensor that is used for micro- or macro location. The path will be preprogrammed into the robot as a large block of conditionals which will access sensor data from the vision subsystem.
+
+The robot will detect specific position in the arena on a near or far scale. To detect position, the sensor network for micro and macro measurements are needed. The subsystem uses the top-level controller for processing sensor data and so that the low-level controller can read the sensors more rapidly, and publish the data to a ROS topic to communicate with the top-level controller. 
+
+The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor and RGB Color Sensor with IR filter and White LED. The final output of the sensor is the electrical signal. The sensor senses A distance from the environment and then generates a corresponding electrical signal and sends it to the controller.
+
+The team chose to use the TCS34725 Color Sensor to detect the duck pond location, which is also used within the design for the sorting subsystem for distinguishing between ducks and pedestals with are going through the bots conveyor belt system. 
 
 ## Function
 
--	micro and macro measurements are needed to detect position from distance and color.
--	The sensors will communicate with top level microcontroller.
+-	Large and small scale measurements are needed to detect position from distance and color
+-	The sensors will communicate with top level microcontroller
+    - This communication will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. 
 
 # Constraints
-
-- The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor and RGB Color Snesor with IR filter and White LED. 
-- The final output of the sensor is the electrical signal. The sensor senses the signal from the environment and then generates a corresponding electrical signal and sends it to the controller. 
-- Sensors communicate with the microcontroller typically over a data network on the PC board. 
-- There’s also a bunch of standard but specialized interfaces. The microcontroller has digital input pins that directly accept digital sensor output. 
-- To interface analog sensors, they have an inbuilt Analog to Digital Converter(ADC) circuit. 
-- The robot needs to measure distances on the arena before moving and Distance sensor can provide greater details during the measurement by pointing it at different spots on the arena.
-- After the robot receives all the information, it will move from the start point to the end point on the arena. 
-- Color Sensor is used and it has an I2C interface and can detect each spot on the arena. It would be positioned to see all desired spots on the arena ground, and it would scan the floor, detect the colors, and generate a signal to send to the main controller. 
-- After identifying the spots’ colors, the sensor will guide the robot to the desired spots. The sensor is able to distinguish between distinct colors as well as detect varying shades of the same hue. 
-- The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
-- The USB frame grabber is chosen to capture digital frames from analog directly to a computer. 
+ 
+- The robot time of flight LIDAR sensors need to have be be able to measure between XXXX - XXXX distance with an accuracy of +/- XXXX distance. 
+- The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely.
+  - The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
+- Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
+- Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
 
 # Electrical schematic
 
