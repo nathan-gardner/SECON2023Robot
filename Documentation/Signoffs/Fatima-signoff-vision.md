@@ -39,7 +39,7 @@ In vision subsystem, the team is going to use two sensors:
     - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
-![image](https://user-images.githubusercontent.com/112426690/214435410-1bc00b1f-eef6-4e69-a1e0-1d54df3665ea.png)
+![image](https://user-images.githubusercontent.com/112426690/214439141-090c5324-f0ba-4fd1-b031-3bf243f64377.png)
 
 - The chip uses 2.8 VDC, the team will included a voltage regulator on board that will take 3 VDC to 5 VDC.
 - This is a I2C device, it has SCL and SDL and they will be connected to the microcontrollers I2C clock and data line.
