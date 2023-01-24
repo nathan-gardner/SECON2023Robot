@@ -30,8 +30,6 @@ The robot will detect specific position in the arena on a near or far scale. To 
 ## Sensor Resolution: 
 ??
 
-<img width="389" alt="image" src="https://user-images.githubusercontent.com/112426690/203201133-8d6a9e50-2918-44fe-aebc-3fe7c1250a9f.png">
-
 ## Sensor size: 
 ??
 
