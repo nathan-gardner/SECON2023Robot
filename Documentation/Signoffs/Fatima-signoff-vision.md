@@ -29,10 +29,13 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 # Analysis 
 
 ## Sensor Resolution: 
-??
+
+*Note:*
+*How close do we need to be?? We need to find tolerances which are +/- a specific distance for the distance time of flight lidar sensor.*
 
 ## Sensor size: 
-??
+
+The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the bottom of the robot with light so that the color is illuminated and is easiest for the sensor to read. The time of flight LIDAR sensor is 17.78 mm x 25.4 mm. These sensors are both very negligible in size and compared to the rest of the sensors on the robot. 
 
 # Buildable Schematics 
 
