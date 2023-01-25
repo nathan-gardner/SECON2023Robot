@@ -105,7 +105,7 @@ Above is the state machine representation for the sensor circuit showing the tim
 
 | Name of Items   | Description                                                  | Used in which subsystem(s) | Part Number | Manufacturer            | Quantity | Price      | Total  |
 |-----------------|--------------------------------------------------------------|----------------------------|-------------|-------------------------|----------|------------|--------|
-| Color Sensor    | RGB COLOR SENSOR WITH IR FILTER                              | Vision, Sorting            | TCS34725    | Adafruit Industries LLC | 1        | $7.95      | $7.95  |
+| Color Sensor    | RGB COLOR SENSOR WITH IR FILTER                              | Vision, Sorting            | TCS34725    | Adafruit Industries LLC | 1        | $7.95      | 7.95   |
 | Distance Sensor | Adafruit Time of Flight Micro-LIDAR Distance Sensor Breakout | Vision                     | VL53L0X     | Adafruit                | 1        | $14.95     | 14.95  |
 | Frame Grabber   | USB Video Frame Grabber Digital MPEG                         | Vision                     | DM300       | Allaboutadapters        | 1        | $23        | 23     |
 | Total           |                                                              |                            |             | Total Components        | 3        | Total Cost | 45.9   |
