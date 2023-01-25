@@ -14,18 +14,6 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 -	The sensors will communicate with top level microcontroller
     - This communication will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. 
 
-# Constraints
- 
-- The robot time of flight LIDAR sensors need to have be be able to measure between XXXX - XXXX distance with an accuracy of +/- XXXX distance. 
-- The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely.
-  - The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
-- Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
-- Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
-
-# Electrical schematic
-
-
-# Analysis 
 In vision subsystem, the team is going to use two sensors:
 
 ## RGB Color Snesor with IR filter and White LED:
@@ -49,6 +37,19 @@ In vision subsystem, the team is going to use two sensors:
 - Vin is connected to the power supply from 3 volt to 5 volt (red wire).
 - GND is connected to the common power ground (black wire).
 - The digital 3 is connected to the SDA pin to the I2C data SDA pin on the Arduino.
+
+# Constraints
+ 
+- The robot time of flight LIDAR sensors need to have be be able to measure between XXXX - XXXX distance with an accuracy of +/- XXXX distance. 
+- The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely.
+  - The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
+- Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
+- Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
+
+
+# Electrical schematic
+
+# Analysis 
 
 
 # Buildable Schematics 
