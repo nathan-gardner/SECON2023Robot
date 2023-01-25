@@ -59,8 +59,6 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 
 ![image](https://user-images.githubusercontent.com/30758520/214467615-b765040b-1130-4919-b1af-a79c21336fe2.png)
 
-With the LIDAR sensor that we will be using the accuracy at 70 cm indoors is 6%. The max distance that we will be measuring when we are finding the pond is 48" + 7" or 55". 6% of 55" is 3.3" of possible error.
-
 # Buildable Schematics 
 
 ![image](https://user-images.githubusercontent.com/112426690/214441225-97e1e8bf-85c6-4d6e-854e-49de336f3563.png)
