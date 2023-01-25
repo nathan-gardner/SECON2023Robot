@@ -87,7 +87,6 @@ $I_{DD} = 2.5\ \mu A \ \ (Sleep)$
 The above voltages and currents will be provided by the power subsystem
 
 $\ $
-
 Speed:
 
 Clock Frequency: $\ \ 0-400kHz$
