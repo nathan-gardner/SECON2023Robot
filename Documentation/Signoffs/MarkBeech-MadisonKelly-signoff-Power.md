@@ -15,8 +15,8 @@
 | Duck Storage and Delivery                                      | Solenoid Actuator          | 12          | 0.65        |
 | Duck Storage and Delivery                                      | Servo Motor Controller     | 6           | 2.5         |
 | Sorting                                                        | Solenoid Actuator          | 12          | 0.3         |
-| Sorting                                                        | Motor Controller           | 12          | ?           |
-| Top-Level Controller                                           | Jetson Nano                | 5           | ?           |
+| Sorting                                                        | Motor Controller           | 12          | 2.5         |
+| Top-Level Controller                                           | Jetson Nano                | 5           | 2           |
 
 ### **Vision** 
 - sensors? (x8):
