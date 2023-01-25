@@ -62,7 +62,40 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 
 *Explain why this implementation is probable to work. Using analytical analysis to prove the design will meet the constraints listed above.*
 
+## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
+The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”
+The LIDAR sensor that we will be using with accuracy at 120 cm indoors is 3%. The max distance that we will be measured when we are finding the pond is 48" + 7" or 55". 3% of 55" is 1.65" of possible error. This was too much error for the original design from the ME team, so the robot corral is being redesigned to allow for more error tolerance from the laser distance sensors. 
+The original design is shown below, but the design is currently being redone so that the corral is shaped more like a square. With the original design, the protruding edges made our possible error half as small as the minimum possible error. 
+
 ![image](https://user-images.githubusercontent.com/30758520/214467615-b765040b-1130-4919-b1af-a79c21336fe2.png)
+
+The distance sensor will need to be read at a minimum of 66 ms. This is the minimum amount of time needed to acquire an accurate measurement according to the datasheet. We will come in above this to have a comfortable cushion and not acquire more than 10 samples per second from the ToF laser distance sensor. The data acquired will be published to a ROS topic so that it can be subscribed to by the navigation logic node and can be used to perform localization tasks. 
+
+## RGB Color Snesor with IR filter and White LED:
+The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be longer and it can be set to 2.4mS, 24mS, 50mS, 101mS, 154mS or 700mS. 
+
+Electrical Specifications:
+
+$V_{DD} = 3\ V$ 
+
+$I_{DD} = 235\ \mu A \ \ (Active)$ 
+
+$I_{DD} = 65\ \mu A \ \ (Wait)$ 
+
+$I_{DD} = 2.5\ \mu A \ \ (Sleep)$ 
+
+The above voltages and currents will be provided by the power subsystem
+
+$\ $
+
+Speed:
+
+Clock Frequency: $\ \ 0-400kHz$
+
+![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
+
+Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
+
 
 # Buildable Schematics 
 
