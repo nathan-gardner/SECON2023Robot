@@ -65,7 +65,7 @@ With the LIDAR sensor that we will be using the accuracy at 70 cm indoors is 6%.
 
 # BOM
 
-| Name of Item    | Description                                                  | Used in which subsystem(s) | Part Number | Manufacturer      | Quantity | Price      | Total  |   |   |
+| Name of Item    | Description                                                  | Used in which subsystem(s) | Part Number | Manufacturer      | Quantity | Price      | Total  
 |-----------------|--------------------------------------------------------------|----------------------------|-------------|-------------------|----------|------------|--------|---|---|
 | Color Sensor    | RGB Color Snesor with IR filter and White LED                | Vision                     | TCS34725    | Adafruit          | 1        | $7.95      | 7.95   |  
 | Distance Sensor | Adafruit Time of Flight Micro-LIDAR Distance Sensor Breakout | Vision                     | VL53L0X     | Adafruit          | 1        | $14.95     | 14.95  |   
