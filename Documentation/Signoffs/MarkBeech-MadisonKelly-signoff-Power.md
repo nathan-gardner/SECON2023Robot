@@ -27,7 +27,7 @@
 - Servo?:
 ### **Socioeconomic Constraint**
 
-The final constraint is that this subsystem will provide the voltages and currents detailed in other subsystems as providing the highest operating efficiency. By doing so, the power consumption will be less overall and the battery charging costs will go down as well.
+The final constraint is that this subsystem will provide the voltages and currents detailed in other subsystems as providing the highest operating efficiency. Not only will this allow other subsystems to work most efficiently, but also the power consumption and the battery charging costs will be less overall.
 
 ## **Buildable Schematic**
 
