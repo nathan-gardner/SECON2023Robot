@@ -35,5 +35,11 @@ $F = m \ast a = 0.054 \ast 9.81 = 0.52974 \frac{N}{m} = 75$ oz-in
 The torque of the motor selected is 83 oz-in, so it will be more than sufficient for its cause.
 
 ## BOM
+| Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
+|------------------------|----------------------------------------------------|-------------------------------------------------------------------|-------------|--------------|----------|-------|-------|
+| Servo Motor            | FEETECH Standard Motor 83 oz-in                    | Feeding                                                           | FS5106B     | Pololu       | 1        | 14.95 | 14.95 |
+| Servo Motor Controller | Micro Maestro 6-Channel USB Servo Controller       | Feeding, Pedestal Storage and Delivery (included on Pedestal BOM) | 1350        | Pololu       | 1        | 0     | 0     |
+| Chip Tube              | 3D printed 1.65 in x 0.5 in tube to hold the chips | Feeding                                                           | N/A         | Print        | 1        | 0     | 0     |
+| Chip Stopper           | 3D printed plate to stop the chips from falling    | Feeding                                                           | N/A         | Print        | 1        | 0     | 0     |
 
 
