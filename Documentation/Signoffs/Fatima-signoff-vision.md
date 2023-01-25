@@ -16,16 +16,6 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 
 In vision subsystem, the team is going to use two sensors:
 
-## RGB Color Snesor with IR filter and White LED:
-![image](https://user-images.githubusercontent.com/112426690/214433432-a4f3ab95-68f4-47b0-84d3-601dc85e328e.png)
-
-- The power is from 3.3 volt to 5 volts.
-- This is a I2C device, it has SCL (pin 2) and SDL (pin 6) and they will be connected to the arduino (pin A4 and pin A5).
-- VDD (pin 1) connected to the power and GND (pin 3) connected to the ground. 
-- The team is going to read the power value to attempt to turn it into a value to the RBG LED. 
-    - the team might use common cathod and want to put resistors on these pins.
-    - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
-
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
 ![image](https://user-images.githubusercontent.com/112426690/214439141-090c5324-f0ba-4fd1-b031-3bf243f64377.png)
 
@@ -44,6 +34,16 @@ In vision subsystem, the team is going to use two sensors:
     - Detection rate is considered at 94% minimum
 
 The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the bottom of the robot with light so that the color is illuminated and is easiest for the sensor to read. The time of flight LIDAR sensor is 17.78 mm x 25.4 mm. These sensors are both very negligible in size and compared to the rest of the sensors on the robot.
+
+## RGB Color Snesor with IR filter and White LED:
+![image](https://user-images.githubusercontent.com/112426690/214433432-a4f3ab95-68f4-47b0-84d3-601dc85e328e.png)
+
+- The power is from 3.3 volt to 5 volts.
+- This is a I2C device, it has SCL (pin 2) and SDL (pin 6) and they will be connected to the arduino (pin A4 and pin A5).
+- VDD (pin 1) connected to the power and GND (pin 3) connected to the ground. 
+- The team is going to read the power value to attempt to turn it into a value to the RBG LED. 
+    - the team might use common cathod and want to put resistors on these pins.
+    - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
 
 # Constraints
  
