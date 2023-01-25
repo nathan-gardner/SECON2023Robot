@@ -51,6 +51,7 @@ In vision subsystem, the team is going to use two sensors:
 
 # Analysis 
 
+*Explain why this implementation is probable to work. Using analytical analysis to prove the design will meet the constraints listed above.*
 
 # Buildable Schematics 
 
