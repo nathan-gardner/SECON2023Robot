@@ -17,7 +17,7 @@
 ### **Pusher:**
 - The pusher must extend greater than $1.5 \ in$ in order to touch the pedestal. 
 - The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
- - The linear actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
+ - The solenoid linear actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
 ### **Sensor:**
 - Color sensor and pusher must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the pusher. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
@@ -157,7 +157,7 @@ Therefore, the motor chosen meets all specifications.
 
 $\ $
 ### **Pusher:**
-The pusher consists of a linear actuator that will be pushing a $2in$ x $2in$ x $2in$ block made of ABS printed plastic with a weight of $0.13503 \ kg$.
+The pusher consists of a push/pull solenoid linear actuator that will be pushing a $2in$ x $2in$ x $2in$ block made of ABS printed plastic with a weight of $0.13503 \ kg$.
 
 
 weight of ABS $1.03 \frac{g}{cm^3}$
@@ -183,7 +183,7 @@ $F_{fpusher}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
 
 The pusher must apply more force than this in order to push the pedestal into the funnel.
 
-The actuator chosen has a force rating of about 20 N which is more than enough for this application. Other noteable specs include a stroke length of $2 \ in$ and a speed of $2 \  \frac{in}{s} $. These meet the constraints mentioned above.
+The actuator chosen has a force rating of about ____ suitable for this application. 
 
 
 
