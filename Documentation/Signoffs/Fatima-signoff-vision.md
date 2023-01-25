@@ -72,4 +72,3 @@ With the LIDAR sensor that we will be using the accuracy at 70 cm indoors is 6%.
 | Frame Grabber         | USB Video Frame Grabber Digital MPEG1/2                                            | Vision                     | DM300       | Allaboutadapters | 1        | 23         | 23     |
 | TCS34725 Color Sensor | RGB Color Sensor with IR filter and White LED - TCS34725                           | Vision                     | 1334        | adafruit         | 1        | 7.95       | 7.95   |
 | Total                 |                                                                                    |                            |             | Total Components | 4        | Total Cost | 64.84 |
-](https://github.com/nathan-gardner/CapstoneRepo/pull/26)
