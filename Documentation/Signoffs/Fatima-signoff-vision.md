@@ -51,6 +51,8 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 
 # Electrical schematic
 
+![image](https://user-images.githubusercontent.com/112426690/214441225-97e1e8bf-85c6-4d6e-854e-49de336f3563.png)
+
 # Analysis 
 
 *Explain why this implementation is probable to work. Using analytical analysis to prove the design will meet the constraints listed above.*
