@@ -30,6 +30,7 @@ In summary, these constraints are as follows:
 - Power
 - Size
 - GPIO
+- Computation speed and minimum system specification requirements
 
 ## Electrical Schematic
 
@@ -63,6 +64,8 @@ The total number of GPIO pin headers is 40. The spreadsheet with the GPIO breakd
 | GPIO_PE6              | 1     |
 | LCD_BL_PWM            | 1     |
 
+The computation speed and minimum system specification requirements are discussed below in the software analysis portion of this document. 
+
 ## Software Analysis - Processing Capabilities and Possible/Probable Software Solutions
 
 This section covers using ROS as a communication framework, and not using the SLAM packages which are available within ROS. ROS will be used for hardware abstraction, low-level device control, functionality implementation, process-to-process messaging, and package management. ROS, in the way it will be implemented on the top-level controller, uses a [publish/subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) communication protocol. 
@@ -73,7 +76,7 @@ The ROS master will be running on the Nvidia Jetson Nano and ROSSerial will be u
 
 This simple demo was created based on this [article](https://sites.duke.edu/memscapstone/using-rosserial-to-setup-a-ros-node-on-a-teensy/) to demonstrate the viability of the design outlined in this sign-off and for the controller network (top and low-level) as a whole, and to make sure ROS was installed correctly. This method for uploading code to the Arduino uses PlatformIO, which is general purpose for different micro-controllers like Arduino, ESP, STM, etc.. It was determined to be the most versatile option instead of using the ArduinoIDE directly.  
 
-ROS has a large amount of community support and will serve as a useful robotics framework. If ROS is unable to be implemented, we will need to use traditional Arduino programming style and establish a serial connection using Pyserial between the top-level controller and the low-level controller. This is what ROSSerial is doing but it has already built the framework to create nodes, establish topics, and to publish and subscribe to those topics.
+ROS has a large amount of community support and will serve as a useful robotics framework. If ROS is unable to be implemented, we will need to use traditional Arduino programming style and establish a serial connection using PySerial between the top-level controller and the low-level controller. This is what ROSSerial is doing but it has already built the framework to create nodes, establish topics, and to publish and subscribe to those topics.
 
 As an example of this implementation, Nathan wrote a [ROS node](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Software/mega2560/sub_consumption/src/main.cpp) for the consumption subsystem which can control the motor speed remotely from anywhere in the ROS computation graph. This uses message passing outlined above, and is what the team plans on using for the serial communication within the controller network. The code in the ROS node above establishes communication between the top and low level controller through topics, one named /consumption/motorState (published) and the other named /consumption/cmdMotorState (subscribed). /consumption/cmdMotorState can be updated from the top level or any node in the computation graph, and this while invoke the analogWrite function on the Arduino and publish an updated value to the /consumption/motorState topic, which is also visible within the computation graph. 
 
