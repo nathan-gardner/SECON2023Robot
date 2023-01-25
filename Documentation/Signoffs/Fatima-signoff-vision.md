@@ -71,9 +71,4 @@ With the LIDAR sensor that we will be using the accuracy at 70 cm indoors is 6%.
 | Distance Sensor | Adafruit Time of Flight Micro-LIDAR Distance Sensor Breakout | Vision                     | VL53L0X     | Adafruit          | 1        | $14.95     | 14.95  |   |   |
 | Frame Grabber   | USB Video Frame Grabber Digital MPEG                         | Vision                     | DM300       |  Allaboutadapters | 1        | $23        | 23     |   |   |
 | Total           |                                                              |                            |             | Total Components  | 3        | Total Cost | 45.9   |   |   |
-|                 |                                                              |                            |             |                   |          |            |        |   |   |
-|                 |                                                              |                            |             |                   |          |            |        |   |   |
-|                 |                                                              |                            |             |                   |          |            |        |   |   |
-|                 |                                                              |                            |             |                   |          |            |        |   |   |
-|                 |                                                              |                            |             |                   |          |            |        |   |   |
 
