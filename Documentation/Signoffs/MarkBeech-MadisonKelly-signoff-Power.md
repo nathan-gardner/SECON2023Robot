@@ -24,9 +24,9 @@
 - Uhh idk man:
 ### **Fireworks**
 - Servo?:
-### **Socioeconomic Constraint**
+### **Constraint from Standard**
 
-- The final constraint is that this subsystem will provide the voltages and currents detailed in other subsystems as providing the highest operating efficiency. Not only will this allow other subsystems to work most efficiently, but also the power consumption and the battery charging costs will be less overall.
+- Shall have a self-latching emergency stop push-button that has a positive operation. The button shall not be a graphical representation or a flat switch based on NFPA 79 - 10.7.2.
 
 ## **Buildable Schematic**
 
