@@ -37,6 +37,11 @@ In vision subsystem, the team is going to use two sensors:
 - Vin is connected to the power supply from 3 volt to 5 volt (red wire).
 - GND is connected to the common power ground (black wire).
 - The digital 3 is connected to the SDA pin to the I2C data SDA pin on the Arduino.
+- Performance: 
+    - The field of view (FOV) is 25 degrees.
+    - Max ranging capabilities with 33ms timing budges
+    - Offset correction done at 10 cm from sensor
+    - Detection rate is considered at 94% minimum
 
 The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the bottom of the robot with light so that the color is illuminated and is easiest for the sensor to read. The time of flight LIDAR sensor is 17.78 mm x 25.4 mm. These sensors are both very negligible in size and compared to the rest of the sensors on the robot.
 
