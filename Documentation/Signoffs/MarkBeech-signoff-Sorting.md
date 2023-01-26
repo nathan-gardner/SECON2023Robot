@@ -202,7 +202,7 @@ $I_{DD} = 65\ \mu A \ \ (Wait)$
 
 $I_{DD} = 2.5\ \mu A \ \ (Sleep)$ 
 
-The above voltages and currents will be provided by the power subsystem
+The above voltages and currents will be provided by one of the Arduino Megas from the low-level controller subsystem.
 
 $\ $
 
