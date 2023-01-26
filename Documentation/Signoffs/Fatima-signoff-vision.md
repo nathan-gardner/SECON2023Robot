@@ -66,7 +66,7 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 
 *Explain why this implementation is probable to work. Using analytical analysis to prove the design will meet the constraints listed above.*
 
-## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
+## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
 
 The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”
 The LIDAR sensor that we will be using with accuracy at 120 cm indoors is 3%. The max distance that we will be measured when we are finding the pond is 48" + 7" or 55". 3% of 55" is 1.65" of possible error. This was too much error for the original design from the ME team, so the robot corral is being redesigned to allow for more error tolerance from the laser distance sensors. 
@@ -76,9 +76,9 @@ The original design is shown below, but the design is currently being redone so 
 
 The distance sensor will need to be read at a minimum of 66 ms. This is the minimum amount of time needed to acquire an accurate measurement according to the datasheet. We will come in above this to have a comfortable cushion and not acquire more than 10 samples per second from the ToF laser distance sensor. The data acquired will be published to a ROS topic so that it can be subscribed to by the navigation logic node and can be used to perform localization tasks. 
 
-## RGB Color Snesor with IR filter and White LED:
+## RGB Color Sensor with IR filter and White LED:
 
-The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be longer and it can be set to 2.4mS, 24mS, 50mS, 101mS, 154mS or 700mS. 
+The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to 2.4mS, 24mS, 50mS, 101mS, 154mS or 700mS. 
 
 Electrical Specifications:
 
@@ -92,14 +92,13 @@ $I_{DD} = 2.5\ \mu A \ \ (Sleep)$
 
 The above voltages and currents will be provided by the power subsystem
 
-Speed:
+Speed: 
 
 Clock Frequency: $\ \ 0-400kHz$
 
 ![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
 
-Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
-
+Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms. This is the most time critical application of the color sensor. The second application of the color sensor is pointed towards the ground, and this sample rate will also be sufficient for this application as well. We need to gain meaningful samples, with the robots maximum speed of $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot for this reason will need to be slowed down from max speed in order to get fine enough samples when we know that we are indeed above the blue duck pond in order to deliver the corral precisely. The speed levels will be designed into the control encodings for the locomotion system.
 
 # Buildable Schematics 
 
@@ -111,6 +110,5 @@ Above is the state machine representation for the sensor circuit showing the tim
 |-----------------|--------------------------------------------------------------|----------------------------|-------------|-------------------------|----------|------------|--------|
 | Color Sensor    | RGB COLOR SENSOR WITH IR FILTER                              | Vision, Sorting            | TCS34725    | Adafruit Industries LLC | 1        | $7.95      | 7.95   |
 | Distance Sensor | Adafruit Time of Flight Micro-LIDAR Distance Sensor Breakout | Vision                     | VL53L0X     | Adafruit                | 1        | $14.95     | 14.95  |
-| Frame Grabber   | USB Video Frame Grabber Digital MPEG                         | Vision                     | DM300       | Allaboutadapters        | 1        | $23        | 23     |
-| Total           |                                                              |                            |             | Total Components        | 3        | Total Cost | 45.9   |
+| Total           |                                                              |                            |             | Total Components        | 3        | Total Cost | 45.90  |
 
