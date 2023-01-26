@@ -10,6 +10,7 @@
 - The servo motor must have a torque of at least 75 oz-in.
 - The color sensor must be able to detect the red and green animal enclosures.
 - The chips must be able to fit within their silos.
+- The chip delivery must be on the (R/L??) side of the robot as to allow for a simple delivery to each enclosure.
 
 ## Buildable Schematic
 
