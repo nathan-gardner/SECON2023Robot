@@ -88,4 +88,5 @@ As an example of this implementation, Nathan wrote a [ROS node](https://github.c
 | 16 GB or larger UHS-1 microSD card        | Storage device with the Jetson Nano (256 GB) | Top-level controller       | LMSESXX256G-BNAEU  | Lexar            | 1        | 24.99      | 24.99  |
 | 5V DC barrel jack power input cable       | Standard barrel jack connector               | Top-level controller       | B07JGR7JJQ         | SIOCEN           | 1        | 9.99       | 9.99   |
 | iClever DK03 Bluetooth Keyboard and Mouse | USB connection with a bluetooth chip         | Top-level controller       | B08KZXLTM6         | iClever          | 1        | 39.99      | 39.99  |
-| Total                                     |                                              |                            |                    | Total Components | 4        | Total Cost | 224.96 |
+| MYFON Micro-USB Cable                     | Micro USB Cable                              | Top-level controller       | B098DW7485         | MYFON            | 1        |  6.99      |  6.99  |
+| Total                                     |                                              |                            |                    | Total Components | 4        | Total Cost | 231.95 |
