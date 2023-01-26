@@ -102,7 +102,7 @@ Above is the state machine representation for the sensor circuit showing the tim
 
 # Buildable Schematics 
 
-![image](https://user-images.githubusercontent.com/112426690/214441225-97e1e8bf-85c6-4d6e-854e-49de336f3563.png)
+![image](https://user-images.githubusercontent.com/30758520/214961487-6be42a02-c97a-472d-b7dd-23595a8391f3.png)
 
 # BOM
 
