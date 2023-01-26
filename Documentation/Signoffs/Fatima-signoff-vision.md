@@ -57,11 +57,6 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 - Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
 - Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
 
-
-# Electrical schematic
-
-![image](https://user-images.githubusercontent.com/112426690/214441225-97e1e8bf-85c6-4d6e-854e-49de336f3563.png)
-
 # Analysis 
 
 *Explain why this implementation is probable to work. Using analytical analysis to prove the design will meet the constraints listed above.*
@@ -100,7 +95,7 @@ Clock Frequency: $\ \ 0-400kHz$
 
 Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms. This is the most time critical application of the color sensor. The second application of the color sensor is pointed towards the ground, and this sample rate will also be sufficient for this application as well. We need to gain meaningful samples, with the robots maximum speed of $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot for this reason will need to be slowed down from max speed in order to get fine enough samples when we know that we are indeed above the blue duck pond in order to deliver the corral precisely. The speed levels will be designed into the control encodings for the locomotion system.
 
-# Buildable Schematics 
+# Electrical Schematics 
 
 ![image](https://user-images.githubusercontent.com/30758520/214961487-6be42a02-c97a-472d-b7dd-23595a8391f3.png)
 
