@@ -1,10 +1,10 @@
 # Function of the subsystem
 
-The vision subsystem for this robot includes the sensor network that will be used for localization within the arena. This is any sensor that is used for micro- or macro location. The path will be preprogrammed into the robot as a large block of conditionals which will access sensor data from the vision subsystem.
+The vision subsystem for this robot includes the sensor network that will be used for localization within the arena. This is any sensor that is used for micro- or macro- location. The path will be preprogrammed into the robot as a large block of conditionals which will access sensor data from the vision subsystem.
 
-The robot will detect specific position in the arena on a near or far scale. To detect position, the sensor network for micro and macro measurements are needed. The subsystem uses the top-level controller for processing sensor data and so that the low-level controller can read the sensors more rapidly, and publish the data to a ROS topic to communicate with the top-level controller. 
+The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor and RGB Color Sensor with IR filter and White LED. The sensor senses A distance or color from the environment and then generates a corresponding electrical signal and sends it to the controller. 
 
-The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor and RGB Color Sensor with IR filter and White LED. The final output of the sensor is the electrical signal. The sensor senses A distance from the environment and then generates a corresponding electrical signal and sends it to the controller.
+The subsystem uses the top-level controller for processing sensor data and so that the data can be read more rapidly, and publish the data to a ROS topic to communicate within the computation graph. Nodes will be created for data acquisitions from the sensors, and will be decoupled from the logic that is making the robot follow its path through the arena. The path locomotion logic will be another node in the network which will subscribe to the data stream created by the sensor nodes, and produce command data for the low-level controller to create at a set interval which will activate the motors to follows the set command encoded in that data stream.
 
 The team chose to use the TCS34725 Color Sensor to detect the duck pond location, which is also used within the design for the sorting subsystem for distinguishing between ducks and pedestals with are going through the bots conveyor belt system. 
 
@@ -12,7 +12,7 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 
 -	Large and small scale measurements are needed to detect position from distance and color
 -	The sensors will communicate with top level microcontroller
-    - This communication will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. 
+    - This communication will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
 
 In vision subsystem, the team is going to use two sensors:
 
@@ -46,8 +46,12 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
     - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
 
 # Constraints
+
+*How close do we need to be?? We need to find tolerances which are +/- a specific distance for the distance time of flight lidar sensor.*
  
-- The robot time of flight LIDAR sensors need to have be be able to measure between XXXX - XXXX distance with an accuracy of +/- XXXX distance. *How close do we need to be?? We need to find tolerances which are +/- a specific distance for the distance time of flight lidar sensor.*
+- The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ XXXX$ distance. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
+  - The closest the robot will need to locate itself in is near the wall at the duck pond, which will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2\ inches$ of the wall, or $5.08\ cm$.
+  - The farthest that the robot will need to locate itself with the ToF LIDAR sensor is the length of the arena minus the width of the robot, which is $48" - \frac{11.25"}{2} = 42.375" = 107.63\ cm$.
 - The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely.
   - The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
 - Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
