@@ -10,12 +10,12 @@
 | Power Subsystem Required Voltage and Current from each Subsystem |                            |             |             |
 |----------------------------------------------------------------|----------------------------|-------------|-------------|
 | Subsystem                                                      | Component                  | Voltage (V) | Current (A) |
-| Locomotion                                                     | Motor Drivers - Motors (4) | 12          | 0.3         |
-| Consumption                                                    | Motor Driver - Motor       | 6           | 1.75-2.5    |
+| Locomotion                                                     | Motor Drivers (2) | 12          | 0.3         |
+| Consumption                                                    | Motor Driver        | 6           | 1.75-2.5    |
 | Duck Storage and Delivery                                      | Solenoid Actuator          | 12          | 0.65        |
 | Duck Storage and Delivery                                      | Servo Motor Controller     | 6           | 2.5         |
 | Sorting                                                        | Solenoid Actuator          | 12          | 0.3         |
-| Sorting                                                        | Motor Controller           | 12          | 2.5         |
+| Sorting                                                        | Motor Driver           | 12          | 2.5         |
 | Top-Level Controller                                           | Jetson Nano                | 5           | 2           |
 
 ### **Vision** 
