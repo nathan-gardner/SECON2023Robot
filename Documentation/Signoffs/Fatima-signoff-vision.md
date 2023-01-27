@@ -12,7 +12,7 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 
 -	Large and small scale measurements are needed to detect position from distance and color
 -	The sensors will communicate with top level microcontroller
-    - This communication between the top-level controller to the rest of the system will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
+    - This communication between the top-level controller to the rest of the controller network will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
 
 In vision subsystem, the team is going to use two distinct sensors:
 
