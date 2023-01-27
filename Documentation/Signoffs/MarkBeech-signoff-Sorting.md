@@ -17,7 +17,7 @@
 ### **Pusher:**
 - The pusher must extend greater than $1.5 \ in$ in order to touch the pedestal. 
 - The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
- - The solenoid linear actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
+- The solenoid actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
 ### **Sensor:**
 - Color sensor and pusher must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the pusher. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
@@ -183,7 +183,7 @@ $F_{fpusher}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
 
 The pusher must apply more force than this in order to push the pedestal into the funnel.
 
-The actuator chosen has a force rating of about ____ suitable for this application. 
+The actuator chosen has a force rating of about 4 N suitable for this application. 
 
 
 
@@ -213,6 +213,8 @@ Clock Frequency: $\ \ 0-400kHz$
 ![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
 
 Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
+
+Pedestals have a diameter of $2 \ in$ and the conveyor moves at $2 \ in/s $ which means that one point of the pedestal will be in front of the sensor for 1 second which allows for plenty of time for the sensor to detect the color of the object as detection takes a maximum of 0.614 ms.
 
 Minimum pusher distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
 
