@@ -140,6 +140,6 @@ At the current torque requirment of 6.149 kg-mm of torque, only 15.34\% of the m
 | Wheel Coupling | The wheel couping attaches the wheel to the motor                                           | Locomotion                 | 18077       | Nexus Robot       | 4        | 2.34       | 9.36   |
 | Motor          | The motors will drive the wheels allowing the robot to move                                 | Locomotion                 | 4865        | Pololu           | 4        | 45.95      | 183.80  |
 | Motor Mount    | The motor mount will secure the motor to the chassis (pack of two mounts)                   | Locomotion                 | 2676        | Pololu           | 2        | 7.95       | 15.90   |
-| Motor Driver   | The motor drivers supply the voltage and current requirements of the motor (pack of 4)                  | Locomotion                 | L298N       | ST               | 1        | 7.41       | 11.39  |
+| Motor Driver   | The motor drivers supply the voltage and current requirements of the motor (pack of 4)                 | Locomotion                 | L298N       | ST               | 1        | 7.41       | 11.39  |
 | Total          |                                                                                             |                            |             | Total Components | 13       | Total Cost | 261.93 |
 
