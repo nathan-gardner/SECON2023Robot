@@ -34,7 +34,7 @@ The electrical schematic for the object storage subsystem is shown below. The Se
 
 ![image](https://user-images.githubusercontent.com/112424739/215144422-ccba345b-f75c-4c72-b348-ed295ff70b01.png)
 
-The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/Electrical/Schematics/Sources/ElectricalSchematicforStorage).
+The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
 
 ## Analysis
 
@@ -102,7 +102,7 @@ Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
 
 ![image](https://user-images.githubusercontent.com/112424739/215122237-d9839cbe-5e73-428a-8454-a86f7dd8787a.png)
 
-You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Storage/Documentation/3D%20Models).
+You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/3D%20Models).
 
 ## BOM
 
