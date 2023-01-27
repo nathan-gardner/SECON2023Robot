@@ -1,10 +1,10 @@
 # Function of the subsystem
 
-The vision subsystem for this robot includes the sensor network that will be used for localization within the arena. This is any sensor that is used for micro- or macro- location. The path will be preprogrammed into the robot as a large block of conditionals which will access sensor data from the vision subsystem.
+The vision subsystem for this robot includes the sensor network that will be used for localization within the arena. The path will be preprogrammed into the robot as a large block of conditionals which will access sensor data from the vision subsystem.
 
-The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor and RGB Color Sensor with IR filter and White LED. The sensor senses A distance or color from the environment and then generates a corresponding electrical signal and sends it to the controller. 
+The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor and RGB Color Sensor with IR filter and White LED. The sensor senses A distance or color from the environment and communicated with the top-level controller via an I2C bus within the vision subsystem. 
 
-The subsystem uses the top-level controller for processing sensor data and so that the data can be read more rapidly, and publish the data to a ROS topic to communicate within the computation graph. Nodes will be created for data acquisitions from the sensors, and will be decoupled from the logic that is making the robot follow its path through the arena. The path locomotion logic will be another node in the network which will subscribe to the data stream created by the sensor nodes, and produce command data for the low-level controller to create at a set interval which will activate the motors to follows the set command encoded in that data stream.
+The subsystem uses the top-level controller for processing sensor data and so that the data can be read more rapidly, and publish the data to a ROS topic to communicate to the rest of the nodes within the computation graph. Nodes will be created for data acquisitions from the sensors, and will be decoupled from the logic that is making the robot follow its path through the arena. The path locomotion logic will be another node in the network which will subscribe to the data stream created by the sensor nodes, and produce command data for the low-level controller to create at a set interval which will activate the motors to follows the set command encoded in that data stream.
 
 The team chose to use the TCS34725 Color Sensor to detect the duck pond location, which is also used within the design for the sorting subsystem for distinguishing between ducks and pedestals with are going through the bots conveyor belt system. 
 
