@@ -15,6 +15,9 @@
 ## Buildable Schematic
 
 ## Electrical Schematic
+The electrical schematic for the feeding subsystem is shown below. 
+
+![image](https://user-images.githubusercontent.com/112424739/215167750-e4cf1915-8647-4b1a-b4c6-486763774914.png)
 
 ## Analysis
 
