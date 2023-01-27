@@ -126,9 +126,9 @@ $\ $
 The chosen motor is the Pololu #4865. It is a 12V medium power motor. The required torque for each motor is 6.149 kg-mm. This motor has a max efficiency at 8.6 kg-mm of torque. At 6.149 kg-mm of torque, the motor will operate at $\approx$ 70% of it's maximum efficiency. This motor choice will allow the torque requirments to be met while simultaneously achieving high efficiency. The motor draws 0.28 A. The L298N motor driver supplies 2A which is more than enough for this motor. The maximum torque of each motor is 40 kg-mm.
 
 
-$6.149\ kgmm / 40\ kgmm = 15.34\%$
+$6.149\ kgmm / 40\ kgmm = 15.34$\%
 
-$100\% - 15.34\% = 84.66\%$
+100\% - 15.34\% = 84.66\%
 
 At the current torque requirment of 6.149 kg-mm of torque, only 15.34\% of the motor's torque capacity is being used. This allows for 84.66\% of each motor's torque capacity as the margin of safety.
 
