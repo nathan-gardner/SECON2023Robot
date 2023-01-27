@@ -99,5 +99,5 @@ Above is the state machine representation for the sensor circuit showing the tim
 |-----------------|--------------------------------------------------------------|----------------------------|------------------|-------------------------|----------|------------|---------|
 | Color Sensor    | RGB COLOR SENSOR WITH IR FILTER                              | Vision                     | TCS34725         | Adafruit Industries LLC | 1        | $7.95      | $7.95   |
 | Distance Sensor | Adafruit Time of Flight Micro-LIDAR Distance Sensor Breakout | Vision                     | VL53L0X          | Adafruit                | 1        | $14.95     | $14.95  |
-| Resistors       | EDGELEC 100pcs 4.7K ohm Resistor 1/2w (0.5Watt) ±1% Tol      | Vision                     | ‎ EFR-W0D50-A:MF | EDGELEC                 | 1        | $5.99      | $5.99   |
+| Resistors       | EDGELEC 100pcs 4.7K ohm Resistor 1/2w (0.5Watt) ±1% Tol      | Vision                     | EFR-W0D50-A:MF   | EDGELEC                 | 1        | $5.99      | $5.99   |
 |                 |                                                              |                            |                  | Total Components        | 3        | Total Cost | $28.89  |
