@@ -63,9 +63,9 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
 
-The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”
-The LIDAR sensor that we will be using with accuracy at 120 cm indoors is 3%. The max distance that we will be measured when we are finding the pond is 48" + 7" or 55". 3% of 55" is 1.65" of possible error. This was too much error for the original design from the ME team, so the robot corral is being redesigned to allow for more error tolerance from the laser distance sensors. 
-The original design is shown below, but the design is currently being redone so that the corral is shaped more like a square. With the original design, the protruding edges made our possible error half as small as the minimum possible error. 
+The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”.
+
+The LIDAR sensor that we will be using with accuracy at 120 cm indoors is 3%. The max distance that we will be measured when we are finding the pond is 48" + 7" or 55". 3% of 55" is 1.65" of possible error. This was too much error for the original design from the ME team, so the robot corral is being redesigned so that the length will be adjustable in the case that the ToF LIDAR sensors are not accurate enough to localize precisely into the duck pond accurately. Also, according to messages in the official public communication from the hardware competition chair, only a majority of the duck needs to be in the duck pond in order to get points for that duck within the point definition in the competition rules. This means that we really have an additional half duck length to work with on our accuracy tolerance, which equates to about 1.5 inches, because the ducks measure 3.5"x3"x3". The possible error given the 0.707" and the 1.5" allows for a total of 2.207" allowable error if we do not end up adjusting the length of the corral. The team feels that this tolerance and the adjustable corral allows the ToF LIDAR sensor to meet the accuracy requirements to localize the ducks into the duck pond during the competition.
 
 ![image](https://user-images.githubusercontent.com/30758520/214467615-b765040b-1130-4919-b1af-a79c21336fe2.png)
 
