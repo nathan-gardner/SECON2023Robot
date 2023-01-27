@@ -97,7 +97,7 @@ Above is the state machine representation for the sensor circuit showing the tim
 
 # Electrical Schematics 
 
-![image](https://user-images.githubusercontent.com/30758520/214961487-6be42a02-c97a-472d-b7dd-23595a8391f3.png)
+![image](https://user-images.githubusercontent.com/30758520/215147684-46ca0794-2ac8-4caa-bbe2-cadbdf7d479f.png)
 
 # BOM
 
