@@ -128,7 +128,7 @@ The chosen motor is the Pololu #4865. It is a 12V medium power motor. The requir
 
 $6.149\ kgmm / 40\ kgmm = 15.34$\%
 
-100\% - 15.34\% = 84.66\%
+$100$\% $- 15.34$\% $= 84.66$\%
 
 At the current torque requirment of 6.149 kg-mm of torque, only 15.34\% of the motor's torque capacity is being used. This allows for 84.66\% of each motor's torque capacity as the margin of safety.
 
