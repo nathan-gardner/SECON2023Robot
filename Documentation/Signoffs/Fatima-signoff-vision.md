@@ -12,21 +12,21 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 
 -	Large and small scale measurements are needed to detect position from distance and color
 -	The sensors will communicate with top level microcontroller
-    - This communication will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
+    - This communication between the top-level controller to the rest of the system will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
 
-In vision subsystem, the team is going to use two sensors:
+In vision subsystem, the team is going to use two distinct sensors:
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
 ![image](https://user-images.githubusercontent.com/112426690/214439141-090c5324-f0ba-4fd1-b031-3bf243f64377.png)
 
-- The chip uses 2.8 VDC, the team will included a voltage regulator on board that will take 3 VDC to 5 VDC.
-- This is a I2C device, it has SCL and SDL and they will be connected to the microcontrollers I2C clock and data line.
-- The GPIO pin used to indicate that data.
+- The chip uses 2.6-3.5 VDC, which can come from the Nvidia Jetson Developer Kits 3.3VDC power pin
+- This is a I2C device, it has SCL and SDL and they will be connected to the Nvidia Jetson Dev Kit I2C clock and data line.
+- The GPIO pin used as an interrupt to indicate data from the sensor
 - SHDN pin is the shutdown pin for the sensor.
     - When the SHDN pin is pulled low then the sensor will be in shutdown mode.
 - Vin is connected to the power supply from 3 volt to 5 volt (red wire).
 - GND is connected to the common power ground (black wire).
-- The digital 3 is connected to the SDA pin to the I2C data SDA pin on the Arduino.
+- The digital 3 is connected to the SDA pin to the I2C data SDA pin on the Nvidia Jetson Dev Kit.
 - Performance: 
     - The field of view (FOV) is 25 degrees.
     - Max ranging capabilities with 33ms timing budges
@@ -35,19 +35,15 @@ In vision subsystem, the team is going to use two sensors:
 
 The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the bottom of the robot with light so that the color is illuminated and is easiest for the sensor to read. The time of flight LIDAR sensor is 17.78 mm x 25.4 mm. These sensors are both very negligible in size and compared to the rest of the sensors on the robot.
 
-## RGB Color Snesor with IR filter and White LED:
+## RGB Color Sensor with IR filter and White LED:
 ![image](https://user-images.githubusercontent.com/112426690/214433432-a4f3ab95-68f4-47b0-84d3-601dc85e328e.png)
 
 - The power is from 3.3 volt to 5 volts.
-- This is a I2C device, it has SCL (pin 2) and SDL (pin 6) and they will be connected to the arduino (pin A4 and pin A5).
+- This is a I2C device, it has SCL (pin 2) and SDL (pin 6) and they will be connected to the Nvidia Jetson Dev Kit.
 - VDD (pin 1) connected to the power and GND (pin 3) connected to the ground. 
-- The team is going to read the power value to attempt to turn it into a value to the RBG LED. 
-    - the team might use common cathod and want to put resistors on these pins.
-    - the team will use four resistors 1k ohm or 2k ohm and they will be connected to the arduino because we need to output analog values to them.
+- The team is going to read the power value to attempt to turn it into a value to the RGB LED. 
 
 # Constraints
-
-*How close do we need to be?? We need to find tolerances which are +/- a specific distance for the distance time of flight lidar sensor.*
  
 - The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ XXXX$ distance. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
   - The closest the robot will need to locate itself in is near the wall at the duck pond, which will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2\ inches$ of the wall, or $5.08\ cm$.
@@ -58,8 +54,6 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 - Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
 
 # Analysis 
-
-*Explain why this implementation is probable to work. Using analytical analysis to prove the design will meet the constraints listed above.*
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
 
