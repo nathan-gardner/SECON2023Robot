@@ -45,7 +45,7 @@ The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the botto
 
 # Constraints
  
-- The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ XXXX$ distance. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
+- The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ 0.707"$. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
   - The closest the robot will need to locate itself in is near the wall at the duck pond, which will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2\ inches$ of the wall, or $5.08\ cm$.
   - The farthest that the robot will need to locate itself with the ToF LIDAR sensor is the length of the arena minus the width of the robot, which is $48" - \frac{11.25"}{2} = 42.375" = 107.63\ cm$.
 - The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely.
