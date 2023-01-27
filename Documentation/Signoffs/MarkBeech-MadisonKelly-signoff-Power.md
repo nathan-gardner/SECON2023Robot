@@ -11,7 +11,7 @@
 | Power Subsystem Required Voltage and Current from each Substem |                            |             |             |
 |----------------------------------------------------------------|----------------------------|-------------|-------------|
 | Subsystem                                                      | Component                  | Voltage (V) | Current (A) |
-| Locomotion                                                     | Motor Drivers - Motors (4) | 12          | 0.3         |
+| Locomotion                                                     | Motor Drivers - Motors (2) | 12          | 0.3         |
 | Consumption                                                    | Motor Driver - Motor       | 6           | 2.5         |
 | Duck Storage and Delivery                                      | Solenoid Actuator          | 12          | 0.65        |
 | Duck Storage and Delivery, Pedestal Storage and Delivery, and Feeding | Servo Motor Controller     | 6           | 2.5         |
