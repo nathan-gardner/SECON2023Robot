@@ -5,7 +5,7 @@
 - Deliver the correct chip to the correct area based on color
   - Color will be detected with the color sensor from vision subsystem
 
-There will be rectangles in the left corners of the arena which will be green and red. Green signifies manatees and red signifies alligators. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and drop the correct color chips though a hole using a servo. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the colored aquariums. 
+There will be rectangles in the left corners of the arena which will be green and red. Green signifies manatees and red signifies alligators. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and drop the correct color chips though a hole using a servo. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated in the corrected direction, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. 
 
 The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before actuating and allowing the chips through a hole which will drop the chips in the aquarium. 
 
@@ -18,6 +18,8 @@ The position of the aquariums can be reflected based on the arena we are playing
 - The chip delivery must be on the (R/L??) side of the robot as to allow for a simple delivery to each enclosure
 
 ## Buildable Schematic
+
+**Add a buildable schematic in CAD software**
 
 ## Electrical Schematic
 The electrical schematic for the feeding subsystem is shown below. 
@@ -35,7 +37,7 @@ Tube Size $= 1.65 in \ast 0.5 in$
 
 Therefore, the chips will comfortably fit inside the tubes.
 
-### Torque
+### Motor Torque
 
 Weight of the chips $= 0.009 \frac{kg}{chip} \ast 6$ chips = 0.054 kg
 
