@@ -2,15 +2,20 @@
 
 ## Function
 
-- Deliver the correct chip to the correct area based on color.
+- Deliver the correct chip to the correct area based on color
+  - Color will be detected with the color sensor from vision subsystem
+
+There will be rectangles in the left corners of the arena which will be green and red. Green signifies manatees and red signifies alligators. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and drop the correct color chips though a hole using a servo. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the colored aquariums. 
+
+The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before actuating and allowing the chips through a hole which will drop the chips in the aquarium. 
 
 ## Constraints
 
-- The size of this subsystem will have to be such that it takes up as minimal space as possible.
-- The servo motor must have a torque of at least 75 oz-in.
-- The color sensor must be able to detect the red and green animal enclosures.
-- The chips must be able to fit within their silos.
-- The chip delivery must be on the (R/L??) side of the robot as to allow for a simple delivery to each enclosure.
+- The size of this subsystem will have to be such that it takes up as minimal space as possible
+- The servo motor must have a torque of at least 75 oz-in
+- The color sensor must be able to detect the red and green animal enclosures
+- The chips must be able to fit within their silos
+- The chip delivery must be on the (R/L??) side of the robot as to allow for a simple delivery to each enclosure
 
 ## Buildable Schematic
 
@@ -33,6 +38,8 @@ Therefore, the chips will comfortably fit inside the tubes.
 ### Torque
 
 Weight of the chips $= 0.009 \frac{kg}{chip} \ast 6$ chips = 0.054 kg
+
+With the force of gravity equal to a = $9.81\ \frac{m^2}{s}$ 
 
 $F = m \ast a = 0.054 \ast 9.81 = 0.52974 \frac{N}{m} = 75$ oz-in
 
