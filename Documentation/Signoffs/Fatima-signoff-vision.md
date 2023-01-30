@@ -14,35 +14,6 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 -	The sensors will communicate with top level microcontroller
     - This communication between the top-level controller to the rest of the controller network will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
 
-In vision subsystem, the team is going to use two distinct sensors:
-
-## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor Breakout: 
-![image](https://user-images.githubusercontent.com/112426690/214439141-090c5324-f0ba-4fd1-b031-3bf243f64377.png)
-
-- The chip uses 2.6-3.5 VDC, which can come from the Nvidia Jetson Developer Kits 3.3VDC power pin
-- This is a I2C device, it has SCL and SDL and they will be connected to the Nvidia Jetson Dev Kit I2C clock and data line.
-- The GPIO pin used as an interrupt to indicate data from the sensor
-- SHDN pin is the shutdown pin for the sensor.
-    - When the SHDN pin is pulled low then the sensor will be in shutdown mode.
-- Vin is connected to the power supply from 3 volt to 5 volt (red wire).
-- GND is connected to the common power ground (black wire).
-- The digital 3 is connected to the SDA pin to the I2C data SDA pin on the Nvidia Jetson Dev Kit.
-- Performance: 
-    - The field of view (FOV) is 25 degrees.
-    - Max ranging capabilities with 33ms timing budges
-    - Offset correction done at 10 cm from sensor
-    - Detection rate is considered at 94% minimum
-
-The TCS34725 sensor will be 20 mm x 20 mm and is able to be mounted on the bottom of the robot with light so that the color is illuminated and is easiest for the sensor to read. The time of flight LIDAR sensor is 17.78 mm x 25.4 mm. These sensors are both very negligible in size and compared to the rest of the sensors on the robot.
-
-## RGB Color Sensor with IR filter and White LED:
-![image](https://user-images.githubusercontent.com/112426690/214433432-a4f3ab95-68f4-47b0-84d3-601dc85e328e.png)
-
-- The power is from 3.3 volt to 5 volts.
-- This is a I2C device, it has SCL (pin 2) and SDL (pin 6) and they will be connected to the Nvidia Jetson Dev Kit.
-- VDD (pin 1) connected to the power and GND (pin 3) connected to the ground. 
-- The team is going to read the power value to attempt to turn it into a value to the RGB LED. 
-
 # Constraints
  
 - The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ 0.707"$. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
