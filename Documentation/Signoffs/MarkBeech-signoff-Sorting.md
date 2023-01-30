@@ -49,7 +49,7 @@ Sorting Subsystem Schematic:
 
 Above is the circuit schematic for the color sensor PCB chosen from Adafruit
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-signoff-Sorting/Documentation/Images/SortingSubsystem/Low_level_controller.png)
+![image](https://user-images.githubusercontent.com/30758520/215600333-04b1fc07-95a0-4019-aa6b-238960dc831b.png)
 
 Above shows the connection to the Arduino MEGA from the low level controller subsystem. The digital pins and PWM pins will be used to control the various electrical components for the system. The PWM pin will be used to control the motor for the conveyor belt. The digital pins will be used for the servo and the the color sensor.
 
@@ -149,7 +149,7 @@ $RPM = 37.5$
 
 Below is the torque curve for the motor chosen from Pololu.
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-signoff-Sorting/Documentation/Images/SortingSubsystem/Motor%20graph.png)
+![image](https://user-images.githubusercontent.com/30758520/215600423-c72d078f-4e15-4f09-ad2c-ea4ddf9deed2.png)
 
 Therefore, the motor chosen meets all specifications.
 
