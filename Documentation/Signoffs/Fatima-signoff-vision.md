@@ -15,14 +15,14 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
     - This communication between the top-level controller to the rest of the controller network will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
 
 # Constraints
- 
-- The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ 0.707"$. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
-  - The closest the robot will need to locate itself in is near the wall at the duck pond, which will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2\ inches$ of the wall, or $5.08\ cm$.
-  - The farthest that the robot will need to locate itself with the ToF LIDAR sensor is the length of the arena minus the width of the robot, which is $48" - \frac{11.25"}{2} = 42.375" = 107.63\ cm$.
-- The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely.
-  - The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
-- Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
-- Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
+
+The closest the robot will need to locate itself in is near the wall at the duck pond, which will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2\ inches$ of the wall, or $5.08\ cm$. The farthest that the robot will need to locate itself with the ToF LIDAR sensor is the length of the arena minus the width of the robot, which is $48" - \frac{11.25"}{2} = 42.375" = 107.63\ cm$. The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ 0.707"$. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
+
+The robot must distinguish between different colors on the color spectrum, specifically the difference between black and blue, so that the robot can localize over the duck pond to deliver the duck trailer precisely. The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
+
+Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
+
+Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
 
 # Analysis 
 
