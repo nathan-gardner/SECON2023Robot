@@ -15,15 +15,13 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 ## Constraints
 
-- The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the team plans to have the ducks held in a corral that is outside of the robot. The corral, as previously mentioned, will surround part of the robot before the competition, and then as soon as the robot starts its path, it will extend from the back of the robot via a rack and pinion mechanism. 
+- The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the team plans to have the ducks held in a bottomless corral that is outside of the robot. The corral, as previously mentioned, will surround part of the robot before the competition, and then as soon as the robot starts its path, it will extend from the back of the robot via a rack and pinion mechanism. 
 - The ducks are approximately 3 inches x 3 inches x 3.5 inches, so the corral will need to be a sufficient size to hold all ten ducks. The ducks can sit on top of each other, so the corral shown in the buildable schematic will be sufficient to hold all ten ducks.
 - The corral will roll behind the robot for the entirety for the competition until the robot reaches its final destination at the duck pond. Once the robot reaches the duck pond, it will drop the corral off with all of the ducks inside and leave them behind by dropping the "locks" within the drawer slides which will eject the corral and ducks. The corral will be bottomless so the ducks can be counted as touching the duck pond when they are dropped off. This will save much needed space within the robot and save time when depositing the ducks at their duck pond location.
 - The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + 1.04 kg (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
-- This motor will need to be controlled in order to determine how many rotations the servo needs to make to extend the corral and open the silo for duck and pedestal drop off, respectively. 
 - Calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;.
 - The duck trailer will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add two lock-style solenoids and lock the trailer in place to stop any unwanted motion. They will insert into the grooves on the rack casing in order to relieve the servo from needing a certain back-driving torque.
 - The pinion gear will need to have some way to "mesh" with the the rack that is mounted on the side of the trailer. In order to prevent it from coming off the rack, the team will 3D print an enclosure to ensure the pinion gear stays on the rack. The 3D model below shows this feature in more detail.
-- The duck trailer should be bottomless so that at the end of each competition round when the ducks are delivered to the duck pond, the ducks will touch the surface of the pond. This constraint ensures that we will get the points rewarded for delivering all ducks present in the trailer to the duck pond. 
 - Next, the omni-wheel on the back of the trailer should be attached such that the gap between the bottom of the back wall of the trailer and the playing field is not large enough that a duck or part of a duck could get jammed in the space and cause extra resistance on the robot's locomotion subsystem. To ensure that this is not an issue, the wheel will be adjustable so that the team can change the placement of the wheel to allow as much or as little of a gap as possible. The omni-wheel will also allow the trailer to follow any motion that the main body of the robot performs as well as lower the overall friction on the locomotion subsystem.
 - This system has been taken into consideration for the locomotion subsystem in terms of overall weight and friction added to the motors for the locomotion subsystem. 
 - The final constraint comes from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the system.
@@ -82,6 +80,7 @@ Keeping in mind that the duck trailer can be fully ejected in 4 seconds, this so
 
 ### Size Calculations for Duck Corral
 
+#### Duck Trailer
 $Duck\ Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
 
 $Duck\ Volume_{Total} = 31.5 \ast 10 = 315 in^{3}$
@@ -90,7 +89,21 @@ $Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
   
 Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
   
+#### Omni-Wheel Height
+ 
+The onmi-wheel is adjustable, so the team can decide how far or how close to the ground the trailer should be. The duck's beak is approximately 0.25 inches.
 
+In order to ensure the duck's beak does not get caught under the trailer, the omni-wheel must be no more than 0.25 inches off the ground. Due to the adjustable feature, this will be possible.
+
+### Affect on Navigation
+
+While the extra weight and friction was analyzed in the locomotion subsystem, the actual impact this will have on navigation will be analyzed within this one.
+
+Since the robot will be approximately 11.5 inches long to abide by the 1 cubic foot constraint set by the competition, this trailer will add some length onto the back of the robot. As previously stated, the trailer will be 6 inches long off the back of the robot.
+
+$Robot\ Length = 11.5 + 6 = 17.5\ inches$
+
+The navigation path will have to account for a robot with a length of 17.5 inches rather than 11.5 inches.
 
 ## Buildable Schematic
 
