@@ -22,22 +22,22 @@
 The two motor encoders will tell the low level microcontroller how fast the motor is driving, as well as the direction. These will be used in the path planning process.
 
 ### Electrical Schematic
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_schematic.jpg)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_schematic.jpg)
 
 The electrical schematic can be found here:
-https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/Electrical/Schematics/Sources/Locomotion
+https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrical/Schematics/Sources/Locomotion
 
 ### Locomotion Assembly
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_top_view.png)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_top_view.png)
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/LukeMcGill-signoff-Locomotion/Documentation/Images/LocomotionSystem/locomotion_whole_view.png)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_whole_view.png)
 
 Each motor will have a motor mount. The mount will attach to the motor by two screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
 
 The CAD model for the motor and wheel assembly can be found here:
-https://github.com/nathan-gardner/CapstoneRepo/tree/LukeMcGill-signoff-Locomotion/Documentation/3D%20Models/LocomotionSystem
+https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/LocomotionSystem
 
 
 ## Analysis
