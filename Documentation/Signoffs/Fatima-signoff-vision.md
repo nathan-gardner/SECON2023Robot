@@ -20,7 +20,7 @@ The closest to the wall the robot will need to localize, or project a LIDAR towa
 
 The robot must distinguish between different colors on the color spectrum, specifically the difference between black (0x000000) and blue (0x0000FF), so that the robot can localize over the duck pond to deliver the duck trailer precisely. The team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
 
-Data must be produced by the sensors at a high enough rate which is up to 400 kbit/s for the robot to be able to reach accuracy constraints listed above in the first of the constraints. 
+Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints.  
 
 Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
 
