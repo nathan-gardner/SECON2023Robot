@@ -12,14 +12,14 @@ The position of the aquariums can be reflected based on the arena we are playing
 ## Constraints
 
 - The size of this subsystem will have to be such that it takes up as minimal space as possible
-- The servo motor must have a torque of at least 75 oz-in (calculation in analysis)
+- The servo motor must be as small as possible since it only has to push the weight of a small 3D printed plate
 - The color sensor must be able to detect the red and green animal enclosures
-- The chips must be able to fit within their silos
+- The chips must be able to fit within their dispenser
 - The chip delivery will be on the opposite side as the pedestal storage silos to allow for a simple delivery to each enclosure
 
 ## Buildable Schematic
 
-**Add a buildable schematic in CAD software**
+![image](https://user-images.githubusercontent.com/112424739/215866478-37b8d6f1-c0f0-4542-9adf-73eb05a63cd0.png)
 
 ## Electrical Schematic
 The electrical schematic for the feeding subsystem is shown below. 
@@ -33,24 +33,20 @@ The electrical schematic for the feeding subsystem is shown below.
 The tubes that the chips will be stored in must be able to fit the chips.
 
 Chip Size $= 1.5 in \ast 0.1 in$
-Tube Size $= 1.65 in \ast 0.5 in$
+Tube Size $= 4.5 in \ast 1.5 in \ast 0.5 in$
 
 Therefore, the chips will comfortably fit inside the tubes.
 
 ### Motor Torque
 
-Weight of the chips $= 0.009 \frac{kg}{chip} \ast 6$ chips = 0.054 kg
+The motor will only need to push the weight of the small 3D printed plate.
 
-With the force of gravity equal to a = $9.81\ \frac{m^2}{s}$ 
-
-$F = m \ast a = 0.054 \ast 9.81 = 0.52974 \frac{N}{m} = 75$ oz-in
-
-The torque of the motor selected is 83 oz-in, so it will be more than sufficient for its cause.
+The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause.
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
 |------------------------|----------------------------------------------------|-------------------------------------------------------------------|-------------|--------------|----------|-------|-------|
-| Servo Motor            | FEETECH Standard Motor 83 oz-in                    | Feeding                                                           | FS5106B     | Pololu       | 1        | 14.95 | 14.95 |
+| Servo Motor            | FEETECH FS90 Micro Servo                    | Feeding                                                           |2818     | Pololu       | 1        | 5.25 | 5.25 |
 | Servo Motor Controller | Micro Maestro 6-Channel USB Servo Controller       | Feeding, Pedestal Storage and Delivery (included on Pedestal BOM) | 1350        | Pololu       | 1        | 0     | 0     |
 | Chip Tube              | 3D printed 1.65 in x 0.5 in tube to hold the chips | Feeding                                                           | N/A         | Print        | 1        | 0     | 0     |
 | Chip Stopper           | 3D printed plate to stop the chips from falling    | Feeding                                                           | N/A         | Print        | 1        | 0     | 0     |
