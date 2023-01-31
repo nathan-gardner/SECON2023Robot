@@ -29,7 +29,7 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 The electrical schematic for the object storage subsystem is shown below. The Servo Programmer comes with a battery pack that is able to power the servo. The voltage on the schematic is shown to come from the power subsystem as a worst case scenario in the event that this battery pack cannot be used.
 
-![image](https://user-images.githubusercontent.com/112424739/215144422-ccba345b-f75c-4c72-b348-ed295ff70b01.png)
+![image](https://user-images.githubusercontent.com/112424739/215840819-dd22b409-ba04-4ebf-be2f-7d7cf625d118.png)
 
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
 
@@ -98,11 +98,23 @@ In order to ensure the duck's beak does not get caught under the trailer, the om
 
 While the extra weight and friction was analyzed in the locomotion subsystem, the actual impact this will have on navigation will be analyzed within this one.
 
-Since the robot will be approximately 11.5 inches long to abide by the 1 cubic foot constraint set by the competition, this trailer will add some length onto the back of the robot. As previously stated, the trailer will be 6 inches long off the back of the robot.
+The navigation path will have to account for a robot with a length of 18 inches rather than 12 inches which would be the case without the trailer. In order to be as conservative as possible, we planned for the maximum robot length for our path that the robot will take. The playing field is 4 feet by 8 feet, there will be no objects closer than 2 inches to the walls, and our robot is now 18 inches long. This constrains our path when making turns. The consumption subsystem which is mounted to the front of the robot must also be facing the front when traversing the playing field. While making turns will be more difficult with the trailer, it will still be possible. Images of the path are shown below.
 
-$Robot\ Length = 11.5 + 6 = 17.5\ inches$
+![image](https://user-images.githubusercontent.com/112424739/215837783-769432d2-edb6-4340-850b-d9f13149374c.png)
+![image](https://user-images.githubusercontent.com/112424739/215837869-2f0f0a95-e123-46ca-a8d4-05c27026ee88.png)
+![image](https://user-images.githubusercontent.com/112424739/215838003-47506fff-4d2e-4bee-bc78-4fd530f7a1cf.png)
+![image](https://user-images.githubusercontent.com/112424739/215838073-c60859e9-c9a4-4c99-aa05-0559394c25fa.png)
+![image](https://user-images.githubusercontent.com/112424739/215838162-e0a84f93-2456-4697-9389-b11788e35b7d.png)
+![image](https://user-images.githubusercontent.com/112424739/215838232-433d4e69-bd52-4dc7-bce6-313151af797f.png)
+![image](https://user-images.githubusercontent.com/112424739/215838621-543c3ad0-fb7f-4eba-b88a-9f10c96507da.png)
+![image](https://user-images.githubusercontent.com/112424739/215838345-9452c8af-b4da-42a3-be39-4f687290fe67.png)
+![image](https://user-images.githubusercontent.com/112424739/215838409-c32e8544-934d-474c-860a-23be8257859c.png)
 
-The navigation path will have to account for a robot with a length of 17.5 inches rather than 11.5 inches.
+Notice that the robot never goes more than 37.75 inches from the side wall. Therefore, this path will be the one the robot takes for each turn. 
+
+### Timing
+
+The affect this subsystem has on navigation will also affect the amount of time the competition rounds will take. This should not be a problem as the locomotion signoff calculates an 84.66\% margin of safety. This means that the motors only are using 15.34\% of their torque capacity, so there will be plenty of extra speed as needed.
 
 ## Buildable Schematic
 
