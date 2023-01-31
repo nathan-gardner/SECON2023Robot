@@ -92,7 +92,7 @@ Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
  
 The onmi-wheel is adjustable, so the team can decide how far or how close to the ground the trailer should be. The duck's beak is approximately 0.25 inches.
 
-In order to ensure the duck's beak does not get caught under the trailer, the omni-wheel must be no more than 0.25 inches off the ground. Due to the adjustable feature, this will be possible.
+In order to ensure the duck's beak does not get caught under the trailer, the omni-wheel must be placed at a height such that the trailer sides are no more than 0.25 inches off the ground. Due to the adjustable nature of the omni-wheel, this will be possible.
 
 ### Affect on Navigation
 
