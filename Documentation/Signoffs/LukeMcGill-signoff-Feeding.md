@@ -5,17 +5,17 @@
 - Deliver the correct chip to the correct area based on color
   - Color will be detected with the color sensor from vision subsystem
 
-There will be rectangles in the left corners of the arena which will be green and red. Green signifies manatees and red signifies alligators. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and drop the correct color chips though a hole using a servo. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated in the corrected direction, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. 
+There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and drop the correct color chips though a hole using a servo. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated in the corrected direction, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate left/right, which will allow the chips to fall through a false bottom and onto the aquarium area. 
 
 The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before actuating and allowing the chips through a hole which will drop the chips in the aquarium. 
 
 ## Constraints
 
 - The size of this subsystem will have to be such that it takes up as minimal space as possible
-- The servo motor must have a torque of at least 75 oz-in
+- The servo motor must have a torque of at least 75 oz-in (calculation in analysis)
 - The color sensor must be able to detect the red and green animal enclosures
 - The chips must be able to fit within their silos
-- The chip delivery must be on the (R/L??) side of the robot as to allow for a simple delivery to each enclosure
+- The chip delivery will be on the opposite side as the pedestal storage silos to allow for a simple delivery to each enclosure
 
 ## Buildable Schematic
 
