@@ -9,19 +9,20 @@ This subsystem’s main function is to ensure that the pedestals have a place to
 - Worst case scenario of three pedestals at a time is analyzed below
 
 ## Constraints
-The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the size and number of silos will need to be considered. There will only be one silo. In order to save as much space as possible, the silo will only be tall enough to store three pedestals at once.  
+- The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the size and number of silos will need to be considered. There will only be one silo. In order to save as much space as possible, the silo will only be tall enough to store three pedestals at once and only wide enough to fit the pedestals and a small gap for the proximity sensor.  
 
-Because the robot contains only one silo that can hold at most three pedestals, there needs to be a way to detect if there are three pedestals present. The plan is to drop off the first three collected and then two sets of two after that, so there also needs to be a way to detect if there are three pedestals present in the silo. To abide by these constraints, two proximity sensors will be placed in the silo to send a signal back to the controller to interrupt the main course and drop off the pedestal statues. 
+- Because the robot contains only one silo that can hold at most three pedestals, there needs to be a way to detect if there are three pedestals present. The plan is to drop off the first three collected and then two sets of two after that, so there also needs to be a way to detect if there are three pedestals present in the silo. To abide by these constraints, two proximity sensors will be placed in the silo to send a signal back to the controller to interrupt the main course and drop off the pedestals. 
 
-The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo).
+- The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo).
 
-This motor will need to be controlled in order to ensure that it opens wide enough to leave the statue standing and not keep it within the silo. The use of a servo-specific motor controller will aid in the control of the servos. As well as this, calculations for the rotation angle of the servo motor are in the analysis section below. The silo will need to open 2 inches which will require 1 rotation or 360 degrees. The silo will remain open until enough time has elapsed that it can close again without trapping the statue within the silo.
+- Calculations for the rotation angle of the servo motor are in the analysis section below. The silo will need to open widde enough to let the statue fit through which will require .318 rotations or 115 degrees. The silo will remain open until enough time has elapsed that it can close again without trapping the statue within the silo.
 
-Another constraint that needs to be considered for this subsystem is the silo placement. The team’s plan is to drop off the pedestals upon collection. This decision was made based on point value versus difficulty level of finding the inner circles to place the statues. Thus, the robot could be anywhere within the playing field when there are two or three pedestals collected for drop-off, so the silo needs to be placed in a strategic location. The silo will be placed at the back corner of the robot so that it opens towards the outside of the robot. Since the duck trailer is also placed at the back of the robot, it will need to be as close to one side as possible. Placing the pedestal silo at the back corner will allow for an easy drop-off. The silo will open and the robot will drive away, leaving the statue behind. After the robot drives away, the silo will close and the process will repeat up to two more times during the competition round.
+- Another constraint that needs to be considered for this subsystem is the silo placement. The team’s plan is to drop off the pedestals upon collection. The silo will be on the side of the robot. The door will open and the robot will drive directly sideways away from the statue, leaving it behind. 
 
 ## Electrical Schematic
+The electrical schematic is shown below.
 
-![image](https://user-images.githubusercontent.com/112424739/213763728-cefd6d52-0207-4277-8a8a-7375e14ff809.png)
+![image](https://user-images.githubusercontent.com/112424739/215895126-91452a6a-a2b4-4962-be82-1a0401ec0ae7.png)
 
 
 ## Buildable Schematic
@@ -46,11 +47,13 @@ Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
 
 ### Rotation Calculation for Statue Delivery
 
-$C = \pi \ast d = \pi \ast 2$
+$C = \pi \ast d = \pi \ast 2 = 6.28$
 
-$Rotations = \frac{ 2 }{ 2 } = \frac{ 2 }{ 2 }$
+$Rotations = \frac{ 2 }{ 12.56 } = 0.318$
 
-$Degrees = rotations \ast 360 = 1 \ast 360 = 360&deg;$
+$Degrees = rotations \ast 360 = 0.318 \ast 360 = 114.64&deg;$
+
+This rotation angle is well within the servo's capabilities. 
 
 ### Distance From Sensors
 
