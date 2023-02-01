@@ -9,16 +9,26 @@
 - To address the overcurrent concern, the addition of 3A fuses will be made. Since the power supply is only able to supply 3A of current, these 3A fuses will protect the power supply from overcurrent damage.
 - Shown below is the voltage and current requirements for each component in each subsystem. These will be the main constraints for the power subsystem.
 
-| Power Subsystem Required Voltage and Current from each Subsystem |                            |             |             |
-|----------------------------------------------------------------|----------------------------|-------------|-------------|
-| Subsystem                                                      | Component                  | Voltage (V) | Current (A) |
-| Locomotion                                                     | Motor Drivers - Motors (2) | 12          | 0.3         |
-| Consumption                                                    | Motor Driver - Motor       | 6           | 2.5         |
-| Duck Storage and Delivery                                      | Solenoid Actuator          | 12          | 0.65        |
-| Duck Storage and Delivery, Pedestal Storage and Delivery, and Feeding | Servo Motor Controller     | 6           | 2.5         |
-| Sorting                                                        | Solenoid Actuator          | 12          | 0.3         |
-| Sorting                                                        | Motor Controller           | 12          | 2           |
-| Top-Level Controller                                           | Jetson Nano                | 5           | 2.5         |
+### **Power Subsystem Required Voltage and Current from each Subsystem**		
+
+
+| Subsystem                                  | Component                  | Voltage (V) | Current (A) |
+| ------------------------------------------ | -------------------------- | ----------- | ----------- |
+| Locomotion                                 | Motor Drivers - Motors (4) | 12          | 1.2         |
+| Consumption                                | Motor Driver - Motor       | 6           | 0.5         |
+| Duck Storage and Delivery                  | Solenoid Actuator          | 12          | 0.65        |
+| Pedestal Storage and Delivery, and Feeding | Servo Motor Controller     | 6           | 1.1         |
+| Sorting                                    | Solenoid Actuator          | 12          | 0.3         |
+| Sorting                                    | Motor Controller           | 12          | 0.25        |
+| TOTAL:                                     |                            |             | 4           |
+
+### **Continuous Use**
+
+| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
+| ----------- | -------------------------- | -- | ---- |
+| Consumption | Motor Driver - Motor       | 6  | 0.5  |
+| Sorting     | Motor Controller           | 12 | 0.25 |
+| TOTAL:      |                            |    | 1.95 |
 
 ### **Constraint from Standard**
 
