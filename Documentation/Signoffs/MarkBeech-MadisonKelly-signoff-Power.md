@@ -44,6 +44,7 @@
 
 ## **Analysis**
 
+### **Buck Converters**
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_model.png)
 
 Above is the LTSpice model for the buck converter board chosen for this subsystem.
@@ -55,6 +56,32 @@ Above is the schematic model for the power supply connected to one of the buck c
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_output_voltage.png)
 
 Above is the output voltage for the buck converter connected to the 12 V power supply voltage. The output voltage stays around 6V, which is the required voltage for some of the motors and why we are using a buck converter.
+
+### **Motor simulations**
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_motor.png)
+
+consumption motor
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_current.png)
+
+consumption current
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_motor.png)
+
+locomotion motor
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_current.png)
+
+locomotion current
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_motor.png)
+
+sorting motor
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_current.png)
+
+sorting current
 
 ### **Power Supply** 
 The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
