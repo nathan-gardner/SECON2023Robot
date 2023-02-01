@@ -51,7 +51,7 @@ The torque of the motor selected is 21 oz-in, so it will be more than sufficient
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
 |------------------------|----------------------------------------------------|-------------------------------------------------------------------|-------------|--------------|----------|-------|-------|
 | Servo Motor            | FEETECH FS90 Micro Servo                    | Feeding                                                           |2818     | Pololu       | 1        | 5.25 | 5.25 |
-| Servo Motor Controller | Micro Maestro 6-Channel USB Servo Controller       | Feeding, Pedestal Storage and Delivery (included on Pedestal BOM) | 1350        | Pololu       | 1        | 0     | 0     |
+| Servo Motor Controller | Micro Maestro 6-Channel USB Servo Controller       | Feeding, Pedestal Storage, and Duck Storage (included on Pedestal BOM) | 1350        | Pololu       | 1        | 0     | 0     |
 | Chip Tube              | 3D printed 1.65 in x 0.5 in tube to hold the chips | Feeding                                                           | N/A         | Print        | 1        | 0     | 0     |
 | Chip Stopper           | 3D printed plate to stop the chips from falling    | Feeding                                                           | N/A         | Print        | 1        | 0     | 0     |
 
