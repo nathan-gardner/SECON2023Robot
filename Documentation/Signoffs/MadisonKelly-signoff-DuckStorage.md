@@ -110,11 +110,25 @@ The navigation path will have to account for a robot with a length of 18 inches 
 ![image](https://user-images.githubusercontent.com/112424739/215838345-9452c8af-b4da-42a3-be39-4f687290fe67.png)
 ![image](https://user-images.githubusercontent.com/112424739/215838409-c32e8544-934d-474c-860a-23be8257859c.png)
 
-Notice that the robot never goes more than 37.75 inches from the side wall. Therefore, this path will be the one the robot takes for each turn. 
+Notice that the robot never goes more than 37.75 inches from the side wall. Therefore, this path will be the one the robot takes for each turn. According to the pre-determined path, the robot will only have to make four turns when doing the initial traversal of the playing field. 
 
 ### Timing
 
-The affect this subsystem has on navigation will also affect the amount of time the competition rounds will take. This should not be a problem as the locomotion signoff calculates an 84.66\% margin of safety. This means that the motors only are using 15.34\% of their torque capacity, so there will be plenty of extra speed as needed.
+The affect this subsystem has on navigation will also affect the amount of time the competition rounds will take. According to the pre-determined path, the robot will only have to make four turns when doing the initial traversal of the playing field. This turning mechanism will add an additional 34.5 inches to our path per turn. 
+
+$4\ turns \ast 34.5\ in = 138\ inches$
+
+$480\ total\ path\ length + 138\ inches = 618\ in$
+
+According to the locomotion subsystem's calculations, the robot can travel at up to 0.2023 $\frac{m}{s}$. Assuming the robot can go this full speed on straight-aways, the following calculations are performed.
+
+$480\ in = 12.192\ m = \frac{12.192}{0.2023} = 60.3\ sec$
+
+Assuming the turns will take 5 seconds each,
+
+$60.3\ sec + 4 \ast 5\ sec = 80.3\ sec$
+
+Therefore, the robot can still traverse the entire playing field in less than half the time (3 minutes). This leaves an additional minute and 40 seconds to complete all the other tasks. In addition to this, locomotion signoff calculates an 84.66\% margin of safety. This means that the motors only are using 15.34\% of their torque capacity, so there will be plenty of extra speed as needed.
 
 ## Buildable Schematic
 
