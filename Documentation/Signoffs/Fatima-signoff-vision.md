@@ -10,13 +10,15 @@ The team chose to use the TCS34725 Color Sensor to detect the duck pond location
 
 ## Function
 
+The vision subsystem is a sensor network that will allow the robot to determine its position in the arena. This is done by finding the distance to the nearest walls, and also using a color sensor pointed towards the ground to detect the feeding areas and the duck pond in the middle of the arena. 
+
 -	Large and small scale measurements are needed to detect position from distance and color
--	The sensors will communicate with top level microcontroller
+-	The sensors will communicate with top level microcontroller, the team will calibrate the color sensor for the desired colors spots in the arena floor, using a reference color chart, or using the sensor and measure the reflectance of each color. 
     - This communication between the top-level controller to the rest of the controller network will be within the ROS computation graph, so that the sensor acquisition and production can be decoupled from the actual navigation logic. They would be able to run entirely independent from one another but will only work if they are both running at the same time. 
 
 # Constraints
 
-The closest to the wall the robot will need to localize, or project a LIDAR towards a wall, is near the wall at the duck pond, which will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2\ inches$ of the wall, or $5.08\ cm$. The farthest that the robot will need to locate itself with the ToF LIDAR sensor is the length of the arena minus the width of the robot, which is $48" - \frac{11.25"}{2} = 42.375" = 107.63\ cm$. The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ 0.707"$. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
+The closest to the wall the robot will need to localize, or project a LIDAR towards a wall to find it general position in the arena, is near the wall at the duck pond. This will be $9"\ -\ \frac{width\ of\ robot}{2}=9" - 5.625" = 3.375" = 8.573\ cm$. This can be assumed because no objects will be within $2"$ of the wall, or $5.08\ cm$. The farthest from the wall that the robot will need to localize within the arena with the ToF LIDAR sensor is the length of the arena minus half the width of the robot, which is $48" - \frac{11.25"}{2} = 42.375" = 107.63\ cm$. This maximum distance will be when the robot is in the center of the arena long ways, for example, in the duck pond. The robot time of flight LIDAR sensors need to have be be able to measure between $5.08\ -\ 107.63\ cm$ with an accuracy of $+/-\ 0.707"$ or $+/-\ 1.8 cm$. This is within the distance range of $5\ -\ 120\ cm$ for the absolute distance. 
 
 The robot must distinguish between different colors on the color spectrum, specifically the difference between black (0x000000) and blue (0x2876BB), so that the robot can localize over the duck pond to deliver the duck trailer precisely. These color values were taking from color sampling the image in the competition rules. 
 
