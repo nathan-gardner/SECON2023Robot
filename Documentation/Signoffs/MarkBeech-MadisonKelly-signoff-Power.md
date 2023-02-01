@@ -30,6 +30,8 @@
 
 ### **Electrical Schematics:**
 
+![image](https://user-images.githubusercontent.com/112424739/216123680-489e3972-0d1b-4fce-9da3-44238d358077.png)
+
 ## **Analysis**
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_model.png)
