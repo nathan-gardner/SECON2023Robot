@@ -40,7 +40,7 @@ The distance sensor will need to be read at a minimum of 66 ms. This is the mini
 
 ## RGB Color Sensor with IR filter and White LED:
 
-The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to 2.4mS, 24mS, 50mS, 101mS, 154mS or 700mS. 
+The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to $2.4\ ms, 24\ ms, 50\ ms, 101\ ms, 154\ ms or 700\ ms$. 
 
 Electrical Specifications:
 
