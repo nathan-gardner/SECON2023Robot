@@ -27,9 +27,9 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 ## Electrical Schematic
 
-The electrical schematic for the object storage subsystem is shown below. The Servo Programmer comes with a battery pack that is able to power the servo. The voltage on the schematic is shown to come from the power subsystem as a worst case scenario in the event that this battery pack cannot be used.
+The electrical schematic for the object storage subsystem is shown below. Please note that the circuit components will be implemented via a solderable breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/215840819-dd22b409-ba04-4ebf-be2f-7d7cf625d118.png)
+![image](https://user-images.githubusercontent.com/112424739/216141345-08d1a449-a93d-4b7f-b599-149018124dbf.png)
 
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
 
@@ -129,6 +129,14 @@ Assuming the turns will take 5 seconds each,
 $60.3\ sec + 4 \ast 5\ sec = 80.3\ sec$
 
 Therefore, the robot can still traverse the entire playing field in less than half the time (3 minutes). This leaves an additional minute and 40 seconds to complete all the other tasks. In addition to this, locomotion signoff calculates an 84.66\% margin of safety. This means that the motors only are using 15.34\% of their torque capacity, so there will be plenty of extra speed as needed.
+
+### Circuit Analysis for Solenoid Circuit 
+
+I did an LTSpice simulation to determine whether or not this circuit would work. his circuit schematic was provided by the datasheet from the manufacturer. As you can see, the solenoid is supplied 12 V which is its operating voltage. Therefore, this circuit schematic will serve the purpose needed by the team.
+
+![image](https://user-images.githubusercontent.com/112424739/216142180-634dfa83-6d23-4c8f-a64f-263d02199b43.png)
+![image](https://user-images.githubusercontent.com/112424739/216142298-0c8a0a9a-3263-4829-bb85-05530f388be4.png)
+
 
 ## Buildable Schematic
 
