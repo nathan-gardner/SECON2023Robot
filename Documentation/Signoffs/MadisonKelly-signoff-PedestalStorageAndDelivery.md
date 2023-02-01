@@ -80,6 +80,6 @@ If the pedestal is two inches in diameter, the silo will need to remain open for
 | Servo Motor            | FEEFETCH Mini Servo FT1117M                  | Pedestal Storage and Delivery             | 3423        | Pololu           | 1        | 9.95       | 9.95  |
 | Silo                   | Silo to hold pedestals, 3D Printed           | Pedestal Storage and Delivery             | N/A         | N/A              | 1        | 0          | 0     |
 | Servo Mount            | 3D Printed                                   | Pedestal Storage and Delivery             | N/A         | N/A              | 1        | 0          | 0     |
-| Servo Motor Controller | Micro Maestro 6-channel USB Servo Controller | Pedestal Storage and Delivery and Feeding | 1350        | Pololu           | 1        | 39.95      | 39.95 |
+| Servo Motor Controller | Micro Maestro 6-channel USB Servo Controller | Duck Storage, Pedestal Storage, and Delivery and Feeding | 1350        | Pololu           | 1        | 39.95      | 39.95 |
 | Total                  |                                              |                                           |             | Total Components | 6        | Total Cost | 75.8  |
 
