@@ -29,7 +29,7 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 The electrical schematic for the object storage subsystem is shown below. Please note that the circuit components will be implemented via a solderable breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/216141345-08d1a449-a93d-4b7f-b599-149018124dbf.png)
+![image](https://user-images.githubusercontent.com/112424739/216147890-9def65de-0d94-44b2-bba5-f4eb34bc201b.png)
 
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
 
@@ -152,19 +152,21 @@ You can find the 3D models for all Components ![here](https://github.com/nathan-
 
 ## BOM
 
-| Name of Item           | Description                                                                                               | Used in which subsystem(s) | Part Number    | Manufacturer     | Quantity | Price      | Total  |
-|------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------|----------------|------------------|----------|------------|--------|
-| Solenoid Mount         | Print                                                                                                     | Duck Storage               | N/A            | N/A              | 1        | 0          | 0      |
-| Corner Bracket         | Print                                                                                                     | Duck Storage               | N/A            | N/A              | 4        | 0          | 0      |
-| Steel Ball Transfer    | Steel Ball Transfer(21 mm Height)                                                                         | Duck Storage               | 1619-001-001   | Servo City       | 1        | 2.99       | 2.99   |
-| Lock-Style Solenoids   | 12 V-DC                                                                                                   | Duck Storage               | 1512           | Adafruit         | 2        | 14.95      | 29.9   |
-| Aluminum Sheet         | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12''             | Duck Storage               | 6061           | McMaster Carr    | 3        | 24.28      | 72.84  |
-| Rack                   | 14-1/2 Degree Pressure Angle Gear Rack, 32 Pitch (1ft) Nylon Plastic                                      | Duck Storage               | 57655K62       | McMaster Carr    | 2        | 8.94       | 17.88  |
-| Servo-Mounted Pinion   | 32P, 32 Tooth, 25T 3F Spline Servo Mount Gear (Acetyl)                                                    | Duck Storage               | RSA32-2FS-32   | McMaster Carr    | 2        | 3.94       | 7.88   |
-| Servo Motors           | 2000 Series Dual Mode Servo                                                                               | Duck Storage               | 2000-0025-0002 | Servo City       | 2        | 31.99      | 63.98  |
-| Servo Motor Controller | 3102 Series Dual Mode Servo Programmer                                                                    | Duck Storage               | 3102-0001-0001 | Servo City       | 2        | 9.99       | 19.98  |
-| TIP102 Transistors     | Darlington Transistors in order to have the ability to switch on and off the solenoid to lock the trailer | Duck Storage               | 976            | Adafruit         | 1        | 2.5        | 2.5    |
-| Total                  |                                                                                                           |                            |                | Total Components | 20       | Total Cost | 217.95 |
+| Name of Item           | Description                                                                                               | Used in which subsystem(s)                  | Part Number    | Manufacturer     | Quantity | Price      | Total |
+|------------------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------|----------------|------------------|----------|------------|-------|
+| Solenoid Mount         | Print                                                                                                     | Duck Storage                                | N/A            | N/A              | 1        | 0          | 0     |
+| Corner Bracket         | Print                                                                                                     | Duck Storage                                | N/A            | N/A              | 4        | 0          | 0     |
+| Steel Ball Transfer    | Steel Ball Transfer(21 mm Height)                                                                         | Duck Storage                                | 1619-001-001   | Servo City       | 1        | 2.99       | 2.99  |
+| Lock-Style Solenoids   | 12 V-DC                                                                                                   | Duck Storage                                | 1512           | Adafruit         | 2        | 14.95      | 29.9  |
+| Aluminum Sheet         | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12''             | Duck Storage                                | 6061           | McMaster Carr    | 3        | 24.28      | 72.84 |
+| Rack                   | 14-1/2 Degree Pressure Angle Gear Rack, 32 Pitch (1ft) Nylon Plastic                                      | Duck Storage                                | 57655K62       | McMaster Carr    | 2        | 8.94       | 17.88 |
+| Servo-Mounted Pinion   | 32P, 32 Tooth, 25T 3F Spline Servo Mount Gear (Acetyl)                                                    | Duck Storage                                | RSA32-2FS-32   | McMaster Carr    | 2        | 3.94       | 7.88  |
+| Servo Motors           | 2000 Series Dual Mode Servo                                                                               | Duck Storage                                | 2000-0025-0002 | Servo City       | 2        | 31.99      | 63.98 |
+| Servo Motor Controller | 3102 Series Dual Mode Servo Programmer                                                                    | Duck Storage                                | 3102-0001-0001 | Servo City       | 2        | 9.99       | 19.98 |
+| TIP102 Transistors     | Darlington Transistors in order to have the ability to switch on and off the solenoid to lock the trailer | Duck Storage                                | 976            | Adafruit         | 1        | 2.5        | 2.5   |
+| Servo Controller       | Micro Maestro 6-Channel USB Servo Controller                                                              | Duck Storage, Pedestal Storage, and Feeding | 1350           | Pololu           | 1        | 39.95      | 39.95 |
+| Total                  |                                                                                                           |                                             |                | Total Components | 21       | Total Cost | 257.9 |
+
 
 
 
