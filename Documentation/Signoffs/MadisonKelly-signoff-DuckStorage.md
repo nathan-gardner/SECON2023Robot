@@ -29,7 +29,7 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 The electrical schematic for the object storage subsystem is shown below. Please note that the circuit components will be implemented via a solderable breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/216147890-9def65de-0d94-44b2-bba5-f4eb34bc201b.png)
+![image](https://user-images.githubusercontent.com/112424739/216155292-916236a9-e371-4c9d-9cbd-1963f927a87e.png)
 
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
 
