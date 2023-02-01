@@ -27,7 +27,7 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 ## Electrical Schematic
 
-The electrical schematic for the object storage subsystem is shown below. Please note that the circuit components will be implemented via a solderable breadboard.
+The electrical schematic for the object storage subsystem is shown below. Please note that the circuit components will be implemented via a solderable breadboard. The circuit layout is as specified by the manufacturer's datasheet.
 
 ![image](https://user-images.githubusercontent.com/112424739/216155292-916236a9-e371-4c9d-9cbd-1963f927a87e.png)
 
@@ -132,11 +132,10 @@ Therefore, the robot can still traverse the entire playing field in less than ha
 
 ### Circuit Analysis for Solenoid Circuit 
 
-I did an LTSpice simulation to determine whether or not this circuit would work. his circuit schematic was provided by the datasheet from the manufacturer. As you can see, the solenoid is supplied 12 V which is its operating voltage. Therefore, this circuit schematic will serve the purpose needed by the team.
+I did an LTSpice simulation to determine whether or not this circuit would work. This circuit schematic was provided by the datasheet from the manufacturer. As you can see, the solenoid is supplied 12 V which is its operating voltage. Therefore, this circuit schematic will serve the purpose needed by the team.
 
 ![image](https://user-images.githubusercontent.com/112424739/216142180-634dfa83-6d23-4c8f-a64f-263d02199b43.png)
 ![image](https://user-images.githubusercontent.com/112424739/216142298-0c8a0a9a-3263-4829-bb85-05530f388be4.png)
-
 
 ## Buildable Schematic
 
