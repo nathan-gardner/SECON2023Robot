@@ -22,14 +22,6 @@
 | Sorting                                    | Motor Controller           | 12          | 0.25        |
 | TOTAL:                                     |                            |             | 4           |
 
-### **Continuous Use**
-
-| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
-| ----------- | -------------------------- | -- | ---- |
-| Consumption | Motor Driver - Motor       | 6  | 0.5  |
-| Sorting     | Motor Controller           | 12 | 0.25 |
-| TOTAL:      |                            |    | 1.95 |
-
 ### **Constraint from Standard**
 
 - Shall have a self-latching emergency stop push-button that has a positive operation. The button shall not be a graphical representation or a flat switch based on NFPA 79 - 10.7.2.
@@ -85,6 +77,18 @@ sorting current
 
 ### **Power Supply** 
 The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
+
+The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
+
+### **Continuous Use**
+
+| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
+| ----------- | -------------------------- | -- | ---- |
+| Consumption | Motor Driver - Motor       | 6  | 0.5  |
+| Sorting     | Motor Controller           | 12 | 0.25 |
+| TOTAL:      |                            |    | 1.95 |
+
+The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
 
 ## **BOM**
 | Name of Item              | Description                                        | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
