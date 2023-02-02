@@ -27,11 +27,9 @@ The electrical schematic is shown below.
 
 ## Buildable Schematic
 
-![image](https://user-images.githubusercontent.com/112424739/213576212-9a67606e-6bfd-4f47-9b77-9e765276380f.png)
-
-![image](https://user-images.githubusercontent.com/112424739/213576274-2bf06847-a65c-4937-8941-d07af3cfdbbf.png)
-
-![image](https://user-images.githubusercontent.com/112424739/213576352-f804ddae-cf98-4ab0-96b0-ac3213059855.png)
+![image](https://user-images.githubusercontent.com/112424739/216230141-b51adfd5-e3c0-481c-bdd2-9584e419ac03.png)
+![image](https://user-images.githubusercontent.com/112424739/216230166-2ee72d46-860f-45da-af1e-fa78c745370b.png)
+![image](https://user-images.githubusercontent.com/112424739/216230204-73e37f0f-681a-40a1-8120-c79857bd24f4.png)
 
 
 ## Analysis
