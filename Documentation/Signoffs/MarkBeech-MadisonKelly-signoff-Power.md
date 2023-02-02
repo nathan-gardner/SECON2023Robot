@@ -53,27 +53,27 @@ Above is the output voltage for the buck converter connected to the 12 V power s
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_motor.png)
 
-consumption motor
+Above is the spice model for the dc motor used in the consumption subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_current.png)
 
-consumption current
+Above is the current draw from the consumption motor.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_motor.png)
 
-locomotion motor
+Above is the spice model for the dc motor used in the locomotion subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_current.png)
 
-locomotion current
+Above is the current draw from the locomotion motor.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_motor.png)
 
-sorting motor
+Above is the spice model for the dc motor used in the sorting subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_current.png)
 
-sorting current
+Above is the current draw from the sorting conveyor motor.
 
 ### **Power Supply** 
 The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
