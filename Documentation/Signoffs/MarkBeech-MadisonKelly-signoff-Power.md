@@ -32,7 +32,7 @@
 
 ### **Electrical Schematics:**
 
-![image](https://user-images.githubusercontent.com/112424739/216123680-489e3972-0d1b-4fce-9da3-44238d358077.png)
+![image](https://user-images.githubusercontent.com/112424739/216204941-4b3447d1-fe79-48cf-9022-17a319b6a4c3.png)
 
 ## **Analysis**
 
@@ -91,12 +91,13 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
 
 ## **BOM**
-| Name of Item              | Description                                        | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
-|---------------------------|----------------------------------------------------|----------------------------|---------------|------------------|----------|------------|-------|
-| Rechargeable 12 V Battery | 12 V/6000 mAH Lithium Ion Battery Pack             | Power                      | YB1206000-USB | TalentCell       | 1        | 40.39      | 40.39 |
-| Buck Converters           | DC-DC Adjustable Buck Converters 3-40V to 1.5-35V  | Power                      | LM2596        | ATNSINC          | 1        | 15.69      | 15.69 |
-| E-Stop Button             | Self-Locking Emergency Stop Button                 | Power                      | HB2-BS542     | MXUTEUK          | 1        | 9.99       | 9.99  |
-|                           |                                                    |                            |               |                  |          |            | 0     |
-|                           |                                                    |                            |               |                  |          |            | 0     |
-| Total                     |                                                    |                            |               | Total Components | 3        | Total Cost | 66.07 |
+| Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
+|---------------------------|-----------------------------------------------------------------|----------------------------|---------------|------------------|----------|------------|-------|
+| Rechargeable 12 V Battery | 12 V/6000 mAH Lithium Ion Battery Pack                          | Power                      | YB1206000-USB | TalentCell       | 1        | 39.99      | 39.99 |
+| Buck Converters           | DC-DC Adjustable Buck Converters 3-40V to 1.5-35V               | Power                      | LM2596        | ATNSINC          | 1        | 15.69      | 15.69 |
+| E-Stop Button             | Self-Locking Emergency Stop Button 2 NC Red Mushroom 660 V 10 A | Power                      | HB2-BS544     | MXUTEUK          | 1        | 10.99      | 10.99 |
+| 3 A Fuses                 | 3A 250V Fuses (pack of 20)                                      | Power                      | F3AL250V      | BOJACK           | 2        | 5.99       | 11.98 |
+| Power Distribution Bus    | Solid Brass                                                     | Power                      | 737           | Adafruit         | 2        | 1.95       | 3.9   |
+| Total                     |                                                                 |                            |               | Total Components | 7        | Total Cost | 82.55 |
+
 
