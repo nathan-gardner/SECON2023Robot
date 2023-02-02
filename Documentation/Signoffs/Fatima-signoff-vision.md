@@ -42,6 +42,10 @@ The distance sensor will need to be read at a minimum of 66 ms. This is the mini
 
 The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to $2.4\ ms, 24\ ms, 50\ ms, 101\ ms, 154\ ms or 700\ ms$. 
 
+The minimum sample rate of the LIDAR sensor is 400 samples per second, which comes from the software library for the sensor. The number of meters per sample can be calculated since we know the max speed of the robot, $0.2023 \frac{m}{s}$. 
+
+$\frac{0.2023\ meter}{1\ second} * \frac{1\ second}{400\ samples} = 0.00050575 \frac{mm}{sample}$
+
 Electrical Specifications:
 
 $V_{DD} = 3\ V$ 
