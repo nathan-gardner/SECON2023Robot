@@ -82,8 +82,9 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 
 ### **Continuous Use**
 
-| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
+| Subsystem  | Component | Voltage (V) | Current (A)  |
 | ----------- | -------------------------- | -- | ---- |
+| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
 | Consumption | Motor Driver - Motor       | 6  | 0.5  |
 | Sorting     | Motor Controller           | 12 | 0.25 |
 | TOTAL:      |                            |    | 1.95 |
