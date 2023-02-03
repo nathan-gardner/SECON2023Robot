@@ -57,7 +57,7 @@ Above is the spice model for the dc motor used in the consumption subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_current.png)
 
-Above is the current draw from the consumption motor.
+Above is the current draw from the consumption motor. This output and model is consistant with what was analyzed for the consumption subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_motor.png)
 
@@ -65,7 +65,7 @@ Above is the spice model for the dc motor used in the locomotion subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_current.png)
 
-Above is the current draw from the locomotion motor.
+Above is the current draw from the locomotion motor. This is accurate to the current draw described in the locomotion subsystem.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_motor.png)
 
