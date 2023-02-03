@@ -15,15 +15,15 @@ Throughout each round of the competition, the robot will need to intake up to 17
 
 ## Constraints
 
-- The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the team plans to have the ducks held in a bottomless corral that is outside of the robot. The corral, as previously mentioned, will surround part of the robot before the competition, and then as soon as the robot starts its path, it will extend from the back of the robot via a rack and pinion mechanism. 
+- To abide by the 1 cubic foot size constraint, the trailer will extend from the back of the robot via a rack and pinion mechanism. 
 - The ducks are approximately 3 inches x 3 inches x 3.5 inches, so the corral will need to be a sufficient size to hold all ten ducks. The ducks can sit on top of each other, so the corral shown in the buildable schematic will be sufficient to hold all ten ducks.
-- The servo motor selected for the corral design should be able to push the weight of the ducks and the corral itself when ejecting the corral at the duck pond location. At worst case, the corral will be carrying all ten ducks, so the weight will be 0.708 kg (the weight of all ten ducks) + 1.04 kg (the weight of the corral). The friction coefficient of rubber on steel is approximately 0.76. This will need to be taken into consideration in the analysis for the rack and pinion.
-- Calculations for the rotation angle of the servo motor are in the analysis section below. The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;.
-- The duck trailer will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add two lock-style solenoids and lock the trailer in place to stop any unwanted motion. They will insert into the grooves on the rack casing in order to relieve the servo from needing a certain back-driving torque.
+- The servo motor selected for the corral design should have at least 16.83 $kg \ast cm$ of torque.
+- The distance that needs to be travelled for the initial roll back of the corral at the beginning of each round is 9 inches which will require 9 rotations or 3240&deg;. For the final drop off, it will need to travel 1 inch which will require 1 rotation or 360&deg;.
+- The duck trailer will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add two lock-style solenoids and lock the trailer in place to stop any unwanted motion. 
 - The pinion gear will need to have some way to "mesh" with the the rack that is mounted on the side of the trailer. In order to prevent it from coming off the rack, the team will 3D print an enclosure to ensure the pinion gear stays on the rack. The 3D model below shows this feature in more detail.
-- Next, the omni-wheel on the back of the trailer should be attached such that the gap between the bottom of the back wall of the trailer and the playing field is not large enough that a duck or part of a duck could get jammed in the space and cause extra resistance on the robot's locomotion subsystem. To ensure that this is not an issue, the wheel will be adjustable so that the team can change the placement of the wheel to allow as much or as little of a gap as possible. The omni-wheel will also allow the trailer to follow any motion that the main body of the robot performs as well as lower the overall friction on the locomotion subsystem.
-- This system has been taken into consideration for the locomotion subsystem in terms of overall weight and friction added to the motors for the locomotion subsystem. 
-- The final constraint comes from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. This will create a safe environment for the team when they are working with the robot and will significantly reduce the chance of finger pinching near the system.
+- The omni-wheel on the back of the trailer should be attached such that the gap between the bottom of the back wall of the trailer and the playing field is not large enough that a duck or part of a duck could get jammed in the space and cause extra resistance on the robot's locomotion subsystem.
+- This system will affect the path taken along the playing field as well as the time constraints. 
+- The final constraint comes from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. 
 
 ## Electrical Schematic
 
@@ -34,6 +34,17 @@ The electrical schematic for the object storage subsystem is shown below. Please
 The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
 
 ## Analysis
+
+### Size Calculations for Duck Corral
+
+#### Duck Trailer
+$Duck\ Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
+
+$Duck\ Volume_{Total} = 31.5 \ast 10 = 315 in^{3}$
+
+$Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
+  
+Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
 
 ### Torque Ratio Calculations
 
@@ -77,16 +88,12 @@ The lock is normally active, so it will not require power while in the locked st
 
 Keeping in mind that the duck trailer can be fully ejected in 4 seconds, this solenoid will be more than adequate for allowing the trailer to roll past when necessary.
 
-### Size Calculations for Duck Corral
+### Circuit Analysis for Solenoid Circuit 
 
-#### Duck Trailer
-$Duck\ Volume = 3 \ast 3 \ast 3.5 = 31.5 in^{3}$
+An LTSpice simulation was performed to determine whether or not this circuit from the manufacturer would work. This circuit schematic was provided by the datasheet from the manufacturer. As you can see, the solenoid is supplied 12 V which is its operating voltage. Therefore, this circuit schematic will serve the purpose needed by the team.
 
-$Duck\ Volume_{Total} = 31.5 \ast 10 = 315 in^{3}$
-
-$Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
-  
-Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
+![image](https://user-images.githubusercontent.com/112424739/216142180-634dfa83-6d23-4c8f-a64f-263d02199b43.png)
+![image](https://user-images.githubusercontent.com/112424739/216142298-0c8a0a9a-3263-4829-bb85-05530f388be4.png)
   
 #### Omni-Wheel Height
  
@@ -129,13 +136,6 @@ Assuming the turns will take 5 seconds each,
 $60.3\ sec + 4 \ast 5\ sec = 80.3\ sec$
 
 Therefore, the robot can still traverse the entire playing field in less than half the time (3 minutes). This leaves an additional minute and 40 seconds to complete all the other tasks. In addition to this, locomotion signoff calculates an 84.66\% margin of safety. This means that the motors only are using 15.34\% of their torque capacity, so there will be plenty of extra speed as needed.
-
-### Circuit Analysis for Solenoid Circuit 
-
-I did an LTSpice simulation to determine whether or not this circuit would work. This circuit schematic was provided by the datasheet from the manufacturer. As you can see, the solenoid is supplied 12 V which is its operating voltage. Therefore, this circuit schematic will serve the purpose needed by the team.
-
-![image](https://user-images.githubusercontent.com/112424739/216142180-634dfa83-6d23-4c8f-a64f-263d02199b43.png)
-![image](https://user-images.githubusercontent.com/112424739/216142298-0c8a0a9a-3263-4829-bb85-05530f388be4.png)
 
 ## Buildable Schematic
 
