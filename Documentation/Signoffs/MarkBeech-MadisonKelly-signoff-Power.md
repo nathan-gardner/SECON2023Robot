@@ -8,6 +8,11 @@
 - The maximum voltage is the biggest constraint that the robot’s power supply needs to accommodate. The largest voltage any of the robot’s components will need will be 12 V, and the power supply chosen is able to supply 12 V at 6000 mAH. The maximum current draw is 3 A, and this is much more than we will need for any component included in the design. The power supply was also chosen due to its small size, light weight, and rechargeable feature.
 - To address the overcurrent concern, the addition of 3A fuses will be made. Since the power supply is only able to supply 3A of current, these 3A fuses will protect the power supply from overcurrent damage.
 - Shown below is the voltage and current requirements for each component in each subsystem. These will be the main constraints for the power subsystem.
+- An emergency stop button must be used for the safety of those involved in the competition. The emergency stop button will need to have a flyback diode connected to the two output lines of the button to prevent sudden voltage spikes when current is interrupted.
+
+### **Constraint from Standard**
+
+- Shall have a self-latching emergency stop push-button that has a positive operation. The button shall not be a graphical representation or a flat switch based on NFPA 79 - 10.7.2.
 
 ### **Power Subsystem Required Voltage and Current from each Subsystem**		
 
@@ -22,9 +27,7 @@
 | Sorting                                    | Motor Controller           | 12          | 0.25        |
 | TOTAL:                                     |                            |             | 4           |
 
-### **Constraint from Standard**
 
-- Shall have a self-latching emergency stop push-button that has a positive operation. The button shall not be a graphical representation or a flat switch based on NFPA 79 - 10.7.2.
 
 ## **Buildable Schematic**
 
@@ -74,6 +77,10 @@ Above is the spice model for the dc motor used in the sorting subsystem.
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_current.png)
 
 Above is the current draw from the sorting conveyor motor.
+
+### **Emergency stop button**
+
+The E-stop button was chosen to be a 2 channel normally closed switch. This was chosen so power can be broken from locomotion, consumption and sorting all together with one button as shown in the electrical schematic above.
 
 ### **Power Supply** 
 
