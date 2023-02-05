@@ -11,6 +11,10 @@ The function of this subsystem is firework activation, which will need to be acc
 
 ## Buildable Schematics
 
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/Team2_Fireworks_Signoff/Documentation/Images/FireWorks/ChassiFullView.png)
+
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/Team2_Fireworks_Signoff/Documentation/Images/FireWorks/ChassisTopView.png)
+
 **Include a model of the chassis point which will make contact with the switch.**
 
 ## Electrical Schematic
