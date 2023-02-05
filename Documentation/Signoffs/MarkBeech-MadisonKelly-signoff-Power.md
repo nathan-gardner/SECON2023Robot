@@ -84,8 +84,6 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 ### **Power Supply** 
 
-The power supply's output voltage is not regulated, so a 12 V voltage regulator will be needed. The regulator chosen is a L7812CV. The regulator can take a max input voltage of 35 V and will output up to 1.5 A. This low current output is why we need more than one. The connections for the regulators are shown in the electrical schematic above.
-
 The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
 
 The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
