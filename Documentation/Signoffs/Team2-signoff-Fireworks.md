@@ -27,10 +27,15 @@ Force analysis is included to show that the motors chosen in the locomotion subs
 
 The switch we are using is smaller than the lower estimation here.
 
-Mass of the switch is close to $0.1\ kg$, acceleration is $9.8\ m/s$ due to gravity
-$F = m * a = 0.1 * 9.8 = 0.98\ N$
+Mass of the switch is close to 0.1 kg, acceleration is 9.8 m/s due to gravity
 
-Since torque equals force times the moment arm length, so the torque would equal $0.98\ N * r_{wheel} = 0.98\ N * 0.024\ m = 0.0235\ N*m = 2.4\ kg*mm$ of torque. The required torque for a single motor in the drive train is 6.149 kg*mm and we will have four of these motors. This means that the torque requirement within the drivetrain for flipping the switch is met. 
+$F = m \ast a = 0.1 \ast 9.8 = 0.98\ N$
+
+Since torque equals force times the moment arm length, so the torque would equal 
+
+$0.98\ N \ast r_{wheel} = 0.98\ N \ast 0.024\ m = 0.0235\ N \ast m = 2.4\ kg \ast mm$ 
+
+The required torque for a single motor in the drive train is 6.149 $kg \ast mm$ and we will have four of these motors. This means that the torque requirement within the drivetrain for flipping the switch is met. 
 
 ## BOM
 
