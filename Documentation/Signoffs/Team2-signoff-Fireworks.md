@@ -6,7 +6,7 @@ The function of this subsystem is firework activation, which will need to be acc
 
 ## Constraints
 
-- The ability to provide enough force to flip the fireworks switch on collision with the switch
+- The ability to provide enough force to flip the fireworks switch on collision with the switch (0.98 N)
 - Natural chassis protrusion which will make contact with the switch
 
 ## Buildable Schematics
