@@ -12,10 +12,8 @@ The position of the aquariums can be reflected based on the arena we are playing
 ## Constraints
 
 - The size of this subsystem will have to be such that it takes up as minimal space as possible, that is to fit the chips and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis. 
-- The servo motor must be as small as possible since it only has to push the weight of a small 3D printed plate
-- The color sensor must be able to detect the red and green animal enclosures
-- The chips must be able to fit within their dispensers
-- The chip delivery will be on the opposite side as the pedestal storage silos to allow for a simple delivery to each enclosure
+- The servo motor must be as small as possible, while also providing necessary torque. The calculation for needed torque is below in analysis.
+- The color sensor must be able to detect a distinct difference between the red and green animal enclosures, the analysis for this is performed below. 
 
 ## Buildable Schematic
 
@@ -54,6 +52,10 @@ The downward force of the chips on the plate will be the mass of three chips tim
 ![image](https://user-images.githubusercontent.com/30758520/216861296-9122d564-b9b9-44e5-833d-dd81255a06ec.png)
 
 The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times needed torque from the calculations above.
+
+# Color of Aquariums
+
+The arena picture from the competition rules description, when color sampled, the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. Because of this, when the red portion of the RGB register value reached a reasonable threshold, the logic will assume that the color sensor is seeing red and will dispense the feeding chips into the red aquarium. The intensity needed to be set at this threshold will depend greatly on the lighting from the light mounted on the sensor, so this value will need to be found in testing after the arena is built and testing has occurred. 
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
