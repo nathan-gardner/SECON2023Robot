@@ -9,11 +9,11 @@ This subsystem’s main function is to ensure that the pedestals have a place to
 - Worst case scenario of three pedestals at a time is analyzed below
 
 ## Constraints
-- The first constraint for this subsystem is the space available within the robot. Like many other subsystems included in this project, the 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. To abide by this constraint, the size and number of silos will need to be considered. There will only be one silo. In order to save as much space as possible, the silo will only be tall enough to store three pedestals at once and only wide enough to fit the pedestals and a small gap for the proximity sensor.  
+- The 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. There will only be one silo that is 5.5 in (height) x 2.25 in (width) x 2.25 inches (length).
 
-- Because the robot contains only one silo that can hold at most three pedestals, there needs to be a way to detect if there are three pedestals present. The plan is to drop off the first three collected and then two sets of two after that, so there also needs to be a way to detect if there are three pedestals present in the silo. To abide by these constraints, two proximity sensors will be placed in the silo to send a signal back to the controller to interrupt the main course and drop off the pedestals. 
+- There will be two proximity sensors placed in the silo to send a signal back to the controller to interrupt the main course and drop off the pedestals. 
 
-- The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.1 kg (the weight of the silo).
+- The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.06287 kg (the weight of the silo). It will need at least 3.495 $kg \ast cm$ of torque to function.
 
 - Calculations for the rotation angle of the servo motor are in the analysis section below. The silo will need to open widde enough to let the statue fit through which will require .318 rotations or 115 degrees. The silo will remain open until enough time has elapsed that it can close again without trapping the statue within the silo.
 
@@ -22,8 +22,7 @@ This subsystem’s main function is to ensure that the pedestals have a place to
 ## Electrical Schematic
 The electrical schematic is shown below.
 
-![image](https://user-images.githubusercontent.com/112424739/215895126-91452a6a-a2b4-4962-be82-1a0401ec0ae7.png)
-
+![image](https://user-images.githubusercontent.com/112424739/216868778-a6e9caa5-07d5-4477-beca-44d0b3224a8a.png)
 
 ## Buildable Schematic
 
@@ -31,6 +30,9 @@ The electrical schematic is shown below.
 ![image](https://user-images.githubusercontent.com/112424739/216230166-2ee72d46-860f-45da-af1e-fa78c745370b.png)
 ![image](https://user-images.githubusercontent.com/112424739/216230204-73e37f0f-681a-40a1-8120-c79857bd24f4.png)
 
+Below is the rough layout of the chassis showing the major subsystems and their placement within the robot. This subsystem is in the block labeled "stacking".
+
+![chassis](https://user-images.githubusercontent.com/112424739/216861688-57e85d61-c0b9-467b-85f4-2b73cdc1b0f9.png)
 
 ## Analysis
 ### Size Calculations for Pedestal Silo
@@ -39,9 +41,35 @@ $Pedestal\ Volume = \pi \ast r^{2} \ast h = \pi \ast 1^{2} \ast 1.8 = 5.65 in^{3
 
 $Pedestal\ Volume_{Total} = 5.65 \ast 3 = 16.96 in^{3}$
 
-$Silo\ Volume = \pi \ast r^{2} \ast h = \pi \ast 1.083^{2} \ast 6 = 22.108 in^{3}$
+$Silo\ Volume = 5.5 \ast 2.25 \ast 2.25 = 27.84 in^{3}$
 
 Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
+
+### Distance From Sensors
+
+$P_{silo} = 2.25 \ast 4 = 9 in^{2}$
+
+$C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
+
+$D_{max} = C_{silo} - C_{pedestal} = 9 - 6.28 = 2.72 in = 0.0691 m$
+
+The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
+
+### Weight Calculations
+
+$W_{pedestals} = 20.6 g \ast 3 = 0.0618 kg$
+
+$W_{silo} = 5.5 \ast 2.5 \ast 0.25 \ast% density of TPU = $3.4375 \ast 0.0448 = 0.154 lbs = 0.06287 kg$
+
+$W_{total} = 0.0618 + 0.06287 = 0.12467 kg$
+
+### Torque Calculations
+
+$F = m \ast a = 0.12467 \ast 9.81 = 1.223 N$
+
+$\tau = F \ast r \ast sin(\theta) = 1.223 \ast 2.8575 \ast sin(90) = 3.495 kg \ast cm$
+
+The servo motor chosen is able to supply 6 $kg \ast cm$ of torque. Therefore, the servo will be sufficient for the design.
 
 ### Rotation Calculation for Statue Delivery
 
@@ -52,16 +80,6 @@ $Rotations = \frac{ 2 }{ 12.56 } = 0.318$
 $Degrees = rotations \ast 360 = 0.318 \ast 360 = 114.64&deg;$
 
 This rotation angle is well within the servo's capabilities. 
-
-### Distance From Sensors
-
-$C_{silo} = \pi \ast d = \pi \ast 2.165 in^{2} = 6.80 in^{2}$
-
-$C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
-
-$D_{max} = C_{silo} - C_{pedestal} = 6.80 - 6.28 = 0.52 in = 0.0133 m$
-
-The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
 
 ### How Long will the Silo need to remain open?
 
@@ -75,7 +93,7 @@ If the pedestal is two inches in diameter, the silo will need to remain open for
 | Name of Item           | Description                                  | Used in which subsystem(s)                | Part Number | Manufacturer     | Quantity | Price      | Total |
 |------------------------|----------------------------------------------|-------------------------------------------|-------------|------------------|----------|------------|-------|
 | Proximity Sensor       | Pololu Digital Sensor 5cm                    | Pedestal Storage and Delivery             | 4050        | Pololu           | 2        | 12.95      | 25.9  |
-| Servo Motor            | FEEFETCH Mini Servo FT1117M                  | Pedestal Storage and Delivery             | 3423        | Pololu           | 1        | 9.95       | 9.95  |
+| Servo Motor            | FEEFETCH Standard Servo FS5106B                  | Pedestal Storage and Delivery             | 3425        | Pololu           | 1        | 14.95       | 14.95  |
 | Silo                   | Silo to hold pedestals, 3D Printed           | Pedestal Storage and Delivery             | N/A         | N/A              | 1        | 0          | 0     |
 | Servo Mount            | 3D Printed                                   | Pedestal Storage and Delivery             | N/A         | N/A              | 1        | 0          | 0     |
 | Servo Motor Controller | Micro Maestro 6-channel USB Servo Controller | Duck Storage, Pedestal Storage, and Delivery and Feeding | 1350        | Pololu           | 1        | 39.95      | 39.95 |
