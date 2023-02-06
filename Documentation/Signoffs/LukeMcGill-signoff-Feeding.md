@@ -51,7 +51,7 @@ The density of the TPU is $0.0448\ \frac{lb}{in^3}$, so the weight of the TPU pr
 
 The downward force of the chips on the plate will be the mass of three chips times the acceleration of gravity squared. This would be $0.01077\ kilograms \ast 9.81^2 \frac{m}{s^2}^2 = 1.0365\ N$. The torque needed for the servo will therefore be $\tau = 1.0365\ N \ast 0.047625\ m = 0.0494 N*m = 6.996 oz*in$, and this based on the worst case moment arm measurement, derived from the picture below.
 
-INSERT IMAGE OF MOMENT ARM
+![image](https://user-images.githubusercontent.com/30758520/216861296-9122d564-b9b9-44e5-833d-dd81255a06ec.png)
 
 The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times needed torque from the calculations above.
 
