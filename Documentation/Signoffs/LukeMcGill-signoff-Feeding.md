@@ -49,7 +49,7 @@ $V = \pi r^2 h = \pi \ast 0.75^2 \ast 0.1 = 0.176715\ in^3$
 
 The density of the TPU is $0.0448\ \frac{lb}{in^3}$, so the weight of the TPU printed chip will be $0.0448\ \frac{lb}{in^3} \ast 0.176715\ in^3 = 0.00792 lb = 3.59\ grams$. 
 
-The downward force of the chips on the plate will be the mass of three chips times the acceleration of gravity squared. This would be $0.01077\ kilograms \ast 9.81^2 \frac{m}{s^2}^2 = 1.0365\ N$. The torque needed for the servo will therefore be $\tau = 1.0365\ N \ast 0.047625\ m = 0.0494 N*m = 6.996 oz*in$, and this based on the worst case moment arm measurement, derived from the picture below.
+The downward force of the chips on the plate will be the mass of three chips times the acceleration of gravity squared. This would be $0.01077\ kilograms \ast 9.81^2 \frac{m}{s^2}^2 = 1.0365\ N$. The torque needed for the servo will therefore be $\tau = 1.0365\ N \ast 0.047625\ m = 0.0494 N \ast m = 6.996 oz \ast in$, and this based on the worst case moment arm measurement, derived from the picture below.
 
 ![image](https://user-images.githubusercontent.com/30758520/216861296-9122d564-b9b9-44e5-833d-dd81255a06ec.png)
 
