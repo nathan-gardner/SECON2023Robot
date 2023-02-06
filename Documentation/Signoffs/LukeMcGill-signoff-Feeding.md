@@ -11,7 +11,7 @@ The position of the aquariums can be reflected based on the arena we are playing
 
 ## Constraints
 
-- The size of this subsystem will have to be such that it takes up as minimal space as possible
+- The size of this subsystem will have to be such that it takes up as minimal space as possible, that is to fit the chips and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis. 
 - The servo motor must be as small as possible since it only has to push the weight of a small 3D printed plate
 - The color sensor must be able to detect the red and green animal enclosures
 - The chips must be able to fit within their dispensers
@@ -34,18 +34,26 @@ The electrical schematic for the feeding subsystem is shown below.
 
 ### Size
 
-The dispensers that the chips will be stored in must be able to fit the chips.
+The dispensers that the chips will be stored in must be able to fit the chips. There will be three chips of each color, so the chips must be able to be stacked to a height of three in each silo. 
 
 Chip Size $= 1.5 in \ast 0.1 in$
 Dispenser Interior Size $= 4.5 in \ast 0.15 in \ast 1.5 in$
 
-Therefore, the chips will comfortably fit inside the tubes. This part will also be 3D printed, so the sizing can be adjusted during testing.
+Therefore, the chips will comfortably fit inside the tubes. This part will also be 3D printed, so the sizing can be adjusted during testing. The chips will fit into the silos in a way similar to how chips fit into a game of Connect 4, they will be top loaded and sit so that the diameter of the chip, $1.5 inches$, is the height of the chip when it is loaded into the silo. 
 
 ### Motor Torque
 
-The motor will only need to push the weight of the small 3D printed plate.
+The motor will only need to push the weight of the small 3D printed plate. The volume of the 3D printed chips are calculated and modeled as a cylinder below:
 
-The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause.
+$V = \pi r^2 h = \pi \ast 0.75^2 \ast 0.1 = 0.176715\ in^3$
+
+The density of the TPU is $0.0448\ \frac{lb}{in^3}$, so the weight of the TPU printed chip will be $0.0448\ \frac{lb}{in^3} \ast 0.176715\ in^3 = 0.00792 lb = 3.59\ grams$. 
+
+The downward force of the chips on the plate will be the mass of three chips times the acceleration of gravity squared. This would be $0.01077\ kilograms \ast 9.81^2 \frac{m}{s^2}^2 = 1.0365\ N$. The torque needed for the servo will therefore be $\tau = 1.0365\ N \ast 0.047625\ m = 0.0494 N*m = 6.996 oz*in$, and this based on the worst case moment arm measurement, derived from the picture below.
+
+INSERT IMAGE OF MOMENT ARM
+
+The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times needed torque from the calculations above.
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
