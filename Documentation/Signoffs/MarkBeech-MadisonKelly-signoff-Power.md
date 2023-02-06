@@ -35,6 +35,8 @@
 
 ### **Electrical Schematics:**
 
+All electrical circuits will be implemented via soldered breadboard.
+
 ![image](https://user-images.githubusercontent.com/112424739/216204941-4b3447d1-fe79-48cf-9022-17a319b6a4c3.png)
 
 ## **Analysis**
