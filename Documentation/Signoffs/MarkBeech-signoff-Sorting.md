@@ -29,15 +29,22 @@
 
 ### **CAD Model for the subsystem:**
 
-![image](https://user-images.githubusercontent.com/112428796/203214411-7822e98e-555d-492a-9ce3-bfae94a87829.png)
+![image](https://user-images.githubusercontent.com/30758520/217083573-140bcb9c-4fa0-4183-8102-0b3e01a4543d.png)
 
-![image](https://user-images.githubusercontent.com/112428796/203214451-758f40d0-eb9d-43b1-9ca9-24e6db49db30.png)
+![image](https://user-images.githubusercontent.com/30758520/217083593-f0c92dea-f0be-456a-b0dd-45a2c0516af1.png)
 
-![image](https://user-images.githubusercontent.com/112428796/203214470-0e758ce9-b856-4eec-923e-32410e9d9563.png)
+![image](https://user-images.githubusercontent.com/30758520/217083626-1b335fac-fea3-4333-bb96-94edd8fac186.png)
 
-![image](https://user-images.githubusercontent.com/112428796/203214491-ff77c0a5-24d4-42c6-9161-67491ab186df.png)
+![image](https://user-images.githubusercontent.com/30758520/217083646-45ddf2e9-122f-4edd-b5d9-c58c59687672.png)
 
-![image](https://user-images.githubusercontent.com/112428796/203214515-7af0d62c-5a34-484e-a266-4728f000bd4a.png)
+![image](https://user-images.githubusercontent.com/30758520/217083665-4cb1557c-2bf3-4bbf-a9e0-518da7e4f294.png)
+
+![image](https://user-images.githubusercontent.com/30758520/217083683-8d7532cf-3541-49e0-afe2-7faec3951319.png)
+
+![image](https://user-images.githubusercontent.com/30758520/217083729-15961e79-865e-4e81-8c71-2f9a680bb755.png)
+
+![image](https://user-images.githubusercontent.com/30758520/217083747-a606dd09-1a91-487c-baf5-59849e43aa57.png)
+
 
 ### **Electrical Schematics:**
 
