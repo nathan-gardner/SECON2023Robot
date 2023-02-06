@@ -7,6 +7,7 @@
 - The power supply must supply 12 V and a current of more than 2 A to accomodate all components that will be running at one time.
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
 - The table below shows the voltage and current requirements for each component in each subsystem. These will be the main constraints for the power subsystem.
+- 6 V will need to be provided to certain components such as some motor drivers and servo drivers.
 - An emergency stop button must be used for the safety of those involved in the competition. Further details are shown in the next subsection.
 
 
@@ -41,6 +42,23 @@ All electrical circuits will be implemented via soldered breadboard.
 
 ## **Analysis**
 
+### **Power Supply** 
+
+The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
+
+The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
+
+### **Continuous Use**
+
+| Subsystem  | Component | Voltage (V) | Current (A)  |
+| ----------- | -------------------------- | -- | ---- |
+| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
+| Consumption | Motor Driver - Motor       | 6  | 0.5  |
+| Sorting     | Motor Controller           | 12 | 0.25 |
+| TOTAL:      |                            |    | 1.95 |
+
+The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
+
 ### **Buck Converters**
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_model.png)
 
@@ -53,6 +71,14 @@ Above is the schematic model for the power supply connected to one of the buck c
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_output_voltage.png)
 
 Above is the output voltage for the buck converter connected to the 12 V power supply voltage. The output voltage stays around 6V, which is the required voltage for some of the motors and why we are using a buck converter.
+
+
+### **Emergency stop button**
+
+The emergency stop button will need to have a flyback diode connected to the two output lines of the button to prevent sudden voltage spikes when current is interrupted.
+
+The E-stop button was chosen to be a 2 channel normally closed switch. This was chosen so power can be broken from locomotion, consumption and sorting all together with one button as shown in the electrical schematic above. 
+
 
 ### **Motor simulations**
 
@@ -82,28 +108,8 @@ Above is the spice model for the dc motor used in the sorting subsystem.
 
 Above is the current draw from the sorting conveyor motor.
 
-### **Emergency stop button**
 
-The emergency stop button will need to have a flyback diode connected to the two output lines of the button to prevent sudden voltage spikes when current is interrupted.
 
-The E-stop button was chosen to be a 2 channel normally closed switch. This was chosen so power can be broken from locomotion, consumption and sorting all together with one button as shown in the electrical schematic above. 
-
-### **Power Supply** 
-
-The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
-
-The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
-
-### **Continuous Use**
-
-| Subsystem  | Component | Voltage (V) | Current (A)  |
-| ----------- | -------------------------- | -- | ---- |
-| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
-| Consumption | Motor Driver - Motor       | 6  | 0.5  |
-| Sorting     | Motor Controller           | 12 | 0.25 |
-| TOTAL:      |                            |    | 1.95 |
-
-The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
 
 ## **BOM**
 | Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
