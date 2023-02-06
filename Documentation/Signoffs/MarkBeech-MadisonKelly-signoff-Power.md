@@ -56,6 +56,8 @@ Above is the output voltage for the buck converter connected to the 12 V power s
 
 ### **Motor simulations**
 
+A $ 0.1 \ \mu F $ will be placed in parallel with the DC motors in order to reduce RF electromagnetic interference produced from the motor caused by the brushes causing current arcs.
+
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_motor.png)
 
 Above is the spice model for the dc motor used in the consumption subsystem.
