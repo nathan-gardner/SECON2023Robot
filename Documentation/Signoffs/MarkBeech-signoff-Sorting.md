@@ -192,6 +192,10 @@ $F_{flipper}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
 
 The flipper must apply more force than this in order to push the pedestal into the funnel.
 
+$\tau = F_{flipper}(r)(sin(\theta)) = 1.5572(0.0889)(sin(90)) = 0.13 \ Nm$
+
+
+
 
 
 
@@ -236,7 +240,7 @@ $\ $
 | Name of Item    | Description                                                                                                      | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
 | --------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------- | ---------------- | -------- | ---------- | ------ |
 | Color Sensor        | RGB Color Snesor with IR filter and White LED                                                                    | Sorting | TCS34725 | Adafruit         | 1  | $7.95      | 7.95   |
-| Servo Motor         | Closed loop servo motor                                                                                          | Sorting | HS-40    | Hitech           | 1  |  $13.49          |  $13.49      |
+| Servo Motor         | Analog Servo                                                                                          | Sorting | 2818    | Fitech           | 1  |  $5.25          |  $5.25      |
 | Motor               | 99:1 Metal Gearmotor 25Dx69L mm LP 6V with 48 CPR Encoder                                                        | Sorting | 4827     | Pololu           | 1  | $45.95     | 45.95  |
 | Funnel              | 3d printed                                                                                                       | Sorting | N/A      | N/A              | 1  |            | 0      |
 | Flipper             | 3d printed                                                                                                       | Sorting | N/A      | N/A              | 1  |            | 0      |
@@ -244,4 +248,4 @@ $\ $
 | Rollers             | 3d printed                                                                                                       | Sorting | N/A      | N/A              | 2  |            | 0      |
 | DC Motor Controller | TB9051FTG Single Brushed DC Motor Driver Carrier                                                                 | Sorting | 2997     | Pololu           | 1  | $11.95     | 11.95  |
 | Motor Mount         | Pololu 25D mm Metal Gearmotor Bracket Pair                                                                       | Sorting | 2676     | Pololu           | 1  | $7.95      | 7.95   |
-| Total               |                                                                                                                  |         |          | Total Components | 10 | Total Cost | 129.45 |
+| Total               |                                                                                                                  |         |          | Total Components | 10 | Total Cost | 134.70 |
