@@ -87,13 +87,6 @@ $Degrees = rotations \ast 360 = 1 \ast 360 = 360 &deg;$
 The lock is normally active, so it will not require power while in the locked state. It is designed for a 1-10 second activation time.
 
 Keeping in mind that the duck trailer can be fully ejected in 4 seconds, this solenoid will be more than adequate for allowing the trailer to roll past when necessary.
-
-### Circuit Analysis for Solenoid Circuit 
-
-An LTSpice simulation was performed to determine whether or not this circuit from the manufacturer would work. This circuit schematic was provided by the datasheet from the manufacturer. As you can see, the solenoid is supplied 12 V which is its operating voltage. Therefore, this circuit schematic will serve the purpose needed by the team.
-
-![image](https://user-images.githubusercontent.com/112424739/216142180-634dfa83-6d23-4c8f-a64f-263d02199b43.png)
-![image](https://user-images.githubusercontent.com/112424739/216142298-0c8a0a9a-3263-4829-bb85-05530f388be4.png)
   
 #### Omni-Wheel Height
  
