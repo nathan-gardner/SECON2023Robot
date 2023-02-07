@@ -38,6 +38,7 @@ Below is the rough layout of the chassis showing the major subsystems and their 
 ![labeled top](https://user-images.githubusercontent.com/112424739/217131223-d5d951c8-d70b-44b6-8011-0d868e72ecd0.png)
 ![labeled front side](https://user-images.githubusercontent.com/112424739/217131251-021f2e84-c748-4926-9170-e3098d97e282.png)
 
+Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/Chassis/Chassis_Fit).
 
 ## Analysis
 ### Size Calculations for Pedestal Silo
