@@ -1,6 +1,6 @@
 # **Sorting Subsystem**
 ## **Function of The Subsystem** 
-- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and pusher.
+- Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper.
 - Actively sort pedestals while passively sorting ducks. 
 - Objects will be passed from the consumption subsystem to the sorting subsystem. The sorting subsystem will then send the ducks to the duck storage and delivery subsystem while sending the pedestals to the pedestal storage and delivery subsystem.
 - The motor driver for the DC motor will be controlled via the low-level controller subsystem.
