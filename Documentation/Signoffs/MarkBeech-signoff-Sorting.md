@@ -9,17 +9,17 @@
 
 ## **Constraints**
 ### **Size:**
-- The sorting subsystem must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot. The consumption subsystem takes up $5 \ in$ of depth, so the sorting subsystem must be no longer than $7 \ in$ deep. The sorting subsystem must be at the top of the robot due to the consumption susbsytem feeding objects out to the top of the robot. There must be sufficient space for a pedestal silo and funnel under the sorting subsystem. The silo will hold three pedestals, which are $2 \ in$ each, thus making the silo $6 \ in$ tall. The funnel has been designed to be $2.75 \ in$ tall, thus making the funnel and silo $8.75 \ in$ tall. The conveyor will be above the funnel with a height of $1 \ in$. The color sensor board is approximately $0.8 \ in$ tall. The pusher will be no greater than $2 \ in$ tall. This makes the total height of the sorting subsystem $11.75 \ in$. This number was found by adding the height of the funnel and silo with the height of the conveyor and maximum height of the pusher.
+- The sorting subsystem must be designed to be space efficient due to the robot having a size constraint of 1 cubic foot. The consumption subsystem takes up $5 \ in$ of depth, so the sorting subsystem must be no longer than $7 \ in$ deep. The sorting subsystem must be at the top of the robot due to the consumption susbsytem feeding objects out to the top of the robot. There must be sufficient space for a pedestal silo and funnel under the sorting subsystem. The silo will hold three pedestals, which are $2 \ in$ each, thus making the silo $6 \ in$ tall. The funnel has been designed to be $2.75 \ in$ tall, thus making the funnel and silo $8.75 \ in$ tall. The conveyor will be above the funnel with a height of $1 \ in$. The color sensor board is approximately $0.8 \ in$ tall. The flipper will be no greater than $2 \ in$ tall. This makes the total height of the sorting subsystem $11.75 \ in$. This number was found by adding the height of the funnel and silo with the height of the conveyor and maximum height of the flipper.
 ### **Conveyor:**
 - The size of ducks will constrain the width of the conveyor belt. The belt must have a width wider than the duck's width of 3.5 $\ in$.
 - The conveyor belt must effectively move ducks and pedestals at $2\ in/s$ and support the weight of at least three ducks ( $F_{ducks} = 2.08152\  N$ ).
 - The length of the conveyor must be no more than $7 \ in$ to make room for the consumption subsystem (the consumption subsystem is $5\ in$ deep into the robot).
-### **Pusher:**
-- The pusher must extend greater than $1.5 \ in$ in order to touch the pedestal. 
-- The pusher must be wide enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $2 \ in$ (the size of a pedestal)
-- The solenoid actuator chosen must provide enough force to move the pedestals ( $F_{pusher} \gt 1.5572 \ N$ ).
+### **Flipper:**
+- Flipper must be long enough to reach across the whole conveyor belt width ($3.5 \ in$)
+- The flipper must be tall enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $1.5 \ in$.
+- The servo and flipper must provide enough force to move the pedestals ( $F_{flipper} \gt 1.5572 \ N$ ).
 ### **Sensor:**
-- Color sensor and pusher must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the pusher. See the colr sensor section under the analysis section for more details.
+- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
 - Color sensor must work well with the Arduino architecture.
 ### **Socioeconomic:**
@@ -163,34 +163,34 @@ Therefore, the motor chosen meets all specifications.
 
 
 $\ $
-### **Pusher:**
-The pusher consists of a push/pull solenoid linear actuator that will be pushing a $2in$ x $2in$ x $2in$ block made of ABS printed plastic with a weight of $0.13503 \ kg$.
+### **Flipper:**
+The flipper consists of a servo motor connected to a 3D printed plastic "pinball" flipper.
 
 
 weight of ABS $1.03 \frac{g}{cm^3}$
 
- $2in$ x $2in$ x $2in$ = $8 \ in^3$ = $131.097 \ cm^3$
+Assuming the plastic flipper is rectangular:
 
- $W_{block} = (1.03 \frac{g}{cm^3})(131.097 \ cm^3) = 135.03 \ g = 0.13503 \ kg$
+ $3.5in$ x $1in$ x $1.5in$ = $5.25 \ in^3$ = $86.03209 \ cm^3$
 
-$(0.13503 \ kg)(9.81) = 1.325 N$
+ $W_{block} = (1.03 \frac{g}{cm^3})(86.03209 \ cm^3) = 88.6130527 \ g = 0.0886 \ kg$
 
-Force needed to push block attached to linear actuator:
+$(0.0886 \ kg)(9.81) = 0.869 N$
 
-$F_{fblock}= 1.325 \ N$
+Force needed to push block attached to the servo:
+
+$F_{fplastic}= 0.869 \ N$
 
 
 Force needed to push the pedestal on rubber:
 
 $F_{fped}= 0.2322 \ N$
 
-Total force needed to be applied by the linear actuator:
+Total force needed to be applied by the servo:
 
-$F_{fpusher}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
+$F_{flipper}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
 
-The pusher must apply more force than this in order to push the pedestal into the funnel.
-
-The actuator chosen has a force rating of about 4 N suitable for this application. 
+The flipper must apply more force than this in order to push the pedestal into the funnel.
 
 
 
@@ -223,9 +223,9 @@ Above is the state machine representation for the sensor circuit showing the tim
 
 Pedestals have a diameter of $2 \ in$ and the conveyor moves at $2 \ in/s $ which means that one point of the pedestal will be in front of the sensor for 1 second which allows for plenty of time for the sensor to detect the color of the object as detection takes a maximum of 0.614 ms.
 
-Minimum pusher distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
+Minimum flipper distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
 
-Pusher distance will be $1.5\ in$ for simplicity.
+flipper distance will be $1.5\ in$ for simplicity.
 
 
 
