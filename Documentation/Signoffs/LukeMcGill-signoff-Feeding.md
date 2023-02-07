@@ -30,6 +30,7 @@ The layout of the chassis is below showing the major subsystems and their placem
 ![labeled other side back](https://user-images.githubusercontent.com/112424739/217131631-361470dd-2a63-4619-adb4-5868702a26dd.png)
 ![labeled top](https://user-images.githubusercontent.com/112424739/217131649-029c2c0b-edc9-4fd4-815b-6c52fa97e540.png)
 
+Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/Chassis/Chassis_Fit).
 
 ## Electrical Schematic
 The electrical schematic for the feeding subsystem is shown below. 
