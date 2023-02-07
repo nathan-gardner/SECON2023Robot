@@ -22,7 +22,7 @@ This subsystem’s main function is to ensure that the pedestals have a place to
 ## Electrical Schematic
 The electrical schematic is shown below.
 
-![image](https://user-images.githubusercontent.com/112424739/216868778-a6e9caa5-07d5-4477-beca-44d0b3224a8a.png)
+![image](https://user-images.githubusercontent.com/112424739/217134565-60b39f12-6ada-46cd-a27a-911821b66bd0.png)
 
 ## Buildable Schematic
 
@@ -73,9 +73,9 @@ $W_{total} = 0.0618 + 0.06287 = 0.12467 kg$
 
 $F = m \ast a = 0.12467 \ast 9.81 = 1.223 N$
 
-$\tau = F \ast r \ast sin(\theta) = 1.223 \ast 2.8575 \ast sin(90) = 3.495 kg \ast cm$
+$\tau = F \ast r \ast sin(\theta) = 1.223 \ast 0.07258 m \ast sin(90) = 0.0888 N \ast m = 0.9055$
 
-The servo motor chosen is able to supply 6 $kg \ast cm$ of torque. Therefore, the servo will be sufficient for the design.
+The servo motor chosen is able to supply 3.5 $kg \ast cm$ of torque. Therefore, the servo will be sufficient for the design.
 
 ### Rotation Calculation for Statue Delivery
 
@@ -99,7 +99,7 @@ If the pedestal is two inches in diameter, the silo will need to remain open for
 | Name of Item           | Description                                  | Used in which subsystem(s)                | Part Number | Manufacturer     | Quantity | Price      | Total |
 |------------------------|----------------------------------------------|-------------------------------------------|-------------|------------------|----------|------------|-------|
 | Proximity Sensor       | Pololu Digital Sensor 5cm                    | Pedestal Storage and Delivery             | 4050        | Pololu           | 2        | 12.95      | 25.9  |
-| Servo Motor            | FEEFETCH Standard Servo FS5106B                  | Pedestal Storage and Delivery             | 3425        | Pololu           | 1        | 14.95       | 14.95  |
+| Servo Motor            | FEEFETCH Standard Servo FT1117M                  | Pedestal Storage and Delivery             | 3423        | Pololu           | 1        | 9.95       | 9.95  |
 | Silo                   | Silo to hold pedestals, 3D Printed           | Pedestal Storage and Delivery             | N/A         | N/A              | 1        | 0          | 0     |
 | Servo Mount            | 3D Printed                                   | Pedestal Storage and Delivery             | N/A         | N/A              | 1        | 0          | 0     |
 | Servo Motor Controller | Micro Maestro 6-channel USB Servo Controller | Duck Storage, Pedestal Storage, and Delivery and Feeding | 1350        | Pololu           | 1        | 39.95      | 39.95 |
