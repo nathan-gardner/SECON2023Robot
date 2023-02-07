@@ -30,9 +30,14 @@ The electrical schematic is shown below.
 ![image](https://user-images.githubusercontent.com/112424739/216230166-2ee72d46-860f-45da-af1e-fa78c745370b.png)
 ![image](https://user-images.githubusercontent.com/112424739/216230204-73e37f0f-681a-40a1-8120-c79857bd24f4.png)
 
-Below is the rough layout of the chassis showing the major subsystems and their placement within the robot. This subsystem is in the block labeled "stacking".
+Below is the rough layout of the chassis showing the major subsystems and their placement within the robot. This subsystem is in the block labeled "pedestals".
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216861688-57e85d61-c0b9-467b-85f4-2b73cdc1b0f9.png)
+![labeled back side](https://user-images.githubusercontent.com/112424739/217131193-9325cbc7-ea8d-4546-a190-71a9cd656890.png)
+![labeled other side back](https://user-images.githubusercontent.com/112424739/217131286-edd70c9e-fb70-4cfa-adc3-e5dc333d018c.png)
+![labeled top](https://user-images.githubusercontent.com/112424739/217131223-d5d951c8-d70b-44b6-8011-0d868e72ecd0.png)
+![labeled front side](https://user-images.githubusercontent.com/112424739/217131251-021f2e84-c748-4926-9170-e3098d97e282.png)
+
 
 ## Analysis
 ### Size Calculations for Pedestal Silo
