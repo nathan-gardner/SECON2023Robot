@@ -236,7 +236,7 @@ $\ $
 | Name of Item    | Description                                                                                                      | Used in which subsystem(s) | Part Number | Manufacturer     | Quantity | Price      | Total  |
 | --------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------- | ---------------- | -------- | ---------- | ------ |
 | Color Sensor        | RGB Color Snesor with IR filter and White LED                                                                    | Sorting | TCS34725 | Adafruit         | 1  | $7.95      | 7.95   |
-| Servo Motor         | Closed loop servo motor                                                                                          | Sorting | HS-40    | Hitech           | 1  |            |        |
+| Servo Motor         | Closed loop servo motor                                                                                          | Sorting | HS-40    | Hitech           | 1  |  $13.49          |  $13.49      |
 | Motor               | 99:1 Metal Gearmotor 25Dx69L mm LP 6V with 48 CPR Encoder                                                        | Sorting | 4827     | Pololu           | 1  | $45.95     | 45.95  |
 | Funnel              | 3d printed                                                                                                       | Sorting | N/A      | N/A              | 1  |            | 0      |
 | Flipper             | 3d printed                                                                                                       | Sorting | N/A      | N/A              | 1  |            | 0      |
