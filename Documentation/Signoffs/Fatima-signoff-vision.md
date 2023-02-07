@@ -24,11 +24,20 @@ The robot must distinguish between different colors on the color spectrum, speci
 
 Data must be produced by the sensors at a high enough rate for the robot to be able to reach accuracy constraints listed above in the first of the constraints.  
 
-Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C. 
+Sensors must be able to connect to one of the existing controller interfaces, either directly to one of the Arduino Mega2560 controllers or to the top level controller USART, SPI, or I2C.
+
+List of constraints:
+
+- Robot LIDAR sensor sensor distance thresholds
+- Color sensor accuracy, specifically with red, green, blue, and black
+- Data production rate from the sensors, or sensor resolution
+- Sensor communication protocols availability (USART, SPI, I2C)
 
 # Analysis 
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
+
+### Robot LIDAR sensor sensor distance thresholds analysis
 
 The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”.
 
@@ -38,7 +47,9 @@ The LIDAR sensor that we will be using with accuracy at 120 cm indoors is 3%. Th
 
 The distance sensor will need to be read at a minimum of 66 ms. This is the minimum amount of time needed to acquire an accurate measurement according to the datasheet. We will come in above this to have a comfortable cushion and not acquire more than 10 samples per second from the ToF laser distance sensor. The data acquired will be published to a ROS topic so that it can be subscribed to by the navigation logic node and can be used to perform localization tasks. 
 
-## RGB Color Sensor with IR filter and White LED:
+### Color sensor accuracy, specifically with red, green, blue, and black analysis
+
+Red, green, and blue are the three primary colors in the RGB format. Computers read RGB (red, green, blue) in as a hex value where 0x00 - 0xFF represent the intensity of red, green, and blue respectively. The intensity of each color individually will be analyzed within the path planning code, based on light provided by the white LED on the color sensor, to determine a intensity threshold at which point the reflected light will be considered red, green, or blue. 
 
 The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to $2.4\ ms, 24\ ms, 50\ ms, 101\ ms, 154\ ms or 700\ ms$. 
 
@@ -54,6 +65,8 @@ $I_{DD} = 2.5\ \mu A \ \ (Sleep)$
 
 The above voltages and currents will be provided by the Nvidia Jetson Nano from the top-level controller subsystem.
 
+### Data production rate from the sensors, or sensor resolution analysis
+
 Speed: 
 
 Clock Frequency: $\ \ 0-400kHz$
@@ -61,6 +74,10 @@ Clock Frequency: $\ \ 0-400kHz$
 ![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
 
 Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms. This is the most time critical application of the color sensor. The second application of the color sensor is pointed towards the ground, and this sample rate will also be sufficient for this application as well. We need to gain meaningful samples, with the robots maximum speed of $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot for this reason will need to be slowed down from max speed in order to get fine enough samples when we know that we are indeed above the blue duck pond in order to deliver the corral precisely. The speed levels will be designed into the control encodings for the locomotion system.
+
+### Sensor communication protocols availability (USART, SPI, I2C)
+
+All of these sensor use I2C, which is a very common communication protocol which allows for many devices on a single bus. Both of our controller models support I2C communication. 
 
 # Electrical Schematics 
 
