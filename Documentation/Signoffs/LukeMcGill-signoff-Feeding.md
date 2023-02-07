@@ -23,9 +23,13 @@ A closer look at the plate that the chips will sit on is below.
 
 ![image](https://user-images.githubusercontent.com/112424739/215889365-92003613-8937-4743-aeb3-278711afe4fa.png)
 
-The layout of the chassis is below showing the major subsystems and their placement within the robot. This subsystem is titled "chip dispenser". 
+The layout of the chassis is below showing the major subsystems and their placement within the robot. This subsystem is titled "chip dispenser" or "chips". 
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216873478-79e741be-d40a-422f-9905-b26dc7f066d7.png)
+![labeled back side](https://user-images.githubusercontent.com/112424739/217131614-a6d99081-d66c-4889-9137-f9562b37c4c2.png)
+![labeled other side back](https://user-images.githubusercontent.com/112424739/217131631-361470dd-2a63-4619-adb4-5868702a26dd.png)
+![labeled top](https://user-images.githubusercontent.com/112424739/217131649-029c2c0b-edc9-4fd4-815b-6c52fa97e540.png)
+
 
 ## Electrical Schematic
 The electrical schematic for the feeding subsystem is shown below. 
