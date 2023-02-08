@@ -11,7 +11,7 @@ This subsystem’s main function is to ensure that the pedestals have a place to
 ## Constraints
 - The 1’x1’x1’ size constraint for the robot causes the design to need to be as area-effective as possible. There will only be one silo that is 5.5 in (height) x 2.25 in (width) x 2.25 inches (length).
 
-- There will be two proximity sensors placed in the silo to send a signal back to the controller to interrupt the main course and drop off the pedestals. 
+- There will be two proximity sensors placed in the silo to send an interrupt signal back to the controller to stop the main path transversal and allow time for the silo to open and the robot to move away to drop off the pedestals. 
 
 - The servo motor selected for the silo extension and pedestal drop off should be able to withstand the weight of at most three pedestals and the weight of the silo itself. In the worst case, the motor will have 0.0618 kg (the weight of three pedestals) + 0.06287 kg (the weight of the silo). It will need at least 3.495 $kg \ast cm$ of torque to function.
 
@@ -67,7 +67,7 @@ $Pedestal\ Volume_{Total} = 5.65 \ast 3 = 16.96 in^{3}$
 
 $Silo\ Volume = 5.5 \ast 2.25 \ast 2.25 = 27.84 in^{3}$
 
-Silo Volume > Pedestal Volume. Therefore, the silos can hold the pedestals.
+Silo Volume > Pedestal Volume. The diameter of the pedestals are 2 inches and the width and length of the silo is 2.25 inches. Therefore, the silos can hold the pedestals.
 
 ### Distance From Sensors
 
@@ -107,7 +107,7 @@ This rotation angle is well within the servo's capabilities.
 
 ### How Long will the Silo need to remain open?
 
-To determine how long the silo will need to remain open to allow the statues to be left untouched, the speed of the robot must be determined. According to the locomotion subsystem, the robot will never be going slower than 0.0677 m/s when traversing the playing field. 
+To determine how long the silo will need to remain open to allow the statues to be left untouched, the speed of the robot must be determined. The robot will be moving at $0.0677 \frac{m}{s}$ after opening the silo and releasing the pedestal.
 
 $0.0677 \frac{m}{s} = 2.665 \frac{in}{s}$
 
