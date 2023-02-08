@@ -1,6 +1,6 @@
 # **Power Subsystem**
 ## **Function of The Subsystem** 
-- Provides power to all other subsystems that require voltages and currents not supplied through the low-level controllers or the top level controller pins.
+- Provides power to all other subsystems that require voltages and currents not supplied indirectly through the low-level controllers or the top level controller pins.
 - Allows the robot to be turned off and on.
 - Addition of an emergency stop button in order to meet safety standard and competition requirement.
 ## **Constraints** 
