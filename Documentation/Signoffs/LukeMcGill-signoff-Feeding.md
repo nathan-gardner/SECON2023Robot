@@ -5,15 +5,15 @@
 - Deliver the correct chip to the correct area based on color
   - Color will be detected with the color sensor from vision subsystem
 
-There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and spin the servo the correct direction in order to drop the right color chip. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated in the correct direction, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate clockwise or counterclockwise, which will allow the chips to fall through a false bottom and onto the aquarium area. 
+There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and spin the servo the correct direction in order to drop the right color chip. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the different colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated to a specific orientation, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate clockwise or counterclockwise, which will allow the chips to fall through a false bottom and onto the aquarium area. 
 
-The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before actuating and allowing the chips through a hole which will drop the chips in the aquarium. 
+The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before dispersing the chips onto the playing field. 
 
 ## Constraints
 
-- The size of this subsystem will have to be such that it takes up as minimal space as possible, that is to fit the chips and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis. 
+- The size of this subsystem will have to be such that it takes up as minimal space as possible, that is to fit the chips and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit in the robot. 
 - The servo motor must be as small as possible, while also providing necessary torque. The calculation for needed torque is below in analysis.
-- The color sensor must be able to detect a distinct difference between the red and green animal enclosures, the analysis for this is performed below. 
+- The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures, the analysis for this is performed below. 
 
 ## Buildable Schematic
 
@@ -63,6 +63,7 @@ The electrical schematic for the feeding subsystem is shown below.
 The dispensers that the chips will be stored in must be able to fit the chips. There will be three chips of each color, so the chips must be able to be stacked to a height of three in each silo. 
 
 Chip Size $= 1.5 in \ast 0.1 in$
+
 Dispenser Interior Size $= 4.5 in \ast 0.15 in \ast 1.5 in$
 
 Therefore, the chips will comfortably fit inside the tubes. This part will also be 3D printed, so the sizing can be adjusted during testing. The chips will fit into the silos in a way similar to how chips fit into a game of Connect 4, they will be top loaded and sit so that the diameter of the chip, $1.5 inches$, is the height of the chip when it is loaded into the silo. 
@@ -75,15 +76,15 @@ $V = \pi r^2 h = \pi \ast 0.75^2 \ast 0.1 = 0.176715\ in^3$
 
 The density of the TPU is $0.0448\ \frac{lb}{in^3}$, so the weight of the TPU printed chip will be $0.0448\ \frac{lb}{in^3} \ast 0.176715\ in^3 = 0.00792 lb = 3.59\ grams$. 
 
-The downward force of the chips on the plate will be the mass of three chips times the acceleration of gravity squared. This would be $0.01077\ kilograms \ast 9.81^2 \frac{m}{s^2}^2 = 1.0365\ N$. The torque needed for the servo will therefore be $\tau = 1.0365\ N \ast 0.047625\ m = 0.0494 N \ast m = 6.996 oz \ast in$, and this based on the worst case moment arm measurement, derived from the picture below.
+The downward force of the chips on the plate will be the mass of three chips times the acceleration of gravity squared. This would be $0.01077\ kilograms \ast 9.81^2 \frac{m}{s^2}^2 = 1.0365\ N$. The torque needed for the servo will therefore be $\tau = 1.0365\ N \ast 0.047625\ m = 0.0494\ N \ast m = 6.996\ oz \ast in$, and this based on the worst case moment arm measurement, derived from the picture below.
 
 ![image](https://user-images.githubusercontent.com/30758520/216861296-9122d564-b9b9-44e5-833d-dd81255a06ec.png)
 
-The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times needed torque from the calculations above.
+The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times minimum necessary torque from the calculations above.
 
 # Color of Aquariums
 
-The arena picture from the competition rules description, when color sampled, the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. Because of this, when the red portion of the RGB register value reached a reasonable threshold, the logic will assume that the color sensor is seeing red and will dispense the feeding chips into the red aquarium. The intensity needed to be set at this threshold will depend greatly on the lighting from the light mounted on the sensor, so this value will need to be found in testing after the arena is built and testing has occurred. 
+The arena picture from the competition rules description, when color sampled, showed the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. Because of this, when the red portion of the RGB register value reached a reasonable threshold, the logic will assume that the color sensor is seeing red and will dispense the feeding chips into the red aquarium. The intensity needed to be set at this threshold will depend greatly on the lighting from the white light mounted on the sensor, so this value will need to be found in testing after the arena is built and testing has occurred. 
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
