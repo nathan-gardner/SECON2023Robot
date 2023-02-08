@@ -86,6 +86,8 @@ Above is the schematic model for the power supply connected to one of the buck c
 
 Above is the output voltage for the buck converter connected to the 12 V power supply voltage. The output voltage stays around 6V, which is the required voltage for some of the motors and why we are using a buck converter.
 
+Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected on not.
+
 
 ### **Emergency stop button**
 
@@ -98,29 +100,7 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 A $47 \ \mu F$ will be placed in parallel with the DC motors in order to reduce RF electromagnetic interference produced from the motor caused by the brushes causing current arcs.
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_motor.png)
 
-Above is the spice model for the dc motor used in the consumption subsystem.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_current.png)
-
-Above is the current draw from the consumption motor. This output and model is consistant with what was analyzed for the consumption subsystem.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_motor.png)
-
-Above is the spice model for the dc motor used in the locomotion subsystem.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Locomotion_current.png)
-
-Above is the current draw from the locomotion motor. This is accurate to the current draw described in the locomotion subsystem.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_motor.png)
-
-Above is the spice model for the dc motor used in the sorting subsystem.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_current.png)
-
-Above is the current draw from the sorting conveyor motor.
 
 ## **BOM**
 | Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
