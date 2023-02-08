@@ -142,6 +142,28 @@ Therefore, the robot can still traverse the entire playing field in less than ha
 
 You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/3D%20Models).
 
+Below are images showing how all of the subsystems, including Duck Storage Subsystem will fit into the robot.
+
+Top view
+
+![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
+
+Rear Side view 1
+
+![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
+
+Rear Side view 2
+
+![image](https://user-images.githubusercontent.com/30758520/217406076-af1fa457-ba10-4bc0-bd10-c326b97fa633.png)
+
+Rear view
+
+![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
+
+Front corner
+
+![image](https://user-images.githubusercontent.com/30758520/217406258-9ac6acc2-2f57-4e2d-a900-f2ad3f18a0f0.png)
+
 ## BOM
 
 | Name of Item           | Description                                                                                               | Used in which subsystem(s)                  | Part Number    | Manufacturer     | Quantity | Price      | Total |
