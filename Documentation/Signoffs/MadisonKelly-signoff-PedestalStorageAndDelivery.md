@@ -37,14 +37,23 @@ Below is the rough layout of the chassis showing the major subsystems and their 
 Below are images showing how all of the subsystems, including the Pedestal Storage and Delivery subsystem will fit into the robot.
 
 Top view
+
 ![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
+
 Rear Side view 1
+
 ![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
+
 Rear Side view 2
+
 ![image](https://user-images.githubusercontent.com/30758520/217406076-af1fa457-ba10-4bc0-bd10-c326b97fa633.png)
+
 Rear view
+
 ![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
+
 Front corner
+
 ![image](https://user-images.githubusercontent.com/30758520/217406258-9ac6acc2-2f57-4e2d-a900-f2ad3f18a0f0.png)
 
 Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/Chassis/Chassis_Fit).
