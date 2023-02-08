@@ -33,6 +33,8 @@
 ## **Buildable Schematic**
 
 ### **CAD Model for the subsystem:**
+![image](https://user-images.githubusercontent.com/112428353/217404755-75b5127b-590a-4b0a-8966-9f2886d97de1.png)
+
 
 ### **Electrical Schematics:**
 
