@@ -18,12 +18,15 @@ The function of this subsystem is firework activation, which will need to be acc
 Below are images showing how all of the subsystems will fit into the robot.
 
 Top view
+
 ![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
 
 Rear view
+
 ![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
 
 Rear Side view
+
 ![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
 
 ## Electrical Schematic
