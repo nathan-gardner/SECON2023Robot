@@ -11,8 +11,8 @@ The position of the aquariums can be reflected based on the arena we are playing
 
 ## Constraints
 
-- The size of this subsystem will have to be such that it takes up as minimal space as possible, that is to fit the chips and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit in the robot. 
-- The servo motor must be as small as possible, while also providing necessary torque. The calculation for needed torque is below in analysis.
+- The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit in the robot. 
+- The servo motor must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so a micro servo can be used. The calculation for needed torque is below in analysis.
 - The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures, the analysis for this is performed below. 
 
 ## Buildable Schematic
