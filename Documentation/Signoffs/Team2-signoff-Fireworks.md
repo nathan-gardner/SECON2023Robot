@@ -11,9 +11,9 @@ The function of this subsystem is firework activation, which will need to be acc
 
 ## Buildable Schematics
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/Team2_Fireworks_Signoff/Documentation/Images/FireWorks/ChassiFullView.png)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/FireWorks/ChassiFullView.png)
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/Team2_Fireworks_Signoff/Documentation/Images/FireWorks/ChassisTopView.png)
+![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/FireWorks/ChassisTopView.png)
 
 Below are images showing how all of the subsystems will fit into the robot.
 
