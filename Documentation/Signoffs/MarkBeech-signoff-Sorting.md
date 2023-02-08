@@ -45,6 +45,8 @@
 
 ![image](https://user-images.githubusercontent.com/30758520/217083747-a606dd09-1a91-487c-baf5-59849e43aa57.png)
 
+![image](https://user-images.githubusercontent.com/112428353/217404567-798dbee2-e0ad-4e2a-99f7-5935e4b5d46f.png)
+
 
 ### **Electrical Schematics:**
 
