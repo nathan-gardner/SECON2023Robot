@@ -30,6 +30,12 @@ The electrical schematic is shown below.
 ![image](https://user-images.githubusercontent.com/112424739/216230166-2ee72d46-860f-45da-af1e-fa78c745370b.png)
 ![image](https://user-images.githubusercontent.com/112424739/216230204-73e37f0f-681a-40a1-8120-c79857bd24f4.png)
 
+Shown with sensors inside.
+
+![thumbnail_proxsensors](https://user-images.githubusercontent.com/112424739/217644541-c84f7a6e-9c59-4be8-9f62-03776397133a.png)
+![thumbnail_sideangle_proxsensors](https://user-images.githubusercontent.com/112424739/217644559-e3783b41-5d36-41b6-a64d-e0a362df918b.png)
+![thumbnail_top_proxsensors](https://user-images.githubusercontent.com/112424739/217644586-106840ef-931e-411e-a08d-3087157807ae.png)
+
 Below is the rough layout of the chassis showing the major subsystems and their placement within the robot. This subsystem is in the block labeled "pedestals".
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216861688-57e85d61-c0b9-467b-85f4-2b73cdc1b0f9.png)
