@@ -20,19 +20,21 @@
 
 | Subsystem                                  | Component                  | Voltage (V) | Current (A) |
 | ------------------------------------------ | -------------------------- | ----------- | ----------- |
-| Locomotion                                 | Motor Drivers - Motors (4) | 12          | 1.2         |
-| Consumption                                | Motor Driver - Motor       | 6           | 0.5         |
-| Duck Storage and Delivery                  | Solenoid Actuator          | 12          | 0.65        |
-| Pedestal Storage and Delivery, and Feeding | Servo Motor Controller     | 6           | 1.1         |
-| Sorting                                    | Solenoid Actuator          | 12          | 0.3         |
-| Sorting                                    | Motor Controller           | 12          | 0.25        |
-| TOTAL:                                     |                            |             | 4           |
+| Locomotion                                 | Motor Drivers (2)          | 12          | 1.2         |
+| Consumption                                | Motor Driver               | 6           | 0.5         |
+| Duck Storage and Delivery                  | Solenoid Actuator          | 12          | 1.17        |
+| Pedestal Storage, Duck Storage, Sorting, and Feeding | Servo Motor Controller | 6     | 1.5         |
+| Sorting                                    | Motor Controller           | 6           | 0.25        |
+| TOTAL:                                     |                            |             | 4.62        |
 
 
 
 ## **Buildable Schematic**
 
 ### **CAD Model for the subsystem:**
+
+Shown below is the layout of the robot. The compact size of this power supply (shown in red) should allow for plenty of room for other components as needed.
+
 ![image](https://user-images.githubusercontent.com/112428353/217404755-75b5127b-590a-4b0a-8966-9f2886d97de1.png)
 
 
@@ -40,7 +42,7 @@
 
 All electrical circuits will be implemented via soldered breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/217129424-98761630-869c-440f-9d06-df18e90335da.png)
+![image](https://user-images.githubusercontent.com/112424739/217408012-ff1a457f-138a-45c0-b081-a4b8020c0ec3.png)
 
 ## **Analysis**
 
@@ -50,16 +52,17 @@ The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each co
 
 The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
 
-### **Continuous Use**
+### **Continuous Use Components**
 
 | Subsystem  | Component | Voltage (V) | Current (A)  |
 | ----------- | -------------------------- | -- | ---- |
 | Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
 | Consumption | Motor Driver - Motor       | 6  | 0.5  |
-| Sorting     | Motor Controller           | 12 | 0.25 |
-| TOTAL:      |                            |    | 1.95 |
+| Sorting     | Motor Controller           | 6  | 0.25 |
+| Sorting     | Servo Motor Controller     | 6  | 0.34 |
+| TOTAL:      |                            |    | 2.29 |
 
-The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
+The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2.3 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 0.7 A of wiggle room for the other components that may switch on for a short period of time.
 
 ### **Buck Converters**
 
