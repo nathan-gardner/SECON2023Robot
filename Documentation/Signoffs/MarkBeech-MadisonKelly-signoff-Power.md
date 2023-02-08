@@ -100,6 +100,13 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 A $47 \ \mu F$ will be placed in parallel with the DC motors in order to reduce RF electromagnetic interference produced from the motor caused by the brushes causing current arcs.
 
+#### **Spice Simulation of all motors**
+
+![image](https://user-images.githubusercontent.com/112428796/217616689-fc20f8b4-5d28-49c7-8023-0d386eb82b25.png)
+
+#### **Spice Simulation of all continuous motors**
+
+![image](https://user-images.githubusercontent.com/112428796/217616760-0a5e9cba-0432-45b6-9b12-233098d659ca.png)
 
 
 ## **BOM**
