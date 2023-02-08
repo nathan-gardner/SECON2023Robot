@@ -71,10 +71,20 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
 
 ### **Buck Converters**
+The buck converter boards were found on Digi-key. The board uses the 	
+LM2596 voltage regulator IC and, according to the datasheet provided by Digi-key for the board, it is suitable for our application.
+
+Noteable specs include:
+- Input voltage: 4 - 40 V
+- Output voltage: 1.5 - 37 V
+- Max output current: 3 A
+- Max output power: 20 W
+- Adjustable via screw potentiometer
+- built in voltmeter
 
 Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above.
 
-Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected on not.
+Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected or not.
 
 
 ### **Emergency stop button**
@@ -86,16 +96,19 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 ### **Motor simulations**
 
-A $47 \ \mu F$ will be placed in parallel with the DC motors in order to reduce RF electromagnetic interference produced from the motor caused by the brushes causing current arcs.
+A $47 \ \mu F$ will be placed in parallel with the DC motors in order to reduce 
 
 #### **Spice Simulation of all motors**
 
 ![image](https://user-images.githubusercontent.com/112428796/217616689-fc20f8b4-5d28-49c7-8023-0d386eb82b25.png)
 
+The resistor values were chosen through trial and error as a representation for the buck converter's voltage drop from 12 V to 6 V.
+
 #### **Spice Simulation of all continuous motors**
 
 ![image](https://user-images.githubusercontent.com/112428796/217616760-0a5e9cba-0432-45b6-9b12-233098d659ca.png)
 
+Above is the spice model for all continuously running motors. The smoothing capacitors are connected across the terminals of each motor to protect against RF electromagnetic interference produced from the motor caused by the brushes causing current arcs. A flyback diode was also added to prevent a large voltage spike from damaging any components when the supply voltage is turned off.
 
 ## **BOM**
 | Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
