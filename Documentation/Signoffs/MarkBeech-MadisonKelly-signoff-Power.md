@@ -48,7 +48,13 @@ All electrical circuits will be implemented via soldered breadboard.
 
 ### **Power Supply** 
 
-The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH. Since each competition round is only 3 minutes, this should provide sufficient power for up to 40 rounds between charging. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
+The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH and the maximum current output is 3A. Since each competition round is only 3 minutes, the following calculations were performed. 
+
+$Time = \frac{6000 \frac{mA}{H}}{3A} = 2 hours = 120mins$
+
+$rounds = \frac{120}{3} = 40 rounds$
+
+The robot should be able to run up to 40 rounds without needing a charge. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
 
 The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
 
@@ -59,10 +65,9 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 | Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
 | Consumption | Motor Driver - Motor       | 6  | 0.5  |
 | Sorting     | Motor Controller           | 6  | 0.25 |
-| Sorting     | Servo Motor Controller     | 6  | 0.34 |
-| TOTAL:      |                            |    | 2.29 |
+| TOTAL:      |                            |    | 1.95 |
 
-The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2.3 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 0.7 A of wiggle room for the other components that may switch on for a short period of time.
+The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
 
 ### **Buck Converters**
 
@@ -123,7 +128,10 @@ Above is the current draw from the sorting conveyor motor.
 | Buck Converters           | DC-DC Adjustable Buck Converters 3-40V to 1.5-35V               | Power                      | LM2596        | ATNSINC          | 1        | 15.69      | 15.69 |
 | E-Stop Button             | Self-Locking Emergency Stop Button 2 NC Red Mushroom 660 V 10 A | Power                      | HB2-BS544     | MXUTEUK          | 1        | 10.99      | 10.99 |
 | 3 A Fuses                 | 3A 250V Fuses (pack of 20)                                      | Power                      | F3AL250V      | BOJACK           | 2        | 5.99       | 11.98 |
+| 1N4001 Diode              | 50V, 1A Diode (100 pcs)                                         | Power                      | 1N4001        | MCIGICM          | 1        | 4.74       | 4.74  |
+| 47 uF Capacitors          | 47uF 50V Electrolytic Capacitors (10 pack)                      | Power                      | 47 uF         | BOJACK           | 1        | 5.99       | 5.99  |
 | Power Distribution Bus    | Solid Brass                                                     | Power                      | 737           | Adafruit         | 2        | 1.95       | 3.9   |
-| Total                     |                                                                 |                            |               | Total Components | 7        | Total Cost | 82.55 |
+| Total                     |                                                                 |                            |               | Total Components | 9        | Total Cost | 93.28 |
+
 
 
