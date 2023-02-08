@@ -74,18 +74,6 @@ The table above shows each component that will be running continuously from the 
 
 Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above.
 
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_model.png)
-
-Above is the LTSpice model for the buck converter board chosen for this subsystem.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Power_supply_and_buck_converter.png)
-
-Above is the schematic model for the power supply connected to one of the buck converters.
-
-![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_output_voltage.png)
-
-Above is the output voltage for the buck converter connected to the 12 V power supply voltage. The output voltage stays around 6V, which is the required voltage for some of the motors and why we are using a buck converter.
-
 Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected on not.
 
 
