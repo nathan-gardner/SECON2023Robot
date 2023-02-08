@@ -5,14 +5,16 @@
 - Deliver the correct chip to the correct area based on color
   - Color will be detected with the color sensor from vision subsystem
 
-There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and spin the servo the correct direction in order to drop the right color chip. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the different colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated to a specific orientation, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate clockwise or counterclockwise, which will allow the chips to fall through a false bottom and onto the aquarium area. 
+There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and spin the servo the correct direction in order to drop the right color chip through the false bottom on the feeding subsystem. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the different colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated to a specific orientation, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate clockwise or counterclockwise, which will allow the chips to fall through a false bottom and onto the aquarium area. 
 
 The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before dispersing the chips onto the playing field. 
 
+The competition rules allow for the feeding chips to be preloaded into the robot, so someone on the team will load the color chips into the feeding subsystem before the start of each round. One of the two silos will be loaded with green chips and the other of the two silos will be loaded with red chips. 
+
 ## Constraints
 
-- The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow for as much space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit in the robot. 
-- The servo motor must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so a micro servo can be used. The calculation for needed torque is below in analysis.
+- The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit within the robot. 
+- The servo motor must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so a micro servo can be used. The calculation for the needed torque is below in analysis.
 - The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures, the analysis for this is performed below. 
 
 ## Buildable Schematic
@@ -52,6 +54,7 @@ Front corner
 Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/Chassis/Chassis_Fit).
 
 ## Electrical Schematic
+
 The electrical schematic for the feeding subsystem is shown below. 
 
 ![image](https://user-images.githubusercontent.com/112424739/215889260-5daf72f9-51eb-45ce-a533-0d5d7dbb871a.png)
