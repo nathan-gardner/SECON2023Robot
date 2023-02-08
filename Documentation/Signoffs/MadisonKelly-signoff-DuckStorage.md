@@ -31,7 +31,7 @@ The electrical schematic for the object storage subsystem is shown below. Please
 
 ![image](https://user-images.githubusercontent.com/112424739/216155292-916236a9-e371-4c9d-9cbd-1963f927a87e.png)
 
-The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/Electrical/Schematics/Sources).
+The link to the Schematic Document is found ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrical/Schematics/Sources).
 
 ## Analysis
 
@@ -148,7 +148,7 @@ Therefore, the robot can still traverse the entire playing field in less than ha
 
 ![image](https://user-images.githubusercontent.com/112424739/215122237-d9839cbe-5e73-428a-8454-a86f7dd8787a.png)
 
-You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/MadisonKelly-signoff-Duck-Storage-Delivery/Documentation/3D%20Models).
+You can find the 3D models for all Components ![here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models).
 
 Below are images showing how all of the subsystems, including Duck Storage Subsystem will fit into the robot.
 
