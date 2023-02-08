@@ -53,18 +53,6 @@ Red, green, and blue are the three primary colors in the RGB format. Computers r
 
 The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to $2.4\ ms, 24\ ms, 50\ ms, 101\ ms, 154\ ms or 700\ ms$. 
 
-Electrical Specifications:
-
-$V_{DD} = 3\ V$ 
-
-$I_{DD} = 235\ \mu A \ \ (Active)$ 
-
-$I_{DD} = 65\ \mu A \ \ (Wait)$ 
-
-$I_{DD} = 2.5\ \mu A \ \ (Sleep)$ 
-
-The above voltages and currents will be provided by the Nvidia Jetson Nano from the top-level controller subsystem.
-
 ### Data production rate from the sensors, or sensor resolution analysis
 
 Speed: 
