@@ -15,11 +15,11 @@
 - The conveyor belt must effectively move ducks and pedestals at $2\ in/s$ and support the weight of at least three ducks ( $F_{ducks} = 2.08152\  N$ ).
 - The length of the conveyor must be no more than $7 \ in$ to make room for the consumption subsystem (the consumption subsystem is $5\ in$ deep into the robot).
 ### **Flipper:**
-- Flipper must be long enough to reach across the whole conveyor belt width ($3.5 \ in$)
+- Flipper must be long enough to reach across the whole conveyor belt width ( $3.5 \ in$ )
 - The flipper must be tall enough to push a pedestal and not cause spin or disturb other objects. The chosen width is $1.5 \ in$.
 - The servo and flipper must provide enough force to move the pedestals ( $F_{flipper} \gt 1.5572 \ N$ ).
 ### **Sensor:**
-- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the colr sensor section under the analysis section for more details.
+- Color sensor and flipper must be at least $1.238\  in$ from each other to ensure the sensor has adequate time to detect the color of the object that passes by. More distance may be required to accomodate the speed of the microcontroller that will control the servo for the flipper. See the color sensor section under the analysis section for more details.
 - The color sensor must be able to distinguish between pink, yellow, red, green, and white.
 - Color sensor must work well with the Arduino architecture.
 ### **Socioeconomic:**
@@ -118,7 +118,7 @@ $F = F_{fduck} + 3m_{duck}(g)(sin(\theta) + kcos(\theta)$
 
 $F = 0.7979 + 0.0708(9.8)(sin(0) + 1.15cos(0)) = 1.4917\ N$
 
-$T_{L} = \frac{FD}{2\eta } =\frac{(1.4917)(0.0254)}{2(0.5)} = 0.03789 \ Nm$
+$T_{L} = \frac{FD}{2\eta } =\frac{(1.4917)(0.0254)}{2(0.5)} = 0.03789 \ N \ast m$
 
 $\ $
 #### **Conveyor Speed:**
@@ -152,7 +152,7 @@ $P = \frac{(1.15)(5)(0.4683+3.1974)(745.7)}{33000} = 0.5855 \ W$
 
 $\ $
 #### **Conveyor Motor Requirements Summarized:**
-$Torque > 0.03789 Nm$ or $3.86\ kgmm$
+$Torque > 0.03789 N \ast m$ or $3.86\ kg \ast mm$
 
 $RPM = 37.5$
 
@@ -194,7 +194,7 @@ $F_{flipper}= 0.2322 \ N + 1.325 \ N = 1.5572 \ N$
 
 The flipper must apply more force than this in order to push the pedestal into the funnel.
 
-$\tau = F_{flipper}(r)(sin(\theta)) = 1.5572(0.0889)(sin(90)) = 0.13 \ Nm$
+$\tau = F_{flipper}(r)(sin(\theta)) = 1.5572(0.0889)(sin(90)) = 0.13 \ N \ast m$
 
 
 
@@ -227,11 +227,11 @@ Clock Frequency: $\ \ 0-400kHz$
 
 Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms.
 
-Pedestals have a diameter of $2 \ in$ and the conveyor moves at $2 \ in/s $ which means that one point of the pedestal will be in front of the sensor for 1 second which allows for plenty of time for the sensor to detect the color of the object as detection takes a maximum of 0.614 ms.
+Pedestals have a diameter of $2 \ in$ and the conveyor moves at $2 \ \frac{in}{s}$ which means that one point of the pedestal will be in front of the sensor for 1 second which allows for plenty of time for the sensor to detect the color of the object as detection takes a maximum of 0.614 ms.
 
 Minimum flipper distance from sensor $=(0.6164\ s)(2\ in/s) = 1.2328 \ in$
 
-flipper distance will be $1.5\ in$ for simplicity.
+Flipper distance will be $1.5\ in$ for simplicity.
 
 
 
