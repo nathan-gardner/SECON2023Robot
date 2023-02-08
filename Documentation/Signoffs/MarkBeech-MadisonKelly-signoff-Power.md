@@ -8,6 +8,7 @@
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
 - The table below shows the voltage and current requirements for each component in each subsystem. These will be the main constraints for the power subsystem.
 - 6 V will need to be provided to certain components such as some motor drivers and servo drivers.
+- The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To fix this, the team will add smoothing capacitors on each motor load.
 - An emergency stop button must be used for the safety of those involved in the competition. Further details are shown in the next subsection.
 
 
