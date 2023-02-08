@@ -27,11 +27,9 @@ The layout of the chassis is below showing the major subsystems and their placem
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216873478-79e741be-d40a-422f-9905-b26dc7f066d7.png)
 ![image](https://user-images.githubusercontent.com/112428353/217402838-a74c6728-62c1-4f24-8067-2b3f66972e63.png)
-![image](https://user-images.githubusercontent.com/112428353/217402876-0f55cdb8-8563-46b5-942e-dd64bd866168.png)
 ![image](https://user-images.githubusercontent.com/112428353/217402928-5521f087-a9cb-4ecc-99a3-4d9797763951.png)
 ![image](https://user-images.githubusercontent.com/112428353/217402966-4e7552fb-b4b2-4e82-a5a9-eba1a48daafe.png)
 ![image](https://user-images.githubusercontent.com/112428353/217403023-c8e09371-6d39-4eef-bdb0-798b07615a3c.png)
-![image](https://user-images.githubusercontent.com/112428353/217403052-297406e9-0db2-4a61-8efc-b850d32a0bbb.png)
 ![image](https://user-images.githubusercontent.com/112428353/217403089-77c43f01-cf74-4b9b-89a4-899a21786071.png)
 
 Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/Chassis/Chassis_Fit).
