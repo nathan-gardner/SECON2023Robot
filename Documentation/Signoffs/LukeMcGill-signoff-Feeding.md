@@ -26,11 +26,19 @@ A closer look at the plate that the chips will sit on is below.
 The layout of the chassis is below showing the major subsystems and their placement within the robot. This subsystem is titled "chip dispenser" or "chips". 
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216873478-79e741be-d40a-422f-9905-b26dc7f066d7.png)
-![image](https://user-images.githubusercontent.com/112428353/217402838-a74c6728-62c1-4f24-8067-2b3f66972e63.png)
-![image](https://user-images.githubusercontent.com/112428353/217402928-5521f087-a9cb-4ecc-99a3-4d9797763951.png)
-![image](https://user-images.githubusercontent.com/112428353/217402966-4e7552fb-b4b2-4e82-a5a9-eba1a48daafe.png)
-![image](https://user-images.githubusercontent.com/112428353/217403023-c8e09371-6d39-4eef-bdb0-798b07615a3c.png)
-![image](https://user-images.githubusercontent.com/112428353/217403089-77c43f01-cf74-4b9b-89a4-899a21786071.png)
+
+Below are images showing how all of the subsystems, including the feeding subsystem will fit into the robot.
+
+Top view
+![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
+Rear Side view 1
+![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
+Rear Side view 2
+![image](https://user-images.githubusercontent.com/30758520/217406076-af1fa457-ba10-4bc0-bd10-c326b97fa633.png)
+Rear view
+![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
+Front corner
+![image](https://user-images.githubusercontent.com/30758520/217406258-9ac6acc2-2f57-4e2d-a900-f2ad3f18a0f0.png)
 
 Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/Chassis/Chassis_Fit).
 
