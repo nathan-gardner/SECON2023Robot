@@ -82,6 +82,10 @@ Noteable specs include:
 - Adjustable via screw potentiometer
 - built in voltmeter
 
+"A typical output ripple voltage can range from approximately 0.5% to 3% of the output voltage" - LM2596 datasheet
+
+The output ripple at worst case will be $0.03(6) = 0.18 \ V = 180 \ mV$
+
 Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above.
 
 Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected or not.
