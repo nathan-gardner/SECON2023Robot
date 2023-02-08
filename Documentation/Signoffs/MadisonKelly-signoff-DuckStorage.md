@@ -22,7 +22,7 @@ Throughout each round of the competition, the robot will need to intake up to 17
 - The duck trailer will need to have a locking mechanism to ensure that it does not roll off of the rack when the robot is in motion. To address this, the team plans to add two lock-style solenoids and lock the trailer in place to stop any unwanted motion. 
 - The pinion gear will need to have some way to "mesh" with the the rack that is mounted on the side of the trailer. In order to prevent it from coming off the rack, the team will 3D print an enclosure to ensure the pinion gear stays on the rack. The 3D model below shows this feature in more detail.
 - The omni-wheel on the back of the trailer should be attached such that the gap between the bottom of the back wall of the trailer and the playing field is not large enough that a duck or part of a duck could get jammed in the space and cause extra resistance on the robot's locomotion subsystem.
-- This system will affect the path taken along the playing field as well as the time constraints. 
+- This system will affect the path taken along the playing field as well as the time constraints, analyzed below. 
 - The final constraint comes from the ethical consideration of a pinching hazard near the drawer and lock-style solenoid system. We will design the system so that the drawer slides are not directly exposed to the open, which would create a pinching hazard. 
 
 ## Electrical Schematic
@@ -44,7 +44,7 @@ $Duck\ Volume_{Total} = 31.5 \ast 10 = 315 in^{3}$
 
 $Corral\ Volume = 6 \ast 11.25 \ 9 = 607.5 in^{3}$
   
-Corral Volume > Duck Volume. Therefore, the corral can hold the ducks.
+Corral Volume >> Duck Volume. Therefore, the corral can hold the ducks.
 
 ### Torque Ratio Calculations
 
@@ -101,13 +101,21 @@ While the extra weight and friction was analyzed in the locomotion subsystem, th
 The navigation path will have to account for a robot with a length of 18 inches rather than 12 inches which would be the case without the trailer. In order to be as conservative as possible, we planned for the maximum robot length for our path that the robot will take. The playing field is 4 feet by 8 feet, there will be no objects closer than 2 inches to the walls, and our robot is now 18 inches long. This constrains our path when making turns. The consumption subsystem which is mounted to the front of the robot must also be facing the front when traversing the playing field. While making turns will be more difficult with the trailer, it will still be possible. Images of the path are shown below.
 
 ![image](https://user-images.githubusercontent.com/112424739/215837783-769432d2-edb6-4340-850b-d9f13149374c.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215837869-2f0f0a95-e123-46ca-a8d4-05c27026ee88.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838003-47506fff-4d2e-4bee-bc78-4fd530f7a1cf.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838073-c60859e9-c9a4-4c99-aa05-0559394c25fa.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838162-e0a84f93-2456-4697-9389-b11788e35b7d.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838232-433d4e69-bd52-4dc7-bce6-313151af797f.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838621-543c3ad0-fb7f-4eba-b88a-9f10c96507da.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838345-9452c8af-b4da-42a3-be39-4f687290fe67.png)
+
 ![image](https://user-images.githubusercontent.com/112424739/215838409-c32e8544-934d-474c-860a-23be8257859c.png)
 
 Notice that the robot never goes more than 37.75 inches from the side wall. Therefore, this path will be the one the robot takes for each turn. According to the pre-determined path, the robot will only have to make four turns when doing the initial traversal of the playing field. 
