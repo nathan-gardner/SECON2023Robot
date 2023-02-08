@@ -96,19 +96,20 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 ### **Motor simulations**
 
-A $47 \ \mu F$ will be placed in parallel with the DC motors in order to reduce 
-
 #### **Spice Simulation of all motors**
 
 ![image](https://user-images.githubusercontent.com/112428796/217616689-fc20f8b4-5d28-49c7-8023-0d386eb82b25.png)
 
 The resistor values were chosen through trial and error as a representation for the buck converter's voltage drop from 12 V to 6 V.
 
+
 #### **Spice Simulation of all continuous motors**
 
 ![image](https://user-images.githubusercontent.com/112428796/217616760-0a5e9cba-0432-45b6-9b12-233098d659ca.png)
 
-Above is the spice model for all continuously running motors. The smoothing capacitors are connected across the terminals of each motor to protect against RF electromagnetic interference produced from the motor caused by the brushes causing current arcs. A flyback diode was also added to prevent a large voltage spike from damaging any components when the supply voltage is turned off.
+Above is the spice model for all continuously running motors. The $47 \ \mu F$ smoothing capacitors are connected across the terminals of each motor to protect against RF electromagnetic interference produced from the motor caused by the brushes causing current arcs. A flyback diode was also added to prevent a large voltage spike from damaging any components when the supply voltage is turned off.
+
+
 
 ## **BOM**
 | Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
