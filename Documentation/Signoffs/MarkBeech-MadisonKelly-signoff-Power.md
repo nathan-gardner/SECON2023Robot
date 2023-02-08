@@ -1,8 +1,8 @@
 # **Power Subsystem**
 ## **Function of The Subsystem** 
-- Provides power to all other subsystems that require voltages and currents not supplied by the low-level controllers or the top level controller.
+- Provides power to all other subsystems that require voltages and currents not supplied through the low-level controllers or the top level controller pins.
 - Allows the robot to be turned off and on.
-- Addition of an emergency stop button in order to meet safety standard.
+- Addition of an emergency stop button in order to meet safety standard and competition requirement.
 ## **Constraints** 
 - The power supply must supply 12 V and a current of more than 2 A to accomodate all components that will be running at one time.
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
@@ -66,7 +66,7 @@ The table above shows each component that will be running continuously from the 
 
 ### **Buck Converters**
 
- Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above.
+Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Buck_converter_model.png)
 
@@ -90,7 +90,7 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 ### **Motor simulations**
 
-A $ 0.1 \ \mu F $ will be placed in parallel with the DC motors in order to reduce RF electromagnetic interference produced from the motor caused by the brushes causing current arcs.
+A $0.1 \ \mu F$ will be placed in parallel with the DC motors in order to reduce RF electromagnetic interference produced from the motor caused by the brushes causing current arcs.
 
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Consumption_motor.png)
 
@@ -115,9 +115,6 @@ Above is the spice model for the dc motor used in the sorting subsystem.
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/MarkBeech-MadisonKelly-signoff-Power/Documentation/Images/PowerSubsystem/Sorting_current.png)
 
 Above is the current draw from the sorting conveyor motor.
-
-
-
 
 ## **BOM**
 | Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
