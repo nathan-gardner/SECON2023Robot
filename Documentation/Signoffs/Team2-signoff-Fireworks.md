@@ -16,6 +16,7 @@ The function of this subsystem is firework activation, which will need to be acc
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/Team2_Fireworks_Signoff/Documentation/Images/FireWorks/ChassisTopView.png)
 
 Below are images showing how all of the subsystems, including the vision sensor network will fit into the robot.
+
 Top view
 ![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
 Side view
