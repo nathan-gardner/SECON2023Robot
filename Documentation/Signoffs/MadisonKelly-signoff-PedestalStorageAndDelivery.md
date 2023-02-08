@@ -107,7 +107,7 @@ This rotation angle is well within the servo's capabilities.
 
 ### How Long will the Silo need to remain open?
 
-To determine how long the silo will need to remain open to allow the statues to be left untouched, the speed of the robot must be determined. The robot will be moving at $0.0677 \frac{m}{s}$ after opening the silo and releasing the pedestal.
+To determine how long the silo will need to remain open to allow the statues to be left untouched, the speed of the robot must be determined. The robot will be moving at or greater than $0.0677 \frac{m}{s}$ after opening the silo and releasing the pedestal.
 
 $0.0677 \frac{m}{s} = 2.665 \frac{in}{s}$
 
