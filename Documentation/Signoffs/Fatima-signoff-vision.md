@@ -84,18 +84,31 @@ All of these sensor use I2C, which is a very common communication protocol which
 Below are images showing how all of the subsystems, including the vision sensor network will fit into the robot.
 
 Top view
+
 ![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
+
 Side view
+
 ![image](https://user-images.githubusercontent.com/30758520/217405754-b7508cac-6b67-48e5-bc1c-969beabe3828.png)
+
 Rear Side view 1
+
 ![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
+
 Rear Side view 2
+
 ![image](https://user-images.githubusercontent.com/30758520/217406076-af1fa457-ba10-4bc0-bd10-c326b97fa633.png)
+
 Rear view
+
 ![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
+
 Front corner
+
 ![image](https://user-images.githubusercontent.com/30758520/217406258-9ac6acc2-2f57-4e2d-a900-f2ad3f18a0f0.png)
+
 Bottom
+
 ![image](https://user-images.githubusercontent.com/30758520/217406342-82d7b362-cc9f-40ac-a97d-a80c6cf51ee9.png)
 
 # Electrical Schematics 
