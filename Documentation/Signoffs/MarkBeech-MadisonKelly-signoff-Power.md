@@ -104,7 +104,12 @@ According to the datasheet for the LM2596 part, a typical output ripple voltage 
 
 Below is an LTSpice simulation of the noise ripple that could result from the buck converter board. A LC filter with a diode will be implemented on a solderless breadboard to flatten out the voltage
 
-(LTSPICE MODEL HERE)
+![image](https://user-images.githubusercontent.com/112428796/217917489-94822c44-8abe-4da1-9e7a-12e57834e14f.png)
+
+![image](https://user-images.githubusercontent.com/112428796/217917597-c88956d1-f3d5-4765-9215-1dcbe664a519.png)
+
+![image](https://user-images.githubusercontent.com/112428796/217917663-eb27452f-6659-4c17-b1c0-8ecb8b31a864.png)
+
 
 As shown above the output voltage is regulated to 6 V with a small ripple of less than 1% of the output voltage.
 
