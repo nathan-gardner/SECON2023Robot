@@ -5,10 +5,13 @@
 - Addition of an emergency stop button in order to meet safety standard and competition requirement.
 ## **Constraints** 
 - The power supply must supply 12 V and a current of more than 2 A to accomodate all components that will be running at one time.
+  - The output of the battery must be regulated with a boost converter in order to ensure each component is provided with the proper voltage for operation.   
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
 - The table below shows the voltage and current requirements for each component in each subsystem. These will be the main constraints for the power subsystem.
 - 6 V will need to be provided to certain components such as some motor drivers and servo drivers.
 - The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To fix this, the team will add smoothing capacitors on each motor load.
+- Since there are multiple loads that need 12V and 6V supplied, there will need to be a power bus for each of them. The power bus selected is rated up to 24V.
+- The power supply chosen has a 5V USB output. Because of this, the concerns for powering the Nvidia Jetson as well as both arduinos will be separate from the remainder of the components. 
 - An emergency stop button must be used for the safety of those involved in the competition. Further details are shown in the next subsection.
 
 
@@ -28,6 +31,7 @@
 | Sorting                                    | Motor Controller           | 6           | 0.25        |
 | TOTAL:                                     |                            |             | 4.77        |
 
+Keep in mind that the current values are different for each side of the buck converters. The buck converters will lower the voltage which will slightly raise the output current. Therefore, the buck converters will need lower amperage values than are shown on the table. 
 
 
 ## **Buildable Schematic**
@@ -70,6 +74,15 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 
 The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
 
+### **Boost Converters**
+
+In order to ensure the proper voltage for each component, the team will use a boost converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the boost converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
+
+(LTSPICE MODEL HERE)
+
+(Explanation for model here)
+
+
 ### **Buck Converters**
 The buck converter boards were found on Digi-key. The board uses the 	
 LM2596 voltage regulator IC and, according to the datasheet provided by Digi-key for the board, it is suitable for our application.
@@ -86,16 +99,11 @@ Noteable specs include:
 
 The output ripple at worst case will be $0.03(6) = 0.18 \ V = 180 \ mV$
 
-Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above.
+Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above. Below is an LTSpice simulation of the buck converters in operation. As you can see, they step down the input voltage to the desired value as well as raise the current. 
+
+(LTSPICE MODEL HERE)
 
 Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected or not.
-
-
-### **Emergency stop button**
-
-The emergency stop button will need to have a flyback diode connected to the two output lines of the button to prevent sudden voltage spikes when current is interrupted.
-
-The E-stop button was chosen to be a 2 channel normally closed switch. This was chosen so power can be broken from locomotion, consumption and sorting all together with one button as shown in the electrical schematic above. 
 
 
 ### **Motor simulations**
@@ -112,6 +120,20 @@ The resistor values were chosen through trial and error as a representation for 
 ![image](https://user-images.githubusercontent.com/112428796/217616760-0a5e9cba-0432-45b6-9b12-233098d659ca.png)
 
 Above is the spice model for all continuously running motors. The $47 \ \mu F$ smoothing capacitors are connected across the terminals of each motor to protect against RF electromagnetic interference produced from the motor caused by the brushes causing current arcs. A flyback diode was also added to prevent a large voltage spike from damaging any components when the supply voltage is turned off.
+
+### **Power Bus
+
+Since there are many components that need 12V and 6V, there will be at least two power buses to better distribute the power to the correct components within the robot. The buses selected are rated up to 24V, and 12V is the maximum voltage within the robot. Also, the number of outputs on the bus itself is much greater than the number of outputs the team will need. Therefore, the buses selected will be sufficient. 
+
+### **Nvidia Jetson Power**
+
+Since the power supply chosen has a separate 5V USB port output with separate ratings, the analysis for the Nvidia Jetson is simple. The team will use the USB(A)-USB(A) that came with the Nvidia Jetson to supply the voltage needed. 
+
+### **Emergency stop button**
+
+The emergency stop button will need to have a flyback diode connected to the two output lines of the button to prevent sudden voltage spikes when current is interrupted.
+
+The E-stop button was chosen to be a 2 channel normally closed switch. This was chosen so power can be broken from locomotion, consumption and sorting all together with one button as shown in the electrical schematic above. 
 
 
 
