@@ -92,18 +92,21 @@ Noteable specs include:
 - Output voltage: 1.5 - 37 V
 - Max output current: 3 A
 - Max output power: 20 W
+- Switching frequency: 150 kHz
 - Adjustable via screw potentiometer
 - built in voltmeter
 
-"A typical output ripple voltage can range from approximately 0.5% to 3% of the output voltage" - LM2596 datasheet
+Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above. 
 
-The output ripple at worst case will be $0.03(6) = 0.18 \ V = 180 \ mV$
+According to the datasheet for the LM2596 part, a typical output ripple voltage can range from approximately 0.5% to 3% of the output voltage. This means The output ripple at worst case will be:
 
-Buck converter boards will be used to drop the 12 V supply voltage to 6 V for all components needing 6 V to operate. These buck converters are shown on the electrical schematic above. Below is an LTSpice simulation of the buck converters in operation. As you can see, they step down the input voltage to the desired value as well as raise the current. 
+ $0.03(6) = 0.18 \ V = 180 \ mV$
+
+Below is an LTSpice simulation of the noise ripple that could result from the buck converter board. A LC filter with a diode will be implemented on a solderless breadboard to flatten out the voltage
 
 (LTSPICE MODEL HERE)
 
-Due to issues with LTSpice, further simulations will use voltage drops as a representation for the buck converter model. Using the buck converter model itself caused many issues in regards to the simulation. Spice would crash each time the buck converter model was added to a schematic, regardless of if it was connected or not.
+As shown above the output voltage is regulated to 6 V with a small ripple of less than 1% of the output voltage.
 
 
 ### **Motor simulations**
