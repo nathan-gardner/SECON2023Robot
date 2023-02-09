@@ -131,7 +131,7 @@ The resistor values were chosen through trial and error as a representation for 
 
 Above is the spice model for all continuously running motors. The $47 \ \mu F$ smoothing capacitors are connected across the terminals of each motor to protect against RF electromagnetic interference produced from the motor caused by the brushes causing current arcs. A flyback diode was also added to prevent a large voltage spike from damaging any components when the supply voltage is turned off.
 
-### **Power Bus
+### **Power Bus**
 
 Since there are many components that need 12V and 6V, there will be at least two power buses to better distribute the power to the correct components within the robot. The buses selected are rated up to 24V, and 12V is the maximum voltage within the robot. Also, the number of outputs on the bus itself is much greater than the number of outputs the team will need. Therefore, the buses selected will be sufficient. 
 
