@@ -108,6 +108,8 @@ Below is an LTSpice simulation of the noise ripple that could result from the bu
 
 ![image](https://user-images.githubusercontent.com/112428796/217917597-c88956d1-f3d5-4765-9215-1dcbe664a519.png)
 
+Above is the unregulated noise signal. The noise is simulated as a sine wave with a frequency of 150 kHz and a Vp-p of $180\ mV(2) = 360 \ mV$.
+
 ![image](https://user-images.githubusercontent.com/112428796/217917663-eb27452f-6659-4c17-b1c0-8ecb8b31a864.png)
 
 
