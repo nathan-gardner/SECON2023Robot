@@ -23,10 +23,10 @@
 | ------------------------------------------ | -------------------------- | ----------- | ----------- |
 | Locomotion                                 | Motor Drivers (2)          | 12          | 1.2         |
 | Consumption                                | Motor Driver               | 6           | 0.5         |
-| Duck Storage and Delivery                  | Solenoid Actuator          | 12          | 1.17        |
-| Pedestal Storage, Duck Storage, Sorting, and Feeding | Servo Motor Controller | 6     | 1.5         |
+| Duck Storage and Delivery                  | Solenoid Actuator          | 12          | 0.65        |
+| Pedestal Storage, Duck Storage, Sorting, and Feeding | Servo Motor Controller | 6     | 2.17        |
 | Sorting                                    | Motor Controller           | 6           | 0.25        |
-| TOTAL:                                     |                            |             | 4.62        |
+| TOTAL:                                     |                            |             | 4.77        |
 
 
 
