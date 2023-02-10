@@ -86,11 +86,11 @@ According to the MatLab simulation the total current needed to be supplied by th
 
 In order to ensure the proper voltage for each component, the team will use a boost converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the boost converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
 
-![image](https://user-images.githubusercontent.com/112428796/217997697-a28ecdc3-8235-4998-b8fc-478d54b8d494.png)
+![image](https://user-images.githubusercontent.com/112428796/218002431-433ad5b6-c22e-4e8f-a45d-0492a3a7a638.png)
 
 According to the datasheet for the boost converter chosen, the ripple noise has a peak to peak ampliture of 220 mV.
 
-![image](https://user-images.githubusercontent.com/112428796/217997674-5b33a13b-94ae-461b-b02f-a3d2a2d00c92.png)
+![image](https://user-images.githubusercontent.com/112428796/218002477-c4cee8fd-4225-4f78-bced-337f54ca0a94.png)
 
 
 ![image](https://user-images.githubusercontent.com/112428796/217997738-3bb06fd8-8bd1-408b-a109-000978781226.png)
@@ -115,11 +115,13 @@ According to the datasheet for the LM2596 part, a typical output ripple voltage 
 
  $0.03(6) = 0.18 \ V = 180 \ mV$
 
-Below is an LTSpice simulation of the noise ripple that could result from the buck converter board. A LC filter with a diode will be implemented on a solderless breadboard to flatten out the voltage
 
-![image](https://user-images.githubusercontent.com/112428796/217917489-94822c44-8abe-4da1-9e7a-12e57834e14f.png)
 
-![image](https://user-images.githubusercontent.com/112428796/217917597-c88956d1-f3d5-4765-9215-1dcbe664a519.png)
+![image](https://user-images.githubusercontent.com/112428796/218002527-55c4fd77-e1b0-4a0a-b55e-a9d1a5be6ea4.png)
+
+Above is an LTSpice simulation of the noise ripple that could result from the buck converter board. A LC filter with a diode will be implemented on a solderless breadboard to flatten out the voltage
+
+![image](https://user-images.githubusercontent.com/112428796/218002596-143b8e32-88fc-4f3e-ad19-f684000c760d.png)
 
 Above is the unregulated noise signal. The noise is simulated as a sine wave with a frequency of 150 kHz and a Vp-p of $180\ mV(2) = 360 \ mV$.
 
