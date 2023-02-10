@@ -9,6 +9,7 @@
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
 - Many of the loads will need to be stepped down to 6V and have a regulated output to eliminate ripple voltage. There will be filters to smooth out the ripple
 - The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To mitigate this, the team will add smoothing capacitors on each motor load.
+- Maximum allowable ripple voltage on all components will be less than $50 \ mV_{p-p}$ to prevent damage to components.
 - Since there are multiple loads that need 12V and 6V supplied, there will need to be a power bus for each of them. The power bus selected is rated up to 10A.
 - The power supply chosen has a 5V USB output. Because of this, the concerns for powering the Nvidia Jetson as well as both arduinos will be separate from the remainder of the components. 
 - An emergency stop button must be used for the safety of those involved in the competition. 
@@ -139,6 +140,9 @@ Above is the unregulated noise signal with $V_{p-p} = 180 mV$ and a frequency of
 
 As shown above the output voltage is regulated to 6 V with a small ripple of less than 1% of the output voltage.
 
+### **Motor Ripple**
+
+All motors chosen in this project have come from Pololu. Pololu recommends connecting up to three $0.1 \mu F$ capacitors to the motors. It was recommended that one cap should be connected from the positive lead to the case, one from the negative lead to the case, and one across the input terminals.
 
 ### **Power Bus**
 
