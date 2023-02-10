@@ -67,17 +67,15 @@ This distance of 2.207 in is less than the possible error. Therefore, it will be
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
 
-Intensity of red, green, and blue will be analyzed separately in order to observe red, green, and blue in the arena. Setting integration times and color intensity thresholds will need to be a slight trial and error process once the sensor is received. This will depend on the light allowed in the robot. Light provided by the sensor, and the distance from the target. 
+Setting integration times and color intensity thresholds will need to be a slight trial and error process once the sensor is received. This will depend on the light allowed in the robot by the chassis, light provided by the sensor, and the distance from the target. 
 
 ![image](https://user-images.githubusercontent.com/30758520/218214807-59ad3827-e0c5-40d2-95bf-e212b0e115c6.png)
 
-Above is the photodiode spectral responsivity graph is shown. Colors within the arena were purposefully chosen to fall at the peaks of the blue, green, and red curves shown.
+Above is the photodiode spectral responsivity (optical-to-electrical conversion efficiency) graph. Colors within the arena were purposefully chosen to fall at the peaks of the blue, green, and red curves shown. This makes color measurement easier, because colors should not regularly fall between the responsivity peaks. 
 
 ![image](https://user-images.githubusercontent.com/30758520/218212688-b8d981ff-0754-46f2-b109-a7e33fb86ebf.png)
 
-Above is the normalized responsivity (optical-to-electrical conversion efficiency) versus angular displacement curve for the elected color sensor. The photocurrent linearly decreases when pointed $±30°$ from the target, and then becomes much less effected. The color sensor will be mounted pointing directly towards the ground for this reason so optimal photocurrent is generated. 
-
-
+Above is the normalized responsivity versus angular displacement curve for the elected color sensor. The photocurrent linearly decreases when pointed $±30°$ from the target, and when outside that threshold decreases much faster. The color sensor will be mounted pointing directly towards the ground for this reason so as photocurrent as possible is generated. 
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
