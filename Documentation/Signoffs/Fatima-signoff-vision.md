@@ -45,9 +45,9 @@ The team knows from dimensions given in the specification that the distance betw
 
 $9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$. 
 
-Max distance the ToF LIDAR will measure when on duck pond and considering possible $3\%$ error will be
+Max distance the ToF LIDAR will measure when on duck pond and considering possible 3% error will be
 
-$48" + 7" = 55" \therefore possible\ error = 3\%\ of\ 55" = 1.65"$
+$48" + 7" = 55" \therefore possible\ error = 3$%$\ of\ 55" = 1.65"$
 
 The robot will have ability to measure $55" ± 1.65"$ with the ToF LIDAR sensor when positioning itself around the duck pond. 
 
