@@ -47,7 +47,7 @@ Shown below is the layout of the robot. The compact size of this power supply (s
 
 All electrical circuits will be implemented via soldered breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/217408012-ff1a457f-138a-45c0-b081-a4b8020c0ec3.png)
+![image](https://user-images.githubusercontent.com/112424739/217992486-ca7d4a41-f99d-4f31-85df-00ea1769315b.png)
 
 ## **Analysis**
 
