@@ -47,7 +47,7 @@ Shown below is the layout of the robot. The compact size of this power supply (s
 
 All electrical circuits will be implemented via soldered breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/217992486-ca7d4a41-f99d-4f31-85df-00ea1769315b.png)
+![image](https://user-images.githubusercontent.com/112424739/217995287-52ce555a-2eab-46a1-9221-4d2651baa916.png)
 
 ## **Analysis**
 
@@ -148,16 +148,20 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 
 
 ## **BOM**
-| Name of Item              | Description                                                     | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total |
-|---------------------------|-----------------------------------------------------------------|----------------------------|---------------|------------------|----------|------------|-------|
-| Rechargeable 12 V Battery | 12 V/6000 mAH Lithium Ion Battery Pack                          | Power                      | YB1206000-USB | TalentCell       | 1        | 39.99      | 39.99 |
-| Buck Converters           | DC-DC Adjustable Buck Converters 3-40V to 1.5-35V               | Power                      | LM2596        | ATNSINC          | 1        | 15.69      | 15.69 |
-| E-Stop Button             | Self-Locking Emergency Stop Button 2 NC Red Mushroom 660 V 10 A | Power                      | HB2-BS544     | MXUTEUK          | 1        | 10.99      | 10.99 |
-| 3 A Fuses                 | 3A 250V Fuses (pack of 20)                                      | Power                      | F3AL250V      | BOJACK           | 2        | 5.99       | 11.98 |
-| 1N4001 Diode              | 50V, 1A Diode (100 pcs)                                         | Power                      | 1N4001        | MCIGICM          | 1        | 4.74       | 4.74  |
-| 47 uF Capacitors          | 47uF 50V Electrolytic Capacitors (10 pack)                      | Power                      | 47 uF         | BOJACK           | 1        | 5.99       | 5.99  |
-| Power Distribution Bus    | Solid Brass                                                     | Power                      | 737           | Adafruit         | 2        | 1.95       | 3.9   |
-| Total                     |                                                                 |                            |               | Total Components | 9        | Total Cost | 93.28 |
+| Name of Item              | Description                                                                                                                                          | Used in which subsystem(s) | Part Number   | Manufacturer     | Quantity | Price      | Total  |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|---------------|------------------|----------|------------|--------|
+| Rechargeable 12 V Battery | 12 V/6000 mAH Lithium Ion Battery Pack                                                                                                               | Power                      | YB1206000-USB | TalentCell       | 1        | 39.99      | 39.99  |
+| Buck Converters           | DC-DC Adjustable Buck Converters 3-40V to 1.5-35V                                                                                                    | Power                      | LM2596        | ATNSINC          | 1        | 15.69      | 15.69  |
+| E-Stop Button             | Self-Locking Emergency Stop Button 2 NC Red Mushroom 660 V 10 A                                                                                      | Power                      | HB2-BS544     | MXUTEUK          | 1        | 10.99      | 10.99  |
+| 3 A Fuses                 | 3A 250V Fuses (pack of 20)                                                                                                                           | Power                      | F3AL250V      | BOJACK           | 2        | 5.99       | 11.98  |
+| 1N5822 Diode              | Ximimark 100Pcs 1N5822 Schottky Diode 3A 40V DO-201AD (DO-27) Barrier Rectifier Diode for Household Appliances                                       | Power                      | 1N5822        | Ximimark         | 1        | 7.29       | 7.29   |
+| 0.1 uF Capacitors         | E-Projects - 0.1uF Ceramic Disc Capacitor - 50 Volts (25 Pieces)                                                                                     | Power                      | 0.1 uF        | E-Projects       | 1        | 5.99       | 5.99   |
+| 330 uF Capacitors         | Capacitor 4.7UF 6.8UF 10UF 15UF 22UF 47UF 100UF 220UF 330UF 470UF 680UF 1500UF Electrolytic Capacitors Kit 6.3V 10V 16V 25V 35V 50V 100V 400V,295Pcs | Power                      | 330 uF        | changhe          | 1        | 18.98      | 18.98  |
+| 33 uH inductors           | uxcell 50Pcs 0510 Color Ring Inductor 33uH 1W Axial RF Choke Coil Inductor                                                                           | Power                      | 33 uH         | uxcell           | 1        | 8.49       | 8.49   |
+| Boost Converter           | DC DC Converter 12 V 120 W                                                                                                                           | Power                      | ?             | ?                | 1        | 0          | 0      |
+| Power Distribution Bus    | Solid Brass                                                                                                                                          | Power                      | 737           | Adafruit         | 5        | 1.95       | 9.75   |
+| Total                     |                                                                                                                                                      |                            |               | Total Components | 15       | Total Cost | 129.15 |
+
 
 
 
