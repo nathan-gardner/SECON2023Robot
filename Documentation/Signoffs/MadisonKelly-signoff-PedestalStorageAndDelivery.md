@@ -77,13 +77,25 @@ Silo Volume > Pedestal Volume. The diameter of the pedestals are 2 inches and th
 
 ### Distance From Sensors
 
+Because of the nature of what the team is wanting from the distance sensor, it must be such that it will not detect the walls of the silo, but will detect the presence of a pedestal.
+
+#### Pedestal Not Present
+
+$Silo\ Wall\ Distance\ from\ sensor = 2.25 in$
+
+$Max\ sensor\ range = 5cm = 1.9685 in$
+
+Since 2.25 in > 1.97 in, the sensor will not detect the walls of the silo itself. 
+
+#### Pedestal Present
+
 $P_{silo} = 2.25 \ast 4 = 9 in^{2}$
 
 $C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
 
 $D_{max} = C_{silo} - C_{pedestal} = 9 - 6.28 = 2.72 in = 0.0691 m$
 
-The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. Therefore, the sensors will be able to detect the pedestals when they enter the silo.
+The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. The distance between the wall of the silo and the sensor is more than its maximum range. Therefore, the sensors will be able to detect the pedestals when they enter the silo and will not detect the walls of the silo when there is no pedestal present.
 
 ### Weight Calculations
 
