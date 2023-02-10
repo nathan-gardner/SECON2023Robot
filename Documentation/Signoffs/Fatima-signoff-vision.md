@@ -83,6 +83,14 @@ When the color sensor is pointed towards the ground, the bot will move at $0.202
 
 All of these sensor use I2C, which is a very common communication protocol which allows for many devices on a single bus. Both of our controller models support I2C communication. 
 
+# Software Consideration - Possible/Probable Software Solutions
+
+Public software libraries have been created for interfacing with boh sensors selcted for the vision sensor network. Libraries are provided by Adafruit and linked below,
+
+![TCS34725 - Color Sensor Software Library](https://github.com/adafruit/Adafruit_TCS34725)
+
+![VL53L0X - ToF LIDAR Sensor Software Library](https://github.com/adafruit/Adafruit_VL53L0X)
+
 # Buildable Schematics
 
 Below are images showing how all of the subsystems, including the vision sensor network will fit into the robot.
