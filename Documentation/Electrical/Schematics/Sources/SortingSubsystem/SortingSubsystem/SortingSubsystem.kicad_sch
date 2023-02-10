@@ -767,7 +767,7 @@
     (uuid f8c766e2-fc88-4a87-ad41-ac3e2dfaaae0)
   )
 
-  (label "Sorting{slash}Storage Arduino Pin 34" (at 341.63 158.75 0)
+  (label "Pin 34" (at 341.63 158.75 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0f41a3c6-eba1-46e0-bec9-bc460b537c87)
   )
@@ -919,7 +919,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid dda215b1-3cb2-47f0-aca1-58642893760b)
   )
-  (label "Sorting{slash}Storage Arduino Pin 32" (at 341.63 161.29 0)
+  (label "Pin 32" (at 341.63 161.29 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e1248585-8a41-47c9-8fd6-f2973d1efd09)
   )
