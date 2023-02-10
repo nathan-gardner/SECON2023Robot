@@ -80,7 +80,10 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 
 #### **Matlab Simulation**
 
-According to the MatLab simulation the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
+![image](https://user-images.githubusercontent.com/112428796/218004508-6a2b09b6-df3f-4aab-b1d5-3a6f0b38a0dd.png)
+
+
+According to the MatLab simulation above the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
 
 ### **Boost Converters**
 
