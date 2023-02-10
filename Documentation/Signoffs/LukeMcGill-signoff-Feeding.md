@@ -15,7 +15,7 @@ The competition rules allow for the feeding chips to be preloaded into the robot
 
 - The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit within the robot. 
 - The servo motor must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so a micro servo can be used. The calculation for the needed torque is below in analysis.
-- The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures, the analysis for this is performed below. 
+- The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures. The color sensor was chosen and analyzed in the vision subsystem for this task. 
 
 ## Buildable Schematic
 
@@ -84,6 +84,7 @@ The downward force of the chips on the plate will be the mass of three chips tim
 ![image](https://user-images.githubusercontent.com/30758520/216861296-9122d564-b9b9-44e5-833d-dd81255a06ec.png)
 
 The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times minimum necessary torque from the calculations above. 
+
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
