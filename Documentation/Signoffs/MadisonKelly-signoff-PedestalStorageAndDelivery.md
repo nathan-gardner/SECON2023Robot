@@ -89,13 +89,9 @@ Since 2.25 in > 1.97 in, the sensor will not detect the walls of the silo itself
 
 #### Pedestal Present
 
-$P_{silo} = 2.25 \ast 4 = 9 in^{2}$
+$D_{max} = L_{silo} - D_{pedestal} = 2.25in - 2in = 0.25 in = 0.635 cm$
 
-$C_{pedestal} = \pi \ast d = \pi \ast 2 = 6.28 in^{2}$
-
-$D_{max} = C_{silo} - C_{pedestal} = 9 - 6.28 = 2.72 in = 0.0691 m$
-
-The max distance calculated is less than the maximum distance the sensor can detect which is 5 meters. The distance between the wall of the silo and the sensor is more than its maximum range. Therefore, the sensors will be able to detect the pedestals when they enter the silo and will not detect the walls of the silo when there is no pedestal present.
+The max distance calculated is less than the maximum distance the sensor can detect which is 5 cm. The distance between the wall of the silo and the sensor is more than its maximum range. Therefore, the sensors will be able to detect the pedestals when they enter the silo and will not detect the walls of the silo when there is no pedestal present.
 
 ### Weight Calculations
 
