@@ -152,7 +152,7 @@ Below is the torque curve for the motor chosen from Pololu.
 
 Therefore, the motor chosen meets all specifications.
 
-
+According to the datasheet for the motor driver, it will be able to supply the necessary voltage and current values (6 V, 250 mA). This is the same motor driver used for the consumption motor which requires double the current compared to this subsystem
 
 $\ $
 ### **Flipper:**
