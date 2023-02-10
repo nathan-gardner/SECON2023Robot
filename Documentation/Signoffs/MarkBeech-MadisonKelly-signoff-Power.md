@@ -88,6 +88,7 @@ In order to ensure the proper voltage for each component, the team will use a bo
 
 ![image](https://user-images.githubusercontent.com/112428796/217997697-a28ecdc3-8235-4998-b8fc-478d54b8d494.png)
 
+According to the datasheet for the boost converter chosen, the ripple noise has a peak to peak ampliture of 220 mV.
 
 ![image](https://user-images.githubusercontent.com/112428796/217997674-5b33a13b-94ae-461b-b02f-a3d2a2d00c92.png)
 
