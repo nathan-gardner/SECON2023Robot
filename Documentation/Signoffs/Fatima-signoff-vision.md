@@ -53,19 +53,21 @@ The robot will have ability to measure $55" ± 1.65"$ with the ToF LIDAR sensor 
 
 *Note: Corral is being designed to be adjustable on it longest dimension if the corral needs to be smaller in order to land in the duck pond. A majority of the duck needs to be in the duck pond to count for points.*
 
-Below is an image of how the corral will fit into the duck pons when it fully extended:
+Below is an image of how the corral will fit into the duck pond when it is fully extended.
 
 ![image](https://user-images.githubusercontent.com/30758520/214467615-b765040b-1130-4919-b1af-a79c21336fe2.png)
 
-If consider only this 0.707", this is not sufficient. Because only a majority of the ducks need to be in the pond to count for point allocations, this also gives us another half duck length and makes the allowable error calculation
+If considering only this 0.707", this is not sufficient. Because only a majority of each duck needs to be in the pond to count for point allocations. This also gives us another half duck length and makes the allowable error calculation shown below.
 
 $0.707" + 1.5" = 2.207"$ 
+
+This distance of 2.207 in is less than the possible error. Therefore, it will be sufficient for the team's needs.
 
 ## RGB color sensor with IR filter: 
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
 
-Intensity of red, green, and blue will be analyzed separately in order to observe red, green, and blue in the arena. Setting integration times and color intensity thresholds will need to be a slight trial and error process once the sensor is received. This will depend on the light allowed in the robot. light provided by the sensor, and the distance from the target.    
+Intensity of red, green, and blue will be analyzed separately in order to observe red, green, and blue in the arena. Setting integration times and color intensity thresholds will need to be a slight trial and error process once the sensor is received. This will depend on the light allowed in the robot. Light provided by the sensor, and the distance from the target.    
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
@@ -75,7 +77,7 @@ $F_{clock}\ \ 0-400kHz$
 
 The majority of the time, the sensor will be in the states idle, RGBC ADC and RGBC INIT after the startup. Detection will take a maximum of 616.4 ms.
 
-When the color sensor is pointed towards the ground, the bot will move at $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot will be slowed down when finer sampled are needed. $0.0677 \frac{m}{s}$ is the minimum speed of the robot, and it will be able to take samples every $41.7\ mm$ at that speed. 
+When the color sensor is pointed towards the ground, the bot will move at $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot will be slowed down when finer samples are needed. $0.0677 \frac{m}{s}$ is the minimum speed of the robot, and it will be able to take samples every $41.7\ mm$ at that speed. 
 
 ### Sensor communication protocols availability (USART, SPI, I2C)
 
