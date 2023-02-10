@@ -78,9 +78,13 @@ The table above shows each component that will be running continuously from the 
 
 In order to ensure the proper voltage for each component, the team will use a boost converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the boost converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
 
-(LTSPICE MODEL HERE)
+![image](https://user-images.githubusercontent.com/112428796/217997697-a28ecdc3-8235-4998-b8fc-478d54b8d494.png)
 
-(Explanation for model here)
+
+![image](https://user-images.githubusercontent.com/112428796/217997674-5b33a13b-94ae-461b-b02f-a3d2a2d00c92.png)
+
+
+![image](https://user-images.githubusercontent.com/112428796/217997738-3bb06fd8-8bd1-408b-a109-000978781226.png)
 
 
 ### **Buck Converters**
@@ -116,20 +120,19 @@ Above is the unregulated noise signal. The noise is simulated as a sine wave wit
 As shown above the output voltage is regulated to 6 V with a small ripple of less than 1% of the output voltage.
 
 
-### **Motor simulations**
+### **Current Analysis**
 
-#### **Spice Simulation of all motors**
+#### **Block Diagram for all components**
 
-![image](https://user-images.githubusercontent.com/112428796/217616689-fc20f8b4-5d28-49c7-8023-0d386eb82b25.png)
+![image](https://user-images.githubusercontent.com/112428796/217997468-f6a13fab-15ee-4600-b607-916deef9cabb.png)
 
 The resistor values were chosen through trial and error as a representation for the buck converter's voltage drop from 12 V to 6 V.
 
 
-#### **Spice Simulation of all continuous motors**
+#### **Block diagram for all constant loads**
 
-![image](https://user-images.githubusercontent.com/112428796/217616760-0a5e9cba-0432-45b6-9b12-233098d659ca.png)
+![image](https://user-images.githubusercontent.com/112428796/217997561-0201fd06-febe-4eff-a30a-7c7635510d9f.png)
 
-Above is the spice model for all continuously running motors. The $47 \ \mu F$ smoothing capacitors are connected across the terminals of each motor to protect against RF electromagnetic interference produced from the motor caused by the brushes causing current arcs. A flyback diode was also added to prevent a large voltage spike from damaging any components when the supply voltage is turned off.
 
 ### **Power Bus**
 
