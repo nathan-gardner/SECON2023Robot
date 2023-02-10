@@ -88,13 +88,15 @@ In order to ensure the proper voltage for each component, the team will use a bo
 
 ![image](https://user-images.githubusercontent.com/112428796/218002431-433ad5b6-c22e-4e8f-a45d-0492a3a7a638.png)
 
-According to the datasheet for the boost converter chosen, the ripple noise has a peak to peak ampliture of 220 mV.
+According to the datasheet for the boost converter chosen, the ripple noise has a peak to peak ampliture of 220 mV and a switching frequency of 220 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
 
 ![image](https://user-images.githubusercontent.com/112428796/218002477-c4cee8fd-4225-4f78-bced-337f54ca0a94.png)
 
+Above is the unregulated noise before passing through the filter. The filter will be implemented via a solderless breadboard.
 
 ![image](https://user-images.githubusercontent.com/112428796/217997738-3bb06fd8-8bd1-408b-a109-000978781226.png)
 
+Above is the output voltage after the filter. The voltage appears to be much claner and varries between 12.0003 V and 11.0097 V which is a variation of less than 1% from 12 V.
 
 ### **Buck Converters**
 The buck converter boards were found on Digi-key. The board uses the 	
@@ -116,14 +118,13 @@ According to the datasheet for the LM2596 part, a typical output ripple voltage 
  $0.03(6) = 0.18 \ V = 180 \ mV$
 
 
-
 ![image](https://user-images.githubusercontent.com/112428796/218002527-55c4fd77-e1b0-4a0a-b55e-a9d1a5be6ea4.png)
 
-Above is an LTSpice simulation of the noise ripple that could result from the buck converter board. A LC filter with a diode will be implemented on a solderless breadboard to flatten out the voltage
+Above is an LTSpice simulation of the noise ripple that could result from the buck converter board. The device has a switching frequency of 150 kHz as reflected in the model.
 
 ![image](https://user-images.githubusercontent.com/112428796/218002596-143b8e32-88fc-4f3e-ad19-f684000c760d.png)
 
-Above is the unregulated noise signal. The noise is simulated as a sine wave with a frequency of 150 kHz and a Vp-p of $180\ mV(2) = 360 \ mV$.
+Above is the unregulated noise signal with $V_{p-p} = 180 mV$ and a frequency of 150 kHz. A LC filter with a diode will be implemented on a solderless breadboard to flatten out the voltage.
 
 ![image](https://user-images.githubusercontent.com/112428796/217917663-eb27452f-6659-4c17-b1c0-8ecb8b31a864.png)
 
