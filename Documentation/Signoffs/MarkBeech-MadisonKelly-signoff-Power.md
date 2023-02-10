@@ -74,6 +74,8 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 
 ![image](https://user-images.githubusercontent.com/112428796/217997468-f6a13fab-15ee-4600-b607-916deef9cabb.png)
 
+Currents have been labelled for use in a matlab script detailed below. Each current value listed by each component was found from the components datasheet.
+
 #### **Block diagram for all constant loads**
 
 ![image](https://user-images.githubusercontent.com/112428796/217997561-0201fd06-febe-4eff-a30a-7c7635510d9f.png)
@@ -82,6 +84,9 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 
 ![image](https://user-images.githubusercontent.com/112428796/218004508-6a2b09b6-df3f-4aab-b1d5-3a6f0b38a0dd.png)
 
+This simulation was done using the block diagram for all constant loads shown above.
+
+The calculates the currents going into each branch and adds them together to find the total current needed to be supplied by the power supply. This was done while taking into account the efficiencies of the buck converter and the boost converter.
 
 According to the MatLab simulation above the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
 
