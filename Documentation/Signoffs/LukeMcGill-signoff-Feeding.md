@@ -83,11 +83,7 @@ The downward force of the chips on the plate will be the mass of three chips tim
 
 ![image](https://user-images.githubusercontent.com/30758520/216861296-9122d564-b9b9-44e5-833d-dd81255a06ec.png)
 
-The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times minimum necessary torque from the calculations above.
-
-# Color of Aquariums
-
-The arena picture from the competition rules description, when color sampled, showed the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. Because of this, when the red portion of the RGB register value reached a reasonable threshold, the logic will assume that the color sensor is seeing red and will dispense the feeding chips into the red aquarium. The intensity needed to be set at this threshold will depend greatly on the lighting from the white light mounted on the sensor, so this value will need to be found in testing after the arena is built and testing has occurred. 
+The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times minimum necessary torque from the calculations above. 
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
