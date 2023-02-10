@@ -59,7 +59,7 @@ All electrical circuits will be implemented via soldered breadboard.
 
 The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH and the maximum current output is 3A. Since each competition round is only 3 minutes, the following calculations were performed. 
 
-$Time = \frac{6000 \frac{mA}{H}}{3A} = 2 hours = 120mins$
+$Time = \frac{6000\ mAh}{3\ A} = 2\ hours = 120\ minutes$
 
 $rounds = \frac{120}{3} = 40 rounds$
 
