@@ -41,11 +41,27 @@ List of constraints:
 
 The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”.
 
-The LIDAR sensor that we will be using with accuracy at 120 cm indoors is 3%. The max distance that we will be measured when we are finding the pond is 48" + 7" or 55". 3% of 55" is 1.65" of possible error. This was too much error for the original design from the ME team, so the robot corral is being redesigned so that the length will be adjustable in the case that the ToF LIDAR sensors are not accurate enough to localize precisely into the duck pond accurately. Also, according to messages in the official public communication from the hardware competition chair, only a majority of the duck needs to be in the duck pond in order to get points for that duck within the point definition in the competition rules. This means that we really have an additional half duck length to work with on our accuracy tolerance, which equates to about 1.5 inches, because the ducks measure 3.5"x3"x3". The possible error given the 0.707" and the 1.5" allows for a total of **2.207"** allowable error if we do not end up adjusting the length of the corral. The team feels that this tolerance and the adjustable corral allows the ToF LIDAR sensor to meet the accuracy requirements to localize the ducks into the duck pond during the competition.
+The team knows from dimensions given in the specification that the distance between the robot and the closest wall when in the circle is  
+
+$9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$. 
+
+Max distance the ToF LIDAR will measure when on duck pond and considering possible $3\%$ error will be
+
+$48" + 7" = 55" \therefore possible\ error = 3\%\ of\ 55" = 1.65"$
+
+The robot will have ability to measure $55" ± 1.65"$ with the ToF LIDAR sensor when positioning itself around the duck pond. 
+
+*Note: Corral is being designed to be adjustable on it longest dimension if the corral needs to be smaller in order to land in the duck pond. A majority of the duck needs to be in the duck pond to count for points.*
+
+Below is an image of how the corral will fit into the duck pons when it fully extended:
 
 ![image](https://user-images.githubusercontent.com/30758520/214467615-b765040b-1130-4919-b1af-a79c21336fe2.png)
 
-The distance sensor will need to be read at a minimum of 66 ms. This is the minimum amount of time needed to acquire an accurate measurement according to the datasheet. We will come in above this to have a comfortable cushion and not acquire more than 10 samples per second from the ToF laser distance sensor. The data acquired will be published to a ROS topic so that it can be subscribed to by the navigation logic node and can be used to perform localization tasks. 
+If consider only this 0.707", this is not sufficient. Because only a majority of the ducks need to be in the pond to count for point allocations, this also gives us another half duck length and makes the allowable error calculation
+
+$0.707" + 1.5" = 2.207"$ 
+
+## RGB color sensor with IR filter: 
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
 
