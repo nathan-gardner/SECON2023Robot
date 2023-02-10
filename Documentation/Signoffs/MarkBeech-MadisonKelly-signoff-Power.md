@@ -169,11 +169,13 @@ The E-stop button was chosen to be a 2 channel normally closed switch. This was 
 | 3 A Fuses                 | 3A 250V Fuses (pack of 20)                                                                                                                           | Power                      | F3AL250V      | BOJACK           | 2        | 5.99       | 11.98  |
 | 1N5822 Diode              | Ximimark 100Pcs 1N5822 Schottky Diode 3A 40V DO-201AD (DO-27) Barrier Rectifier Diode for Household Appliances                                       | Power                      | 1N5822        | Ximimark         | 1        | 7.29       | 7.29   |
 | 0.1 uF Capacitors         | E-Projects - 0.1uF Ceramic Disc Capacitor - 50 Volts (25 Pieces)                                                                                     | Power                      | 0.1 uF        | E-Projects       | 1        | 5.99       | 5.99   |
+| 1 uF Capacitor            | 1 µF Conformal Coated Tantalum Capacitors 50 V Radial 8Ohm                                                                                           |                            | TAP105K050SCS | KYOCERA AVX      | 1        | 0.82       | 0.82   |
 | 330 uF Capacitors         | Capacitor 4.7UF 6.8UF 10UF 15UF 22UF 47UF 100UF 220UF 330UF 470UF 680UF 1500UF Electrolytic Capacitors Kit 6.3V 10V 16V 25V 35V 50V 100V 400V,295Pcs | Power                      | 330 uF        | changhe          | 1        | 18.98      | 18.98  |
 | 33 uH inductors           | uxcell 50Pcs 0510 Color Ring Inductor 33uH 1W Axial RF Choke Coil Inductor                                                                           | Power                      | 33 uH         | uxcell           | 1        | 8.49       | 8.49   |
 | Boost Converter           | DC DC Converter 12 V 120 W                                                                                                                           | Power                      | ?             | ?                | 1        | 0          | 0      |
 | Power Distribution Bus    | Solid Brass                                                                                                                                          | Power                      | 737           | Adafruit         | 5        | 1.95       | 9.75   |
-| Total                     |                                                                                                                                                      |                            |               | Total Components | 15       | Total Cost | 129.15 |
+| Total                     |                                                                                                                                                      |                            |               | Total Components | 16       | Total Cost | 129.97 |
+
 
 
 
