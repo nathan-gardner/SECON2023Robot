@@ -4,23 +4,22 @@
 - Allows the robot to be turned off and on.
 - Addition of an emergency stop button in order to meet safety standard and competition requirement.
 ## **Constraints** 
-- The power supply must supply 12 V and a current of more than 2 A to accomodate all components that will be running at one time.
-  - The output of the battery must be regulated with a boost converter in order to ensure each component is provided with the proper voltage for operation.   
+- The power supply must supply 12 V and a current of more than 2 A to accommodate all components that will be running at one time. 
+- The output of the battery must be regulated with a boost converter in order to ensure each component is provided with the proper voltage for operation.   
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
-- The table below shows the voltage and current requirements for each component in each subsystem. These will be the main constraints for the power subsystem.
-- 6 V will need to be provided to certain components such as some motor drivers and servo drivers.
-- The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To fix this, the team will add smoothing capacitors on each motor load.
-- Since there are multiple loads that need 12V and 6V supplied, there will need to be a power bus for each of them. The power bus selected is rated up to 24V.
+- Many of the loads will need to be stepped down to 6V and have a regulated output to eliminate with ripple voltage. There will be filters to smooth out the ripple
+- The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To mitigate this, the team will add smoothing capacitors on each motor load.
+- Since there are multiple loads that need 12V and 6V supplied, there will need to be a power bus for each of them. The power bus selected is rated up to 10A.
 - The power supply chosen has a 5V USB output. Because of this, the concerns for powering the Nvidia Jetson as well as both arduinos will be separate from the remainder of the components. 
-- An emergency stop button must be used for the safety of those involved in the competition. Further details are shown in the next subsection.
-
+- An emergency stop button must be used for the safety of those involved in the competition. 
+  - The emergency button must have a flyback diode attached in reverse bias because of the motor’s inductive load and the chance of a sudden switch in the power being supplied.
 
 ### **Constraint from Standard**
 
 - Shall have a self-latching emergency stop push-button that has a positive operation. The button shall not be a graphical representation or a flat switch based on NFPA 79 - 10.7.2.
 
-### **Power Subsystem Required Voltage and Current from each Subsystem**		
 
+### **Voltage and current requirements for all components**
 
 | Subsystem                                  | Component                  | Voltage (V) | Current (A) |
 | ------------------------------------------ | -------------------------- | ----------- | ----------- |
@@ -29,10 +28,15 @@
 | Duck Storage and Delivery                  | Solenoid Actuator          | 12          | 0.65        |
 | Pedestal Storage, Duck Storage, Sorting, and Feeding | Servo Motor Controller | 6     | 2.17        |
 | Sorting                                    | Motor Controller           | 6           | 0.25        |
-| TOTAL:                                     |                            |             | 4.77        |
 
-Keep in mind that the current values are different for each side of the buck converters. The buck converters will lower the voltage which will slightly raise the output current. Therefore, the buck converters will need lower amperage values than are shown on the table. 
 
+### **Voltage and current requirements for all continuous components**
+
+| Subsystem  | Component | Voltage (V) | Current (A)  |
+| ----------- | -------------------------- | -- | ---- |
+| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
+| Consumption | Motor Driver - Motor       | 6  | 0.5  |
+| Sorting     | Motor Controller           | 6  | 0.25 |
 
 ## **Buildable Schematic**
 
@@ -63,16 +67,20 @@ The robot should be able to run up to 40 rounds without needing a charge. This w
 
 The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
 
-### **Continuous Use Components**
 
-| Subsystem  | Component | Voltage (V) | Current (A)  |
-| ----------- | -------------------------- | -- | ---- |
-| Locomotion  | Motor Drivers - Motors (4) | 12 | 1.2  |
-| Consumption | Motor Driver - Motor       | 6  | 0.5  |
-| Sorting     | Motor Controller           | 6  | 0.25 |
-| TOTAL:      |                            |    | 1.95 |
+### **Current Analysis**
 
-The table above shows each component that will be running continuously from the 12 V supply. These components will need a total of about 2 A in order to function properly. The power supply can supply up to 3 A, which allows for about an extra 1 A of wiggle room for the other components that may switch on for a short period of time.
+#### **Block Diagram for all components**
+
+![image](https://user-images.githubusercontent.com/112428796/217997468-f6a13fab-15ee-4600-b607-916deef9cabb.png)
+
+#### **Block diagram for all constant loads**
+
+![image](https://user-images.githubusercontent.com/112428796/217997561-0201fd06-febe-4eff-a30a-7c7635510d9f.png)
+
+#### **Matlab Simulation**
+
+According to the MatLab simulation the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
 
 ### **Boost Converters**
 
@@ -118,20 +126,6 @@ Above is the unregulated noise signal. The noise is simulated as a sine wave wit
 
 
 As shown above the output voltage is regulated to 6 V with a small ripple of less than 1% of the output voltage.
-
-
-### **Current Analysis**
-
-#### **Block Diagram for all components**
-
-![image](https://user-images.githubusercontent.com/112428796/217997468-f6a13fab-15ee-4600-b607-916deef9cabb.png)
-
-The resistor values were chosen through trial and error as a representation for the buck converter's voltage drop from 12 V to 6 V.
-
-
-#### **Block diagram for all constant loads**
-
-![image](https://user-images.githubusercontent.com/112428796/217997561-0201fd06-febe-4eff-a30a-7c7635510d9f.png)
 
 
 ### **Power Bus**
