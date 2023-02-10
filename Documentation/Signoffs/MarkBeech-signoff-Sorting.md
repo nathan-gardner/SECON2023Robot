@@ -50,17 +50,7 @@
 
 ### **Electrical Schematics:**
 
-Sorting Subsystem Schematic:
-
 ![image](https://user-images.githubusercontent.com/30758520/205470620-8f525419-8f01-48a8-b775-f67ca29675b9.png)
-
-![image](https://user-images.githubusercontent.com/112428796/203215313-85ff081d-fb19-4ab0-b8c6-72a5adc10ec5.png)
-
-Above is the circuit schematic for the color sensor PCB chosen from Adafruit
-
-![image](https://user-images.githubusercontent.com/30758520/215600333-04b1fc07-95a0-4019-aa6b-238960dc831b.png)
-
-Above shows the connection to the Arduino MEGA from the low level controller subsystem. The digital pins and PWM pins will be used to control the various electrical components for the system. The PWM pin will be used to control the motor for the conveyor belt. The digital pins will be used for the servo and the the color sensor.
 
 ## **Analysis**
 ### **Conveyor Belt**:
