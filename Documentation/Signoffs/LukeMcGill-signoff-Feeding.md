@@ -57,7 +57,7 @@ Chassis Subsystem Fit CAD model files available [here](https://github.com/nathan
 
 The electrical schematic for the feeding subsystem is shown below. 
 
-![image](https://user-images.githubusercontent.com/112424739/218157004-da79fe7e-6f40-4ce6-86df-6d0d8d8548df.png)
+![image](https://user-images.githubusercontent.com/112424739/218158290-946fe6fc-cd54-4bf9-94a0-50b784b2db8b.png)
 
 ## Analysis
 
