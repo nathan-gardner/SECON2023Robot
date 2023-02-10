@@ -7,7 +7,7 @@
 - The power supply must supply 12 V and a current of more than 2 A to accommodate all components that will be running at one time. 
 - The output of the battery must be regulated with a boost converter in order to ensure each component is provided with the proper voltage for operation.   
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
-- Many of the loads will need to be stepped down to 6V and have a regulated output to eliminate with ripple voltage. There will be filters to smooth out the ripple
+- Many of the loads will need to be stepped down to 6V and have a regulated output to eliminate ripple voltage. There will be filters to smooth out the ripple
 - The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To mitigate this, the team will add smoothing capacitors on each motor load.
 - Since there are multiple loads that need 12V and 6V supplied, there will need to be a power bus for each of them. The power bus selected is rated up to 10A.
 - The power supply chosen has a 5V USB output. Because of this, the concerns for powering the Nvidia Jetson as well as both arduinos will be separate from the remainder of the components. 
