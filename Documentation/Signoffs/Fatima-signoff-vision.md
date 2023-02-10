@@ -65,19 +65,17 @@ $0.707" + 1.5" = 2.207"$
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
 
-Red, green, and blue are the three primary colors in the RGB format. Computers read RGB (red, green, blue) in as a hex value where 0x00 - 0xFF represent the intensity of red, green, and blue respectively. The intensity of each color individually will be analyzed within the path planning code, based on light provided by the white LED on the color sensor, to determine a intensity threshold at which point the reflected light will be considered red, green, or blue. 
-
-The TCS34725 color sensor is an RGB (red, green, blue) which is a digital light-to-digital converter, which converts the visible light into a digital signal that the external microcontroller reads. The measurements are taken using a 3 x 4 matrix of sensors that have red, green, blue color filters in front of them. Also, to have good accuracy, the integration times must be long and it can be set to $2.4\ ms, 24\ ms, 50\ ms, 101\ ms, 154\ ms or 700\ ms$. 
+Intensity of red, green, and blue will be analyzed separately in order to observe red, green, and blue in the arena. Setting integration times and color intensity thresholds will need to be a slight trial and error process once the sensor is received. This will depend on the light allowed in the robot. light provided by the sensor, and the distance from the target.    
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
-Speed: 
-
-Clock Frequency: $\ \ 0-400kHz$
+$F_{clock}\ \ 0-400kHz$
 
 ![image](https://user-images.githubusercontent.com/112428796/203214738-1178d2db-62f4-489b-8cfd-b6a167bece1f.png)
 
-Above is the state machine representation for the sensor circuit showing the times each of the states will take. For the majority of the time, the sensor will be in the states idle, RGCB ADC and RGCB INIT after the startup. Detection will take a maximum of 616.4 ms. This is the most time critical application of the color sensor. The second application of the color sensor is pointed towards the ground, and this sample rate will also be sufficient for this application as well. We need to gain meaningful samples, with the robots maximum speed of $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot for this reason will need to be slowed down from max speed in order to get fine enough samples when we know that we are indeed above the blue duck pond in order to deliver the corral precisely. The speed levels will be designed into the control encodings for the locomotion system.
+The majority of the time, the sensor will be in the states idle, RGBC ADC and RGBC INIT after the startup. Detection will take a maximum of 616.4 ms.
+
+When the color sensor is pointed towards the ground, the bot will move at $0.2023\ \frac{m}{s}$, the robot samples per distance traveled will be $0.2023\ \frac{m}{s} * 0.6164\ s = 0.125\ m = 125\ mm$. The robot will be slowed down when finer sampled are needed. $0.0677 \frac{m}{s}$ is the minimum speed of the robot, and it will be able to take samples every $41.7\ mm$ at that speed. 
 
 ### Sensor communication protocols availability (USART, SPI, I2C)
 
