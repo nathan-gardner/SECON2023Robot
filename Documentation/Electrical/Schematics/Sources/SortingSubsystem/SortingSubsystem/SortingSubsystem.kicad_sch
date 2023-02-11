@@ -595,6 +595,10 @@
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 735f65e4-e205-47e7-b5fd-89174798b3f0)
   )
+  (wire (pts (xy 107.95 154.94) (xy 113.03 154.94))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 76e929b9-ef90-4e4c-a6cb-6a7388e89414)
+  )
   (wire (pts (xy 313.69 147.32) (xy 330.2 147.32))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 7aaffff2-f95f-452b-b2c3-ae2ec5be4c45)
@@ -645,6 +649,10 @@
     (uuid a2044db8-48e3-449c-8825-d9a642f4c898)
   )
 
+  (wire (pts (xy 113.03 152.4) (xy 113.03 154.94))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid a65f8e53-f0e2-418b-8488-62cd2dc91522)
+  )
   (wire (pts (xy 313.69 149.86) (xy 330.2 149.86))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid a6f73327-20d0-47ec-be22-15c49ca2841e)
@@ -746,7 +754,7 @@
     (uuid e5d037e3-d5f3-44e3-ba7c-2ec201df19d4)
   )
 
-  (wire (pts (xy 99.06 128.27) (xy 118.11 128.27))
+  (wire (pts (xy 97.79 128.27) (xy 116.84 128.27))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid e6020efc-aeda-4e98-b2cc-629ce0d12d14)
   )
@@ -1079,6 +1087,22 @@
     (pin "3" (uuid 003dfd15-3041-442d-8c09-0244c937edb4))
   )
 
+  (symbol (lib_id "power:+5V") (at 113.03 152.4 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid b7713ffa-c1b5-4eb0-8303-fbe6f6cc2bf4)
+    (property "Reference" "#PWR?" (id 0) (at 113.03 156.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (id 1) (at 113.03 147.32 0))
+    (property "Footprint" "" (id 2) (at 113.03 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 113.03 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 15237904-2b98-453b-a1df-91e9ea86e8f1))
+  )
+
   (symbol (lib_id "Motor:Motor_DC") (at 297.18 152.4 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f8d8116b-49e3-4f76-99a7-2025425b0ac1)
@@ -1114,6 +1138,9 @@
     )
     (path "/94c94c65-8069-4482-a449-fdc652d71c46"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/b7713ffa-c1b5-4eb0-8303-fbe6f6cc2bf4"
+      (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
     )
     (path "/86e4b687-287a-4a00-b99c-4964373a399a"
       (reference "ColorSensor") (unit 1) (value "TCS34725FN") (footprint "SON65P200X240X70-6N")
