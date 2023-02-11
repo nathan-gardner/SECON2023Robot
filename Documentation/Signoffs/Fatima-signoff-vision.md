@@ -39,7 +39,9 @@ List of constraints:
 
 ### Robot LIDAR sensor sensor distance thresholds analysis
 
-The team assumes that the distance between the robot and the closest wall is  $9” – (0.5x11.25”) = 9” – 5.625” = 3.375”$.
+The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
+
+$9” – (0.5x11.25”) = 9” – 5.625” = 3.375”$.
 
 The team knows from dimensions given in the specification that the distance between the robot and the closest wall when in the circle is  
 
