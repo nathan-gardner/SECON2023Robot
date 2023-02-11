@@ -69,11 +69,19 @@ This distance of 2.207 in is less than the possible error. Therefore, it will be
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
 
-Setting integration times and color intensity thresholds will need to be a slight trial and error process once the sensor is received. This will depend on the light allowed in the robot by the chassis, light provided by the sensor, and the distance from the target. 
+Interrupts will be set to generate when the light intensity has exceeded the set threshold. Threshold values depend on many variables that can not be simulated like light allowed in the robot by the chassis, light provided by the sensor, and the distance from the target. 
 
 ![image](https://user-images.githubusercontent.com/30758520/218214807-59ad3827-e0c5-40d2-95bf-e212b0e115c6.png)
 
-Above is the photodiode spectral responsivity (optical-to-electrical conversion efficiency) graph. Colors within the arena were purposefully chosen to fall at the peaks of the blue, green, and red curves shown. This makes color measurement easier, because colors should not regularly fall between the responsivity peaks. 
+Above is the photodiode spectral responsivity (optical-to-electrical conversion efficiency) graph. Colors within the arena were purposefully chosen to fall at the peaks of the blue, green, and red curves shown. This makes color measurement easier, because colors should not regularly fall between the responsivity peaks. Color falls within the ranges below, which can be met with the color sensor selected. 
+
+Blue: $450\ nm$
+
+Green: $550\ nm$
+
+Red: $650\ nm$
+
+*Source: ![Encyclopedia Britannica](https://www.britannica.com/science/color/The-visible-spectrum)*
 
 ![image](https://user-images.githubusercontent.com/30758520/218212688-b8d981ff-0754-46f2-b109-a7e33fb86ebf.png)
 
