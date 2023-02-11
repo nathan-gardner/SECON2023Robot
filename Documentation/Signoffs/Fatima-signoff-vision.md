@@ -4,7 +4,7 @@ The vision subsystem for this robot includes the sensor network that will be use
 
 The team chose the Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor for distance measurements in the arena and the RGB Color Sensor with IR filter for color sensing within the robot for active sorting and in order to find landmarks within the arena. 
 
-The subsystem uses the top-level controller for processing sensor data and so that the data can be read more rapidly, and publish the data to a ROS topic to communicate to the rest of the nodes within the computation graph. Nodes will be created for data acquisitions from the sensors, and will be decoupled from the logic that is making the robot follow its path through the arena. The path locomotion logic will be another node in the network which will subscribe to the data stream created by the sensor nodes, and produce command data for the low-level controller to create at a set interval which will activate the motors to follows the set command encoded in that data stream.
+The subsystem uses the top-level controller for processing sensor data, reading data more rapidly, and publishing the data to a ROS topic to communicate to the rest of the nodes within the computation graph. Nodes will be created for data acquisitions from the sensors, and will be decoupled from the logic that is making the robot follow its path through the arena. The path locomotion logic will be another node in the network which will subscribe to the data stream created by the sensor nodes, and produce command data for the low-level controller to create at a set interval which will activate the motors to follows the set command encoded in that data stream.
 
 The team chose to use the TCS34725 Color Sensor to detect the duck pond location, which is also used within the design for the sorting subsystem for distinguishing between ducks and pedestals with are going through the bots conveyor belt system. 
 
@@ -39,7 +39,7 @@ List of constraints:
 
 ### Robot LIDAR sensor sensor distance thresholds analysis
 
-The team assumes that the distance between the robot and the closest wall is  9” – (0.5x11.25”) = 9” – 5.625” = 3.375”.
+The team assumes that the distance between the robot and the closest wall is  $9” – (0.5x11.25”) = 9” – 5.625” = 3.375”$.
 
 The team knows from dimensions given in the specification that the distance between the robot and the closest wall when in the circle is  
 
