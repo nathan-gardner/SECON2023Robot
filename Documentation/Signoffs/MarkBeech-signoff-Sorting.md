@@ -50,7 +50,7 @@
 
 ### **Electrical Schematics:**
 
-![image](https://user-images.githubusercontent.com/112428796/218278457-238a0ca1-9b05-400c-906e-ca18e305f24e.png)
+![image](https://user-images.githubusercontent.com/112428796/218278721-7a10bdb2-1479-46bc-87bb-2c08a4d699c8.png)
 
 ## **Analysis**
 ### **Conveyor Belt**:
