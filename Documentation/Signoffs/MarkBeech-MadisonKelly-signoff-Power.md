@@ -19,6 +19,17 @@
 
 - Shall have a self-latching emergency stop push-button that has a positive operation. The button shall not be a graphical representation or a flat switch based on NFPA 79 - 10.7.2.
 
+### **Voltage input ranges for all components**
+
+| Component             | Input Range |
+| --------------------- | ----------- |
+| Boost converter board | 9V to 36V   |
+| Buck Converter board  | 4.0 to 40V  |
+| L298N                 | 5V to 35V   |
+| TB9051FTG             | 4.5V to 28V |
+| Micro Maestro         | 5V  to 16V  |
+| Lock style solenoid   | 9V to 12V   |
+| Nvidia Jetson nano   | 4.75 V to 5.25 V |
 
 ### **Voltage and current requirements for all components**
 
