@@ -137,11 +137,19 @@ Red: $650\ nm$
 
 ### Color sensor analysis for green versus red
 
+*Note: analysis below is shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
+
 *Red and green are very far from each other on the color spectrum below are calculations showing confidence that the color sensor can distinguish between red and green.*
+
+![image](https://user-images.githubusercontent.com/30758520/218564650-edd9df0a-3364-46cc-affe-ea88169ce358.png)
 
 ### Color sensor analysis for black versus blue
 
+*Note: analysis below is shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
+
 *Below are calculations showing confidence that the color sensor can distinguish between blue and black.*
+
+![image](https://user-images.githubusercontent.com/30758520/218564650-edd9df0a-3364-46cc-affe-ea88169ce358.png)
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
