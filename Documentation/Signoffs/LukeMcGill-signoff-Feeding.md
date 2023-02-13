@@ -15,7 +15,7 @@ The competition rules allow for the feeding chips to be preloaded into the robot
 
 - The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit within the robot. 
 - The servo motor must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so a micro servo can be used. The calculation for the needed torque is below in analysis.
-- The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures. The color sensor was chosen and analyzed in the vision subsystem for this task. 
+- This subsystem constrains the vision subsystem. The color sensor must be able to detect a distinct difference between the red (0xFF0000) and green (0x00FF00) animal enclosures. The color sensor was chosen and analyzed in the vision subsystem for this task. 
 
 ## Buildable Schematic
 
@@ -85,17 +85,6 @@ The downward force of the chips on the plate will be the mass of three chips tim
 
 The torque of the motor selected is 21 oz-in, so it will be more than sufficient for its cause because it is three times minimum necessary torque from the calculations above. 
 
-# Color of Aquariums
-
-The arena picture from the competition rules description, when color sampled, showed the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. 
-
-![image](https://user-images.githubusercontent.com/30758520/218523472-e4533f3a-220d-4b5f-b10d-ab1f35160cf4.png)
-
-The color sensors have an upper and lower threshold, which can be set for clear, red, green, blue, and will generate interrupts when that threshold is met. The sensor has a programmable analog gain and filter, so gain can be increased for color dimly lit environments. It is difficult to impossible to predict the exact amount of light that will be reflected from the arena for the color sensor inside vision. We do however know that the colors will be green and red, and this means they will be near the top of the responsivity curves for each color, shown below. 
-
-![image](https://user-images.githubusercontent.com/30758520/218214807-59ad3827-e0c5-40d2-95bf-e212b0e115c6.png)
-
-The sensors being mounted on the bottom of the robot will allow the sensor to be directly over and very close the aquarium. This makes the team feel confident that the color sensor will be able to function as intended after experimentation with threshold measurements on the color sensor. 
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
