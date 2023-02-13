@@ -135,6 +135,14 @@ Red: $650\ nm$
 
 *Source: ![Encyclopedia Britannica](https://www.britannica.com/science/color/The-visible-spectrum)*
 
+### Color sensor analysis for green versus red
+
+*Red and green are very far from each other on the color spectrum below are calculations showing confidence that the color sensor can distinguish between red and green.*
+
+### Color sensor analysis for black versus blue
+
+*Below are calculations showing confidence that the color sensor can distinguish between blue and black.*
+
 ### Data production rate from the sensors, or sensor resolution analysis
 
 $F_{clock}\ \ 0-400kHz$
