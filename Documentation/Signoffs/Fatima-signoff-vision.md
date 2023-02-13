@@ -37,21 +37,31 @@ List of constraints:
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
 
-### Robot LIDAR sensor sensor distance thresholds analysis
+### Robot LIDAR sensor distance thresholds analysis
+
+The analysis below is ensuring the robot will be able to position itself over the duck pond accurately using the LIDAR sensors. This has been determined to be the most difficult localization that the LIDAR sensors will need to perform, because they will be furthest from the nearest wall and the landmark is not in the corner. 
 
 The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
 
 $9” – (0.5x11.25”) = 9” – 5.625” = 3.375”$.
 
+The middle of the duck pond is 9" away from the wall. The robot width is 11.25". Analysis below shows how far the sensor on the side of the robot will be away from the wall when the robot is on the duck pond.
+
 The team knows from dimensions given in the specification that the distance between the robot and the closest wall when in the circle is  
 
 $9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$. 
 
-Max distance the ToF LIDAR will measure when on duck pond and considering possible 3% error will be
+Max distance the ToF LIDAR will measure the distance to the furthest wall (distance from the wall to the middle of the circle, minus half the robot width)
 
-$48" + 7" = 55" \therefore possible\ error = 3$% $of\ 55" = 1.65"$
+$48" - 0.5 \ast 11.25 = 42.375'$
 
-The robot will have ability to measure $55" ± 1.65"$ with the ToF LIDAR sensor when positioning itself around the duck pond. 
+and considering possible 3% error (from datasheet) will be
+
+$\therefore possible\ error = 3$% $of\ 42.375" = 1.27"$
+
+The robot will have ability to measure $42.375" ± 1.27"$ with the ToF LIDAR sensor when positioning itself around the duck pond. 
+
+The above analysis fits into the 50 - 1200 mm (5.08" - 47.24") constraint defined. 
 
 *Note: Corral is being designed to be adjustable on it longest dimension if the corral needs to be smaller in order to land in the duck pond. A majority of the duck needs to be in the duck pond to count for points.*
 
@@ -63,7 +73,7 @@ If considering only this 0.707", this is not sufficient. Because only a majority
 
 $0.707" + 1.5" = 2.207"$ 
 
-This distance of 2.207 in is less than the possible error. Therefore, it will be sufficient for the team's needs.
+This distance of 2.207 in is less than the possible error. Therefore, $42.375" ± 1.27"$ accuracy will be sufficient for the team's needs.
 
 ## RGB color sensor with IR filter: 
 
