@@ -159,9 +159,9 @@ All motors chosen in this project have come from Pololu. Pololu recommends conne
 
 Since there are many components that need 12V and 6V, there will be at least two power buses to better distribute the power to the correct components within the robot. The buses selected are rated up to 24V, and 12V is the maximum voltage within the robot. Also, the number of outputs on the bus itself is much greater than the number of outputs the team will need. Therefore, the buses selected will be sufficient. 
 
-### **Nvidia Jetson Power**
+### **USB Output Power**
 
-Since the power supply chosen has a separate 5V USB port output with separate ratings, the analysis for the Nvidia Jetson is simple. The team will use the USB(A)-USB(A) that came with the Nvidia Jetson to supply the voltage needed. 
+Since the power supply chosen has a separate 5V USB port output with separate ratings, the analysis for the Nvidia Jetson is simple. The team will use the USB(A)-micro USB that came with the Nvidia Jetson to supply the voltage needed. The 5V output on the power supply has a regulated output of 5V at 2A. Therefore, it will be sufficient to power the Nvidia Jetson which needs 4.75-5.25V at 2A.
 
 ### **Emergency stop button**
 
