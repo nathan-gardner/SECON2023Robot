@@ -81,7 +81,7 @@ The 40-pin header connection design is represented in this sign off, and not in 
 
 ### Robot LIDAR sensor distance thresholds analysis
 
-The analysis below is ensuring the robot will be able to position itself over the duck pond accurately using the LIDAR sensors. This has been determined to be the most difficult localization that the LIDAR sensors will need to perform, because they will be furthest from the nearest wall and the landmark is not in the corner. 
+Max error calculation based on duck pond location:
 
 The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
 
