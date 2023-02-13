@@ -87,9 +87,13 @@ The torque of the motor selected is 21 oz-in, so it will be more than sufficient
 
 # Color of Aquariums
 
-The arena picture from the competition rules description, when color sampled, showed the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. The color sensors have an upper and lower threshold, and will generate interrupts when that threshold is met. 
+The arena picture from the competition rules description, when color sampled, showed the aquariums will be true green and red, meaning that they will be 0x00FF00 and 0xFF0000 respectively. In the case of a color sensor measuring color values in the real world, there will be noise in the green and blue values when measuring the red aquarium, and the same will occur when measuring green. 
 
 ![image](https://user-images.githubusercontent.com/30758520/218523472-e4533f3a-220d-4b5f-b10d-ab1f35160cf4.png)
+
+The color sensors have an upper and lower threshold, which can be set for clear, red, green, blue, and will generate interrupts when that threshold is met. The sensor has a programmable analog gain and filter, so gain can be increased for color dimly lit environments. It is difficult to impossible to predict the exact amount of light that will be reflected from the arena for the color sensor inside vision. We do however know that the colors will be green and red, and this means they will be near the top of the responsivity curves for each color, shown below. 
+
+
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
