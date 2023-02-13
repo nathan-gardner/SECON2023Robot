@@ -33,6 +33,44 @@ List of constraints:
 - Data production rate from the sensors, or sensor resolution (color sensor: take samples every $41.7\ mm$, LIDAR: < 400 kbit/sec)
 - Sensor communication protocols availability (USART, SPI, I2C)
 
+# Buildable Schematics
+
+## CAD models
+
+Below are images showing how all of the subsystems, including the vision sensor network will fit into the robot.
+
+Top view
+
+![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
+
+Side view
+
+![image](https://user-images.githubusercontent.com/30758520/217405754-b7508cac-6b67-48e5-bc1c-969beabe3828.png)
+
+Rear Side view 1
+
+![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
+
+Rear Side view 2
+
+![image](https://user-images.githubusercontent.com/30758520/217406076-af1fa457-ba10-4bc0-bd10-c326b97fa633.png)
+
+Rear view
+
+![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
+
+Front corner
+
+![image](https://user-images.githubusercontent.com/30758520/217406258-9ac6acc2-2f57-4e2d-a900-f2ad3f18a0f0.png)
+
+Bottom
+
+![image](https://user-images.githubusercontent.com/30758520/217406342-82d7b362-cc9f-40ac-a97d-a80c6cf51ee9.png)
+
+## Electrical Schematics 
+
+![image](https://user-images.githubusercontent.com/30758520/215352489-d551fc0e-c145-45f6-baf1-f7ca09882be0.png)
+
 # Analysis 
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
@@ -114,42 +152,6 @@ Public software libraries have been created for interfacing with boh sensors sel
 ![TCS34725 - Color Sensor Software Library](https://github.com/adafruit/Adafruit_TCS34725)
 
 ![VL53L0X - ToF LIDAR Sensor Software Library](https://github.com/adafruit/Adafruit_VL53L0X)
-
-# Buildable Schematics
-
-Below are images showing how all of the subsystems, including the vision sensor network will fit into the robot.
-
-Top view
-
-![image](https://user-images.githubusercontent.com/30758520/217405647-4aef4118-8f63-4c85-bbfe-5125365fd0a0.png)
-
-Side view
-
-![image](https://user-images.githubusercontent.com/30758520/217405754-b7508cac-6b67-48e5-bc1c-969beabe3828.png)
-
-Rear Side view 1
-
-![image](https://user-images.githubusercontent.com/30758520/217406171-b0454923-5b69-47fe-aef1-dd19d3acfe9c.png)
-
-Rear Side view 2
-
-![image](https://user-images.githubusercontent.com/30758520/217406076-af1fa457-ba10-4bc0-bd10-c326b97fa633.png)
-
-Rear view
-
-![image](https://user-images.githubusercontent.com/30758520/217406232-0fdc2a19-cdb0-42c5-bda1-3b213afa7b6e.png)
-
-Front corner
-
-![image](https://user-images.githubusercontent.com/30758520/217406258-9ac6acc2-2f57-4e2d-a900-f2ad3f18a0f0.png)
-
-Bottom
-
-![image](https://user-images.githubusercontent.com/30758520/217406342-82d7b362-cc9f-40ac-a97d-a80c6cf51ee9.png)
-
-# Electrical Schematics 
-
-![image](https://user-images.githubusercontent.com/30758520/215352489-d551fc0e-c145-45f6-baf1-f7ca09882be0.png)
 
 # BOM
 
