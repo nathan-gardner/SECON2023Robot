@@ -28,9 +28,9 @@ Sensors must be able to connect to one of the existing controller interfaces, ei
 
 List of constraints:
 
-- Robot LIDAR sensor sensor distance thresholds
-- Color sensor accuracy, specifically with red, green, blue, and black
-- Data production rate from the sensors, or sensor resolution
+- Robot LIDAR sensor sensor distance thresholds (50 - 1200 mm)
+- Color sensor accuracy, specifically with red, green, blue, and black (responsivity analysis below)
+- Data production rate from the sensors, or sensor resolution (color sensor: take samples every $41.7\ mm$, LIDAR: < 400 kbit/sec)
 - Sensor communication protocols availability (USART, SPI, I2C)
 
 # Analysis 
@@ -83,10 +83,6 @@ Red: $650\ nm$
 
 *Source: ![Encyclopedia Britannica](https://www.britannica.com/science/color/The-visible-spectrum)*
 
-![image](https://user-images.githubusercontent.com/30758520/218212688-b8d981ff-0754-46f2-b109-a7e33fb86ebf.png)
-
-Above is the normalized responsivity versus angular displacement curve for the elected color sensor. The photocurrent linearly decreases when pointed $±30°$ from the target, and when outside that threshold decreases much faster. The color sensor will be mounted pointing directly towards the ground for this reason so as photocurrent as possible is generated. 
-
 ### Data production rate from the sensors, or sensor resolution analysis
 
 $F_{clock}\ \ 0-400kHz$
@@ -103,7 +99,7 @@ All of these sensor use I2C, which is a very common communication protocol which
 
 # Software Consideration - Possible/Probable Software Solutions
 
-Public software libraries have been created for interfacing with boh sensors selcted for the vision sensor network. Libraries are provided by Adafruit and linked below,
+Public software libraries have been created for interfacing with boh sensors selected for the vision sensor network. Libraries are provided by Adafruit and linked below,
 
 ![TCS34725 - Color Sensor Software Library](https://github.com/adafruit/Adafruit_TCS34725)
 
