@@ -36,6 +36,8 @@ In summary, these constraints are as follows:
 
 ![image](https://user-images.githubusercontent.com/112424739/213819382-0b3b04ac-6564-4466-a17c-074a57101b0d.png)
 
+The 40-pin header connection design is represented in the vision sensor network sign off, and not in the top-level controller sign off. The rest of the connections in the top level controller are represented here. 
+
 ## Analysis
 
 The top-level controller will need to be analyzed in terms of the constraints: power, size, and GPIO. 
