@@ -69,7 +69,7 @@ Bottom
 
 ## Electrical Schematics 
 
-![image](https://user-images.githubusercontent.com/30758520/215352489-d551fc0e-c145-45f6-baf1-f7ca09882be0.png)
+![image](https://user-images.githubusercontent.com/30758520/218514407-e11f8120-6d6d-4c76-9670-b072b54623e7.png)
 
 # Analysis 
 
