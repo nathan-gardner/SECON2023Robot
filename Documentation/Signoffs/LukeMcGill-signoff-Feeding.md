@@ -93,7 +93,7 @@ The arena picture from the competition rules description, when color sampled, sh
 
 The color sensors have an upper and lower threshold, which can be set for clear, red, green, blue, and will generate interrupts when that threshold is met. The sensor has a programmable analog gain and filter, so gain can be increased for color dimly lit environments. It is difficult to impossible to predict the exact amount of light that will be reflected from the arena for the color sensor inside vision. We do however know that the colors will be green and red, and this means they will be near the top of the responsivity curves for each color, shown below. 
 
-
+![image](https://user-images.githubusercontent.com/30758520/218214807-59ad3827-e0c5-40d2-95bf-e212b0e115c6.png)
 
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
