@@ -73,6 +73,8 @@ Bottom
 
 ![image](https://user-images.githubusercontent.com/30758520/218519001-13fccbc9-3add-4bb9-8bc5-e52de2323b04.png)
 
+The 40-pin header connection design is represented in this sign off, and not in the top-level controller sign off.
+
 # Analysis 
 
 ## Adafruit VL53L0X Time of Flight Micro-LIDAR Distance Sensor: 
