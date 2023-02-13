@@ -161,7 +161,7 @@ Since there are many components that need 12V and 6V, there will be at least two
 
 ### **USB Output Power**
 
-Since the power supply chosen has a separate 5V USB port output with separate ratings, the analysis for the Nvidia Jetson is simple. The team will use the USB(A)-micro USB that came with the Nvidia Jetson to supply the voltage needed. The 5V output on the power supply has a regulated output of 5V at 2A. Therefore, it will be sufficient to power the Nvidia Jetson which needs 4.75-5.25V at 2A.
+Since the power supply chosen has a separate 5V USB port output with separate ratings, the analysis for the Nvidia Jetson is simple. The team will use the USB(A) - micro USB that came with the Nvidia Jetson to supply the voltage needed. The 5V output on the power supply has a regulated output of 5V at 2A. Therefore, it will be sufficient to power the Nvidia Jetson which needs 4.75-5.25V at 2A.
 
 ### **Emergency stop button**
 
