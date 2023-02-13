@@ -95,6 +95,8 @@ The color sensors have an upper and lower threshold, which can be set for clear,
 
 ![image](https://user-images.githubusercontent.com/30758520/218214807-59ad3827-e0c5-40d2-95bf-e212b0e115c6.png)
 
+This makes the team feel confident that the color sensor will be able to function as intended after experimentation with threshold measurements on the color sensor. 
+
 ## BOM
 | Name of Item           | Description                                        | Used in which subsystem(s)                                        | Part Number | Manufacturer | Quantity | Price | Total |
 |------------------------|----------------------------------------------------|-------------------------------------------------------------------|-------------|--------------|----------|-------|-------|
