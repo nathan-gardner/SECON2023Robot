@@ -91,7 +91,7 @@ Since 2.25 in > 1.97 in, the sensor will not detect the walls of the silo itself
 
 $D_{max} = L_{silo} - D_{pedestal} = 2.25in - 2in = 0.25 in = 0.635 cm$
 
-The max distance calculated is less than the maximum distance the sensor can detect which is 5 cm. The distance between the wall of the silo and the sensor is more than its maximum range. Therefore, the sensors will be able to detect the pedestals when they enter the silo and will not detect the walls of the silo when there is no pedestal present.
+The max distance calculated is less than the maximum distance the sensor can detect which is 5 cm. The distance between the wall of the silo and the sensor is more than its maximum range. Therefore, the sensors will be able to detect the pedestals when they enter the silo and will not detect the walls of the silo when there is no pedestal present. According to the manufacturer, the sensor will output a "low" signal when there is an object present and a "high" signal otherwise. The sensor will only detect if there is an object within range, so if there is not, it will output a defined signal showing that there is no object present.
 
 ### Weight Calculations
 
