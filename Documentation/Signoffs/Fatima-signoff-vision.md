@@ -1,3 +1,5 @@
+# Vision Sensor Network Subsystem Signoff
+
 # Function of the subsystem
 
 The vision subsystem for this robot includes the sensor network that will be used for localization within the arena. The path will be preprogrammed into the robot as a large block of conditionals which will access sensor data from the vision subsystem.
