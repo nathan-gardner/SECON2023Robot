@@ -145,7 +145,11 @@ Above is the photodiode spectral responsivity (optical-to-electrical conversion 
 | Wavelength (nm) | 0                 | 380               | 760                | 790               |
 | RGB Hex Value   | 0x000000          | 0x610061          | 0x8D0000           | 0x000000          |
 
+### Red vs Green
+The typical red color has a wavelength of 650 nm and corresponds to the RGB hex number 0xFF0000. The typical green color has a wavelength of 540 nm and corresponds to the RGB hex number 0x81FF00. Red meets green at $\approx$ 580 nm wavelength and hex 0xFFFF00. This color is closer to a bright yellow, and is not very close to either green or red. The red and green hex values are different enough such that the color sensor will be able to distinguish between them.
 
+### Blue vs Black
+Black corresponds to very low and high wavelengths and hex values close to 0x000000. Blue is centered at 450 nm and 0x0046FF in hex. Blue has a wide enough range such that the color sensor will be able to distinguish between blue and not blue.
 
 ### Color sensor analysis for green versus red and black versus blue
 
