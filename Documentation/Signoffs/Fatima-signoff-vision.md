@@ -81,7 +81,7 @@ The 40-pin header connection design is represented in this sign off, and not in 
 
 ### Robot LIDAR sensor distance thresholds analysis
 
-Max error calculation based on duck pond location:
+### Max error calculation based on duck pond location:
 
 The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
 
