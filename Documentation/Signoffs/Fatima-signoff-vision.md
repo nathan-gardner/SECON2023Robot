@@ -89,10 +89,6 @@ $9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$.
 
 The middle of the duck pond is 9" away from the wall. The robot width is 11.25". Analysis below shows how far the sensor on the side of the robot will be away from the wall when the robot is on the duck pond.
 
-The team knows from dimensions given in the specification that the distance between the robot and the closest wall when in the circle is  
-
-$9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$. 
-
 Max distance the ToF LIDAR will measure the distance to the furthest wall (distance from the wall to the middle of the circle, minus half the robot width)
 
 $48" - 0.5 \ast 11.25 = 42.375'$
