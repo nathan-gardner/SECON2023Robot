@@ -147,7 +147,7 @@ From the table above for $\lambda = 465\ nm$
 
 $\frac{percentage\ red\ value}{percentage\ clear\ value}_{minimum} = 0$%
 
-$\frac{percentage\ red\ value}{percentage\ clear\ value}_{maximum} = 10$%
+$\frac{percentage\ red\ value}{percentage\ clear\ value}_{maximum} = 15$%
 
 $Minimum\ Register\ Value_{red}= ceiling\ of\ 0$% $\ast 0xFF = 0x00$
 
