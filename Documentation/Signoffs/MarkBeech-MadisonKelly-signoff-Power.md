@@ -9,7 +9,7 @@
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
 - Many of the loads will need to be stepped down to 6V and have a regulated output to eliminate ripple voltage. There will be filters to smooth out the ripple
 - The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To mitigate this, the team will add smoothing capacitors on each motor load.
-- Maximum allowable ripple voltage on all components will be less than $50 \ mV_{p-p}$ to prevent damage to components.
+- Voltage input ranges for all components can be seen in the table below.
 - Since there are multiple loads that need 12V and 6V supplied, there will need to be a power bus for each of them. The power bus selected is rated up to 10A.
 - The power supply chosen has a 5V USB output. Because of this, the concerns for powering the Nvidia Jetson as well as both arduinos will be separate from the remainder of the components. 
 - An emergency stop button must be used for the safety of those involved in the competition. 
@@ -67,7 +67,7 @@ All electrical circuits will be implemented via soldered breadboard.
 
 ## **Analysis**
 
-### **Power Supply** 
+### **Power Supply - 12V Output** 
 
 The power supply can supply 12 V at 6000 mAH and 5 V at 12000 mAH and the maximum current output is 3A. Since each competition round is only 3 minutes, the following calculations were performed. 
 
@@ -76,9 +76,6 @@ $Time = \frac{6000\ mAh}{3\ A} = 2\ hours = 120\ minutes$
 $rounds = \frac{120}{3} = 40 rounds$
 
 The robot should be able to run up to 40 rounds without needing a charge. This will help with testing as well as reducing the risk that the robot's power supply will die during the competition.
-
-The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable to the Nvidia Jetson Nano. 
-
 
 ### **Current Analysis**
 
@@ -103,8 +100,9 @@ This calculates the currents going into each branch and adds them together to fi
 According to the MatLab simulation above the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
 
 ### **DC-DC Converter**
+This power supply has an output range from 9 - 12.6 V with a typical value of 11.1 V. This is why a DC-DC converter is needed to regulate the input to 12 V. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
 
-In order to ensure the proper voltage for each component, the team will use a DC-DC converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the DC-DC converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
+The power supply itself has a ripple of 100 mV, which is not a problem for this DC-DC converter as it can accept anywhere between 9 - 18 V.
 
 ![image](https://user-images.githubusercontent.com/112428796/218621728-82d293cb-42fe-4e65-9051-7d1d8df31aec.png)
 
@@ -161,7 +159,7 @@ Since there are many components that need 12V and 6V, there will be at least two
 
 ### **USB Output Power**
 
-Since the power supply chosen has a separate 5V USB port output with separate ratings, the analysis for the Nvidia Jetson is simple. The team will use the USB(A) - micro USB that came with the Nvidia Jetson to supply the voltage needed. The 5V output on the power supply has a regulated output of 5V at 2A. Therefore, it will be sufficient to power the Nvidia Jetson which needs 4.75-5.25V at 2A.
+The Nvidia Jetson Nano Dev kit will be power via the USB-A port on the power supply connected to the Jetson's micro USB port. This supply has a ripple of 100 mV on this output as well, meaning the output can be from 4.9 V to 5.1 V. The Jetson requires anywhere from 4.75 V to 5.25 V to operate, meaning it can run even with the ripple of 100 mV. As for current, the power supply is rated for up to 2 A, which is what the Jetson requires.
 
 ### **Emergency stop button**
 
