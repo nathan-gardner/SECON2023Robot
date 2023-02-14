@@ -135,21 +135,36 @@ Red: $650\ nm$
 
 *Source: ![Encyclopedia Britannica](https://www.britannica.com/science/color/The-visible-spectrum)*
 
-### Color sensor analysis for green versus red
+### Color sensor analysis for green versus red and black versus blue
 
 *Note: analysis below is shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
 
-*Red and green are very far from each other on the color spectrum below are calculations showing confidence that the color sensor can distinguish between red and green.*
-
 ![image](https://user-images.githubusercontent.com/30758520/218564650-edd9df0a-3364-46cc-affe-ea88169ce358.png)
 
-### Color sensor analysis for black versus blue
+Convert to HEX RGB values
 
-*Note: analysis below is shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
+From the table above for $\lambda = 465\ nm$
 
-*Below are calculations showing confidence that the color sensor can distinguish between blue and black.*
+$\frac{percentage\ red\ value}{percentage\ clear\ value}_{minimum} = 0$%
 
-![image](https://user-images.githubusercontent.com/30758520/218564650-edd9df0a-3364-46cc-affe-ea88169ce358.png)
+$\frac{percentage\ red\ value}{percentage\ clear\ value}_{maximum} = 10$%
+
+$Minimum\ Register\ Value_{red}= ceiling\ of\ 0$% $\ast 0xFF = 0x00$
+
+$Maximum\ Register\ Value_{red}= ceiling\ of\ 15$% $\ast 0xFF = 0x26$
+
+$Average\ Register\ Value_{red}= ceiling\ of\ the\ average\ of\ 0x00\ and\ 0x26 = 0x08$
+
+This process is continued for every wavelength given in the table below
+
+|            |         |Red  |       |         |Green|      |         |Blue |     |         |           |
+|------------|---------|-----|-------|---------|-----|------|---------|-----|-----|---------|-----------|
+| Wavelength | Color   | Min | Max   | Average | Min | Max  | Average | Min | Max | Average | RGB VALUE |
+| 465 nm     | Blue    | 0   | 27    | 8       | 1A  | 6C   | 1A      | A6  | E1  | 4D      | 081A4D    |
+| 525 nm     | Green   | B   | 40    | F       | 99  | D9   | 49      | 1A  | 73  | 1C      | 0F491C    |
+| 615 nm     | Magenta | CC  | 119   | 5F      | 0   | 24   | 7       | D   | 3E  | F       | 5F070F    |
+
+If we map these wavelengths, 465 nm, 525 nm, and 615 nm, to represent blue green and red respectively, it is clear that the average of the corresponding RGB (redd green blue) register is significantly larger than the others on average, and therefore the team feels confident the color sensor will work for distinguishing green and red, as well as the absence of color, black, from blue. 
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
