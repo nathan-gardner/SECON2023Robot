@@ -125,32 +125,6 @@ Above is the photodiode spectral responsivity (optical-to-electrical conversion 
 
 *Source: ![Encyclopedia Britannica](https://www.britannica.com/science/color/The-visible-spectrum)*
 
-|                 | Lower Limit Red | Center Red | Upper Limit Red |
-| --------------- | --------------- | ---------- | --------------- |
-| Wavelength (nm) | 590             | 650        | 730             |
-| RGB Hex Value   | 0xFFDF00        | 0xFF0000   | 0xC80000        |
-
-|                 | Lower Limit Green | Center Green | Upper Limit Green |
-| --------------- | ----------------- | ------------ | ----------------- |
-| Wavelength (nm) | 500               | 540          | 570               |
-| RGB Hex Value   | 0x00FF92          | 0x81FF00     | 0x01FF00          |
-
-|                 | Lower Limit Blue | Center Blue | Upper Limit Blue |
-| --------------- | ---------------- | ----------- | ---------------- |
-| Wavelength (nm) | 400              | 450         | 490              |
-| RGB Hex Value   | 0x8300B5         | 0x0046FF    | 0x00FFFF         |
-
-|                 | Lower Limit Black | Center Left Black | Center Right Black | Upper Limit Black |
-| --------------- | ----------------- | ----------------- | ------------------ | ----------------- |
-| Wavelength (nm) | 0                 | 380               | 760                | 790               |
-| RGB Hex Value   | 0x000000          | 0x610061          | 0x8D0000           | 0x000000          |
-
-### Red vs Green
-The typical red color has a wavelength of 650 nm and corresponds to the RGB hex number 0xFF0000. The typical green color has a wavelength of 540 nm and corresponds to the RGB hex number 0x81FF00. Red meets green at $\approx$ 580 nm wavelength and hex 0xFFFF00. This color is closer to a bright yellow, and is not very close to either green or red. The red and green hex values are different enough such that the color sensor will be able to distinguish between them.
-
-### Blue vs Black
-Black corresponds to very low and high wavelengths and hex values close to 0x000000. Blue is centered at 450 nm and 0x0046FF in hex. Blue has a wide enough range such that the color sensor will be able to distinguish between blue and not blue.
-
 ### Color sensor analysis for green versus red and black versus blue
 
 *Note: analysis below shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
@@ -181,6 +155,32 @@ This process is continued for every wavelength given in the table below
 | 615 nm     | Magenta | CC  | 119   | 5F      | 0   | 24   | 7       | D   | 3E  | F       | 5F070F    |
 
 If we map these wavelengths, 465 nm, 525 nm, and 615 nm, to represent blue green and red respectively, it is clear that the average of the corresponding RGB (red green blue) register is significantly larger than the others on average. Therefore, the team feels confident the color sensor will definitively show the difference between green and red on the playing field, as well as the absence of color, black, from blue. 
+
+|                 | Lower Limit Red | Center Red | Upper Limit Red |
+| --------------- | --------------- | ---------- | --------------- |
+| Wavelength (nm) | 590             | 650        | 730             |
+| RGB Hex Value   | 0xFFDF00        | 0xFF0000   | 0xC80000        |
+
+|                 | Lower Limit Green | Center Green | Upper Limit Green |
+| --------------- | ----------------- | ------------ | ----------------- |
+| Wavelength (nm) | 500               | 540          | 570               |
+| RGB Hex Value   | 0x00FF92          | 0x81FF00     | 0x01FF00          |
+
+|                 | Lower Limit Blue | Center Blue | Upper Limit Blue |
+| --------------- | ---------------- | ----------- | ---------------- |
+| Wavelength (nm) | 400              | 450         | 490              |
+| RGB Hex Value   | 0x8300B5         | 0x0046FF    | 0x00FFFF         |
+
+|                 | Lower Limit Black | Center Left Black | Center Right Black | Upper Limit Black |
+| --------------- | ----------------- | ----------------- | ------------------ | ----------------- |
+| Wavelength (nm) | 0                 | 380               | 760                | 790               |
+| RGB Hex Value   | 0x000000          | 0x610061          | 0x8D0000           | 0x000000          |
+
+### Red vs Green
+The typical red color has a wavelength of 650 nm and corresponds to the RGB hex number 0xFF0000. The typical green color has a wavelength of 540 nm and corresponds to the RGB hex number 0x81FF00. Red meets green at $\approx$ 580 nm wavelength and hex 0xFFFF00. This color is closer to a bright yellow, and is not very close to either green or red. The red and green hex values are different enough such that the color sensor will be able to distinguish between them.
+
+### Blue vs Black
+Black corresponds to very low and high wavelengths and hex values close to 0x000000. Blue is centered at 450 nm and 0x0046FF in hex. Blue has a wide enough range such that the color sensor will be able to distinguish between blue and not blue.
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
