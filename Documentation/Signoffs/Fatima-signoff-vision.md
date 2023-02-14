@@ -85,7 +85,7 @@ The 40-pin header connection design is represented in this sign off, and not in 
 
 The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
 
-$9” – (0.5x11.25”) = 9” – 5.625” = 3.375”$.
+$9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$.
 
 The middle of the duck pond is 9" away from the wall. The robot width is 11.25". Analysis below shows how far the sensor on the side of the robot will be away from the wall when the robot is on the duck pond.
 
