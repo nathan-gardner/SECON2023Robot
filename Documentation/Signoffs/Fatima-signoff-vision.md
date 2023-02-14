@@ -123,13 +123,29 @@ Interrupts will be set to generate when the light intensity has exceeded the set
 
 Above is the photodiode spectral responsivity (optical-to-electrical conversion efficiency) graph. Colors within the arena were purposefully chosen to fall at the peaks of the blue, green, and red curves shown. This makes color measurement easier, because colors should not regularly fall between the responsivity peaks. Color falls within the ranges below, which can be met with the color sensor selected. 
 
-Blue: $450\ nm$
-
-Green: $550\ nm$
-
-Red: $650\ nm$
-
 *Source: ![Encyclopedia Britannica](https://www.britannica.com/science/color/The-visible-spectrum)*
+
+|                 | Lower Limit Red | Center Red | Upper Limit Red |
+| --------------- | --------------- | ---------- | --------------- |
+| Wavelength (nm) | 590             | 650        | 730             |
+| RGB Hex Value   | 0xFFDF00        | 0xFF0000   | 0xC80000        |
+
+|                 | Lower Limit Green | Center Green | Upper Limit Green |
+| --------------- | ----------------- | ------------ | ----------------- |
+| Wavelength (nm) | 500               | 540          | 570               |
+| RGB Hex Value   | 0x00FF92          | 0x81FF00     | 0x01FF00          |
+
+|                 | Lower Limit Blue | Center Blue | Upper Limit Blue |
+| --------------- | ---------------- | ----------- | ---------------- |
+| Wavelength (nm) | 400              | 450         | 490              |
+| RGB Hex Value   | 0x8300B5         | 0x0046FF    | 0x00FFFF         |
+
+|                 | Lower Limit Black | Center Left Black | Center Right Black | Upper Limit Black |
+| --------------- | ----------------- | ----------------- | ------------------ | ----------------- |
+| Wavelength (nm) | 0                 | 380               | 760                | 790               |
+| RGB Hex Value   | 0x000000          | 0x610061          | 0x8D0000           | 0x000000          |
+
+
 
 ### Color sensor analysis for green versus red and black versus blue
 
