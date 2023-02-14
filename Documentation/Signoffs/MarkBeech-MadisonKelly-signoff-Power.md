@@ -63,7 +63,7 @@ Shown below is the layout of the robot. The compact size of this power supply (s
 
 All electrical circuits will be implemented via soldered breadboard.
 
-![image](https://user-images.githubusercontent.com/112424739/218517052-c25ffea9-683f-48e7-8154-230f52c5189e.png)
+![image](https://user-images.githubusercontent.com/112424739/218628545-9205ca72-0c81-485a-94fc-9ae56a80e9f2.png)
 
 ## **Analysis**
 
@@ -159,7 +159,11 @@ Since there are many components that need 12V and 6V, there will be at least two
 
 ### **USB Output Power**
 
-The Nvidia Jetson Nano Dev kit will be power via the USB-A port on the power supply connected to the Jetson's micro USB port. This supply has a ripple of 100 mV on this output as well, meaning the output can be from 4.9 V to 5.1 V. The Jetson requires anywhere from 4.75 V to 5.25 V to operate, meaning it can run even with the ripple of 100 mV. As for current, the power supply is rated for up to 2 A, which is what the Jetson requires.
+The Nvidia Jetson Nano Dev kit will be power via the USB-A port on the power supply connected to the Jetson's micro USB port. This supply has a ripple of 100 mV on this output as well, meaning the output can be from 4.9 V to 5.1 V per the image below sent from the manufacturer via email. 
+
+![image](https://user-images.githubusercontent.com/112424739/218628831-0b33d853-8887-457e-a172-fa5bb4fb1259.png)
+
+The Jetson requires anywhere from 4.75 V to 5.25 V to operate, meaning it can run even with the ripple of 100 mV. As for current, the power supply is rated for up to 2 A, which is what the Jetson requires.
 
 ### **Emergency stop button**
 
