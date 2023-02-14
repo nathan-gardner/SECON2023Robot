@@ -81,44 +81,43 @@ The robot should be able to run up to 40 rounds without needing a charge. This w
 
 #### **Block Diagram for all components**
 
-![image](https://user-images.githubusercontent.com/112428796/218621561-c4c70ea2-66fe-4fa1-ba2c-3d958648a536.png)
+![image](https://user-images.githubusercontent.com/112428796/218630028-7f7a58cb-8eea-4944-8946-7023c066734c.png)
 
 Currents have been labelled for use in a matlab script detailed below. Each current value listed by each component was found from the components datasheet.
 
 #### **Block diagram for all constant loads**
 
-![image](https://user-images.githubusercontent.com/112428796/218621623-a02aca32-3187-4c21-8023-7b3a0aaf03c9.png)
+![image](https://user-images.githubusercontent.com/112428796/218630061-110dd6d8-d5b5-4a06-adac-8d24c97c1238.png)
 
 #### **Matlab Simulation**
 
-![image](https://user-images.githubusercontent.com/112428796/218621653-a975e896-b182-4728-a356-3f1ed360b1c5.png)
+![image](https://user-images.githubusercontent.com/112428796/218630099-6a3eb620-9246-48bd-88d2-e423e4ef6a80.png)
 
 This simulation was done using the block diagram for all constant loads shown above.
 
 This calculates the currents going into each branch and adds them together to find the total current needed to be supplied by the power supply. This was done while taking into account the efficiencies of the buck converter and the DC-DC converter.
 
-According to the MatLab simulation above the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
+According to the MatLab simulation above the total current needed to be supplied by the power supply is 1.767 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
 
 ### **DC-DC Converter**
 This power supply has an output range from 9 - 12.6 V with a typical value of 11.1 V. This is why a DC-DC converter is needed to regulate the input to 12 V. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
 
 The power supply itself has a ripple of 100 mV, which is not a problem for this DC-DC converter as it can accept anywhere between 9 - 18 V.
 
-![image](https://user-images.githubusercontent.com/112428796/218621728-82d293cb-42fe-4e65-9051-7d1d8df31aec.png)
+![image](https://user-images.githubusercontent.com/112428796/218630587-5ee4fcc3-6adc-4fec-a800-ae8d72fc2070.png)
 
-According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 75 mV and a switching frequency of 350 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
+According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 150 mV and a switching frequency of 270 kHz. The noise has been modelled as such and can be seen in the LTSpice model above (This noise was measured by the manufacturer with a $1 \ \mu F$ ceramic capacitor in parallel with a $10 \ \mu F$ electrolytic capacitor, which we will also add to the circuit)
 
-![image](https://user-images.githubusercontent.com/112428796/218621763-2d2e35f4-22ff-4fbf-bc85-6d5ef8a01c16.png)
+![image](https://user-images.githubusercontent.com/112428796/218630632-600457e0-cb9a-4c84-a605-f897976c702f.png)
 
 Above is the unregulated noise before passing through the filter. The filter will be implemented via a solderless breadboard.
 
-![image](https://user-images.githubusercontent.com/112428796/218621803-edb153fd-1047-44f1-a794-3fa40537fa55.png)
+![image](https://user-images.githubusercontent.com/112428796/218630652-efc02f7b-8198-4baa-99cf-a3cda34ab647.png)
 
-Above is the output voltage after the filter. The voltage appears to be much claner and varries mostly between 12.0003 V and 11.0097 V which is a variation of less than 1% from 12 V.
+Above is the output voltage after the filter. The voltage appears to be much claner and varries very close to exactly 12 V.
 
 ### **Buck Converters**
-The buck converter boards were found on Digi-key. The board uses the 	
-LM2596 voltage regulator IC and, according to the datasheet provided by Digi-key for the board, it is suitable for our application.
+The buck converter boards were found on Digi-key. The board uses the LM2596 voltage regulator IC and, according to the datasheet provided by Digi-key for the board, it is suitable for our application.
 
 Noteable specs include:
 - Input voltage: 4 - 40 V
