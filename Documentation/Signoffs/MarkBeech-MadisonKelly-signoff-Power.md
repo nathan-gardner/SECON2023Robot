@@ -5,7 +5,7 @@
 - Addition of an emergency stop button in order to meet safety standard and competition requirement.
 ## **Constraints** 
 - The power supply must supply 12 V and a current of more than 2 A to accommodate all components that will be running at one time. 
-- The output of the battery must be regulated with a boost converter in order to ensure each component is provided with the proper voltage for operation.   
+- The output of the battery must be regulated with a DC-DC converter in order to ensure each component is provided with the proper voltage for operation.   
 - Fuses will need to be added to the power supply bus for added overcurrent protection.
 - Many of the loads will need to be stepped down to 6V and have a regulated output to eliminate ripple voltage. There will be filters to smooth out the ripple
 - The ripple voltage from the inductive load of the motors should be eliminated in order to protect other components. To mitigate this, the team will add smoothing capacitors on each motor load.
@@ -23,7 +23,7 @@
 
 | Component             | Input Range |
 | --------------------- | ----------- |
-| Boost converter board | 9V to 36V   |
+| DC-DC converter       | 9V to 18V   |
 | Buck Converter board  | 4.0 to 40V  |
 | L298N                 | 5V to 35V   |
 | TB9051FTG             | 4.5V to 28V |
@@ -98,17 +98,17 @@ Currents have been labelled for use in a matlab script detailed below. Each curr
 
 This simulation was done using the block diagram for all constant loads shown above.
 
-The calculates the currents going into each branch and adds them together to find the total current needed to be supplied by the power supply. This was done while taking into account the efficiencies of the buck converter and the boost converter.
+This calculates the currents going into each branch and adds them together to find the total current needed to be supplied by the power supply. This was done while taking into account the efficiencies of the buck converter and the DC-DC converter.
 
 According to the MatLab simulation above the total current needed to be supplied by the power supply is 1.7862 A. The power supply chosen has a max output current of 3 A, which is almost double the constant current constraint.
 
-### **Boost Converters**
+### **DC-DC Converter**
 
-In order to ensure the proper voltage for each component, the team will use a boost converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the boost converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
+In order to ensure the proper voltage for each component, the team will use a DC-DC converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the DC-DC converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
 
 ![image](https://user-images.githubusercontent.com/112428796/218002431-433ad5b6-c22e-4e8f-a45d-0492a3a7a638.png)
 
-According to the datasheet for the boost converter chosen, the ripple noise has a peak to peak ampliture of 220 mV and a switching frequency of 220 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
+According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 220 mV and a switching frequency of 220 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
 
 ![image](https://user-images.githubusercontent.com/112428796/218002477-c4cee8fd-4225-4f78-bced-337f54ca0a94.png)
 
