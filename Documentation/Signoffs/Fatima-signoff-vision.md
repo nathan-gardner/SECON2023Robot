@@ -141,7 +141,7 @@ Red: $650\ nm$
 
 ![image](https://user-images.githubusercontent.com/30758520/218564650-edd9df0a-3364-46cc-affe-ea88169ce358.png)
 
-Convert to HEX RGB values
+Convert to hex RGB values (all values below are in hex)
 
 From the table above for $\lambda = 465\ nm$
 
