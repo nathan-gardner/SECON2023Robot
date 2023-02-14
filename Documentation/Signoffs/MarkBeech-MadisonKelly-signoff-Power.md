@@ -108,7 +108,7 @@ In order to ensure the proper voltage for each component, the team will use a DC
 
 ![image](https://user-images.githubusercontent.com/112428796/218002431-433ad5b6-c22e-4e8f-a45d-0492a3a7a638.png)
 
-According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 220 mV and a switching frequency of 220 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
+According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 75 mV and a switching frequency of 350 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
 
 ![image](https://user-images.githubusercontent.com/112428796/218002477-c4cee8fd-4225-4f78-bced-337f54ca0a94.png)
 
