@@ -91,7 +91,7 @@ The middle of the duck pond is 9" away from the wall. The robot width is 11.25".
 
 Max distance the ToF LIDAR will measure the distance to the furthest wall (distance from the wall to the middle of the circle, minus half the robot width)
 
-$48" - 0.5 \ast 11.25 = 42.375'$
+$48" - 0.5 \ast 11.25" = 42.375"$
 
 and considering possible 3% error (from datasheet) will be
 
@@ -111,7 +111,7 @@ If considering only this 0.707", this is not sufficient. Because only a majority
 
 $0.707" + 1.5" = 2.207"$ 
 
-This distance of 2.207 in is less than the possible error. Therefore, $42.375" ± 1.27"$ accuracy will be sufficient for the team's needs.
+This distance of $2.207"$ is less than the possible error. Therefore, $42.375" ± 1.27"$ accuracy will be sufficient for the team's needs.
 
 ## RGB color sensor with IR filter: 
 
