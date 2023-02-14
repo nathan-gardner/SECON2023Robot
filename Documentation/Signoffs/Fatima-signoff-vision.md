@@ -137,7 +137,7 @@ Red: $650\ nm$
 
 ### Color sensor analysis for green versus red and black versus blue
 
-*Note: analysis below is shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
+*Note: analysis below shows percentage ratio of the respective red, green, or blue channel value to the clear channel value*
 
 ![image](https://user-images.githubusercontent.com/30758520/218564650-edd9df0a-3364-46cc-affe-ea88169ce358.png)
 
@@ -164,7 +164,7 @@ This process is continued for every wavelength given in the table below
 | 525 nm     | Green   | B   | 40    | F       | 99  | D9   | 49      | 1A  | 73  | 1C      | 0F491C    |
 | 615 nm     | Magenta | CC  | 119   | 5F      | 0   | 24   | 7       | D   | 3E  | F       | 5F070F    |
 
-If we map these wavelengths, 465 nm, 525 nm, and 615 nm, to represent blue green and red respectively, it is clear that the average of the corresponding RGB (redd green blue) register is significantly larger than the others on average, and therefore the team feels confident the color sensor will work for distinguishing green and red, as well as the absence of color, black, from blue. 
+If we map these wavelengths, 465 nm, 525 nm, and 615 nm, to represent blue green and red respectively, it is clear that the average of the corresponding RGB (red green blue) register is significantly larger than the others on average. Therefore, the team feels confident the color sensor will definitively show the difference between green and red on the playing field, as well as the absence of color, black, from blue. 
 
 ### Data production rate from the sensors, or sensor resolution analysis
 
