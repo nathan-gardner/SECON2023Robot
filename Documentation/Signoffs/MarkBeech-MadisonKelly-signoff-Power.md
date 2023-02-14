@@ -84,17 +84,17 @@ The power supply's 5 V, 2 A output will be connected via a USB A to USB A cable 
 
 #### **Block Diagram for all components**
 
-![image](https://user-images.githubusercontent.com/112428796/217997468-f6a13fab-15ee-4600-b607-916deef9cabb.png)
+![image](https://user-images.githubusercontent.com/112428796/218621561-c4c70ea2-66fe-4fa1-ba2c-3d958648a536.png)
 
 Currents have been labelled for use in a matlab script detailed below. Each current value listed by each component was found from the components datasheet.
 
 #### **Block diagram for all constant loads**
 
-![image](https://user-images.githubusercontent.com/112428796/217997561-0201fd06-febe-4eff-a30a-7c7635510d9f.png)
+![image](https://user-images.githubusercontent.com/112428796/218621623-a02aca32-3187-4c21-8023-7b3a0aaf03c9.png)
 
 #### **Matlab Simulation**
 
-![image](https://user-images.githubusercontent.com/112428796/218004508-6a2b09b6-df3f-4aab-b1d5-3a6f0b38a0dd.png)
+![image](https://user-images.githubusercontent.com/112428796/218621653-a975e896-b182-4728-a356-3f1ed360b1c5.png)
 
 This simulation was done using the block diagram for all constant loads shown above.
 
@@ -106,17 +106,17 @@ According to the MatLab simulation above the total current needed to be supplied
 
 In order to ensure the proper voltage for each component, the team will use a DC-DC converter on the output of the power supply. Since the power supply has an unregulated voltage output of 12.6-9V, the DC-DC converter will take the output voltage of the battery and step the voltage up to 12V when needed. The concern for noise produced by the buck converter is adressed in an LTSpice simulation shown below.
 
-![image](https://user-images.githubusercontent.com/112428796/218002431-433ad5b6-c22e-4e8f-a45d-0492a3a7a638.png)
+![image](https://user-images.githubusercontent.com/112428796/218621728-82d293cb-42fe-4e65-9051-7d1d8df31aec.png)
 
 According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 75 mV and a switching frequency of 350 kHz. The noise has been modelled as such and can be seen in the LTSpice model above.
 
-![image](https://user-images.githubusercontent.com/112428796/218002477-c4cee8fd-4225-4f78-bced-337f54ca0a94.png)
+![image](https://user-images.githubusercontent.com/112428796/218621763-2d2e35f4-22ff-4fbf-bc85-6d5ef8a01c16.png)
 
 Above is the unregulated noise before passing through the filter. The filter will be implemented via a solderless breadboard.
 
-![image](https://user-images.githubusercontent.com/112428796/217997738-3bb06fd8-8bd1-408b-a109-000978781226.png)
+![image](https://user-images.githubusercontent.com/112428796/218621803-edb153fd-1047-44f1-a794-3fa40537fa55.png)
 
-Above is the output voltage after the filter. The voltage appears to be much claner and varries between 12.0003 V and 11.0097 V which is a variation of less than 1% from 12 V.
+Above is the output voltage after the filter. The voltage appears to be much claner and varries mostly between 12.0003 V and 11.0097 V which is a variation of less than 1% from 12 V.
 
 ### **Buck Converters**
 The buck converter boards were found on Digi-key. The board uses the 	
