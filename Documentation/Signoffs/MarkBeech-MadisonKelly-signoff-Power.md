@@ -106,7 +106,7 @@ The power supply itself has a ripple of 100 mV, which is not a problem for this 
 
 ![image](https://user-images.githubusercontent.com/112428796/218630587-5ee4fcc3-6adc-4fec-a800-ae8d72fc2070.png)
 
-According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 150 mV and a switching frequency of 270 kHz. The noise has been modelled as such and can be seen in the LTSpice model above (This noise was measured by the manufacturer with a $1 \ \mu F$ ceramic capacitor in parallel with a $10 \ \mu F$ electrolytic capacitor, which we will also add to the circuit)
+According to the datasheet for the DC-DC converter chosen, the ripple noise has a peak to peak ampliture of 150 mV and a switching frequency of 270 kHz. The noise has been modelled as such and can be seen in the LTSpice model above (This noise was measured by the manufacturer with a $1 \ \mu F$ ceramic capacitor in parallel with a $10 \ \mu F$ electrolytic capacitor, which can be added to the circuit if necessary)
 
 ![image](https://user-images.githubusercontent.com/112428796/218630632-600457e0-cb9a-4c84-a605-f897976c702f.png)
 
