@@ -83,6 +83,8 @@ The 40-pin header connection design is represented in this sign off, and not in 
 
 ### Max error calculation based on duck pond location:
 
+![image](https://user-images.githubusercontent.com/30758520/218898224-134045d1-7e99-4c46-bcc1-d9f43c864a46.png)
+
 The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
 
 $9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$.
