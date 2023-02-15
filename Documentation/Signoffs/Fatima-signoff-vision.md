@@ -103,6 +103,8 @@ $d_{top\ side\ with\ error} = 6.25" ± 0.1875"$
 
 $d_{bottom\ side\ with\ error} = 28.375" ± 0.85125"$
 
+![image](https://user-images.githubusercontent.com/30758520/218904829-e1eca4ee-9ec5-45bf-bc90-ded6b3852e13.png)
+
 ## RGB color sensor with IR filter: 
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
