@@ -105,6 +105,12 @@ $d_{bottom\ side\ with\ error} = 28.375" ± 0.85125"$
 
 ![image](https://user-images.githubusercontent.com/30758520/218904829-e1eca4ee-9ec5-45bf-bc90-ded6b3852e13.png)
 
+The image above shows the corral resting in the duck pond and the tolerance in the x, y, and z direction. The allowable error is 5/8" on the x-axis and 1/2" on the y-axis. The top sensor is within error tolerance for this measurement on the y axis and the x axis nearly within the allowable tolerance on the right side. The rules specify that a majority of the duck needs to be in the pond to count for points. This adds 1.5" to each of the error tolerance in the image above.
+
+This makes the error in the image above within the allowable tolerance to fit into the duck pond. 
+
+*Note: Corral is being designed to be adjustable on it longest dimension if the corral needs to be smaller in order to land in the duck pond.*
+
 ## RGB color sensor with IR filter: 
 
 ### Color sensor accuracy, specifically with red, green, blue, and black analysis
