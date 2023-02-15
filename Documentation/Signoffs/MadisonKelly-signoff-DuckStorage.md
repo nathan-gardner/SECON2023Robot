@@ -183,11 +183,11 @@ Front corner
 | Aluminum Sheet         | Sides and Backing for Duck Corral - Multipurpose 6061 Aluminum Sheet, 1/8'' thick, 6'' x 12''             | Duck Storage                                | 6061           | McMaster Carr    | 3        | 24.28      | 72.84 |
 | Rack                   | 14-1/2 Degree Pressure Angle Gear Rack, 32 Pitch (1ft) Nylon Plastic                                      | Duck Storage                                | 57655K62       | McMaster Carr    | 2        | 8.94       | 17.88 |
 | Servo-Mounted Pinion   | 32P, 32 Tooth, 25T 3F Spline Servo Mount Gear (Acetyl)                                                    | Duck Storage                                | RSA32-2FS-32   | McMaster Carr    | 2        | 3.94       | 7.88  |
-| Servo Motors           | 2000 Series Dual Mode Servo                                                                               | Duck Storage                                | 2000-0025-0002 | Servo City       | 2        | 31.99      | 63.98 |
+| Servo Motor           | 2000 Series Dual Mode Servo                                                                               | Duck Storage                                | 2000-0025-0002 | Servo City       | 1        | 31.99      | 31.99 |
 | Servo Motor Controller | 3102 Series Dual Mode Servo Programmer                                                                    | Duck Storage                                | 3102-0001-0001 | Servo City       | 2        | 9.99       | 19.98 |
 | TIP102 Transistors     | Darlington Transistors in order to have the ability to switch on and off the solenoid to lock the trailer | Duck Storage                                | 976            | Adafruit         | 1        | 2.5        | 2.5   |
 | Servo Controller       | Micro Maestro 6-Channel USB Servo Controller                                                              | Duck Storage, Pedestal Storage, and Feeding | 1350           | Pololu           | 1        | 39.95      | 39.95 |
-| Total                  |                                                                                                           |                                             |                | Total Components | 21       | Total Cost | 257.9 |
+| Total                  |                                                                                                           |                                             |                | Total Components | 21       | Total Cost | 225.91 |
 
 
 
