@@ -85,35 +85,23 @@ The 40-pin header connection design is represented in this sign off, and not in 
 
 ![image](https://user-images.githubusercontent.com/30758520/218898224-134045d1-7e99-4c46-bcc1-d9f43c864a46.png)
 
-The team knows from dimensions given in the specification that the distance between the robot (when in the duck pond) and the closest wall is 
+Above are all dimensions the LIDAR sensor will be expected to measure when releasing the trailer on the duck pond. Considering a 3% error in the sensor measurements indoors:
 
-$9” – (0.5 \ast 11.25”) = 9” – 5.625” = 3.375”$.
+$error_{left\ side} = 3$% $of\ 50" = 1.5"$
 
-The middle of the duck pond is 9" away from the wall. The robot width is 11.25". Analysis below shows how far the sensor on the side of the robot will be away from the wall when the robot is on the duck pond.
+$error_{right\ side} = 3$% $of\ 25.75" = 0.77"$
 
-Max distance the ToF LIDAR will measure the distance to the furthest wall (distance from the wall to the middle of the circle, minus half the robot width)
+$error_{top\ side} = 3$% $of\ 6.25" = 0.1875"$
 
-$48" - 0.5 \ast 11.25" = 42.375"$
+$error_{bottom\ side} = 3$% $of\ 28.375" = 0.85125"$
 
-and considering possible 3% error (from datasheet) will be
+$d_{left\ side\ with\ error} = 50" ± 1.5"$
 
-$\therefore possible\ error = 3$% $of\ 42.375" = 1.27"$
+$d_{right\ side\ with\ error} = 25.75" ± 0.77"$
 
-The robot will have ability to measure $42.375" ± 1.27"$ with the ToF LIDAR sensor when positioning itself around the duck pond. 
+$d_{top\ side\ with\ error} = 6.25" ± 0.1875"$
 
-The above analysis fits into the 50 - 1200 mm (5.08" - 47.24") constraint defined. 
-
-*Note: Corral is being designed to be adjustable on it longest dimension if the corral needs to be smaller in order to land in the duck pond. A majority of the duck needs to be in the duck pond to count for points.*
-
-Below is an image of how the corral will fit into the duck pond when it is fully extended.
-
-![image](https://user-images.githubusercontent.com/30758520/214467615-b765040b-1130-4919-b1af-a79c21336fe2.png)
-
-If considering only this 0.707", this is not sufficient. Because only a majority of each duck needs to be in the pond to count for point allocations. This also gives us another half duck length and makes the allowable error calculation shown below.
-
-$0.707" + 1.5" = 2.207"$ 
-
-This distance of $2.207"$ is less than the possible error. Therefore, $42.375" ± 1.27"$ accuracy will be sufficient for the team's needs.
+$d_{bottom\ side\ with\ error} = 28.375" ± 0.85125"$
 
 ## RGB color sensor with IR filter: 
 
