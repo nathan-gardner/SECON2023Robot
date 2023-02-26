@@ -16,21 +16,25 @@
 #include <ros.h>
 #include <std_msgs/UInt8.h>
 #include <geometry_msgs/Twist.h>
-#include <std_msgs/UInt8MultiArray.h>
 
 // Consumption Defs
 #define PWM1 2
 #define consumptionMotorOff analogWrite(PWM1, 0)
 
 // Locomotion Defs ()
-#define FRONT_LEFT_PIN1 5
-#define FRONT_LEFT_PIN2 6
-#define FRONT_RIGHT_PIN1 3
-#define FRONT_RIGHT_PIN2 4
-#define REAR_LEFT_PIN1 7
-#define REAR_LEFT_PIN2 8
-#define REAR_RIGHT_PIN1 9
-#define REAR_RIGHT_PIN2 10
+#define FRONT_LEFT_PIN1 26
+#define FRONT_LEFT_PIN2 28
+#define FRONT_RIGHT_PIN1 22
+#define FRONT_RIGHT_PIN2 24
+#define REAR_LEFT_PIN1 30
+#define REAR_LEFT_PIN2 32
+#define REAR_RIGHT_PIN1 34
+#define REAR_RIGHT_PIN2 36
+
+#define FRONT_LEFT_SPEED_PIN 10
+#define FRONT_RIGHT_SPEED_PIN 11
+#define REAR_LEFT_SPEED_PIN 12
+#define REAR_RIGHT_SPEED_PIN 13
 
 // Prototypes
 void consumptionCallback(const std_msgs::UInt8& msg);
@@ -61,40 +65,42 @@ void consumptionCallback(const std_msgs::UInt8& msg){
 
 //---------------------------------------------------------------------------
 
-void set_motor_speed(int motor_pin1, int motor_pin2, int motor_speed) {
+void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_speed) {
   // set motor speed
-  if (motor_speed > 0) {
+  int set_speed = 255 * motor_speed;
+  if (set_speed > 0) {
     digitalWrite(motor_pin1, HIGH); // forward direction
     digitalWrite(motor_pin2, LOW);
   } 
-  else if (motor_speed < 0) {
+  else if (set_speed < 0) {
     digitalWrite(motor_pin1, LOW); // reverse direction
     digitalWrite(motor_pin2, HIGH);
+    set_speed = -set_speed;
   }
   else {
     digitalWrite(motor_pin1, LOW); // stop movement
     digitalWrite(motor_pin2, LOW);
   }
-  //analogWrite(motor_pin, motor_speed); // set motor speed (ignoring for now)
+  analogWrite(speed_pin, set_speed); // set motor speed (ignoring for now)
 }
 
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
   t_stateMotorLocomotion = cmd_vel;
   // calculate motor speeds from twist message
-  volatile float x = cmd_vel.linear.x;
-  volatile float y = cmd_vel.linear.y;
-  volatile float z = cmd_vel.angular.z;
+  float x = cmd_vel.linear.x;
+  float y = cmd_vel.linear.y;
+  float z = cmd_vel.angular.z;
 
-  int front_left_speed = y + x + z;
-  int front_right_speed = y - x - z;
-  int rear_left_speed = y - x + z;
-  int rear_right_speed = y + x - z;
+  float front_left_speed = y + x + z;
+  float front_right_speed = y - x - z;
+  float rear_left_speed = y - x + z;
+  float rear_right_speed = y + x - z;
 
   // set motor speeds
-  set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, front_left_speed);
-  set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, front_right_speed);
-  set_motor_speed(REAR_LEFT_PIN1, REAR_LEFT_PIN2, rear_left_speed);
-  set_motor_speed(REAR_RIGHT_PIN1, REAR_RIGHT_PIN2, rear_right_speed);
+  set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, front_left_speed);
+  set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, front_right_speed);
+  set_motor_speed(REAR_LEFT_PIN1, REAR_LEFT_PIN2, REAR_LEFT_SPEED_PIN, rear_left_speed);
+  set_motor_speed(REAR_RIGHT_PIN1, REAR_RIGHT_PIN2, REAR_RIGHT_SPEED_PIN, rear_right_speed);
 }
 
 //---------------------------------------------------------------------------
@@ -113,10 +119,11 @@ void setup()
   pinMode(REAR_LEFT_PIN2, OUTPUT);
   pinMode(REAR_RIGHT_PIN1, OUTPUT);
   pinMode(REAR_RIGHT_PIN2, OUTPUT);
-  
-  //pinMode(FRONT_RIGHT_PIN, OUTPUT);
-  //pinMode(REAR_LEFT_PIN, OUTPUT);
-  //pinMode(REAR_RIGHT_PIN, OUTPUT);
+
+  pinMode(FRONT_LEFT_SPEED_PIN, OUTPUT);
+  pinMode(FRONT_RIGHT_SPEED_PIN, OUTPUT);
+  pinMode(REAR_LEFT_SPEED_PIN, OUTPUT);
+  pinMode(REAR_RIGHT_SPEED_PIN, OUTPUT);
 
   nh.initNode();
   // consumption
