@@ -1,8 +1,8 @@
 /**
  * @file main.cpp
  * @author Nathan Gardner
- * @brief ROS node P/S to /consumption/motorState and consumption/cmdMotorState for motor remote control
- * @version 0.1
+ * @brief ROS node P/S to /consumption/motorState and consumption/cmdMotorState for consumption control. ROS node P/S Twist message type on topics /locomotion/motorState and /locomotion/cmd_vel for locomotion motor control. 
+ * @version 0.2
  * @date 2023-01-21
  * 
  * @copyright Copyright (c) 2023
@@ -21,7 +21,7 @@
 #define PWM1 2
 #define consumptionMotorOff analogWrite(PWM1, 0)
 
-// Locomotion Defs ()
+// Locomotion Defs 
 #define FRONT_LEFT_PIN1 26
 #define FRONT_LEFT_PIN2 28
 #define FRONT_RIGHT_PIN1 22
@@ -36,7 +36,6 @@
 #define REAR_LEFT_SPEED_PIN 12
 #define REAR_RIGHT_SPEED_PIN 13
 
-// Prototypes
 void consumptionCallback(const std_msgs::UInt8& msg);
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
 
@@ -56,15 +55,26 @@ geometry_msgs::Twist t_stateMotorLocomotion;
 ros::Publisher locomotion_pub("/locomotion/motorState", &t_stateMotorLocomotion);
 ros::Subscriber<geometry_msgs::Twist> locomotion_sub("/locomotion/cmd_vel", &cmdVelCallback);
 
-
+/**
+ * @brief Callback for ros::Subscriber /locomotion/cmd_vel
+ * Analog write to PWM pin for locomotion motor speed control
+ * 
+ * @param msg Updated std_msgs::UInt8 value published to /consumption/cmdMotorState
+ */
 void consumptionCallback(const std_msgs::UInt8& msg){
   // update motor state and analog pin
   u8_stateMotorConsumption.data = msg.data;
   analogWrite(PWM1, msg.data);
 }
 
-//---------------------------------------------------------------------------
-
+/**
+ * @brief Digital write to motor_pin1 and motor_pin2 to command direction and speed. Used for the locomotion subsystem.
+ * 
+ * @param motor_pin1 Pin1 (digital value) for locomotion motor for which the direction is being set
+ * @param motor_pin2 Pin2 (digital value) for locomotion motor for which the direction is being set
+ * @param speed_pin Speed pin (analog value) for locomotion motor for which the speed is being set
+ * @param motor_speed [-1.0,1.0] range for from Twist message which encodes cmd direction and speed
+ */
 void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_speed) {
   // set motor speed
   int set_speed = 255 * motor_speed;
@@ -84,6 +94,11 @@ void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_
   analogWrite(speed_pin, set_speed); // set motor speed (ignoring for now)
 }
 
+/**
+ * @brief Decodes geometry_msgs::Twist message to get linear x and y and angular z. Calculates each wheel speed and directions and then writes values to pins. 
+ * 
+ * @param cmd_vel Updated geometry_msgs::Twist value published to /locomotion/cmd_vel 
+ */
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
   t_stateMotorLocomotion = cmd_vel;
   // calculate motor speeds from twist message
@@ -103,8 +118,10 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
   set_motor_speed(REAR_RIGHT_PIN1, REAR_RIGHT_PIN2, REAR_RIGHT_SPEED_PIN, rear_right_speed);
 }
 
-//---------------------------------------------------------------------------
-
+/**
+ * @brief Setup code for Arduino boot
+ * 
+ */
 void setup()
 {
   //Consumption
@@ -136,11 +153,12 @@ void setup()
   // initialize consumption motor state to false and motor state to off
   u8_stateMotorConsumption.data = 0;
   consumptionMotorOff;
-
-  //au8_stateMotorLocomotion.data = 0;
-  //analogWrite(PWMX, 0);
 }
 
+/**
+ * @brief Loop that is run continually while the Arduino is powered on
+ * 
+ */
 void loop()
 {
   consumption_pub.publish( &u8_stateMotorConsumption );
