@@ -16,6 +16,7 @@
 #include <ros.h>
 #include <std_msgs/UInt8.h>
 #include <std_msgs/UInt32.h>
+#include <std_msgs/UInt32MultiArray.h>
 #include <geometry_msgs/Twist.h>
 
 // Consumption Defs
@@ -56,23 +57,20 @@ ros::NodeHandle nh;
 std_msgs::UInt8 u8_stateMotorConsumption;
 
 // Consumption Pub/Sub
-ros::Publisher consumption_pub("/consumption/motorState", &u8_stateMotorConsumption);
-ros::Subscriber<std_msgs::UInt8> consumption_sub("/consumption/cmdMotorState", &consumptionCallback);
+ros::Publisher _consumption_motorState("/consumption/motorState", &u8_stateMotorConsumption);
+ros::Subscriber<std_msgs::UInt8> _consumption_cmdMotorState("/consumption/cmdMotorState", &consumptionCallback);
 
 // Locomotion Data
 geometry_msgs::Twist t_stateMotorLocomotion;
-std_msgs::UInt32 u32_encodertest;
+std_msgs::UInt32MultiArray u32_motorPosData;
 
-uint32_t front_left_enc_pos = 0;
-uint32_t front_right_enc_pos = 0;
-uint32_t rear_left_enc_pos = 0;
-uint32_t rear_right_enc_pos = 0;
-
+// array format front_left, front_right, rear_left, rear_right
+uint32_t enc_pos[4] = {0, 0, 0, 0};
 
 // Locomotion Pub/Sub
-ros::Publisher locomotion_pub("/locomotion/motorState", &t_stateMotorLocomotion);
-ros::Publisher test_pub("/locomotion/encoder", &u32_encodertest);
-ros::Subscriber<geometry_msgs::Twist> locomotion_sub("/locomotion/cmd_vel", &cmdVelCallback);
+ros::Publisher _locomotion_motorState("/locomotion/motorState", &t_stateMotorLocomotion);
+ros::Publisher _locomotion_encoder("/locomotion/encoder", &u32_motorPosData);
+ros::Subscriber<geometry_msgs::Twist> _locomotion_cmd_vel("/locomotion/cmd_vel", &cmdVelCallback);
 
 /**
  * @brief Callback for ros::Subscriber /locomotion/cmd_vel
@@ -138,16 +136,26 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
 }
 
 /**
+ * @brief Update published encoder value
+ * 
+ */
+
+void updateEncoder(){
+  u32_motorPosData.data_length = sizeof(enc_pos)/sizeof(enc_pos[0]);
+  u32_motorPosData.data = enc_pos;
+}
+
+/**
  * @brief interrupt service routine for front left encoder , increments position + or - based on direction
  * 
  */
 void readFrontLeftEncoder(){
   int b = digitalRead(FRONT_LEFT_ENCB);
   if(b>0){
-    front_left_enc_pos++;
+    enc_pos[0]++;
   }
   else{
-    front_left_enc_pos--;
+    enc_pos[0]--;
   }
 }
 
@@ -158,10 +166,10 @@ void readFrontLeftEncoder(){
 void readFrontRightEncoder(){
   int b = digitalRead(FRONT_RIGHT_ENCB);
   if(b>0){
-    front_right_enc_pos--;
+    enc_pos[1]--;
   }
   else{
-    front_right_enc_pos++;
+    enc_pos[1]++;
   }
 }
 
@@ -172,10 +180,10 @@ void readFrontRightEncoder(){
 void readRearLeftEncoder(){
   int b = digitalRead(REAR_LEFT_ENCB);
   if(b>0){
-    rear_left_enc_pos++;
+    enc_pos[2]++;
   }
   else{
-    rear_left_enc_pos--;
+    enc_pos[2]--;
   }
 }
 
@@ -186,10 +194,10 @@ void readRearLeftEncoder(){
 void readRearRightEncoder(){
   int b = digitalRead(REAR_RIGHT_ENCB);
   if(b>0){
-    rear_right_enc_pos--;
+    enc_pos[3]--;
   }
   else{
-    rear_right_enc_pos++;
+    enc_pos[3]++;
   }
 }
 
@@ -228,12 +236,12 @@ void setup()
 
   nh.initNode();
   // consumption
-  nh.advertise(consumption_pub);
-  nh.subscribe(consumption_sub);
+  nh.advertise(_consumption_motorState);
+  nh.subscribe(_consumption_cmdMotorState);
   // locomotion
-  nh.advertise(locomotion_pub);
-  nh.advertise(test_pub);
-  nh.subscribe(locomotion_sub);
+  nh.advertise(_locomotion_motorState);
+  nh.advertise(_locomotion_encoder);
+  nh.subscribe(_locomotion_cmd_vel);
 
   // initialize consumption motor state to false and motor state to off
   u8_stateMotorConsumption.data = 0;
@@ -252,10 +260,10 @@ void setup()
  */
 void loop()
 {
-  u32_encodertest.data = rear_left_enc_pos;
-  test_pub.publish( &u32_encodertest );
-  consumption_pub.publish( &u8_stateMotorConsumption );
-  locomotion_pub.publish ( &t_stateMotorLocomotion );
+  updateEncoder();
+  _locomotion_encoder.publish( &u32_motorPosData );
+  _consumption_motorState.publish( &u8_stateMotorConsumption );
+  _locomotion_motorState.publish ( &t_stateMotorLocomotion );
   nh.spinOnce();
   delay(10);
 }
