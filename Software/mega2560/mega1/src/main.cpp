@@ -15,10 +15,11 @@
 #include <Arduino.h>
 #include <ros.h>
 #include <std_msgs/UInt8.h>
+#include <std_msgs/UInt32.h>
 #include <geometry_msgs/Twist.h>
 
 // Consumption Defs
-#define PWM1 2
+#define PWM1 23
 #define consumptionMotorOff analogWrite(PWM1, 0)
 
 // Locomotion Defs 
@@ -36,6 +37,16 @@
 #define REAR_LEFT_SPEED_PIN 12
 #define REAR_RIGHT_SPEED_PIN 13
 
+// ENCA always need to be at an interrupt pin
+#define FRONT_LEFT_ENCA 19
+#define FRONT_LEFT_ENCB 5
+#define FRONT_RIGHT_ENCA 2
+#define FRONT_RIGHT_ENCB 6
+#define REAR_LEFT_ENCA 18
+#define REAR_LEFT_ENCB 7
+#define REAR_RIGHT_ENCA 3
+#define REAR_RIGHT_ENCB 4
+
 void consumptionCallback(const std_msgs::UInt8& msg);
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
 
@@ -50,9 +61,17 @@ ros::Subscriber<std_msgs::UInt8> consumption_sub("/consumption/cmdMotorState", &
 
 // Locomotion Data
 geometry_msgs::Twist t_stateMotorLocomotion;
+std_msgs::UInt32 u32_encodertest;
+
+uint32_t front_left_enc_pos = 0;
+uint32_t front_right_enc_pos = 0;
+uint32_t rear_left_enc_pos = 0;
+uint32_t rear_right_enc_pos = 0;
+
 
 // Locomotion Pub/Sub
 ros::Publisher locomotion_pub("/locomotion/motorState", &t_stateMotorLocomotion);
+ros::Publisher test_pub("/locomotion/encoder", &u32_encodertest);
 ros::Subscriber<geometry_msgs::Twist> locomotion_sub("/locomotion/cmd_vel", &cmdVelCallback);
 
 /**
@@ -119,6 +138,62 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
 }
 
 /**
+ * @brief interrupt service routine for front left encoder , increments position + or - based on direction
+ * 
+ */
+void readFrontLeftEncoder(){
+  int b = digitalRead(FRONT_LEFT_ENCB);
+  if(b>0){
+    front_left_enc_pos++;
+  }
+  else{
+    front_left_enc_pos--;
+  }
+}
+
+/**
+ * @brief interrupt service routine for front right encoder , increments position + or - based on direction
+ * 
+ */
+void readFrontRightEncoder(){
+  int b = digitalRead(FRONT_RIGHT_ENCB);
+  if(b>0){
+    front_right_enc_pos--;
+  }
+  else{
+    front_right_enc_pos++;
+  }
+}
+
+/**
+ * @brief interrupt service routine for rear left encoder , increments position + or - based on direction
+ * 
+ */
+void readRearLeftEncoder(){
+  int b = digitalRead(REAR_LEFT_ENCB);
+  if(b>0){
+    rear_left_enc_pos++;
+  }
+  else{
+    rear_left_enc_pos--;
+  }
+}
+
+/**
+ * @brief interrupt service routine for rear right encoder , increments position + or - based on direction
+ * 
+ */
+void readRearRightEncoder(){
+  int b = digitalRead(REAR_RIGHT_ENCB);
+  if(b>0){
+    rear_right_enc_pos--;
+  }
+  else{
+    rear_right_enc_pos++;
+  }
+}
+
+/**
  * @brief Setup code for Arduino boot
  * 
  */
@@ -142,17 +217,33 @@ void setup()
   pinMode(REAR_LEFT_SPEED_PIN, OUTPUT);
   pinMode(REAR_RIGHT_SPEED_PIN, OUTPUT);
 
+  pinMode(FRONT_LEFT_ENCA, INPUT);
+  pinMode(FRONT_LEFT_ENCB, INPUT);
+  pinMode(FRONT_RIGHT_ENCA, INPUT);
+  pinMode(FRONT_RIGHT_ENCB, INPUT);
+  pinMode(REAR_LEFT_ENCA, INPUT);
+  pinMode(REAR_LEFT_ENCB, INPUT);
+  pinMode(REAR_RIGHT_ENCA, INPUT);
+  pinMode(REAR_RIGHT_ENCB, INPUT);
+
   nh.initNode();
   // consumption
   nh.advertise(consumption_pub);
   nh.subscribe(consumption_sub);
   // locomotion
   nh.advertise(locomotion_pub);
+  nh.advertise(test_pub);
   nh.subscribe(locomotion_sub);
 
   // initialize consumption motor state to false and motor state to off
   u8_stateMotorConsumption.data = 0;
   consumptionMotorOff;
+
+  // locomotion
+  attachInterrupt(digitalPinToInterrupt(FRONT_LEFT_ENCA), readFrontLeftEncoder, RISING);
+  attachInterrupt(digitalPinToInterrupt(FRONT_RIGHT_ENCA), readFrontRightEncoder, RISING);
+  attachInterrupt(digitalPinToInterrupt(REAR_LEFT_ENCA), readRearLeftEncoder, RISING);
+  attachInterrupt(digitalPinToInterrupt(REAR_RIGHT_ENCA), readRearRightEncoder, RISING);
 }
 
 /**
@@ -161,6 +252,8 @@ void setup()
  */
 void loop()
 {
+  u32_encodertest.data = rear_left_enc_pos;
+  test_pub.publish( &u32_encodertest );
   consumption_pub.publish( &u8_stateMotorConsumption );
   locomotion_pub.publish ( &t_stateMotorLocomotion );
   nh.spinOnce();
