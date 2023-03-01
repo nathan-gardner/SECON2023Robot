@@ -12,8 +12,3 @@
 ## 3. Prototype Chassis
 - Substitute the built proto-chassis for pedestal storage minimally functional expectation
   - Proximity sensor for pedestal storage has not come in yet
-
-## 4. Consumption
-- Substitute consumption for duck storage
-  - Fully functioning consumption
-  - The servos and solenoid actuator parts have come in yet for duck storage
