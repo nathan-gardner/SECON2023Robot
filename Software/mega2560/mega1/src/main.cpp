@@ -24,6 +24,15 @@
 #define consumptionMotorOff analogWrite(PWM1, 0)
 
 // Locomotion Defs 
+
+// same driver
+// Front Left Motor Out34 Yellow -, Brown +
+// Front Right Motor Out12 Brown +, Orange -
+
+// same driver
+// Rear Left Motor Out12 Yellow -. Black +
+// Rear Right Motor Out34 Red +, Black -
+
 #define FRONT_LEFT_PIN1 26
 #define FRONT_LEFT_PIN2 28
 #define FRONT_RIGHT_PIN1 22
