@@ -14,7 +14,8 @@
 
 #include <Arduino.h>
 #include <ros.h>
-#include <maestro-arduino/PololuMaestro.h>
+#include <PololuMaestro.h>
+#include <std_msgs/String.h>
 #include <std_msgs/UInt8.h>
 #include <std_msgs/UInt32.h>
 #include <std_msgs/UInt32MultiArray.h>
@@ -58,8 +59,13 @@
 #define REAR_RIGHT_ENCA 3
 #define REAR_RIGHT_ENCB 4
 
+// Servo defs
+#define maestroSerial Serial2
+MicroMaestro maestro(maestroSerial);
+
 void consumptionCallback(const std_msgs::UInt8& msg);
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
+void cmdPosServo(const std_msgs::String& msg);
 
 ros::NodeHandle nh;
 
@@ -82,6 +88,9 @@ ros::Publisher _locomotion_motorState("/locomotion/motorState", &t_stateMotorLoc
 ros::Publisher _locomotion_encoder("/locomotion/encoder", &u32_motorPosData);
 ros::Subscriber<geometry_msgs::Twist> _locomotion_cmd_vel("/locomotion/cmd_vel", &cmdVelCallback);
 
+// Feeding Sub
+ros::Subscriber<std_msgs::String> _feeding_servo_pos("/feeding/servo_pos", &cmdPosServo);
+
 /**
  * @brief Callback for ros::Subscriber /locomotion/cmd_vel
  * Analog write to PWM pin for locomotion motor speed control
@@ -92,6 +101,18 @@ void consumptionCallback(const std_msgs::UInt8& msg){
   // update motor state and analog pin
   u8_stateMotorConsumption.data = msg.data;
   analogWrite(PWM1, msg.data);
+}
+
+void cmdPosServo(const std_msgs::String& msg){
+  if(msg.data == "LEFT"){
+    maestro.setTargetMiniSSC(0,254);
+  }
+  else if(msg.data == "RIGHT"){
+    maestro.setTargetMiniSSC(0,0);
+  }
+  else{
+    maestro.setTargetMiniSSC(0,0);
+  }
 }
 
 /**
@@ -262,6 +283,10 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(FRONT_RIGHT_ENCA), readFrontRightEncoder, RISING);
   attachInterrupt(digitalPinToInterrupt(REAR_LEFT_ENCA), readRearLeftEncoder, RISING);
   attachInterrupt(digitalPinToInterrupt(REAR_RIGHT_ENCA), readRearRightEncoder, RISING);
+
+  // Setup servo for feeding
+  maestroSerial.begin(9600);
+  maestro.setTarget(0, 6000);
 }
 
 /**
