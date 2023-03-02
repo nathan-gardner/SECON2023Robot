@@ -1,6 +1,6 @@
 # Team 2 Functional Prototype Substitution Request
 
-## Original Requirementa
+## Original Requirements
 ### Top Level Controller
 - Able to publish ROS topics from command line to the low level controllers
 ### Low Level controller
