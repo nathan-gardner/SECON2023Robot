@@ -14,6 +14,7 @@
 
 #include <Arduino.h>
 #include <ros.h>
+#include <maestro-arduino/PololuMaestro.h>
 #include <std_msgs/UInt8.h>
 #include <std_msgs/UInt32.h>
 #include <std_msgs/UInt32MultiArray.h>
