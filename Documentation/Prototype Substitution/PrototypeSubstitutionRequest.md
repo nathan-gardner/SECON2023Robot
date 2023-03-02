@@ -1,36 +1,38 @@
 # Team 2 Functional Prototype Substitution Request
 
-## Original Requirements
-### Top Level Controller
+## **Original Requirements**
+## Top Level Controller
 - Able to publish ROS topics from command line to the low level controllers
-### Low Level controller
+## Low Level controller
 - Able to send accurate controls signals to motors
-### Pedestal Storage
+## Pedestal Storage
 - Able to get data from the sensors (maybe incorrect data, but of correct data type)
 - All sensors need to be connected, but getting data from each sensor
 Connecting up the servo is sufficient in the case that Carlos does not have a Physical prototype for the silo
 - The servo needs to be operating electrically and have the ability to ge driven by the controller
-### Duck Storage
+## Duck Storage
 - Able to actuate solenoid locks
 - Able to spin servos a full 360 degrees
-### Consumption
+## Consumption
 - Fully assembled
 - Spokes spinning
-### Locomotion
+## Locomotion
 - Ability to move robot in all directions allowable by the mecanum wheels (forward, backward, left, right and rotating)
-### Fireworks
+## Fireworks
 - Nothing
-### Sorting
+## Sorting
 - Able to move conveyor belt
 - Able to actuated servo flipper
 - Able to actuate servo based on color sensor data
-### Feeding
+## Feeding
 - Servo is able to be be driven by the motor driver commanded by the controller network
-### Power
+## Power
 - Able to regulate battery output to 12 V
 - Able to supply 6 V via buck converters where necessary
 - All components that can be connected together actually connected
 
+
+## **Substitutions**
 
 ## 1. Firework Video
 - Substitude the completed firework video for the sorting minimally functional prototype
