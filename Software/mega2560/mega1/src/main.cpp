@@ -62,6 +62,7 @@
 // Servo defs
 #define maestroSerial Serial2
 MicroMaestro maestro(maestroSerial);
+uint8_t feedingServoPos = 0;
 
 void consumptionCallback(const std_msgs::UInt8& msg);
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
@@ -105,13 +106,13 @@ void consumptionCallback(const std_msgs::UInt8& msg){
 
 void cmdPosServo(const std_msgs::String& msg){
   if(msg.data == "LEFT"){
-    maestro.setTargetMiniSSC(0,254);
+    feedingServoPos = 254;
   }
   else if(msg.data == "RIGHT"){
-    maestro.setTargetMiniSSC(0,0);
+    feedingServoPos = 0;
   }
   else{
-    maestro.setTargetMiniSSC(0,0);
+    feedingServoPos = 0;
   }
 }
 
@@ -295,6 +296,7 @@ void setup()
  */
 void loop()
 {
+  maestro.setTargetMiniSSC(0, feedingServoPos);
   updateEncoder();
   _locomotion_encoder.publish( &u32_motorPosData );
   _consumption_motorState.publish( &u8_stateMotorConsumption );
