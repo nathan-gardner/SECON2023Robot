@@ -105,6 +105,11 @@ void consumptionCallback(const std_msgs::UInt8& msg){
   analogWrite(PWM1, msg.data);
 }
 
+/**
+ * @brief Decodes std_msgs::String and update feeding servo position. The exact value of the positions will need to be found when the feeding system has been designed.  
+ * 
+ * @param msg std_msgs::String& value for the changed position of the feeding servo
+ */
 void cmdPosServo(const std_msgs::String& msg){
   if(strcmp(msg.data, "LEFT") == 0){
     u8_feedingServoPos = 254;
@@ -172,7 +177,6 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
  * @brief Update published encoder value
  * 
  */
-
 void updateEncoder(){
   u32_motorPosData.data_length = sizeof(enc_pos)/sizeof(enc_pos[0]);
   u32_motorPosData.data = enc_pos;
