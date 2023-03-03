@@ -62,7 +62,7 @@
 // Servo defs
 #define maestroSerial Serial2
 MicroMaestro maestro(maestroSerial);
-uint8_t feedingServoPos = 0;
+uint8_t u8_feedingServoPos = 0;
 
 void consumptionCallback(const std_msgs::UInt8& msg);
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
@@ -90,7 +90,8 @@ ros::Publisher _locomotion_encoder("/locomotion/encoder", &u32_motorPosData);
 ros::Subscriber<geometry_msgs::Twist> _locomotion_cmd_vel("/locomotion/cmd_vel", &cmdVelCallback);
 
 // Feeding Sub
-ros::Subscriber<std_msgs::String> _feeding_servo_pos("/feeding/servo_pos", &cmdPosServo);
+ros::Subscriber<std_msgs::String> _feeding_servo_pos("/feeding/cmd_servo_pos", &cmdPosServo);
+
 
 /**
  * @brief Callback for ros::Subscriber /locomotion/cmd_vel
@@ -105,14 +106,14 @@ void consumptionCallback(const std_msgs::UInt8& msg){
 }
 
 void cmdPosServo(const std_msgs::String& msg){
-  if(msg.data == "LEFT"){
-    feedingServoPos = 254;
+  if(strcmp(msg.data, "LEFT") == 0){
+    u8_feedingServoPos = 254;
   }
-  else if(msg.data == "RIGHT"){
-    feedingServoPos = 0;
+  else if(strcmp(msg.data, "RIGHT") == 0){
+    u8_feedingServoPos = 0;
   }
   else{
-    feedingServoPos = 0;
+    u8_feedingServoPos = 254;
   }
 }
 
@@ -274,6 +275,8 @@ void setup()
   nh.advertise(_locomotion_motorState);
   nh.advertise(_locomotion_encoder);
   nh.subscribe(_locomotion_cmd_vel);
+  // feeding
+  nh.subscribe(_feeding_servo_pos);
 
   // initialize consumption motor state to false and motor state to off
   u8_stateMotorConsumption.data = 0;
@@ -296,7 +299,7 @@ void setup()
  */
 void loop()
 {
-  maestro.setTargetMiniSSC(0, feedingServoPos);
+  maestro.setTargetMiniSSC(0, u8_feedingServoPos);
   updateEncoder();
   _locomotion_encoder.publish( &u32_motorPosData );
   _consumption_motorState.publish( &u8_stateMotorConsumption );
