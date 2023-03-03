@@ -170,9 +170,14 @@ void readRearRightEncoder(){
     }
 }
 
+/**
+ * @brief Initialization for the locomotion namespace
+ * 
+ * @param nh Pointer to the ROS node handle
+ */
 void init(ros::NodeHandle *nh){
 
-    //Locomotion
+    // Locomotion
     pinMode(FRONT_LEFT_PIN1, OUTPUT);
     pinMode(FRONT_LEFT_PIN2, OUTPUT);
     pinMode(FRONT_RIGHT_PIN1, OUTPUT);

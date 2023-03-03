@@ -36,6 +36,11 @@ ros::Subscriber<std_msgs::String> servo_pos("/feeding/cmd_servo_pos", &cmdPosSer
     }
   }
 
+  /**
+   * @brief Initialization for the feeding namespace
+   * 
+   * @param nh Pointer to the ROS node handle
+   */
   void init(ros::NodeHandle *nh){
     // feeding
     nh->subscribe(servo_pos);

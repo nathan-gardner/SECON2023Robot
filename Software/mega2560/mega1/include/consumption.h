@@ -32,6 +32,11 @@ void consumptionCallback(const std_msgs::UInt8& msg){
   analogWrite(PWM1, msg.data);
 }
 
+/**
+ * @brief Initialization for the consumption namespace
+ * 
+ * @param nh Pointer to the ROS node handle
+ */
 void init(ros::NodeHandle *nh){
     //Consumption
     pinMode(PWM1, OUTPUT);
