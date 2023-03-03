@@ -12,7 +12,7 @@
 namespace consumption
 {
 void consumptionCallback(const std_msgs::UInt8& msg);
-    
+
 // Consumption Data
 std_msgs::UInt8 u8_stateMotorConsumption;
 
@@ -23,10 +23,11 @@ ros::Subscriber<std_msgs::UInt8> cmdMotorState("/consumption/cmdMotorState", &co
 /**
  * @brief Callback for ros::Subscriber /locomotion/cmd_vel
  * Analog write to PWM pin for locomotion motor speed control
- * 
+ *
  * @param msg Updated std_msgs::UInt8 value published to /consumption/cmdMotorState
  */
-void consumptionCallback(const std_msgs::UInt8& msg){
+void consumptionCallback(const std_msgs::UInt8& msg)
+{
   // update motor state and analog pin
   u8_stateMotorConsumption.data = msg.data;
   analogWrite(PWM1, msg.data);
@@ -34,21 +35,22 @@ void consumptionCallback(const std_msgs::UInt8& msg){
 
 /**
  * @brief Initialization for the consumption namespace
- * 
+ *
  * @param nh Pointer to the ROS node handle
  */
-void init(ros::NodeHandle *nh){
-    //Consumption
-    pinMode(PWM1, OUTPUT);
-    // consumption
-    nh->advertise(motorState);
-    nh->subscribe(cmdMotorState);
+void init(ros::NodeHandle* nh)
+{
+  // Consumption
+  pinMode(PWM1, OUTPUT);
+  // consumption
+  nh->advertise(motorState);
+  nh->subscribe(cmdMotorState);
 
-    // initialize consumption motor state to false and motor state to off
-    u8_stateMotorConsumption.data = 0;
-    consumptionMotorOff;
+  // initialize consumption motor state to false and motor state to off
+  u8_stateMotorConsumption.data = 0;
+  consumptionMotorOff;
 }
 
-}
+}  // namespace consumption
 
 #endif

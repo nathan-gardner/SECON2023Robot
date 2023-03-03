@@ -4,9 +4,9 @@
  * @brief Main driver file
  * @version 0.2
  * @date 2023-01-21
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef MAIN_CPP
@@ -23,7 +23,7 @@ ros::NodeHandle nh;
 
 /**
  * @brief Setup code for Arduino boot
- * 
+ *
  */
 void setup()
 {
@@ -36,15 +36,15 @@ void setup()
 
 /**
  * @brief Loop that is run continually while the Arduino is powered on
- * 
+ *
  */
 void loop()
 {
   feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
   locomotion::updateEncoder();
-  locomotion::encoder.publish( &locomotion::u32_motorPosData );
-  consumption::motorState.publish( &consumption::u8_stateMotorConsumption );
-  locomotion::motorState.publish ( &locomotion::t_stateMotorLocomotion );
+  locomotion::encoder.publish(&locomotion::u32_motorPosData);
+  consumption::motorState.publish(&consumption::u8_stateMotorConsumption);
+  locomotion::motorState.publish(&locomotion::t_stateMotorLocomotion);
   nh.spinOnce();
   delay(10);
 }

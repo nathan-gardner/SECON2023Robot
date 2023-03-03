@@ -6,7 +6,7 @@
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/UInt32MultiArray.h>
 
-// Locomotion Defs 
+// Locomotion Defs
 // same driver
 // Front Left Motor Out34 Yellow -, Brown +
 // Front Right Motor Out12 Brown +, Orange -
@@ -47,7 +47,7 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
 geometry_msgs::Twist t_stateMotorLocomotion;
 std_msgs::UInt32MultiArray u32_motorPosData;
 // array format front_left, front_right, rear_left, rear_right
-uint32_t enc_pos[4] = {0, 0, 0, 0};
+uint32_t enc_pos[4] = { 0, 0, 0, 0 };
 
 // Locomotion Pub/Sub
 ros::Publisher motorState("/locomotion/motorState", &t_stateMotorLocomotion);
@@ -56,37 +56,43 @@ ros::Subscriber<geometry_msgs::Twist> cmd_vel("/locomotion/cmd_vel", &cmdVelCall
 
 /**
  * @brief Digital write to motor_pin1 and motor_pin2 to command direction and speed. Used for the locomotion subsystem.
- * 
+ *
  * @param motor_pin1 Pin1 (digital value) for locomotion motor for which the direction is being set
  * @param motor_pin2 Pin2 (digital value) for locomotion motor for which the direction is being set
  * @param speed_pin Speed pin (analog value) for locomotion motor for which the speed is being set
  * @param motor_speed [-1.0,1.0] range for from Twist message which encodes cmd direction and speed
  */
-void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_speed) {
+void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_speed)
+{
   // set motor speed
   int set_speed = 255 * motor_speed;
-  if (set_speed > 0) {
-    digitalWrite(motor_pin1, HIGH); // forward direction
+  if (set_speed > 0)
+  {
+    digitalWrite(motor_pin1, HIGH);  // forward direction
     digitalWrite(motor_pin2, LOW);
-  } 
-  else if (set_speed < 0) {
-    digitalWrite(motor_pin1, LOW); // reverse direction
+  }
+  else if (set_speed < 0)
+  {
+    digitalWrite(motor_pin1, LOW);  // reverse direction
     digitalWrite(motor_pin2, HIGH);
     set_speed = -set_speed;
   }
-  else {
-    digitalWrite(motor_pin1, LOW); // stop movement
+  else
+  {
+    digitalWrite(motor_pin1, LOW);  // stop movement
     digitalWrite(motor_pin2, LOW);
   }
-  analogWrite(speed_pin, set_speed); // set motor speed (ignoring for now)
+  analogWrite(speed_pin, set_speed);  // set motor speed (ignoring for now)
 }
 
 /**
- * @brief Decodes geometry_msgs::Twist message to get linear x and y and angular z. Calculates each wheel speed and directions and then writes values to pins. 
- * 
- * @param cmd_vel Updated geometry_msgs::Twist value published to /locomotion/cmd_vel 
+ * @brief Decodes geometry_msgs::Twist message to get linear x and y and angular z. Calculates each wheel speed and
+ * directions and then writes values to pins.
+ *
+ * @param cmd_vel Updated geometry_msgs::Twist value published to /locomotion/cmd_vel
  */
-void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
+void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
+{
   t_stateMotorLocomotion = cmd_vel;
   // calculate motor speeds from twist message
   float x = cmd_vel.linear.x;
@@ -107,112 +113,125 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel) {
 
 /**
  * @brief Update published encoder value
- * 
+ *
  */
-void updateEncoder(){
-  u32_motorPosData.data_length = sizeof(enc_pos)/sizeof(enc_pos[0]);
+void updateEncoder()
+{
+  u32_motorPosData.data_length = sizeof(enc_pos) / sizeof(enc_pos[0]);
   u32_motorPosData.data = enc_pos;
 }
 
 /**
  * @brief interrupt service routine for front left encoder , increments position + or - based on direction
- * 
+ *
  */
-void readFrontLeftEncoder(){
-    int b = digitalRead(FRONT_LEFT_ENCB);
-    if(b>0){
+void readFrontLeftEncoder()
+{
+  int b = digitalRead(FRONT_LEFT_ENCB);
+  if (b > 0)
+  {
     enc_pos[0]++;
-    }
-    else{
+  }
+  else
+  {
     enc_pos[0]--;
-    }
+  }
 }
 
 /**
  * @brief interrupt service routine for front right encoder , increments position + or - based on direction
- * 
+ *
  */
-void readFrontRightEncoder(){
-    int b = digitalRead(FRONT_RIGHT_ENCB);
-    if(b>0){
+void readFrontRightEncoder()
+{
+  int b = digitalRead(FRONT_RIGHT_ENCB);
+  if (b > 0)
+  {
     enc_pos[1]--;
-    }
-    else{
+  }
+  else
+  {
     enc_pos[1]++;
-    }
+  }
 }
 
 /**
  * @brief interrupt service routine for rear left encoder , increments position + or - based on direction
- * 
+ *
  */
-void readRearLeftEncoder(){
-    int b = digitalRead(REAR_LEFT_ENCB);
-    if(b>0){
+void readRearLeftEncoder()
+{
+  int b = digitalRead(REAR_LEFT_ENCB);
+  if (b > 0)
+  {
     enc_pos[2]++;
-    }
-    else{
+  }
+  else
+  {
     enc_pos[2]--;
-    }
+  }
 }
 
 /**
  * @brief interrupt service routine for rear right encoder , increments position + or - based on direction
- * 
+ *
  */
-void readRearRightEncoder(){
-    int b = digitalRead(REAR_RIGHT_ENCB);
-    if(b>0){
+void readRearRightEncoder()
+{
+  int b = digitalRead(REAR_RIGHT_ENCB);
+  if (b > 0)
+  {
     enc_pos[3]--;
-    }
-    else{
+  }
+  else
+  {
     enc_pos[3]++;
-    }
+  }
 }
 
 /**
  * @brief Initialization for the locomotion namespace
- * 
+ *
  * @param nh Pointer to the ROS node handle
  */
-void init(ros::NodeHandle *nh){
+void init(ros::NodeHandle* nh)
+{
+  // Locomotion
+  pinMode(FRONT_LEFT_PIN1, OUTPUT);
+  pinMode(FRONT_LEFT_PIN2, OUTPUT);
+  pinMode(FRONT_RIGHT_PIN1, OUTPUT);
+  pinMode(FRONT_RIGHT_PIN2, OUTPUT);
+  pinMode(REAR_LEFT_PIN1, OUTPUT);
+  pinMode(REAR_LEFT_PIN2, OUTPUT);
+  pinMode(REAR_RIGHT_PIN1, OUTPUT);
+  pinMode(REAR_RIGHT_PIN2, OUTPUT);
 
-    // Locomotion
-    pinMode(FRONT_LEFT_PIN1, OUTPUT);
-    pinMode(FRONT_LEFT_PIN2, OUTPUT);
-    pinMode(FRONT_RIGHT_PIN1, OUTPUT);
-    pinMode(FRONT_RIGHT_PIN2, OUTPUT);
-    pinMode(REAR_LEFT_PIN1, OUTPUT);
-    pinMode(REAR_LEFT_PIN2, OUTPUT);
-    pinMode(REAR_RIGHT_PIN1, OUTPUT);
-    pinMode(REAR_RIGHT_PIN2, OUTPUT);
+  pinMode(FRONT_LEFT_SPEED_PIN, OUTPUT);
+  pinMode(FRONT_RIGHT_SPEED_PIN, OUTPUT);
+  pinMode(REAR_LEFT_SPEED_PIN, OUTPUT);
+  pinMode(REAR_RIGHT_SPEED_PIN, OUTPUT);
 
-    pinMode(FRONT_LEFT_SPEED_PIN, OUTPUT);
-    pinMode(FRONT_RIGHT_SPEED_PIN, OUTPUT);
-    pinMode(REAR_LEFT_SPEED_PIN, OUTPUT);
-    pinMode(REAR_RIGHT_SPEED_PIN, OUTPUT);
+  pinMode(FRONT_LEFT_ENCA, INPUT);
+  pinMode(FRONT_LEFT_ENCB, INPUT);
+  pinMode(FRONT_RIGHT_ENCA, INPUT);
+  pinMode(FRONT_RIGHT_ENCB, INPUT);
+  pinMode(REAR_LEFT_ENCA, INPUT);
+  pinMode(REAR_LEFT_ENCB, INPUT);
+  pinMode(REAR_RIGHT_ENCA, INPUT);
+  pinMode(REAR_RIGHT_ENCB, INPUT);
 
-    pinMode(FRONT_LEFT_ENCA, INPUT);
-    pinMode(FRONT_LEFT_ENCB, INPUT);
-    pinMode(FRONT_RIGHT_ENCA, INPUT);
-    pinMode(FRONT_RIGHT_ENCB, INPUT);
-    pinMode(REAR_LEFT_ENCA, INPUT);
-    pinMode(REAR_LEFT_ENCB, INPUT);
-    pinMode(REAR_RIGHT_ENCA, INPUT);
-    pinMode(REAR_RIGHT_ENCB, INPUT);
+  // locomotion
+  attachInterrupt(digitalPinToInterrupt(FRONT_LEFT_ENCA), readFrontLeftEncoder, RISING);
+  attachInterrupt(digitalPinToInterrupt(FRONT_RIGHT_ENCA), readFrontRightEncoder, RISING);
+  attachInterrupt(digitalPinToInterrupt(REAR_LEFT_ENCA), readRearLeftEncoder, RISING);
+  attachInterrupt(digitalPinToInterrupt(REAR_RIGHT_ENCA), readRearRightEncoder, RISING);
 
-    // locomotion
-    attachInterrupt(digitalPinToInterrupt(FRONT_LEFT_ENCA), readFrontLeftEncoder, RISING);
-    attachInterrupt(digitalPinToInterrupt(FRONT_RIGHT_ENCA), readFrontRightEncoder, RISING);
-    attachInterrupt(digitalPinToInterrupt(REAR_LEFT_ENCA), readRearLeftEncoder, RISING);
-    attachInterrupt(digitalPinToInterrupt(REAR_RIGHT_ENCA), readRearRightEncoder, RISING);
-
-    // locomotion
-    nh->advertise(motorState);
-    nh->advertise(encoder);
-    nh->subscribe(cmd_vel);
+  // locomotion
+  nh->advertise(motorState);
+  nh->advertise(encoder);
+  nh->subscribe(cmd_vel);
 }
 
-}
+}  // namespace locomotion
 
 #endif
