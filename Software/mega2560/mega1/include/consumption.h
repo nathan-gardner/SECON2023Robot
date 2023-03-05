@@ -11,14 +11,12 @@
 
 namespace consumption
 {
-void consumptionCallback(const std_msgs::UInt8& msg);
-
 // Consumption Data
-std_msgs::UInt8 u8_stateMotorConsumption;
+extern std_msgs::UInt8 u8_stateMotorConsumption;
 
 // Consumption Pub/Sub
-ros::Publisher motorState("/consumption/motorState", &u8_stateMotorConsumption);
-ros::Subscriber<std_msgs::UInt8> cmdMotorState("/consumption/cmdMotorState", &consumptionCallback);
+extern ros::Publisher motorState;
+extern ros::Subscriber<std_msgs::UInt8> cmdMotorState;
 
 /**
  * @brief Callback for ros::Subscriber /locomotion/cmd_vel
@@ -26,30 +24,14 @@ ros::Subscriber<std_msgs::UInt8> cmdMotorState("/consumption/cmdMotorState", &co
  *
  * @param msg Updated std_msgs::UInt8 value published to /consumption/cmdMotorState
  */
-void consumptionCallback(const std_msgs::UInt8& msg)
-{
-  // update motor state and analog pin
-  u8_stateMotorConsumption.data = msg.data;
-  analogWrite(PWM1, msg.data);
-}
+void consumptionCallback(const std_msgs::UInt8& msg);
 
 /**
  * @brief Initialization for the consumption namespace
  *
  * @param nh Pointer to the ROS node handle
  */
-void init(ros::NodeHandle* nh)
-{
-  // Consumption
-  pinMode(PWM1, OUTPUT);
-  // consumption
-  nh->advertise(motorState);
-  nh->subscribe(cmdMotorState);
-
-  // initialize consumption motor state to false and motor state to off
-  u8_stateMotorConsumption.data = 0;
-  consumptionMotorOff;
-}
+void init(ros::NodeHandle* nh);
 
 }  // namespace consumption
 
