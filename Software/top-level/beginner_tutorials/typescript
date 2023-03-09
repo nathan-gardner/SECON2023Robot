@@ -1,0 +1,544 @@
+Script started on 2023-03-08 19:58:28-0600
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ cd scripts/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ ls
+[0m[01;32mtalker.py[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ cd [K[K[Kpythi[Kon t alker.py 
+Traceback (most recent call last):
+  File "talker.py", line 68, in <module>
+    talker()
+  File "talker.py", line 51, in talker
+    mag.angular.z = 0
+NameError: global name 'mag' is not defined
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ python taalker.py 
+Traceback (most recent call last):
+  File "talker.py", line 68, in <module>
+    talker()
+  File "talker.py", line 51, in talker
+    mag.angular.z = 0
+NameError: global name 'mag' is not defined
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ python taalker.py 
+Traceback (most recent call last):
+  File "talker.py", line 68, in <module>
+    talker()
+  File "talker.py", line 55, in talker
+    mag.angular.z = 0
+NameError: global name 'mag' is not defined
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ python taalker.py 
+^C
+
+
+
+^C]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ 
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ 
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ 
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ cd ../.. [A
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ l[Kcd ..
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ catkin [K_make
+Base path: /home/capstone2/catkin_ws
+Source space: /home/capstone2/catkin_ws/src
+Build space: /home/capstone2/catkin_ws/build
+Devel space: /home/capstone2/catkin_ws/devel
+Install space: /home/capstone2/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/capstone2/catkin_ws/build"[0m
+[34m####[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/capstone2/catkin_ws/devel
+[0m-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+[0m-- This workspace overlays: /opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/capstone2/catkin_ws/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [35m~~ [0m traversing 16 packages in topological order:
+[0m-- [35m~~ [0m - [1m[34mrosserial [0m(metapackage)
+[0m-- [35m~~ [0m - [1m[34mrosserial_arduino
+[0m-- [35m~~ [0m - [1m[34mrosserial_chibios
+[0m-- [35m~~ [0m - [1m[34mrosserial_mbed
+[0m-- [35m~~ [0m - [1m[34mrosserial_msgs
+[0m-- [35m~~ [0m - [1m[34mrosserial_python
+[0m-- [35m~~ [0m - [1m[34mrosserial_tivac
+[0m-- [35m~~ [0m - [1m[34mrosserial_vex_cortex
+[0m-- [35m~~ [0m - [1m[34mrosserial_vex_v5
+[0m-- [35m~~ [0m - [1m[34mrosserial_xbee
+[0m-- [35m~~ [0m - [1m[34mrosserial_client
+[0m-- [35m~~ [0m - [1m[34mbeginner_tutorials
+[0m-- [35m~~ [0m - [1m[34mrosserial_server
+[0m-- [35m~~ [0m - [1m[34mrosserial_embeddedlinux
+[0m-- [35m~~ [0m - [1m[34mrosserial_test
+[0m-- [35m~~ [0m - [1m[34mrosserial_windows
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [1m[32m+++[0m processing catkin metapackage: 'rosserial[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_arduino[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_arduino)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_arduino: 1 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_chibios[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_chibios)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_mbed[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_mbed)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_mbed: 1 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_msgs[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_msgs)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_msgs: 2 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_python[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_python)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_tivac[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_tivac)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_vex_cortex[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_vex_cortex)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_vex_v5[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_vex_v5)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_xbee[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_xbee)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_client[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_client)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mbeginner_tutorials[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(beginner_tutorials)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_server[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_server)
+[0m-- Boost version: 1.65.1
+[0m-- Found the following Boost libraries:
+[0m--   system
+[0m--   thread
+[0m--   chrono
+[0m--   date_time
+[0m--   atomic
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_embeddedlinux[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_embeddedlinux)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_test[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_test)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_windows[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_windows)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- Configuring done
+[0m-- Generating done
+[0m-- Build files have been written to: /home/capstone2/catkin_ws/build
+[0m[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/capstone2/catkin_ws/build"[0m
+[34m####[0m
+[  0%] Built target _rosserial_mbed_generate_messages_check_deps_Adc
+[  0%] Built target _rosserial_arduino_generate_messages_check_deps_Adc
+[  0%] Built target _rosserial_mbed_generate_messages_check_deps_Test
+[  0%] Built target _rosserial_arduino_generate_messages_check_deps_Test
+[  0%] Built target topic_tools_generate_messages_py
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_Log
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_RequestParam
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_TopicInfo
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target topic_tools_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target topic_tools_generate_messages_cpp
+[  3%] Built target rosserial_server_lookup
+[  3%] Built target topic_tools_generate_messages_lisp
+[  3%] Built target topic_tools_generate_messages_nodejs
+[  9%] Built target rosserial_arduino_generate_messages_eus
+[ 19%] Built target rosserial_arduino_generate_messages_cpp
+[ 21%] Built target rosserial_arduino_generate_messages_py
+[ 25%] Built target rosserial_arduino_generate_messages_lisp
+[ 28%] Built target rosserial_arduino_generate_messages_nodejs
+[ 32%] Built target rosserial_mbed_generate_messages_nodejs
+[ 40%] Built target rosserial_mbed_generate_messages_py
+[ 46%] Built target rosserial_mbed_generate_messages_eus
+[ 50%] Built target rosserial_mbed_generate_messages_lisp
+[ 53%] Built target rosserial_mbed_generate_messages_cpp
+[ 63%] Built target rosserial_msgs_generate_messages_py
+[ 71%] Built target rosserial_msgs_generate_messages_eus
+[ 76%] Built target rosserial_msgs_generate_messages_nodejs
+[ 82%] Built target rosserial_msgs_generate_messages_lisp
+[ 88%] Built target rosserial_msgs_generate_messages_cpp
+[ 88%] Built target rosserial_arduino_generate_messages
+[ 88%] Built target rosserial_mbed_generate_messages
+[ 88%] Built target rosserial_msgs_generate_messages
+[ 92%] Built target rosserial_server_socket_node
+[ 96%] Built target rosserial_server_serial_node
+[100%] Built target rosserial_server_udp_socket_node
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ ls
+[0m[01;34mbuild[0m  [01;34mdevel[0m  [01;34minstall[0m  [01;34msrc[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ cd scr[K[Krc/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ ls
+[0m[01;34mbeginner_tutorials[0m  [01;36mCMakeLists.txt[0m  [01;34mrosserial[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ cd [K[K[Kcd beginner_tutorials/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ ls
+CMakeLists.txt  [0m[01;34minclude[0m  package.xml  [01;34mscripts[0m  [01;34msrc[0m  typescript
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ cd [K scripts/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ ;s
+bash: syntax error near unexpected token `;'
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ cd [K[K[Kcd scr[K[Kcr[K[K[K[K[K[Kpython [K t alker.py 
+^C]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ cd ../.. /..
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ catkin [K_make [K
+Base path: /home/capstone2/catkin_ws
+Source space: /home/capstone2/catkin_ws/src
+Build space: /home/capstone2/catkin_ws/build
+Devel space: /home/capstone2/catkin_ws/devel
+Install space: /home/capstone2/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/capstone2/catkin_ws/build"[0m
+[34m####[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/capstone2/catkin_ws/devel
+[0m-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+[0m-- This workspace overlays: /opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/capstone2/catkin_ws/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [35m~~ [0m traversing 16 packages in topological order:
+[0m-- [35m~~ [0m - [1m[34mrosserial [0m(metapackage)
+[0m-- [35m~~ [0m - [1m[34mrosserial_arduino
+[0m-- [35m~~ [0m - [1m[34mrosserial_chibios
+[0m-- [35m~~ [0m - [1m[34mrosserial_mbed
+[0m-- [35m~~ [0m - [1m[34mrosserial_msgs
+[0m-- [35m~~ [0m - [1m[34mrosserial_python
+[0m-- [35m~~ [0m - [1m[34mrosserial_tivac
+[0m-- [35m~~ [0m - [1m[34mrosserial_vex_cortex
+[0m-- [35m~~ [0m - [1m[34mrosserial_vex_v5
+[0m-- [35m~~ [0m - [1m[34mrosserial_xbee
+[0m-- [35m~~ [0m - [1m[34mrosserial_client
+[0m-- [35m~~ [0m - [1m[34mbeginner_tutorials
+[0m-- [35m~~ [0m - [1m[34mrosserial_server
+[0m-- [35m~~ [0m - [1m[34mrosserial_embeddedlinux
+[0m-- [35m~~ [0m - [1m[34mrosserial_test
+[0m-- [35m~~ [0m - [1m[34mrosserial_windows
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [1m[32m+++[0m processing catkin metapackage: 'rosserial[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_arduino[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_arduino)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_arduino: 1 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_chibios[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_chibios)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_mbed[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_mbed)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_mbed: 1 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_msgs[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_msgs)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_msgs: 2 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_python[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_python)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_tivac[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_tivac)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_vex_cortex[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_vex_cortex)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_vex_v5[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_vex_v5)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_xbee[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_xbee)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_client[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_client)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mbeginner_tutorials[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(beginner_tutorials)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_server[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_server)
+[0m-- Boost version: 1.65.1
+[0m-- Found the following Boost libraries:
+[0m--   system
+[0m--   thread
+[0m--   chrono
+[0m--   date_time
+[0m--   atomic
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_embeddedlinux[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_embeddedlinux)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_test[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_test)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_windows[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_windows)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- Configuring done
+[0m-- Generating done
+[0m-- Build files have been written to: /home/capstone2/catkin_ws/build
+[0m[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/capstone2/catkin_ws/build"[0m
+[34m####[0m
+[  0%] Built target _rosserial_arduino_generate_messages_check_deps_Adc
+[  0%] Built target _rosserial_mbed_generate_messages_check_deps_Adc
+[  0%] Built target _rosserial_mbed_generate_messages_check_deps_Test
+[  0%] Built target _rosserial_arduino_generate_messages_check_deps_Test
+[  0%] Built target topic_tools_generate_messages_py
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_RequestParam
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_Log
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_TopicInfo
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target topic_tools_generate_messages_eus
+[  0%] Built target topic_tools_generate_messages_cpp
+[  3%] Built target rosserial_server_lookup
+[  3%] Built target topic_tools_generate_messages_lisp
+[  3%] Built target topic_tools_generate_messages_nodejs
+[  9%] Built target rosserial_arduino_generate_messages_eus
+[ 13%] Built target rosserial_arduino_generate_messages_cpp
+[ 21%] Built target rosserial_arduino_generate_messages_py
+[ 25%] Built target rosserial_arduino_generate_messages_lisp
+[ 28%] Built target rosserial_arduino_generate_messages_nodejs
+[ 32%] Built target rosserial_mbed_generate_messages_nodejs
+[ 40%] Built target rosserial_mbed_generate_messages_py
+[ 46%] Built target rosserial_mbed_generate_messages_eus
+[ 50%] Built target rosserial_mbed_generate_messages_lisp
+[ 53%] Built target rosserial_mbed_generate_messages_cpp
+[ 61%] Built target rosserial_msgs_generate_messages_eus
+[ 71%] Built target rosserial_msgs_generate_messages_py
+[ 76%] Built target rosserial_msgs_generate_messages_nodejs
+[ 82%] Built target rosserial_msgs_generate_messages_lisp
+[ 84%] Built target rosserial_mbed_generate_messages
+[ 88%] Built target rosserial_msgs_generate_messages_cpp
+[ 88%] Built target rosserial_arduino_generate_messages
+[ 88%] Built target rosserial_msgs_generate_messages
+[ 92%] Built target rosserial_server_socket_node
+[ 96%] Built target rosserial_server_udp_socket_node
+[100%] Built target rosserial_server_serial_node
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ cd src/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ ls
+[0m[01;34mbeginner_tutorials[0m  [01;36mCMakeLists.txt[0m  [01;34mrosserial[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ cd beginner_tutorials/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ ks
+bash: ks: command not found
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ ls
+CMakeLists.txt  [0m[01;34minclude[0m  package.xml  [01;34mscripts[0m  [01;34msrc[0m  typescript
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ cd [K[K[Kcd src
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/src[00m$ ls
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/src[00m$ cd ..
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ ls
+CMakeLists.txt  [0m[01;34minclude[0m  package.xml  [01;34mscripts[0m  [01;34msrc[0m  typescript
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ cd script
+bash: cd: script: No such file or directory
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ cd scripts
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ ls
+[0m[01;32mtalker.py[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ python t alker.py 
+Traceback (most recent call last):
+  File "talker.py", line 72, in <module>
+    talker()
+  File "talker.py", line 52, in talker
+    pub.publish(msg)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/topics.py", line 879, in publish
+    data = args_kwds_to_message(self.data_class, args, kwds)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/msg.py", line 121, in args_kwds_to_message
+    raise TypeError("expected [%s] but got [%s]"%(data_class._slot_types[0], arg._type))
+TypeError: expected [string] but got [geometry_msgs/Twist]
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ python taalker.py 
+Traceback (most recent call last):
+  File "talker.py", line 73, in <module>
+    talker()
+  File "talker.py", line 51, in talker
+    pub.publish(msg)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/topics.py", line 879, in publish
+    data = args_kwds_to_message(self.data_class, args, kwds)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/msg.py", line 121, in args_kwds_to_message
+    raise TypeError("expected [%s] but got [%s]"%(data_class._slot_types[0], arg._type))
+TypeError: expected [string] but got [geometry_msgs/Twist]
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ python taalker.py 
+talker.py:44: SyntaxWarning: The publisher should be created with an explicit keyword argument 'queue_size'. Please see http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers for more information.
+  pub = rospy.Publisher('/locomotion/cmd_vel', Twist)
+^C]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ cd ../.. /..
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ catkin [K_make
+Base path: /home/capstone2/catkin_ws
+Source space: /home/capstone2/catkin_ws/src
+Build space: /home/capstone2/catkin_ws/build
+Devel space: /home/capstone2/catkin_ws/devel
+Install space: /home/capstone2/catkin_ws/install
+[34m####[0m
+[34m#### Running command: [1m"make cmake_check_build_system"[0m[34m in [1m"/home/capstone2/catkin_ws/build"[0m
+[34m####[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/capstone2/catkin_ws/devel
+[0m-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+[0m-- This workspace overlays: /opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/capstone2/catkin_ws/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [35m~~ [0m traversing 16 packages in topological order:
+[0m-- [35m~~ [0m - [1m[34mrosserial [0m(metapackage)
+[0m-- [35m~~ [0m - [1m[34mrosserial_arduino
+[0m-- [35m~~ [0m - [1m[34mrosserial_chibios
+[0m-- [35m~~ [0m - [1m[34mrosserial_mbed
+[0m-- [35m~~ [0m - [1m[34mrosserial_msgs
+[0m-- [35m~~ [0m - [1m[34mrosserial_python
+[0m-- [35m~~ [0m - [1m[34mrosserial_tivac
+[0m-- [35m~~ [0m - [1m[34mrosserial_vex_cortex
+[0m-- [35m~~ [0m - [1m[34mrosserial_vex_v5
+[0m-- [35m~~ [0m - [1m[34mrosserial_xbee
+[0m-- [35m~~ [0m - [1m[34mrosserial_client
+[0m-- [35m~~ [0m - [1m[34mbeginner_tutorials
+[0m-- [35m~~ [0m - [1m[34mrosserial_server
+[0m-- [35m~~ [0m - [1m[34mrosserial_embeddedlinux
+[0m-- [35m~~ [0m - [1m[34mrosserial_test
+[0m-- [35m~~ [0m - [1m[34mrosserial_windows
+[0m-- [35m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[0m-- [1m[32m+++[0m processing catkin metapackage: 'rosserial[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_arduino[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_arduino)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_arduino: 1 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_chibios[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_chibios)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_mbed[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_mbed)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_mbed: 1 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_msgs[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_msgs)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- rosserial_msgs: 2 messages, 1 services
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_python[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_python)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_tivac[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_tivac)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_vex_cortex[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_vex_cortex)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_vex_v5[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_vex_v5)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_xbee[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_xbee)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_client[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_client)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mbeginner_tutorials[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(beginner_tutorials)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_server[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_server)
+[0m-- Boost version: 1.65.1
+[0m-- Found the following Boost libraries:
+[0m--   system
+[0m--   thread
+[0m--   chrono
+[0m--   date_time
+[0m--   atomic
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_embeddedlinux[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_embeddedlinux)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_test[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_test)
+[0m-- [1m[32m+++[0m processing catkin package: '[1m[34mrosserial_windows[0m[0m'
+[0m-- [1m[34m==>[0m add_subdirectory(rosserial/rosserial_windows)
+[0m-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0m-- Configuring done
+[0m-- Generating done
+[0m-- Build files have been written to: /home/capstone2/catkin_ws/build
+[0m[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/capstone2/catkin_ws/build"[0m
+[34m####[0m
+[  0%] Built target _rosserial_arduino_generate_messages_check_deps_Adc
+[  0%] Built target _rosserial_mbed_generate_messages_check_deps_Test
+[  0%] Built target _rosserial_arduino_generate_messages_check_deps_Test
+[  0%] Built target _rosserial_mbed_generate_messages_check_deps_Adc
+[  0%] Built target topic_tools_generate_messages_py
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_Log
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_RequestParam
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target _rosserial_msgs_generate_messages_check_deps_TopicInfo
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target topic_tools_generate_messages_eus
+[  0%] Built target topic_tools_generate_messages_cpp
+[  3%] Built target rosserial_server_lookup
+[  3%] Built target topic_tools_generate_messages_lisp
+[  3%] Built target topic_tools_generate_messages_nodejs
+[  9%] Built target rosserial_arduino_generate_messages_eus
+[ 13%] Built target rosserial_arduino_generate_messages_lisp
+[ 17%] Built target rosserial_arduino_generate_messages_cpp
+[ 25%] Built target rosserial_arduino_generate_messages_py
+[ 28%] Built target rosserial_arduino_generate_messages_nodejs
+[ 32%] Built target rosserial_mbed_generate_messages_nodejs
+[ 40%] Built target rosserial_mbed_generate_messages_py
+[ 46%] Built target rosserial_mbed_generate_messages_eus
+[ 50%] Built target rosserial_mbed_generate_messages_lisp
+[ 53%] Built target rosserial_mbed_generate_messages_cpp
+[ 61%] Built target rosserial_msgs_generate_messages_eus
+[ 71%] Built target rosserial_msgs_generate_messages_py
+[ 76%] Built target rosserial_msgs_generate_messages_nodejs
+[ 76%] Built target rosserial_arduino_generate_messages
+[ 82%] Built target rosserial_msgs_generate_messages_cpp
+[ 88%] Built target rosserial_msgs_generate_messages_lisp
+[ 88%] Built target rosserial_mbed_generate_messages
+[ 88%] Built target rosserial_msgs_generate_messages
+[ 92%] Built target rosserial_server_socket_node
+[ 96%] Built target rosserial_server_udp_socket_node
+[100%] Built target rosserial_server_serial_node
+]0;capstone2@capstone2-desktop: ~/catkin_ws[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws[00m$ cd src/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ ls
+[0m[01;34mbeginner_tutorials[0m  [01;36mCMakeLists.txt[0m  [01;34mrosserial[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src[00m$ cd beginner_tutorials/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ ls
+CMakeLists.txt  [0m[01;34minclude[0m  package.xml  [01;34mscripts[0m  [01;34msrc[0m  typescript
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials[00m$ cd scripts/
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ ls
+[0m[01;32mtalker.py[0m
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ cd[K[Kpython t alker.py 
+^C]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ 
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ 
+]0;capstone2@capstone2-desktop: ~/catkin_ws/src/beginner_tutorials/scripts[01;32mcapstone2@capstone2-desktop[00m:[01;34m~/catkin_ws/src/beginner_tutorials/scripts[00m$ 
+]0;capstone2@capstone2-desktop: ~
