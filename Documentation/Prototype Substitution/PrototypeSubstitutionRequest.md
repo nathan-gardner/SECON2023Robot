@@ -45,4 +45,4 @@ Connecting up the servo is sufficient in the case that Carlos does not have a Ph
 
 ## 3. Arean Build
 - Substitute the built arena for pedestal storage minimally functional expectation
-  - Arena fully painted and assembled
+  - Arena fully painted and assembled including light switch for fireworks video testing
