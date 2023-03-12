@@ -22,6 +22,8 @@ uint32_t enc_pos[4] = { 0, 0, 0, 0 };
 volatile uint32_t enc_pos_i[4] = { 0, 0, 0, 0 };
 uint32_t enc_posPrev[4] = { 0, 0, 0, 0 };
 float enc_vel[4] = {0, 0, 0, 0};
+volatile float enc_vel_i[4] = {0, 0, 0, 0};
+float xyz[4] = {0,0,0,0};
 
 long prevT = 0;
 float deltaT = 0;
@@ -34,10 +36,10 @@ ros::Publisher motorState("/locomotion/motorState", &t_stateMotorLocomotion);
 ros::Publisher encoder("/locomotion/encoder", &u32_motorPosData);
 ros::Subscriber<geometry_msgs::Twist> cmd_vel("/locomotion/cmd_vel", &cmdVelCallback);
 
-void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_speed)
+void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, int motor_speed)
 {
   // set motor speed
-  int set_speed = 255 * motor_speed;
+  int set_speed = motor_speed;
   if (set_speed > 0)
   {
     digitalWrite(motor_pin1, HIGH);  // forward direction
@@ -59,8 +61,6 @@ void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_
 
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
 {
-
-  int pwr[4];
   t_stateMotorLocomotion = cmd_vel;
   // calculate motor speeds from twist message
   float x = cmd_vel.linear.x;
@@ -72,14 +72,21 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
   float rear_left_speed = y - x + z;
   float rear_right_speed = y + x - z;
 //*****************************************************
-  float xyz[4] = {front_left_speed, front_right_speed, rear_left_speed, rear_right_speed};
-  pi_control(enc_vel,pwr);
+  xyz[0] = front_left_speed;
+  xyz[1] = front_right_speed;
+  xyz[2] = rear_left_speed;
+  xyz[3] = rear_right_speed;
 //*****************************************************
+}
+
+void set_locomotion_speed(){
+  int pwr[4];
+  pi_control(enc_vel,pwr, xyz);
   // set motor speeds
-  set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, front_left_speed);
-  set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, front_right_speed);
-  set_motor_speed(REAR_LEFT_PIN1, REAR_LEFT_PIN2, REAR_LEFT_SPEED_PIN, rear_left_speed);
-  set_motor_speed(REAR_RIGHT_PIN1, REAR_RIGHT_PIN2, REAR_RIGHT_SPEED_PIN, rear_right_speed);
+  set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, pwr[0]);
+  set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, pwr[1]);
+  set_motor_speed(REAR_LEFT_PIN1, REAR_LEFT_PIN2, REAR_LEFT_SPEED_PIN, pwr[2]);
+  set_motor_speed(REAR_RIGHT_PIN1, REAR_RIGHT_PIN2, REAR_RIGHT_SPEED_PIN, pwr[3]);
 }
 
 void updateEncoder()
@@ -94,6 +101,11 @@ void updateEncoder()
 }
 
 void updateVelocity(){
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE){
+    for(int i=0; i<4;i++){
+      enc_vel[i] = enc_vel_i[i];
+    }
+  }
   af32_velocity.data_length = 4;
   af32_velocity.data = enc_vel;
 }
@@ -150,7 +162,7 @@ void readRearRightEncoder()
   }
 }
 
-void computeVelocity(float* vel){
+void computeVelocity(volatile float* vel){
   long  currT = micros();
   deltaT = ((float)(currT-prevT))/1.0e6;
   for(int i = 0; i < 4; i++){
@@ -163,7 +175,7 @@ void computeVelocity(float* vel){
   prevT = currT;
 }
 
-void lowPassFilter(float* vel){
+void lowPassFilter(volatile float* vel){
   static float velocityFilter[4];
   static float velocityPrev[4];
   for(int i=0;i<4;i++){
@@ -175,17 +187,18 @@ void lowPassFilter(float* vel){
   vel = velocityFilter;
 }
 
-void pi_control(float* vel, int* pwr){
+void pi_control(float* vel, int* pwr, float* xyz){
   float eintegral = 0;
-  float vt = 100;
-  float kp = 1;
-  float ki = 3;
+  
+  float kp = 3;
+  float ki = 6;
 
   for(int i=0;i<4;i++){
+    float vt = xyz[i];
     float e = vt - *(vel + i);
     eintegral = eintegral + e*deltaT;
     float u = e*kp + eintegral*ki;
-    *(pwr + i) = (int8_t)u;
+    *(pwr + i) = (int)u;
     // cap pwr at -255 or 255
     if(*(pwr + i) > 255){
       *(pwr + i) = 255;

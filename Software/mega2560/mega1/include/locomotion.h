@@ -52,6 +52,8 @@ extern uint32_t enc_pos[4];
 extern volatile uint32_t enc_pos_i[4];
 extern uint32_t enc_posPrev[4];
 extern float enc_vel[4];
+extern volatile float enc_vel_i[4];
+extern float xyz[4];
 
 extern long prevT;
 extern float deltaT;
@@ -81,6 +83,8 @@ void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_
  * @param cmd_vel Updated geometry_msgs::Twist value published to /locomotion/cmd_vel
  */
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
+
+void set_locomotion_speed();
 
 /**
  * @brief Update published encoder value
@@ -115,13 +119,13 @@ void readRearLeftEncoder();
 void readRearRightEncoder();
 
 // updates value pointed to by vel
-void computeVelocity(float* vel);
+void computeVelocity(volatile float* vel);
 
 // updates value pointed to by vel
-void lowPassFilter(float* vel);
+void lowPassFilter(volatile float* vel);
 
-// updates value pointed to by vel and pwr
-void pi_control(float* vel, int* pwr);
+// updates value pointed to by pwr
+void pi_control(float* vel, int* pwr, float* xyz);
 
 /**
  * @brief Initialization for the locomotion namespace
