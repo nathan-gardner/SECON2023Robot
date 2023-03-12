@@ -3,8 +3,11 @@
 
 #include <Arduino.h>
 #include <ros.h>
+#include <util/atomic.h>
+
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/UInt32MultiArray.h>
+#include <std_msgs/Float32MultiArray.h>
 
 #include <locomotion.h>
 
@@ -15,6 +18,14 @@ geometry_msgs::Twist t_stateMotorLocomotion;
 std_msgs::UInt32MultiArray u32_motorPosData;
 // array format front_left, front_right, rear_left, rear_right
 uint32_t enc_pos[4] = { 0, 0, 0, 0 };
+volatile uint32_t enc_pos_i[4] = { 0, 0, 0, 0 };
+uint32_t enc_posPrev[4] = { 0, 0, 0, 0 };
+float enc_vel[4] = {0, 0, 0, 0};
+
+long prevT = 0;
+
+std_msgs::Float32MultiArray af32_velocity;
+ros::Publisher velocity("/locomotion/velocity", &af32_velocity);
 
 // Locomotion Pub/Sub
 ros::Publisher motorState("/locomotion/motorState", &t_stateMotorLocomotion);
@@ -66,8 +77,18 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
 
 void updateEncoder()
 {
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE){
+    for(int i=0; i<4;i++){
+      enc_pos[i] = enc_pos_i[i];
+    }
+  }
   u32_motorPosData.data_length = sizeof(enc_pos) / sizeof(enc_pos[0]);
   u32_motorPosData.data = enc_pos;
+}
+
+void updateVelocity(){
+  af32_velocity.data_length = 4;
+  af32_velocity.data = enc_vel;
 }
 
 void readFrontLeftEncoder()
@@ -75,11 +96,11 @@ void readFrontLeftEncoder()
   int b = digitalRead(FRONT_LEFT_ENCB);
   if (b > 0)
   {
-    enc_pos[0]++;
+    enc_pos_i[0]++;
   }
   else
   {
-    enc_pos[0]--;
+    enc_pos_i[0]--;
   }
 }
 
@@ -88,11 +109,11 @@ void readFrontRightEncoder()
   int b = digitalRead(FRONT_RIGHT_ENCB);
   if (b > 0)
   {
-    enc_pos[1]--;
+    enc_pos_i[1]--;
   }
   else
   {
-    enc_pos[1]++;
+    enc_pos_i[1]++;
   }
 }
 
@@ -101,11 +122,11 @@ void readRearLeftEncoder()
   int b = digitalRead(REAR_LEFT_ENCB);
   if (b > 0)
   {
-    enc_pos[2]++;
+    enc_pos_i[2]++;
   }
   else
   {
-    enc_pos[2]--;
+    enc_pos_i[2]--;
   }
 }
 
@@ -114,12 +135,22 @@ void readRearRightEncoder()
   int b = digitalRead(REAR_RIGHT_ENCB);
   if (b > 0)
   {
-    enc_pos[3]--;
+    enc_pos_i[3]--;
   }
   else
   {
-    enc_pos[3]++;
+    enc_pos_i[3]++;
   }
+}
+
+void computeVelocity(float* vel){
+  long  currT = micros();
+  float deltaT = ((float)(currT-prevT))/1.0e6;
+  for(int i = 0; i < 4; i++){
+    *(vel + i) = (enc_pos[i] - enc_posPrev[i])/deltaT;
+    enc_posPrev[i] = enc_pos[i];
+  }
+  prevT = currT;
 }
 
 void init(ros::NodeHandle* nh)
@@ -158,6 +189,7 @@ void init(ros::NodeHandle* nh)
   nh->advertise(motorState);
   nh->advertise(encoder);
   nh->subscribe(cmd_vel);
+  nh->advertise(velocity);
 }
 
 }
