@@ -42,8 +42,10 @@ void loop()
 {
   locomotion::updateEncoder();
   locomotion::computeVelocity(locomotion::enc_vel);
-  feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
+  locomotion::lowPassFilter(locomotion::enc_vel);
+
   locomotion::updateVelocity();
+  feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
   locomotion::velocity.publish(&locomotion::af32_velocity);
   locomotion::encoder.publish(&locomotion::u32_motorPosData);
   consumption::motorState.publish(&consumption::u8_stateMotorConsumption);

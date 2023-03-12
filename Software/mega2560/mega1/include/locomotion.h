@@ -40,6 +40,8 @@
 #define REAR_RIGHT_ENCA 3
 #define REAR_RIGHT_ENCB 4
 
+#define CLICKS_PER_ROTATION 562.2
+
 namespace locomotion
 {
 // Locomotion Data
@@ -52,6 +54,7 @@ extern uint32_t enc_posPrev[4];
 extern float enc_vel[4];
 
 extern long prevT;
+extern float deltaT;
 
 extern std_msgs::Float32MultiArray af32_velocity;
 extern ros::Publisher velocity;
@@ -111,7 +114,14 @@ void readRearLeftEncoder();
  */
 void readRearRightEncoder();
 
+// updates value pointed to by vel
 void computeVelocity(float* vel);
+
+// updates value pointed to by vel
+void lowPassFilter(float* vel);
+
+// updates value pointed to by vel and pwr
+void pi_control(float* vel, int* pwr);
 
 /**
  * @brief Initialization for the locomotion namespace
