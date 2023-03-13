@@ -46,21 +46,21 @@ def talker():
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
         msg.linear.x = 0
-        msg.linear.y = 1.0
+        msg.linear.y = 100.0
         msg.angular.z = 0
         pub.publish(msg)
         rate.sleep()
-        msg.linear.x = 1.0
+        msg.linear.x = 100.0
         msg.linear.y = 0
         msg.angular.z = 0
         pub.publish(msg)
         rate.sleep()
         msg.linear.x = 0
-        msg.linear.y = -1.0
+        msg.linear.y = -100.0
         msg.angular.z = 0
         pub.publish(msg)
         rate.sleep()
-        msg.linear.x = -1.0
+        msg.linear.x = -100.0
         msg.linear.y = 0
         msg.angular.z = 0
         pub.publish(msg)
