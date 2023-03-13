@@ -20,7 +20,7 @@ std_msgs::Int32MultiArray i32_motorPosData;
 // array format front_left, front_right, rear_left, rear_right
 int32_t enc_pos[4] = { 0, 0, 0, 0 };
 volatile int32_t enc_pos_i[4] = { 0, 0, 0, 0 };
-int32_t enc_posPrev[4] = { 0, 0, 0, 0 };
+
 float enc_vel[4] = {0, 0, 0, 0};
 volatile float enc_vel_i[4] = {0, 0, 0, 0};
 float xyz[4] = {0,0,0,0};
@@ -81,7 +81,7 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
 
 void set_locomotion_speed(){
   int pwr[4];
-  pi_control(enc_vel,pwr, xyz);
+  pi_control(enc_vel,pwr,xyz);
   // set motor speeds
   set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, pwr[0]);
   set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, pwr[1]);
@@ -163,6 +163,7 @@ void readRearRightEncoder()
 }
 
 void computeVelocity(volatile float* vel){
+  static int32_t enc_posPrev[4];
   long  currT = micros();
   deltaT = ((float)(currT-prevT))/1.0e6;
   for(int i = 0; i < 4; i++){
@@ -188,7 +189,7 @@ void lowPassFilter(volatile float* vel){
 }
 
 void pi_control(float* vel, int* pwr, float* xyz){
-  static float eintegral;
+  static float eintegral[4];
   
   float kp = 3;
   float ki = 6;
@@ -196,8 +197,8 @@ void pi_control(float* vel, int* pwr, float* xyz){
   for(int i=0;i<4;i++){
     float vt = *(xyz + i);
     float e = vt - *(vel + i);
-    eintegral = eintegral + e*deltaT;
-    float u = e*kp + eintegral*ki;
+    eintegral[i] = eintegral[i] + e*deltaT;
+    float u = e*kp + eintegral[i]*ki;
     *(pwr + i) = (int)u;
     // cap pwr at -255 or 255
     if(*(pwr + i) > 255){

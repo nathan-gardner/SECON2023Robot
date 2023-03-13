@@ -50,7 +50,6 @@ extern std_msgs::Int32MultiArray i32_motorPosData;
 // array format front_left, front_right, rear_left, rear_right
 extern int32_t enc_pos[4];
 extern volatile int32_t enc_pos_i[4];
-extern int32_t enc_posPrev[4];
 extern float enc_vel[4];
 extern volatile float enc_vel_i[4];
 extern float xyz[4];
