@@ -7,7 +7,7 @@
 #include <math.h>
 
 #include <geometry_msgs/Twist.h>
-#include <std_msgs/UInt32MultiArray.h>
+#include <std_msgs/Int32MultiArray.h>
 #include <std_msgs/Float32MultiArray.h>
 
 #include <locomotion.h>
@@ -16,11 +16,11 @@ namespace locomotion
 {
 // Locomotion Data
 geometry_msgs::Twist t_stateMotorLocomotion;
-std_msgs::UInt32MultiArray u32_motorPosData;
+std_msgs::Int32MultiArray i32_motorPosData;
 // array format front_left, front_right, rear_left, rear_right
-uint32_t enc_pos[4] = { 0, 0, 0, 0 };
-volatile uint32_t enc_pos_i[4] = { 0, 0, 0, 0 };
-uint32_t enc_posPrev[4] = { 0, 0, 0, 0 };
+int32_t enc_pos[4] = { 0, 0, 0, 0 };
+volatile int32_t enc_pos_i[4] = { 0, 0, 0, 0 };
+int32_t enc_posPrev[4] = { 0, 0, 0, 0 };
 float enc_vel[4] = {0, 0, 0, 0};
 volatile float enc_vel_i[4] = {0, 0, 0, 0};
 float xyz[4] = {0,0,0,0};
@@ -33,7 +33,7 @@ ros::Publisher velocity("/locomotion/velocity", &af32_velocity);
 
 // Locomotion Pub/Sub
 ros::Publisher motorState("/locomotion/motorState", &t_stateMotorLocomotion);
-ros::Publisher encoder("/locomotion/encoder", &u32_motorPosData);
+ros::Publisher encoder("/locomotion/encoder", &i32_motorPosData);
 ros::Subscriber<geometry_msgs::Twist> cmd_vel("/locomotion/cmd_vel", &cmdVelCallback);
 
 void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, int motor_speed)
@@ -96,8 +96,8 @@ void updateEncoder()
       enc_pos[i] = enc_pos_i[i];
     }
   }
-  u32_motorPosData.data_length = sizeof(enc_pos) / sizeof(enc_pos[0]);
-  u32_motorPosData.data = enc_pos;
+  i32_motorPosData.data_length = sizeof(enc_pos) / sizeof(enc_pos[0]);
+  i32_motorPosData.data = enc_pos;
 }
 
 void updateVelocity(){
@@ -188,13 +188,13 @@ void lowPassFilter(volatile float* vel){
 }
 
 void pi_control(float* vel, int* pwr, float* xyz){
-  float eintegral = 0;
+  static float eintegral;
   
   float kp = 3;
   float ki = 6;
 
   for(int i=0;i<4;i++){
-    float vt = xyz[i];
+    float vt = *(xyz + i);
     float e = vt - *(vel + i);
     eintegral = eintegral + e*deltaT;
     float u = e*kp + eintegral*ki;
@@ -203,8 +203,8 @@ void pi_control(float* vel, int* pwr, float* xyz){
     if(*(pwr + i) > 255){
       *(pwr + i) = 255;
     }
-    else if(*(pwr + i) < -254){
-      *(pwr + i) = -254;
+    else if(*(pwr + i) < -255){
+      *(pwr + i) = -255;
     }
   }
 }

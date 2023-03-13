@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <ros.h>
 #include <geometry_msgs/Twist.h>
-#include <std_msgs/UInt32MultiArray.h>
+#include <std_msgs/Int32MultiArray.h>
 #include <std_msgs/Float32MultiArray.h>
 
 // Locomotion Defs
@@ -46,11 +46,11 @@ namespace locomotion
 {
 // Locomotion Data
 extern geometry_msgs::Twist t_stateMotorLocomotion;
-extern std_msgs::UInt32MultiArray u32_motorPosData;
+extern std_msgs::Int32MultiArray i32_motorPosData;
 // array format front_left, front_right, rear_left, rear_right
-extern uint32_t enc_pos[4];
-extern volatile uint32_t enc_pos_i[4];
-extern uint32_t enc_posPrev[4];
+extern int32_t enc_pos[4];
+extern volatile int32_t enc_pos_i[4];
+extern int32_t enc_posPrev[4];
 extern float enc_vel[4];
 extern volatile float enc_vel_i[4];
 extern float xyz[4];
