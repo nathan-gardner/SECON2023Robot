@@ -21,9 +21,9 @@ std_msgs::Int32MultiArray i32_motorPosData;
 int32_t enc_pos[4] = { 0, 0, 0, 0 };
 volatile int32_t enc_pos_i[4] = { 0, 0, 0, 0 };
 
-float enc_vel[4] = {0, 0, 0, 0};
-volatile float enc_vel_i[4] = {0, 0, 0, 0};
-float xyz[4] = {0,0,0,0};
+float enc_vel[4] = { 0, 0, 0, 0 };
+volatile float enc_vel_i[4] = { 0, 0, 0, 0 };
+float xyz[4] = { 0, 0, 0, 0 };
 
 long prevT = 0;
 float deltaT = 0;
@@ -71,17 +71,18 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
   float front_right_speed = y - x - z;
   float rear_left_speed = y - x + z;
   float rear_right_speed = y + x - z;
-//*****************************************************
+  //*****************************************************
   xyz[0] = front_left_speed;
   xyz[1] = front_right_speed;
   xyz[2] = rear_left_speed;
   xyz[3] = rear_right_speed;
-//*****************************************************
+  //*****************************************************
 }
 
-void set_locomotion_speed(){
+void set_locomotion_speed()
+{
   int pwr[4];
-  pi_control(enc_vel,pwr,xyz);
+  pi_control(enc_vel, pwr, xyz);
   // set motor speeds
   set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, pwr[0]);
   set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, pwr[1]);
@@ -91,8 +92,10 @@ void set_locomotion_speed(){
 
 void updateEncoder()
 {
-  ATOMIC_BLOCK(ATOMIC_RESTORESTATE){
-    for(int i=0; i<4;i++){
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+  {
+    for (int i = 0; i < 4; i++)
+    {
       enc_pos[i] = enc_pos_i[i];
     }
   }
@@ -100,9 +103,12 @@ void updateEncoder()
   i32_motorPosData.data = enc_pos;
 }
 
-void updateVelocity(){
-  ATOMIC_BLOCK(ATOMIC_RESTORESTATE){
-    for(int i=0; i<4;i++){
+void updateVelocity()
+{
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+  {
+    for (int i = 0; i < 4; i++)
+    {
       enc_vel[i] = enc_vel_i[i];
     }
   }
@@ -162,49 +168,57 @@ void readRearRightEncoder()
   }
 }
 
-void computeVelocity(volatile float* vel){
+void computeVelocity(volatile float* vel)
+{
   static int32_t enc_posPrev[4];
-  long  currT = micros();
-  deltaT = ((float)(currT-prevT))/1.0e6;
-  for(int i = 0; i < 4; i++){
-    *(vel + i) = (enc_pos[i] - enc_posPrev[i])/deltaT;
+  long currT = micros();
+  deltaT = ((float)(currT - prevT)) / 1.0e6;
+  for (int i = 0; i < 4; i++)
+  {
+    *(vel + i) = (enc_pos[i] - enc_posPrev[i]) / deltaT;
     // convert from clicks per cycle to rpm
-    *(vel + i) = *(vel + i)/CLICKS_PER_ROTATION*60.0;
+    *(vel + i) = *(vel + i) / CLICKS_PER_ROTATION * 60.0;
 
     enc_posPrev[i] = enc_pos[i];
   }
   prevT = currT;
 }
 
-void lowPassFilter(volatile float* vel){
+void lowPassFilter(volatile float* vel)
+{
   static float velocityFilter[4];
   static float velocityPrev[4];
-  for(int i=0;i<4;i++){
+  for (int i = 0; i < 4; i++)
+  {
     // predefined low pass filter constaints
-    velocityFilter[i] = 0.854*velocityFilter[i] + 0.0728*(*(vel + i)) + 0.0728*velocityPrev[i];
+    velocityFilter[i] = 0.854 * velocityFilter[i] + 0.0728 * (*(vel + i)) + 0.0728 * velocityPrev[i];
     velocityPrev[i] = *(vel + i);
   }
   // update velocity to low pass filter version
   vel = velocityFilter;
 }
 
-void pi_control(float* vel, int* pwr, float* xyz){
+void pi_control(float* vel, int* pwr, float* xyz)
+{
   static float eintegral[4];
-  
+
   float kp = 3;
   float ki = 6;
 
-  for(int i=0;i<4;i++){
+  for (int i = 0; i < 4; i++)
+  {
     float vt = *(xyz + i);
     float e = vt - *(vel + i);
-    eintegral[i] = eintegral[i] + e*deltaT;
-    float u = e*kp + eintegral[i]*ki;
+    eintegral[i] = eintegral[i] + e * deltaT;
+    float u = e * kp + eintegral[i] * ki;
     *(pwr + i) = (int)u;
     // cap pwr at -255 or 255
-    if(*(pwr + i) > 255){
+    if (*(pwr + i) > 255)
+    {
       *(pwr + i) = 255;
     }
-    else if(*(pwr + i) < -255){
+    else if (*(pwr + i) < -255)
+    {
       *(pwr + i) = -255;
     }
   }
@@ -249,6 +263,6 @@ void init(ros::NodeHandle* nh)
   nh->advertise(velocity);
 }
 
-}
+}  // namespace locomotion
 
 #endif

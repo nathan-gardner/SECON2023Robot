@@ -83,6 +83,10 @@ void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_
  */
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel);
 
+/**
+ * @brief Set the locomotion speed for each motor based on the pi_control output
+ *
+ */
 void set_locomotion_speed();
 
 /**
@@ -93,7 +97,7 @@ void updateEncoder();
 
 /**
  * @brief Update published velocity value
- * 
+ *
  */
 void updateVelocity();
 
@@ -123,14 +127,14 @@ void readRearRightEncoder();
 
 /**
  * @brief Compute velocity from encoder position data and deltaT
- * 
+ *
  * @param vel value updated by reference
  */
 void computeVelocity(volatile float* vel);
 
 /**
- * @brief Low-pass filter for the velocity to remove high frequency oscillations from velocity measurements 
- * 
+ * @brief Low-pass filter for the velocity to remove high frequency oscillations from velocity measurements
+ *
  * @param vel value updated by reference
  */
 void lowPassFilter(volatile float* vel);
@@ -138,7 +142,7 @@ void lowPassFilter(volatile float* vel);
 // updates value pointed to by pwr
 /**
  * @brief PI controller for locomotion velocity control
- * 
+ *
  * @param vel value read by reference
  * @param pwr value updated by reference
  * @param xyz velocity in RPM for each motor (front left, front right, rear left, rear right)
