@@ -4,7 +4,6 @@
 #include <Arduino.h>
 #include <ros.h>
 #include <util/atomic.h>
-#include <math.h>
 
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Int32MultiArray.h>
@@ -25,7 +24,6 @@ float enc_vel[4] = { 0, 0, 0, 0 };
 volatile float enc_vel_i[4] = { 0, 0, 0, 0 };
 float xyz[4] = { 0, 0, 0, 0 };
 
-long prevT = 0;
 float deltaT = 0;
 
 std_msgs::Float32MultiArray af32_velocity;
@@ -38,25 +36,23 @@ ros::Subscriber<geometry_msgs::Twist> cmd_vel("/locomotion/cmd_vel", &cmdVelCall
 
 void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, int motor_speed)
 {
-  // set motor speed
-  int set_speed = motor_speed;
-  if (set_speed > 0)
+  if (motor_speed > 0)
   {
     digitalWrite(motor_pin1, HIGH);  // forward direction
     digitalWrite(motor_pin2, LOW);
   }
-  else if (set_speed < 0)
+  else if (motor_speed < 0)
   {
     digitalWrite(motor_pin1, LOW);  // reverse direction
     digitalWrite(motor_pin2, HIGH);
-    set_speed = -set_speed;
+    motor_speed = -motor_speed;
   }
   else
   {
     digitalWrite(motor_pin1, LOW);  // stop movement
     digitalWrite(motor_pin2, LOW);
   }
-  analogWrite(speed_pin, set_speed);  // set motor speed (ignoring for now)
+  analogWrite(speed_pin, motor_speed);  // set motor speed (ignoring for now)
 }
 
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
@@ -81,6 +77,7 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
 
 void set_locomotion_speed()
 {
+  // variable which will hold the pwr (-255 to 255) which will be written to the motors, (front left, front right, rear left, rear right)
   int pwr[4];
   pi_control(enc_vel, pwr, xyz);
   // set motor speeds
@@ -171,6 +168,7 @@ void readRearRightEncoder()
 void computeVelocity(volatile float* vel)
 {
   static int32_t enc_posPrev[4];
+  static long prevT;
   long currT = micros();
   deltaT = ((float)(currT - prevT)) / 1.0e6;
   for (int i = 0; i < 4; i++)

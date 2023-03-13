@@ -3,6 +3,8 @@
 
 #include <Arduino.h>
 #include <ros.h>
+#include <util/atomic.h>
+
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Int32MultiArray.h>
 #include <std_msgs/Float32MultiArray.h>
@@ -54,7 +56,6 @@ extern float enc_vel[4];
 extern volatile float enc_vel_i[4];
 extern float xyz[4];
 
-extern long prevT;
 extern float deltaT;
 
 extern std_msgs::Float32MultiArray af32_velocity;

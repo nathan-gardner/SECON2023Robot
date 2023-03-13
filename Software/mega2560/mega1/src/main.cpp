@@ -42,8 +42,8 @@ void loop()
 {
   locomotion::updateEncoder();
   locomotion::updateVelocity();
-  locomotion::computeVelocity(locomotion::enc_vel_i);
-  locomotion::lowPassFilter(locomotion::enc_vel_i);
+  locomotion::computeVelocity(locomotion::enc_vel);
+  locomotion::lowPassFilter(locomotion::enc_vel);
   locomotion::set_locomotion_speed();
   feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
   locomotion::velocity.publish(&locomotion::af32_velocity);
