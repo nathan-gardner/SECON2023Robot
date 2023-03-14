@@ -199,7 +199,7 @@ void pi_control(float* vel, int* pwr, float* xyz)
 {
   static float eintegral[4];
 
-  float kp = 3;
+  float kp = 1;
   float ki = 6;
 
   for (int i = 0; i < 4; i++)

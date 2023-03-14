@@ -51,7 +51,7 @@ void loop()
   consumption::motorState.publish(&consumption::u8_stateMotorConsumption);
   locomotion::motorState.publish(&locomotion::t_stateMotorLocomotion);
   nh.spinOnce();
-  delay(20);
+  delay(200);
 }
 
 #endif
