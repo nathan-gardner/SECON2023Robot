@@ -67,12 +67,11 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
   float front_right_speed = y - x - z;
   float rear_left_speed = y - x + z;
   float rear_right_speed = y + x - z;
-  //*****************************************************
+  
   xyz[0] = front_left_speed;
   xyz[1] = front_right_speed;
   xyz[2] = rear_left_speed;
   xyz[3] = rear_right_speed;
-  //*****************************************************
 }
 
 void set_locomotion_speed()

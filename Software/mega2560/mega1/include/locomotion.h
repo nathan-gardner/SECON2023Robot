@@ -72,7 +72,7 @@ extern ros::Subscriber<geometry_msgs::Twist> cmd_vel;
  * @param motor_pin1 Pin1 (digital value) for locomotion motor for which the direction is being set
  * @param motor_pin2 Pin2 (digital value) for locomotion motor for which the direction is being set
  * @param speed_pin Speed pin (analog value) for locomotion motor for which the speed is being set
- * @param motor_speed [-1.0,1.0] range for from Twist message which encodes cmd direction and speed
+ * @param motor_speed [-255.0,255.0] range for from Twist message which encodes cmd direction and speed
  */
 void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, float motor_speed);
 
