@@ -22,7 +22,7 @@ volatile int32_t enc_pos_i[4] = { 0, 0, 0, 0 };
 
 float enc_vel[4] = { 0, 0, 0, 0 };
 volatile float enc_vel_i[4] = { 0, 0, 0, 0 };
-float xyz[4] = { 0, 0, 0, 0 };
+volatile float xyz[4] = { 0, 0, 0, 0 };
 
 float deltaT = 0;
 
@@ -195,11 +195,11 @@ void lowPassFilter(volatile float* vel)
   vel = velocityFilter;
 }
 
-void pi_control(float* vel, int* pwr, float* xyz)
+void pi_control(float* vel, int* pwr, volatile float* xyz)
 {
   static float eintegral[4];
 
-  float kp = 1;
+  float kp = 2;
   float ki = 6;
 
   for (int i = 0; i < 4; i++)

@@ -54,7 +54,7 @@ extern int32_t enc_pos[4];
 extern volatile int32_t enc_pos_i[4];
 extern float enc_vel[4];
 extern volatile float enc_vel_i[4];
-extern float xyz[4];
+extern volatile float xyz[4];
 
 extern float deltaT;
 
@@ -148,7 +148,7 @@ void lowPassFilter(volatile float* vel);
  * @param pwr value updated by reference
  * @param xyz velocity in RPM for each motor (front left, front right, rear left, rear right)
  */
-void pi_control(float* vel, int* pwr, float* xyz);
+void pi_control(float* vel, int* pwr, volatile float* xyz);
 
 /**
  * @brief Initialization for the locomotion namespace
