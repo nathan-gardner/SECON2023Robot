@@ -13,32 +13,21 @@
 #define MAIN_CPP
 
 #include <Arduino.h>
-
+#include <ros.h>
 #include <PololuMaestro.h>
 
-#define solenoidPin 7
-#define solenoidPin2 8
-#define maestroSerial Serial1
+#include <duckstorage.h>
 
-MicroMaestro maestro(maestroSerial);
+ros::NodeHandle nh;
 
 void setup() {
-  pinMode(solenoidPin, OUTPUT);
-  pinMode(solenoidPin2, OUTPUT);
-  maestroSerial.begin(9600);
-  maestro.setTarget(0, 6000);
+  DuckStorage::init(&nh);
 }
 
 void loop() {
-  digitalWrite(solenoidPin, HIGH);
-  digitalWrite(solenoidPin2, HIGH);
-  maestro.setTargetMiniSSC(0, 254);
-  delay(500);
-
-  digitalWrite(solenoidPin, LOW);
-  digitalWrite(solenoidPin2, LOW);
-  maestro.setTargetMiniSSC(0, 0);
-  delay(7000);
+  DuckStorage::maestro.setTargetMiniSSC(0, DuckStorage::u8_duckStorageServoPos);
+  nh.spinOnce();
+  delay(10);
 }
 
 
