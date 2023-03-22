@@ -26,11 +26,10 @@
  ******************************************************************************/
 '''
 
-import pygame
 from time import sleep
 
 import rospy
-from std_msgs.msg import String
+from std_msgs.msg import Int32MultiArray
 from geometry_msgs.msg import Twist
 
 def pub_direction(x, y, z):
@@ -39,145 +38,214 @@ def pub_direction(x, y, z):
     msg.angular.z = z
     pub.publish(msg)
 
+'''
+#broken
+def turn_left():
+    pub_direction(0,0,0)
+    sleep(0.5)
+    global fr_encoder
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pos = fr_encoder
+    while(abs(pos - fr_encoder) > 740):
+        pub_direction(0,0,-50)
+        sleep(0.1)
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pub_direction(0,0,0)
+    sleep(0.5)
+'''
+
+# working
+def turn_right():
+    pub_direction(0,0,0)
+    sleep(0.5)
+    global fr_encoder
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pos = fr_encoder
+    while(abs(pos - fr_encoder) < 740):
+        pub_direction(0,0,50)
+        sleep(0.001)
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pub_direction(0,0,0)
+    sleep(0.5)
+
+
+def forward(clicks, speed):
+    global fr_encoder
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pos = fr_encoder
+    while(abs(pos - fr_encoder) < clicks):
+        pub_direction(0,50,0)
+        sleep(0.001)
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pub_direction(0,0,0)
+
+def backward(clicks, speed):
+    global fr_encoder
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pos = fr_encoder
+    while(abs(pos - fr_encoder) < clicks):
+        pub_direction(0,-speed,0)
+        sleep(0.001)
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pub_direction(0,0,0)
+
+def left(clicks):
+    global encoder
+    encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+    fl_pos = encoder.data[0]
+    fr_pos = encoder.data[1]
+    rl_pos = encoder.data[2]
+    rr_pos = encoder.data[3]
+    while((abs(fl_pos - encoder.data[0]) < clicks) and (abs(fr_pos - encoder.data[1]) < clicks) and (abs(rl_pos - encoder.data[2]) < clicks) and (abs(rr_pos - encoder.data[3]) < clicks)):
+        pub_direction(50,0,0)
+        sleep(0.001)
+        encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+    pub_direction(0,0,0)
+
+def spin(clicks):
+    global encoder
+    encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+    fl_pos = encoder.data[0]
+    fr_pos = encoder.data[1]
+    rl_pos = encoder.data[2]
+    rr_pos = encoder.data[3]
+    while((abs(fl_pos - encoder.data[0]) < clicks) and (abs(fr_pos - encoder.data[1]) < clicks) and (abs(rl_pos - encoder.data[2]) < clicks) and (abs(rr_pos - encoder.data[3]) < clicks)):
+        pub_direction(50,0,0)
+        sleep(0.001)
+        encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+    pub_direction(0,0,0)
+
+
+'''
+def left(clicks):
+    global fr_encoder
+    global rl_encoder
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    rl_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[2]
+    fr_pos = fr_encoder
+    rl_pos = rl_encoder
+    while((abs(fr_pos - fr_encoder) < clicks) and (abs(rl_pos - rl_encoder) < clicks)):
+        pub_direction(50,0,0)
+        sleep(0.001)
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+        rl_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[2]
+    pub_direction(0,0,0)
+'''
+
+def right(clicks):
+    global fr_encoder
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pos = fr_encoder
+    while(abs(pos - fr_encoder) < clicks):
+        pub_direction(-50,0,0)
+        sleep(0.001)
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    pub_direction(0,0,0)
+
+def callback(data):
+    print(str(data.data[0]) + ' ' + str(data.data[1]) + ' ' + str(data.data[2]) + ' ' + str(data.data[3]))
+    fl_encoder = data.data[0]
+    fr_encoder = data.data[1]
+    rl_encoder = data.data[2]
+    rr_encoder = data.data[3]
+
 # initialize things
+fl_encoder = 0
+fr_encoder = 0
+rl_encoder = 0
+rr_encoder = 0
+
 global msg
 msg = Twist()
 
 pub = rospy.Publisher('/locomotion/cmd_vel', Twist, queue_size=10)
+sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
 rospy.init_node('talker', anonymous=True)
 
-pygame.init()
+sleep(1)
+forward(3800, 75)
+sleep(1)
+right(400)
+sleep(1)
+backward(240, 50)
+sleep(1)
+turn_right()
+turn_right()
+sleep(1)
+backward(800, 50)
+sleep(1)
+right(300)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
+sleep(1)
 
-# create window with size (our image size)
-window = pygame.display.set_mode((700,400))  # track 1
-#window = pygame.display.set_mode((1155,399))   # track 2
+# first forward path
+forward(6500, 75)
+sleep(1)
+backward(6500, 100)
+sleep(1)
+backward(800, 50)
+sleep(1)
+left(400)
+sleep(1)
 
-# load image file
-bg  = pygame.image.load("images/track1.png")
-#bg  = pygame.image.load("track2.png")
-car = pygame.image.load("images/car.png")
-car = pygame.transform.scale(car, (40, 40)) # resize car image
+# second forward path
+forward(6500, 75)
+sleep(1)
+backward(6500, 100)
+sleep(1)
+backward(800, 50)
+sleep(1)
+left(400)
+sleep(1)
 
-""" main loop varibales and things """
-# set up timer clock 
-clock = pygame.time.Clock()
+# third forward path
+forward(6500, 75)
+sleep(1)
+backward(6500, 100)
+sleep(1)
 
-# initial x y axis position of the car
-car_x = 30   
-car_y = 260  
+'''
+sleep(1)
+forward(3800, 75)
+sleep(1)
+right(400)
+sleep(1)
+backward(240, 50)
+sleep(1)
+turn_right()
+sleep(1)
+turn_right()
+sleep(1)
+backward(800, 50)
+sleep(1)
+right(300)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
+sleep(1)
+forward(6500, 75)
+sleep(1)
+backward(6500, 150)
+sleep(1)
+backward(800, 50)
+sleep(1)
+left(600)
+sleep(1)
+forward(6500, 75)
+sleep(1)
+backward(6500, 150)
+sleep(1)
+backward(800, 50)
+sleep(1)
+left(600)
+sleep(1)
+forward(6500, 75)
+sleep(1)
+backward(6500, 150)
+'''
 
-JUMP_VALUE = 25     # turning point value
-direction = 'y_up'  # cars current direction
-run = 1
 
-# start the robot
-pub_direction(0,50,0)
-DELAY = 2.4
-# main loop
-while run:
-    clock.tick(30)         # update the window/run loop by this speed
-    #check for events
-    for event in pygame.event.get():
-        # quit button clicked
-        if event.type == pygame.QUIT:
-            run = 0
-
-    # position images
-    window.blit(bg, (0, 0))          # load the track image
-    window.blit(car, (car_x, car_y)) # the car image
-
-    # record last x, y pos of car
-    last_x, last_y = car_x, car_y
-    
-    # find the center of the car and draw a point on that
-    center_x, center_y = (int(car_x + 40 /2), int(car_y + 40 / 2))
-    pygame.draw.circle(window, (0,255,255), (center_x, center_y), 5, 5)
-
-    # check surrounding (4 direction data)
-    # the calibration value is the pixel from car's sensor/mid point
-    # so it checks for road info 30 pixels far from the sensor.
-    # 255 means we have a clear white road
-    cal_value = 30              # calibrate this to get good data
-    y_up      = window.get_at((center_x, center_y - cal_value))[0]
-    y_down    = window.get_at((center_x, center_y + cal_value))[0]
-    x_right   = window.get_at((center_x + cal_value, center_y))[0]
-    x_left    = window.get_at((center_x - cal_value, center_y))[0]
-    #print("y_up   ", y_up)
-    #print("y_down ", y_down)
-    #print("x_right", x_right)
-    #print("x_left ", x_left)
-    #print("-----------")
-
-    # determine which way to go
-    # go up
-    if y_up == 255 and direction == 'y_up' and x_left != 255 and x_right != 255:
-        # move up
-        car_y -= 2  # decrease pixel and move the car on y axis
-        
-    # make the turn
-    if y_up == 255 and direction == 'y_up' and x_left != 255 and x_right == 255:
-        # make a right turn
-        direction = 'x_right'
-        car_y -= JUMP_VALUE
-        car_x += JUMP_VALUE
-        car = pygame.transform.rotate(car, -90)
-        window.blit(car, (car_x, car_y))
-        print('Turn Right')
-        pub_direction(0,0,50)
-        sleep(DELAY)
-        pub_direction(0,50,0)
-
-    # go x right
-    if y_up != 255 and direction == 'x_right' and y_down != 255 and x_right == 255:
-        car_x += 2
-
-    if y_down == 255 and direction == 'x_right' and x_left == 255 and x_right == 255:
-        # make a turn from x_right
-        car = pygame.transform.rotate(car, -90)
-        direction = 'y_down'
-        car_y += JUMP_VALUE + 5
-        car_x += JUMP_VALUE
-        window.blit(car, (car_x, car_y))
-        print('Turn Right')
-        pub_direction(0,0,50)
-        sleep(DELAY)
-        pub_direction(0,50,0)
-
-    # go y down
-    if y_down == 255 and direction == 'y_down' and x_left != 255 and x_right != 255:
-        # move down
-        car_y += 2
-
-    # left turn
-    if y_down == 255 and direction == 'y_down' and x_left != 255 and x_right == 255:
-        # turn from y_down
-        car = pygame.transform.rotate(car, 90)
-        direction = 'x_right'
-        car_y += JUMP_VALUE
-        car_x += JUMP_VALUE
-        print('Turn left')
-        pub_direction(0,0,-50)
-        sleep(DELAY)
-        pub_direction(0,50,0)
-    
-    # turn to y up
-    if y_up == 255 and direction == 'x_right' and x_left == 255 and x_right == 255:
-        # turn from y_down
-        car = pygame.transform.rotate(car, 90)
-        direction = 'y_up'
-        car_y -= JUMP_VALUE + 5
-        car_x += JUMP_VALUE
-        print('Turn left')
-        pub_direction(0,0,-50)
-        sleep(DELAY)
-        pub_direction(0,50,0)
-    
-    # if car is stopped
-    if car_x == last_x and car_y == last_y:
-        # stop the engine sound
-        print("STOPPED")
-        pub_direction(0,0,0)
-        
-    pygame.display.update()  # update the window
-
-pygame.quit()      #close everything
