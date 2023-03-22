@@ -21,6 +21,7 @@
 ros::NodeHandle nh;
 
 void setup() {
+  nh.initNode();
   DuckStorage::init(&nh);
 }
 
