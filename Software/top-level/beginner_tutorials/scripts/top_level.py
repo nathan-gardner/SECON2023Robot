@@ -61,7 +61,7 @@ def turn_right():
     global fr_encoder
     fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
     pos = fr_encoder
-    while(abs(pos - fr_encoder) < 740):
+    while(abs(pos - fr_encoder) < 780):
         pub_direction(0,0,50)
         sleep(0.001)
         fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
@@ -163,7 +163,7 @@ sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
 rospy.init_node('talker', anonymous=True)
 
 sleep(1)
-forward(3800, 75)
+forward(3800, 100)
 sleep(1)
 right(400)
 sleep(1)
@@ -176,35 +176,89 @@ backward(800, 50)
 sleep(1)
 right(300)
 sleep(1)
+backward(400, 50)
+sleep(1)
+forward(8000, 100) #slightly higher because of wall friction 
+sleep(1)
+backward(8000, 100) #slightly higher because of wall friction
+sleep(1)
 left(600)
 sleep(1)
 backward(400, 50)
 sleep(1)
 
 # first forward path
-forward(6500, 75)
+forward(7400, 100)
 sleep(1)
-backward(6500, 100)
+backward(7300, 100)
 sleep(1)
 backward(800, 50)
 sleep(1)
-left(400)
+left(600)
+sleep(1)
+backward(400, 50)
 sleep(1)
 
 # second forward path
-forward(6500, 75)
+forward(7400, 100)
 sleep(1)
-backward(6500, 100)
+backward(7300, 100)
 sleep(1)
 backward(800, 50)
 sleep(1)
-left(400)
+left(600)
+sleep(1)
+backward(400, 50)
 sleep(1)
 
 # third forward path
-forward(6500, 75)
+forward(7400, 100)
 sleep(1)
-backward(6500, 100)
+backward(7300, 100)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
+sleep(1)
+
+# fourth forward path
+forward(7400, 100)
+sleep(1)
+backward(7300, 100)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
+sleep(1)
+
+# fifth forward path
+forward(7400, 100)
+sleep(1)
+backward(7300, 100)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
+sleep(1)
+
+# sixth forward path
+forward(7400, 100)
+sleep(1)
+backward(7300, 100)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
+sleep(1)
+
+# seventh forward path
+forward(7400, 100)
+sleep(1)
+backward(7300, 100)
+sleep(1)
+left(600)
+sleep(1)
+backward(400, 50)
 sleep(1)
 
 '''
