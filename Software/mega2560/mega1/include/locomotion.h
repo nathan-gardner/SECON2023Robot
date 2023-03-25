@@ -18,29 +18,29 @@
 // Rear Left Motor Out12 Yellow -. Black +
 // Rear Right Motor Out34 Red +, Black -
 
-#define FRONT_LEFT_PIN1 26
-#define FRONT_LEFT_PIN2 28
-#define FRONT_RIGHT_PIN1 22
-#define FRONT_RIGHT_PIN2 24
-#define REAR_LEFT_PIN1 30
-#define REAR_LEFT_PIN2 32
-#define REAR_RIGHT_PIN1 34
-#define REAR_RIGHT_PIN2 36
+#define FRONT_LEFT_PIN1 30
+#define FRONT_LEFT_PIN2 32
+#define FRONT_RIGHT_PIN1 34
+#define FRONT_RIGHT_PIN2 36
+#define REAR_LEFT_PIN1 26
+#define REAR_LEFT_PIN2 28
+#define REAR_RIGHT_PIN1 22
+#define REAR_RIGHT_PIN2 24
 
-#define FRONT_LEFT_SPEED_PIN 10
-#define FRONT_RIGHT_SPEED_PIN 11
-#define REAR_LEFT_SPEED_PIN 12
-#define REAR_RIGHT_SPEED_PIN 13
+#define REAR_LEFT_SPEED_PIN 10
+#define REAR_RIGHT_SPEED_PIN 11
+#define FRONT_LEFT_SPEED_PIN 12
+#define FRONT_RIGHT_SPEED_PIN 13
 
 // ENCA always need to be at an interrupt pin
-#define FRONT_LEFT_ENCA 19
-#define FRONT_LEFT_ENCB 5
-#define FRONT_RIGHT_ENCA 2
-#define FRONT_RIGHT_ENCB 6
-#define REAR_LEFT_ENCA 18
-#define REAR_LEFT_ENCB 7
-#define REAR_RIGHT_ENCA 3
-#define REAR_RIGHT_ENCB 4
+#define FRONT_RIGHT_ENCA 19
+#define FRONT_RIGHT_ENCB 5
+#define FRONT_LEFT_ENCA 2
+#define FRONT_LEFT_ENCB 6
+#define REAR_RIGHT_ENCA 18
+#define REAR_RIGHT_ENCB 7
+#define REAR_LEFT_ENCA 3
+#define REAR_LEFT_ENCB 4
 
 #define CLICKS_PER_ROTATION 562.2
 
