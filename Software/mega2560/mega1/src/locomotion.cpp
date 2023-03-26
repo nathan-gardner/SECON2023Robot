@@ -205,6 +205,15 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
   for (int i = 0; i < 4; i++)
   {
     float vt = *(xyz + i);
+    //-------------------------------------
+    // Decrease current draw for large changes and decrease voltage rise time
+    if(vt - *(vel + i) > 25){
+      vt = *(vel + i) + 25;
+    }
+    else if(vt - *(vel + i) < -25){
+      vt = *(vel + i) - 25;
+    }
+    //-------------------------------------
     float e = vt - *(vel + i);
     eintegral[i] = eintegral[i] + e * deltaT;
     float u = e * kp + eintegral[i] * ki;
@@ -254,10 +263,10 @@ void init(ros::NodeHandle* nh)
   attachInterrupt(digitalPinToInterrupt(REAR_RIGHT_ENCA), readRearRightEncoder, RISING);
 
   // locomotion
-  nh->advertise(motorState);
+  //nh->advertise(motorState);
   nh->advertise(encoder);
   nh->subscribe(cmd_vel);
-  nh->advertise(velocity);
+  //nh->advertise(velocity);
 }
 
 }  // namespace locomotion

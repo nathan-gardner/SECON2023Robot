@@ -35,7 +35,7 @@ void cmdPosServo(const std_msgs::String& msg)
 void init(ros::NodeHandle* nh)
 {
   // feeding
-  nh->subscribe(servo_pos);
+  //nh->subscribe(servo_pos);
   // Setup servo for feeding
   maestroSerial.begin(9600);
   maestro.setTarget(0, 6000);
