@@ -42,6 +42,8 @@
 #define REAR_LEFT_ENCA 3
 #define REAR_LEFT_ENCB 4
 
+#define MAX_ERROR_COUNT 8
+
 #define CLICKS_PER_ROTATION 562.2
 
 namespace locomotion
@@ -55,6 +57,9 @@ extern volatile int32_t enc_pos_i[4];
 extern float enc_vel[4];
 extern volatile float enc_vel_i[4];
 extern volatile float xyz[4];
+
+extern int error_count[4];
+extern bool startCheck;
 
 extern float deltaT;
 
@@ -149,6 +154,11 @@ void lowPassFilter(volatile float* vel);
  * @param xyz velocity in RPM for each motor (front left, front right, rear left, rear right)
  */
 void pi_control(float* vel, int* pwr, volatile float* xyz);
+
+/**
+ * @brief Stop all motors
+*/
+void e_stop();
 
 /**
  * @brief Initialization for the locomotion namespace

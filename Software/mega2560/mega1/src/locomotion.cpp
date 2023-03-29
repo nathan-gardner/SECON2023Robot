@@ -24,6 +24,9 @@ float enc_vel[4] = { 0, 0, 0, 0 };
 volatile float enc_vel_i[4] = { 0, 0, 0, 0 };
 volatile float xyz[4] = { 0, 0, 0, 0 };
 
+int error_count[4] = { 0, 0, 0, 0 };
+bool startCheck = false;
+
 float deltaT = 0;
 
 std_msgs::Float32MultiArray af32_velocity;
@@ -72,6 +75,13 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
   xyz[1] = front_right_speed;
   xyz[2] = rear_left_speed;
   xyz[3] = rear_right_speed;
+
+  startCheck = false;
+
+  error_count[0] = 0;
+  error_count[1] = 0;
+  error_count[2] = 0;
+  error_count[3] = 0;
 }
 
 void set_locomotion_speed()
@@ -79,6 +89,25 @@ void set_locomotion_speed()
   // variable which will hold the pwr (-255 to 255) which will be written to the motors, (front left, front right, rear left, rear right)
   int pwr[4];
   pi_control(enc_vel, pwr, xyz);
+
+  // Check that we are making progress towards goal
+  for (int i = 0; i<4; i++){
+    if(abs(xyz[i] - enc_vel[i]) < 5){
+      startCheck = true;
+    }
+    if(startCheck){
+      if(abs(xyz[i] - enc_vel[i]) > 8){
+        error_count[i]++;
+      }
+    }
+    if(error_count[i] > MAX_ERROR_COUNT){
+      xyz[0] = 0;
+      xyz[1] = 0;
+      xyz[2] = 0;
+      xyz[3] = 0;
+    }
+  }
+
   // set motor speeds
   set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, pwr[0]);
   set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, pwr[1]);
@@ -199,21 +228,22 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
 {
   static float eintegral[4];
 
-  float kp = 2;
-  float ki = 6;
+  float kp = 1.5;
+  float ki = 3;
 
+  
   for (int i = 0; i < 4; i++)
   {
     float vt = *(xyz + i);
-    //-------------------------------------
+    
     // Decrease current draw for large changes and decrease voltage rise time
-    if(vt - *(vel + i) > 25){
-      vt = *(vel + i) + 25;
+    if(vt - *(vel + i) > 50){
+      vt = *(vel + i) + 50;
     }
-    else if(vt - *(vel + i) < -25){
-      vt = *(vel + i) - 25;
+    else if(vt - *(vel + i) < -50){
+      vt = *(vel + i) - 50;
     }
-    //-------------------------------------
+    
     float e = vt - *(vel + i);
     eintegral[i] = eintegral[i] + e * deltaT;
     float u = e * kp + eintegral[i] * ki;
@@ -228,6 +258,13 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
       *(pwr + i) = -255;
     }
   }
+}
+
+void e_stop(){
+  set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, 0);
+  set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, 0);
+  set_motor_speed(REAR_LEFT_PIN1, REAR_LEFT_PIN2, REAR_LEFT_SPEED_PIN, 0);
+  set_motor_speed(REAR_RIGHT_PIN1, REAR_RIGHT_PIN2, REAR_RIGHT_SPEED_PIN, 0);
 }
 
 void init(ros::NodeHandle* nh)
@@ -266,7 +303,7 @@ void init(ros::NodeHandle* nh)
   //nh->advertise(motorState);
   nh->advertise(encoder);
   nh->subscribe(cmd_vel);
-  //nh->advertise(velocity);
+  nh->advertise(velocity);
 }
 
 }  // namespace locomotion
