@@ -23,6 +23,8 @@
  * Author                Date                  Comment
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Nathan Gardner        3/18/23               Original
+ * Luke McGill           3/18/23               Original
+ * Not Mark or Madison
  ******************************************************************************/
 '''
 
@@ -74,7 +76,7 @@ def forward(clicks, speed):
     fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
     pos = fr_encoder
     while(abs(pos - fr_encoder) < clicks):
-        pub_direction(0,50,0)
+        pub_direction(0,speed,0)
         sleep(0.001)
         fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
     pub_direction(0,0,0)
@@ -89,7 +91,7 @@ def backward(clicks, speed):
         fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
     pub_direction(0,0,0)
 
-def left(clicks):
+def left(clicks, speed):
     global encoder
     encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
     fl_pos = encoder.data[0]
@@ -97,7 +99,7 @@ def left(clicks):
     rl_pos = encoder.data[2]
     rr_pos = encoder.data[3]
     while((abs(fl_pos - encoder.data[0]) < clicks) and (abs(fr_pos - encoder.data[1]) < clicks) and (abs(rl_pos - encoder.data[2]) < clicks) and (abs(rr_pos - encoder.data[3]) < clicks)):
-        pub_direction(50,0,0)
+        pub_direction(-speed,0,0)
         sleep(0.001)
         encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
     pub_direction(0,0,0)
@@ -132,12 +134,12 @@ def left(clicks):
     pub_direction(0,0,0)
 '''
 
-def right(clicks):
+def right(clicks, speed):
     global fr_encoder
     fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
     pos = fr_encoder
     while(abs(pos - fr_encoder) < clicks):
-        pub_direction(-50,0,0)
+        pub_direction(speed,0,0)
         sleep(0.001)
         fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
     pub_direction(0,0,0)
@@ -163,26 +165,26 @@ sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
 rospy.init_node('talker', anonymous=True)
 
 sleep(1)
-forward(3800, 100)
+forward(3500, 125)
 sleep(1)
-right(400)
+right(350, 100)
 sleep(1)
-backward(240, 50)
+backward(500, 100)
 sleep(1)
 turn_right()
 turn_right()
 sleep(1)
-backward(800, 50)
+backward(800, 75)
 sleep(1)
-right(300)
+right(300, 100)
 sleep(1)
 backward(400, 50)
 sleep(1)
-forward(8000, 100) #slightly higher because of wall friction 
+forward(8000, 150) #slightly higher because of wall friction 
 sleep(1)
-backward(8000, 100) #slightly higher because of wall friction
+backward(8000, 150) #slightly higher because of wall friction
 sleep(1)
-left(600)
+left(600, 100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -194,7 +196,7 @@ backward(7300, 100)
 sleep(1)
 backward(800, 50)
 sleep(1)
-left(600)
+left(600, 100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -206,7 +208,7 @@ backward(7300, 100)
 sleep(1)
 backward(800, 50)
 sleep(1)
-left(600)
+left(600, 100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -216,7 +218,7 @@ forward(7400, 100)
 sleep(1)
 backward(7300, 100)
 sleep(1)
-left(600)
+left(600,100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -226,7 +228,7 @@ forward(7400, 100)
 sleep(1)
 backward(7300, 100)
 sleep(1)
-left(600)
+left(600,100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -236,7 +238,7 @@ forward(7400, 100)
 sleep(1)
 backward(7300, 100)
 sleep(1)
-left(600)
+left(600,100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -246,7 +248,7 @@ forward(7400, 100)
 sleep(1)
 backward(7300, 100)
 sleep(1)
-left(600)
+left(600,100)
 sleep(1)
 backward(400, 50)
 sleep(1)
@@ -256,7 +258,7 @@ forward(7400, 100)
 sleep(1)
 backward(7300, 100)
 sleep(1)
-left(600)
+left(600,100)
 sleep(1)
 backward(400, 50)
 sleep(1)
