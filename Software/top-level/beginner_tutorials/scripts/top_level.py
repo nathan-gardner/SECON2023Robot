@@ -33,6 +33,7 @@ from time import sleep
 import rospy
 from std_msgs.msg import Int32MultiArray
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Bool
 
 def pub_direction(x, y, z):
     msg.linear.x = x
@@ -40,23 +41,6 @@ def pub_direction(x, y, z):
     msg.angular.z = z
     pub.publish(msg)
 
-'''
-#broken
-def turn_left():
-    pub_direction(0,0,0)
-    sleep(0.5)
-    global fr_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
-    pos = fr_encoder
-    while(abs(pos - fr_encoder) > 740):
-        pub_direction(0,0,-50)
-        sleep(0.1)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
-    pub_direction(0,0,0)
-    sleep(0.5)
-'''
-
-# working
 def turn_right():
     pub_direction(0,0,0)
     sleep(0.5)
@@ -118,22 +102,6 @@ def spin(clicks):
     pub_direction(0,0,0)
 
 
-'''
-def left(clicks):
-    global fr_encoder
-    global rl_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
-    rl_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[2]
-    fr_pos = fr_encoder
-    rl_pos = rl_encoder
-    while((abs(fr_pos - fr_encoder) < clicks) and (abs(rl_pos - rl_encoder) < clicks)):
-        pub_direction(50,0,0)
-        sleep(0.001)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
-        rl_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[2]
-    pub_direction(0,0,0)
-'''
-
 def right(clicks, speed):
     global fr_encoder
     fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
@@ -151,6 +119,10 @@ def callback(data):
     rl_encoder = data.data[2]
     rr_encoder = data.data[3]
 
+# not needed 
+def start_callback(data):
+    pass
+
 # initialize things
 fl_encoder = 0
 fr_encoder = 0
@@ -162,7 +134,14 @@ msg = Twist()
 
 pub = rospy.Publisher('/locomotion/cmd_vel', Twist, queue_size=10)
 sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
+start_sub = rospy.Subscriber('/start', Bool, start_callback)
 rospy.init_node('talker', anonymous=True)
+
+# wait until start is flipped
+start = True
+while(start):
+    start = not rospy.wait_for_message('/start', Bool, timeout=None).data
+    sleep(0.1)
 
 sleep(1)
 forward(3500, 125)
