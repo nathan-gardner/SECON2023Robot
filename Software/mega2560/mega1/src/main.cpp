@@ -18,8 +18,11 @@
 #include <feeding.h>
 #include <locomotion.h>
 #include <consumption.h>
+#include <start.h>
 
 ros::NodeHandle nh;
+
+
 
 /**
  * @brief Setup code for Arduino boot
@@ -32,6 +35,9 @@ void setup()
   locomotion::init(&nh);
   feeding::init(&nh);
   consumption::init(&nh);
+  start::init(&nh);
+
+  Serial.begin(115200);
 }
 
 /**
@@ -40,13 +46,22 @@ void setup()
  */
 void loop()
 {
-  feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
+  start::read();
   locomotion::updateEncoder();
-  locomotion::encoder.publish(&locomotion::u32_motorPosData);
-  consumption::motorState.publish(&consumption::u8_stateMotorConsumption);
-  locomotion::motorState.publish(&locomotion::t_stateMotorLocomotion);
+  locomotion::updateVelocity();
+  start::updateStart();
+  locomotion::computeVelocity(locomotion::enc_vel);
+  locomotion::lowPassFilter(locomotion::enc_vel);
+  locomotion::set_locomotion_speed();
+  feeding::maestro.setTargetMiniSSC(2, feeding::u8_rightFeedingServoPos);
+  feeding::maestro.setTargetMiniSSC(3, feeding::u8_leftFeedingServoPos);
+  locomotion::velocity.publish(&locomotion::af32_velocity);
+  locomotion::encoder.publish(&locomotion::i32_motorPosData);
+  start::start.publish(&start::b_start);
+  //consumption::motorState.publish(&consumption::u8_stateMotorConsumption);
+  //locomotion::motorState.publish(&locomotion::t_stateMotorLocomotion);
   nh.spinOnce();
-  delay(10);
+  delay(150);
 }
 
 #endif

@@ -29,8 +29,8 @@ void init(ros::NodeHandle* nh)
   // Consumption
   pinMode(PWM1, OUTPUT);
   // consumption
-  nh->advertise(motorState);
-  nh->subscribe(cmdMotorState);
+  //nh->advertise(motorState);
+  //nh->subscribe(cmdMotorState);
 
   // initialize consumption motor state to false and motor state to off
   u8_stateMotorConsumption.data = 0;
