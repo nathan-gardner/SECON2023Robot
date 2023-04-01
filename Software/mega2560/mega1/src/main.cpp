@@ -53,7 +53,8 @@ void loop()
   locomotion::computeVelocity(locomotion::enc_vel);
   locomotion::lowPassFilter(locomotion::enc_vel);
   locomotion::set_locomotion_speed();
-  feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
+  feeding::maestro.setTargetMiniSSC(2, feeding::u8_rightFeedingServoPos);
+  feeding::maestro.setTargetMiniSSC(3, feeding::u8_leftFeedingServoPos);
   locomotion::velocity.publish(&locomotion::af32_velocity);
   locomotion::encoder.publish(&locomotion::i32_motorPosData);
   start::start.publish(&start::b_start);
