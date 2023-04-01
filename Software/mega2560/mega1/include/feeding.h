@@ -12,10 +12,12 @@
 namespace feeding
 {
 extern MicroMaestro maestro;
-extern uint8_t u8_feedingServoPos;
+extern uint8_t u8_redFeedingServoPos;
+extern uint8_t u8_greenFeedingServoPos;
 
 // Feeding Sub
-extern ros::Subscriber<std_msgs::String> servo_pos;
+extern ros::Subscriber<std_msgs::String> red_servo_pos;
+extern ros::Subscriber<std_msgs::String> blue_servo_pos;
 
 /**
  * @brief Decodes std_msgs::String and update feeding servo position. The exact value of the positions will need to be
@@ -23,7 +25,15 @@ extern ros::Subscriber<std_msgs::String> servo_pos;
  *
  * @param msg std_msgs::String& value for the changed position of the feeding servo
  */
-void cmdPosServo(const std_msgs::String& msg);
+void cmdRedPosServo(const std_msgs::String& msg);
+
+/**
+ * @brief Decodes std_msgs::String and update feeding servo position. The exact value of the positions will need to be
+ * found when the feeding system has been designed.
+ *
+ * @param msg std_msgs::String& value for the changed position of the feeding servo
+ */
+void cmdBluePosServo(const std_msgs::String& msg);
 
 /**
  * @brief Initialization for the feeding namespace

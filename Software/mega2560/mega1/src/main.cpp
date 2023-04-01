@@ -40,7 +40,8 @@ void setup()
  */
 void loop()
 {
-  feeding::maestro.setTargetMiniSSC(0, feeding::u8_feedingServoPos);
+  feeding::maestro.setTargetMiniSSC(2, feeding::u8_redFeedingServoPos);
+  feeding::maestro.setTargetMiniSSC(3, feeding::u8_greenFeedingServoPos);
   locomotion::updateEncoder();
   locomotion::encoder.publish(&locomotion::u32_motorPosData);
   consumption::motorState.publish(&consumption::u8_stateMotorConsumption);

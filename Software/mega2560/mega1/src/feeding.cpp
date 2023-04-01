@@ -11,31 +11,50 @@
 namespace feeding
 {
 MicroMaestro maestro(maestroSerial);
-uint8_t u8_feedingServoPos = 0;
+uint8_t u8_redFeedingServoPos = 0;
+uint8_t u8_greenFeedingServoPos = 0;
 
 // Feeding Sub
-ros::Subscriber<std_msgs::String> servo_pos("/feeding/cmd_servo_pos", &cmdPosServo);
+ros::Subscriber<std_msgs::String> red_servo_pos("/feeding/cmd_red_servo_pos", &cmdRedPosServo);
+ros::Subscriber<std_msgs::String> blue_servo_pos("/feeding/cmd_blue_servo_pos", &cmdBluePosServo);
 
-void cmdPosServo(const std_msgs::String& msg)
+void cmdRedPosServo(const std_msgs::String& msg)
 {
   if (strcmp(msg.data, "LEFT") == 0)
   {
-    u8_feedingServoPos = 254;
+    u8_redFeedingServoPos = 254;
   }
   else if (strcmp(msg.data, "RIGHT") == 0)
   {
-    u8_feedingServoPos = 0;
+    u8_redFeedingServoPos = 0;
   }
   else
   {
-    u8_feedingServoPos = 254;
+    u8_redFeedingServoPos = 254;
+  }
+}
+
+void cmdBluePosServo(const std_msgs::String& msg)
+{
+  if (strcmp(msg.data, "LEFT") == 0)
+  {
+    u8_greenFeedingServoPos = 254;
+  }
+  else if (strcmp(msg.data, "RIGHT") == 0)
+  {
+    u8_greenFeedingServoPos = 0;
+  }
+  else
+  {
+    u8_greenFeedingServoPos = 254;
   }
 }
 
 void init(ros::NodeHandle* nh)
 {
   // feeding
-  nh->subscribe(servo_pos);
+  nh->subscribe(red_servo_pos);
+  nh->subscribe(blue_servo_pos);
   // Setup servo for feeding
   maestroSerial.begin(9600);
   maestro.setTarget(0, 6000);
