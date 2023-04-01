@@ -10,7 +10,7 @@
 #define SOLENOIDPIN1 15
 #define SOLENOIDPIN2 14
 
-#define maestroSerial Serial1
+#define maestroSerial Serial2
 
 namespace DuckStorage{
 extern MicroMaestro maestro;
