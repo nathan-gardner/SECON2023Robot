@@ -23,10 +23,12 @@ ros::NodeHandle nh;
 void setup() {
   nh.initNode();
   DuckStorage::init(&nh);
+
+  Serial.begin(115200);
 }
 
 void loop() {
-  DuckStorage::maestro.setTargetMiniSSC(0, DuckStorage::u8_duckStorageServoPos);
+  //DuckStorage::maestro.setTargetMiniSSC(0, DuckStorage::u8_duckStorageServoPos);
   nh.spinOnce();
   delay(10);
 }

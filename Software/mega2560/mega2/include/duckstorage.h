@@ -7,8 +7,8 @@
 #include <std_msgs/Bool.h>
 #include <PololuMaestro.h>
 
-#define solenoidPin 7
-#define solenoidPin2 8
+#define SOLENOIDPIN1 15
+#define SOLENOIDPIN2 14
 
 #define maestroSerial Serial1
 

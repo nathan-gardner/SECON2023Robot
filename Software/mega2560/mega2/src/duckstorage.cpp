@@ -9,8 +9,8 @@
 
 #include <duckstorage.h>
 
-#define solenoidPin 7
-#define solenoidPin2 8
+#define SOLENOIDPIN1 15
+#define SOLENOIDPIN2 14
 
 #define maestroSerial Serial2
 
@@ -22,44 +22,39 @@ MicroMaestro maestro(maestroSerial);
 uint8_t u8_duckStorageServoPos = 0;
 
 ros::Subscriber<std_msgs::String> servo_pos("/duckstorage/cmd_servo_pos", &cmdPosServo);
-ros::Subscriber<std_msgs::Bool> solenoid_pos("/duckstorage/cmd_solenoide_pos", &cmdPosSolenoid);
+ros::Subscriber<std_msgs::Bool> solenoid_pos("/duckstorage/cmd_solenoid_pos", &cmdPosSolenoid);
 
 void cmdPosServo(const std_msgs::String& msg)
 {
-  if (strcmp(msg.data, "LEFT") == 0)
+  if (strcmp(msg.data, "EXTEND") == 0)
   {
-    u8_duckStorageServoPos = 254;
-  }
-  else if (strcmp(msg.data, "RIGHT") == 0)
-  {
-    u8_duckStorageServoPos = 0;
-  }
-  else
-  {
-    u8_duckStorageServoPos = 254;
+    maestro.restartScript(0);
   }
 }
 
 void cmdPosSolenoid(const std_msgs::Bool& msg)
 {
-    if(msg.data == true)
+    if(msg.data == true) // retract solenoid
     {
-        digitalWrite(solenoidPin, HIGH);
-        digitalWrite(solenoidPin2, HIGH);
+        digitalWrite(SOLENOIDPIN1, HIGH);
+        digitalWrite(SOLENOIDPIN2, HIGH);
     }
-    else if(msg.data == false)
+    else if(msg.data == false) // extend solenoid
     {
-        digitalWrite(solenoidPin, LOW);
-        digitalWrite(solenoidPin2, LOW);
+        digitalWrite(SOLENOIDPIN1, LOW);
+        digitalWrite(SOLENOIDPIN2, LOW);
     }
 }
 
 void init(ros::NodeHandle* nh)
 {
     nh->subscribe(servo_pos);
+    nh->subscribe(solenoid_pos);
 
-    pinMode(solenoidPin, OUTPUT);
-    pinMode(solenoidPin2, OUTPUT);
+    pinMode(SOLENOIDPIN1, OUTPUT);
+    pinMode(SOLENOIDPIN2, OUTPUT);
+    digitalWrite(SOLENOIDPIN1, LOW);
+    digitalWrite(SOLENOIDPIN2, LOW);
     maestroSerial.begin(9600);
     DuckStorage::maestro.setTarget(0, 6000);
 }
