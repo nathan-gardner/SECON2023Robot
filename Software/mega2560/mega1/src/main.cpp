@@ -15,9 +15,10 @@
 #include <Arduino.h>
 #include <ros.h>
 
-#include <feeding.h>
 #include <locomotion.h>
+#include <feeding.h>
 #include <consumption.h>
+#include <duckstorage.h>
 #include <start.h>
 
 ros::NodeHandle nh;
@@ -35,6 +36,7 @@ void setup()
   locomotion::init(&nh);
   feeding::init(&nh);
   consumption::init(&nh);
+  DuckStorage::init(&nh);
   start::init(&nh);
 
   Serial.begin(115200);
