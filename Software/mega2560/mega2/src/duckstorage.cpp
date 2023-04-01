@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <ros.h>
 #include <std_msgs/String.h>
+#include <std_msgs/Bool.h>
 #include <PololuMaestro.h>
 
 #include <duckstorage.h>
@@ -11,17 +12,17 @@
 #define solenoidPin 7
 #define solenoidPin2 8
 
-#define maestroSerial Serial1
+#define maestroSerial Serial2
 
 namespace DuckStorage{
 void cmdPosServo(const std_msgs::String& msg);
-void cmdPosSolenoid(const std_msgs::String& msg);
+void cmdPosSolenoid(const std_msgs::Bool& msg);
 
 MicroMaestro maestro(maestroSerial);
 uint8_t u8_duckStorageServoPos = 0;
 
 ros::Subscriber<std_msgs::String> servo_pos("/duckstorage/cmd_servo_pos", &cmdPosServo);
-ros::Subscriber<std_msgs::String> solenoid_pos("/duckstorage/cmd_solenoide_pos", &cmdPosSolenoid);
+ros::Subscriber<std_msgs::Bool> solenoid_pos("/duckstorage/cmd_solenoide_pos", &cmdPosSolenoid);
 
 void cmdPosServo(const std_msgs::String& msg)
 {
@@ -39,14 +40,14 @@ void cmdPosServo(const std_msgs::String& msg)
   }
 }
 
-void cmdPosSolenoid(const std_msgs::String& msg)
+void cmdPosSolenoid(const std_msgs::Bool& msg)
 {
-    if(strcmp(msg.data, "IN") == 0)
+    if(msg.data == true)
     {
         digitalWrite(solenoidPin, HIGH);
         digitalWrite(solenoidPin2, HIGH);
     }
-    else if(strcmp(msg.data, "OUT") == 0)
+    else if(msg.data == false)
     {
         digitalWrite(solenoidPin, LOW);
         digitalWrite(solenoidPin2, LOW);
