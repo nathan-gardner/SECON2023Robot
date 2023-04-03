@@ -32,14 +32,26 @@ from time import sleep
 
 import rospy
 from std_msgs.msg import Int32MultiArray
-from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool
+from std_msgs.msg import String
+from geometry_msgs.msg import Twist
+
 
 def pub_direction(x, y, z):
-    msg.linear.x = x
-    msg.linear.y = y
-    msg.angular.z = z
-    pub.publish(msg)
+    cmd_vel_msg.linear.x = x
+    cmd_vel_msg.linear.y = y
+    cmd_vel_msg.angular.z = z
+    cmd_vel_pub.publish(cmd_vel_msg)
+
+def extend_trailer():
+    cmd_solenoid_pos_msg.data = True
+    cmd_solenoid_pos_pub.publish(cmd_solenoid_pos_msg)
+    sleep(1)
+    cmd_servo_pos_msg.data = "EXTEND"
+    cmd_servo_pos_pub.publish(cmd_servo_pos_msg)
+    sleep(1)
+    cmd_solenoid_pos_msg.data = False
+    cmd_solenoid_pos_pub.publish(cmd_solenoid_pos_msg)
 
 def turn_right():
     pub_direction(0,0,0)
@@ -129,12 +141,21 @@ fr_encoder = 0
 rl_encoder = 0
 rr_encoder = 0
 
-global msg
-msg = Twist()
+global cmd_vel_msg
+global cmd_servo_pos_msg
+global cmd_solenoid_pos_msg
+cmd_vel_msg = Twist()
+cmd_servo_pos_msg = String()
+cmd_solenoid_pos_msg = Bool()
 
-pub = rospy.Publisher('/locomotion/cmd_vel', Twist, queue_size=10)
+# initislize publishers and subscribers 
+cmd_vel_pub = rospy.Publisher('/locomotion/cmd_vel', Twist, queue_size=10)
+cmd_servo_pos_pub = rospy.Publisher('/duckstorage/cmd_servo_pos', String, queue_size=10)
+cmd_solenoid_pos_pub = rospy.Publisher('/duckstorage/cmd_solenoid_pos', Bool, queue_size=10)
 sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
 start_sub = rospy.Subscriber('/start', Bool, start_callback)
+
+# initialize node
 rospy.init_node('talker', anonymous=True)
 
 # wait until start is flipped
@@ -142,6 +163,9 @@ start = True
 while(start):
     start = not rospy.wait_for_message('/start', Bool, timeout=None).data
     sleep(0.1)
+
+# Extend the trailer at the beginning
+extend_trailer()
 
 sleep(1)
 forward(3500, 125)
@@ -241,46 +265,3 @@ left(600,100)
 sleep(1)
 backward(400, 50)
 sleep(1)
-
-'''
-sleep(1)
-forward(3800, 75)
-sleep(1)
-right(400)
-sleep(1)
-backward(240, 50)
-sleep(1)
-turn_right()
-sleep(1)
-turn_right()
-sleep(1)
-backward(800, 50)
-sleep(1)
-right(300)
-sleep(1)
-left(600)
-sleep(1)
-backward(400, 50)
-sleep(1)
-forward(6500, 75)
-sleep(1)
-backward(6500, 150)
-sleep(1)
-backward(800, 50)
-sleep(1)
-left(600)
-sleep(1)
-forward(6500, 75)
-sleep(1)
-backward(6500, 150)
-sleep(1)
-backward(800, 50)
-sleep(1)
-left(600)
-sleep(1)
-forward(6500, 75)
-sleep(1)
-backward(6500, 150)
-'''
-
-
