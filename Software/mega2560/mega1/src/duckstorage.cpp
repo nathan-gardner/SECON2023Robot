@@ -30,6 +30,10 @@ void cmdPosServo(const std_msgs::String& msg)
   {
     maestro.restartScript(0);
   }
+  else if (strcmp(msg.data, "RETRACT") == 0)
+  {
+    maestro.restartScript(1);
+  }
 }
 
 void cmdPosSolenoid(const std_msgs::Bool& msg)

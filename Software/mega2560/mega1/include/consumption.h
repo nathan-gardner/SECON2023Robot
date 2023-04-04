@@ -3,20 +3,22 @@
 
 #include <Arduino.h>
 #include <ros.h>
-#include <std_msgs/UInt8.h>
+#include <std_msgs/Bool.h>
 
 // Consumption Defs
-#define PWM1 23
+#define PWM1 23 // depricated
+#define CONSUMPTIONPIN1 8
+#define CONSUMPTIONPIN2 9
 #define consumptionMotorOff analogWrite(PWM1, 0)
 
 namespace consumption
 {
 // Consumption Data
-extern std_msgs::UInt8 u8_stateMotorConsumption;
+//extern std_msgs::UInt8 u8_stateMotorConsumption;
 
 // Consumption Pub/Sub
-extern ros::Publisher motorState;
-extern ros::Subscriber<std_msgs::UInt8> cmdMotorState;
+//extern ros::Publisher motorState;
+extern ros::Subscriber<std_msgs::Bool> cmdMotorState;
 
 /**
  * @brief Callback for ros::Subscriber /locomotion/cmd_vel
@@ -24,7 +26,7 @@ extern ros::Subscriber<std_msgs::UInt8> cmdMotorState;
  *
  * @param msg Updated std_msgs::UInt8 value published to /consumption/cmdMotorState
  */
-void consumptionCallback(const std_msgs::UInt8& msg);
+void consumptionCallback(const std_msgs::Bool& msg);
 
 /**
  * @brief Initialization for the consumption namespace
