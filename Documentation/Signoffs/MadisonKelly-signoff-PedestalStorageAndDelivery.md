@@ -1,4 +1,6 @@
-# Pedestal Storage and Delivery
+# Pedestal Storage and Delivery - Not Implemented
+
+Due to shipping issues with the sorting subsystem, this subsystem was not able to be implemented.
 
 ## Function of the Subsystem
 Throughout each round of the competition, the robot will need to intake up to seven pedestals. Once the pedestals are collected, they’ll need to be sorted and stored until it is the appropriate time to drop them off. The team plans to collect three pedestals before placing them wherever the robot may be upon the collection of the third pedestal. After that, it will place one or two stacks of two depending on whether or not all pedestals were collected. 
