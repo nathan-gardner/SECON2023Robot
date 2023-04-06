@@ -1,4 +1,7 @@
-# **Sorting Subsystem**
+# **Sorting Subsystem** - Not Implemented
+
+Due to shipping issues, this subsystem was cut.
+
 ## **Function of The Subsystem** 
 - Take ducks and pedestals from the comsumption susbsytem to their proper storage locations via a conveyor belt and flipper.
 - Actively sort pedestals while passively sorting ducks. 
