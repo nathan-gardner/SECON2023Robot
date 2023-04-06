@@ -1,4 +1,6 @@
-# Vision Sensor Network Subsystem Signoff
+# Vision Sensor Network Subsystem Signoff - Not Implemented
+
+The vision subsystem was cut due to not recieving sensors. 
 
 # Function of the subsystem
 
