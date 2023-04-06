@@ -1,20 +1,28 @@
-# Feeding Subsystem
+# Feeding Subsystem - revised 4/6/2023
 
-## Function
+## Function 
 
-- Deliver the correct chip to the correct area based on color
-  - Color will be detected with the color sensor from vision subsystem
+~~- Deliver the correct chip to the correct area based on color~~
 
-There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and spin the servo the correct direction in order to drop the right color chip through the false bottom on the feeding subsystem. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the different colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated to a specific orientation, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate clockwise or counterclockwise, which will allow the chips to fall through a false bottom and onto the aquarium area. 
+~~- Color will be detected with the color sensor from vision subsystem~~
 
-The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before dispersing the chips onto the playing field. 
+~~There will be rectangles in the left corners of the arena which will be green (0x00FF00) and red (0xFF0000). Green signifies the manatees and red signifies the alligators aquarium. A color sensor will be pointed towards the ground and will detect the color of the aquarium, and spin the servo the correct direction in order to drop the right color chip through the false bottom on the feeding subsystem. This will allow the servo positions to be preprogrammed, so that the robot can react correctly to the different colored aquariums. The servo will be connected to a plate that will hold the chips up, but when the servo is actuated to a specific orientation, the chips will fall through a hole onto the floor of the arena and into the correct aquarium. The chips will sit in a sort of silo, and will be held up by a plate connected to the servo. The servo will rotate clockwise or counterclockwise, which will allow the chips to fall through a false bottom and onto the aquarium area.~~
+
+~~The position of the aquariums can be reflected based on the arena we are playing in, this is the reason for the design choice of making the robot detect the color before dispersing the chips onto the playing field.~~
+
+- Deliver the correct chip to the correct area
+
+There will be rectangles in the left corners of the arena which will be green and red. Green signifies the manatees and red signifies the alligators aquarium. The robot will drop the chips in their respective areas based on the teams' placement before the competition. The servos will activate when they reach their pre-determined destination on each animal area. There will be two servos mounted on either side of the robot that will hold either red or green chips in a small "cup". Once they reach their destinations, the servos will turn about 180&deg; and dump the chips out of the cups, leaving the chips behind.
 
 The competition rules allow for the feeding chips to be preloaded into the robot, so someone on the team will load the color chips into the feeding subsystem before the start of each round. One of the two silos will be loaded with green chips and the other of the two silos will be loaded with red chips. 
 
+
 ## Constraints
 
-- The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit within the robot. 
-- The servo motor must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so a micro servo can be used. The calculation for the needed torque is below in analysis. 
+~~- The size of this subsystem will have to be such that it takes up only enough space to fit the chips (6.15 $in^3$) and allow space for the rest of the components on the robot. Analysis for the allowable size of feeding system is in analysis, with CAD models showing subsystem fit within the robot.~~
+
+- The servos with the chip cups attached will be mounted towards the top of the robot in order to allow for some much needed space within the robot. The cups they are held in are 1.5 in diameter by 5 in height. Since they are mounted towards the outer edge on the top, they will not be taking up much space inside the robot.
+- The servo motors must be as small as possible, while also providing necessary torque. The torque needed is 0.0494 $N \ast m$, so micro servos can be used. The calculation for the needed torque is below in analysis.
 
 ## Buildable Schematic
 
@@ -62,17 +70,19 @@ The electrical schematic for the feeding subsystem is shown below.
 
 ### Size
 
-The dispensers that the chips will be stored in must be able to fit the chips. There will be three chips of each color, so the chips must be able to be stacked to a height of three in each silo. 
+~~The dispensers that the chips will be stored in must be able to fit the chips. There will be three chips of each color, so the chips must be able to be stacked to a height of three in each silo.~~ 
 
 Chip Size $= 1.5 in \ast 0.1 in$
 
-Dispenser Interior Size $= 4.5 in \ast 0.15 in \ast 1.5 in$
+~~Dispenser Interior Size $= 4.5 in \ast 0.15 in \ast 1.5 in$~~
 
-Therefore, the chips will comfortably fit inside the tubes. This part will also be 3D printed, so the sizing can be adjusted during testing. The chips will fit into the silos in a way similar to how chips fit into a game of Connect 4, they will be top loaded and sit so that the diameter of the chip, $1.5 inches$, is the height of the chip when it is loaded into the silo. 
+Dispenser Interior Size $= \pi \ast 1.5 in \ast 0.5 in = 0.88 in^3$
+
+Therefore, the chips will comfortably fit inside the cups. ~~This part will also be 3D printed, so the sizing can be adjusted during testing. The chips will fit into the silos in a way similar to how chips fit into a game of Connect 4, they will be top loaded and sit so that the diameter of the chip, $1.5 inches$, is the height of the chip when it is loaded into the silo.~~ 
 
 ### Motor Torque
 
-The motor will only need to push the weight of the small 3D printed plate. The volume of the 3D printed chips are calculated and modeled as a cylinder below:
+The motor will only need to push the weight of the ~~small 3D printed plate.~~ cups with the chips inside. The volume of the 3D printed chips are calculated and modeled as a cylinder below:
 
 $V = \pi r^2 h = \pi \ast 0.75^2 \ast 0.1 = 0.176715\ in^3$
 
