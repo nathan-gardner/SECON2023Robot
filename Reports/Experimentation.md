@@ -8,8 +8,6 @@ The results of the experiments should be in the proper format. Data that is best
 # **Experimental Analysis**
 
 ## **Constraints from Signoffs:**
-### **Vision:**
-- Due to shipping issues (idk how to put this to make it sound better), the team made the decision to cut this subsystem. Therefore, there was no experimentation.
 
 ### **Feeding:**
 - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.(****PUT PICTURE BELOW***)
@@ -30,9 +28,6 @@ The results of the experiments should be in the proper format. Data that is best
 - Due to shipping issues and sensors not coming in, the team changed the path plan, so the original idea for making a full 180 turn is not necessary. Therefore, that constraint is obsolete.
 - The rack and pinion is located inside the robot. Therefore, it is not a pinching hazard.
 
-### **Pedestal Storage and Delivery:**
-- Due to items not coming in for the sorting subsystem, there was no longer a need for the pedestal storage and delivery subsystem. Therefore, there was no experimentation on this subsystem.
-
 ### **Power:**
 - The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs.
 - The output of the battery is regulated by the DC-DC Converter and provides a constant 11.97 V to sufficiently power all components.
@@ -41,9 +36,6 @@ The results of the experiments should be in the proper format. Data that is best
 - The inductive load from the motors was not found to be an issue, so the team decided to not add the capacitors on the input of the motors.
 - The team is using a 12 V bus and a 6 V bus. There was no need for a 6 V bus.
 - The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.25 V to supply the Jetson.
-
-### **Sorting:**
-- Due to items not coming in, this subsystem had to be cut from the robot’s functionality. Therefore, there was no experimentation.
 
 ### **Low-Level Controller:**
 - The arduinos had more than enough GPIO especially with all of the sensors not being shipped in and able to be used. The team was able to cut down to using only one arduino instead of the expected two arduinos.
