@@ -42,7 +42,7 @@
 #define REAR_LEFT_ENCA 3
 #define REAR_LEFT_ENCB 4
 
-#define MAX_ERROR_COUNT 8
+#define MAX_ERROR_COUNT 2
 
 #define CLICKS_PER_ROTATION 562.2
 
@@ -60,6 +60,7 @@ extern volatile float xyz[4];
 
 extern int error_count[4];
 extern bool startCheck;
+extern bool newDir;
 
 extern float deltaT;
 

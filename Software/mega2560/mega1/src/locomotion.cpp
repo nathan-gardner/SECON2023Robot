@@ -26,6 +26,7 @@ volatile float xyz[4] = { 0, 0, 0, 0 };
 
 int error_count[4] = { 0, 0, 0, 0 };
 bool startCheck = false;
+bool newDir = false;
 
 float deltaT = 0;
 
@@ -60,6 +61,11 @@ void set_motor_speed(int motor_pin1, int motor_pin2, int speed_pin, int motor_sp
 
 void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
 {
+  if(cmd_vel.linear.x != t_stateMotorLocomotion.linear.x ||
+    cmd_vel.linear.y != t_stateMotorLocomotion.linear.y ||
+    cmd_vel.angular.z != t_stateMotorLocomotion.angular.z){
+    newDir = true;
+  }
   t_stateMotorLocomotion = cmd_vel;
   // calculate motor speeds from twist message
   float x = cmd_vel.linear.x;
@@ -89,7 +95,7 @@ void set_locomotion_speed()
   // variable which will hold the pwr (-255 to 255) which will be written to the motors, (front left, front right, rear left, rear right)
   int pwr[4];
   pi_control(enc_vel, pwr, xyz);
-
+  
   // Check that we are making progress towards goal
   for (int i = 0; i<4; i++){
     if(abs(xyz[i] - enc_vel[i]) < 5){
@@ -107,7 +113,6 @@ void set_locomotion_speed()
       xyz[3] = 0;
     }
   }
-
   // set motor speeds
   set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, pwr[0]);
   set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, pwr[1]);
@@ -228,6 +233,14 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
 {
   static float eintegral[4];
 
+  if(newDir){
+    eintegral[0] = 0;
+    eintegral[1] = 0;
+    eintegral[2] = 0;
+    eintegral[3] = 0;
+    newDir = false;
+  }
+
   float kp = 1.5;
   float ki = 3;
 
@@ -235,7 +248,7 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
   for (int i = 0; i < 4; i++)
   {
     float vt = *(xyz + i);
-    
+    /*
     // Decrease current draw for large changes and decrease voltage rise time
     if(vt - *(vel + i) > 50){
       vt = *(vel + i) + 50;
@@ -243,7 +256,7 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
     else if(vt - *(vel + i) < -50){
       vt = *(vel + i) - 50;
     }
-    
+    */
     float e = vt - *(vel + i);
     eintegral[i] = eintegral[i] + e * deltaT;
     float u = e * kp + eintegral[i] * ki;
