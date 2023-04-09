@@ -29,7 +29,6 @@ bool startCheck = false;
 bool newDir = false;
 
 float deltaT = 0;
-float prevE = 0;
 
 std_msgs::Float32MultiArray af32_velocity;
 ros::Publisher velocity("/locomotion/velocity", &af32_velocity);
@@ -234,6 +233,7 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
 {
   static float eintegral[4];
   static float ederivative[4];
+  static float prevE;
 
   if(newDir){
     eintegral[0] = 0;
@@ -250,7 +250,7 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
 
   float kp = 1.5;
   float ki = 3;
-  float kd = 0.5;
+  float kd = 0;
 
   
   for (int i = 0; i < 4; i++)
