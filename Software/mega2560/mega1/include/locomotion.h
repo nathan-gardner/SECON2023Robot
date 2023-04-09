@@ -42,7 +42,7 @@
 #define REAR_LEFT_ENCA 3
 #define REAR_LEFT_ENCB 4
 
-#define MAX_ERROR_COUNT 2
+#define MAX_ERROR_COUNT 14
 
 #define CLICKS_PER_ROTATION 562.2
 
