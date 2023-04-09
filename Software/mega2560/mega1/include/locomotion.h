@@ -63,6 +63,7 @@ extern bool startCheck;
 extern bool newDir;
 
 extern float deltaT;
+extern float prevE;
 
 extern std_msgs::Float32MultiArray af32_velocity;
 extern ros::Publisher velocity;

@@ -29,6 +29,7 @@ bool startCheck = false;
 bool newDir = false;
 
 float deltaT = 0;
+float prevE = 0;
 
 std_msgs::Float32MultiArray af32_velocity;
 ros::Publisher velocity("/locomotion/velocity", &af32_velocity);
@@ -232,17 +233,24 @@ void lowPassFilter(volatile float* vel)
 void pi_control(float* vel, int* pwr, volatile float* xyz)
 {
   static float eintegral[4];
+  static float ederivative[4];
 
   if(newDir){
     eintegral[0] = 0;
     eintegral[1] = 0;
     eintegral[2] = 0;
     eintegral[3] = 0;
+    ederivative[0] = 0;
+    ederivative[1] = 0;
+    ederivative[2] = 0;
+    ederivative[3] = 0;
+
     newDir = false;
   }
 
   float kp = 1.5;
   float ki = 3;
+  float kd = 0.5;
 
   
   for (int i = 0; i < 4; i++)
@@ -259,7 +267,8 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
     */
     float e = vt - *(vel + i);
     eintegral[i] = eintegral[i] + e * deltaT;
-    float u = e * kp + eintegral[i] * ki;
+    ederivative[i] = (e - prevE)/deltaT;
+    float u = e * kp + eintegral[i] * ki + ederivative[i] * kd;
     *(pwr + i) = (int)u;
     // cap pwr at -255 or 255
     if (*(pwr + i) > 255)
@@ -270,6 +279,7 @@ void pi_control(float* vel, int* pwr, volatile float* xyz)
     {
       *(pwr + i) = -255;
     }
+    prevE = e;
   }
 }
 
