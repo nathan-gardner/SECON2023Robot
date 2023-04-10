@@ -75,12 +75,12 @@ def turn_right():
     pub_direction(0,0,0)
     sleep(0.5)
     global fr_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pos = fr_encoder
     while(abs(pos - fr_encoder) < 880):
         pub_direction(0,0,50)
         sleep(0.001)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pub_direction(0,0,0)
     sleep(0.5)
 
@@ -88,38 +88,38 @@ def turn_left():
     pub_direction(0,0,0)
     sleep(0.5)
     global fr_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pos = fr_encoder
-    while(abs(pos - fr_encoder) < 880):
+    while(abs(pos - fr_encoder) < 900):
         pub_direction(0,0,-50)
         sleep(0.001)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pub_direction(0,0,0)
     sleep(0.5)
 
 def forward(clicks, speed):
     global fr_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pos = fr_encoder
     while(abs(pos - fr_encoder) < clicks):
         pub_direction(0,speed,0)
         sleep(0.001)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pub_direction(0,0,0)
 
 def backward(clicks, speed):
     global fr_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pos = fr_encoder
     while(abs(pos - fr_encoder) < clicks):
         pub_direction(0,-speed,0)
         sleep(0.001)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pub_direction(0,0,0)
 
 def left(clicks, speed):
     global encoder
-    encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+    encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None)
     fl_pos = encoder.data[0]
     fr_pos = encoder.data[1]
     rl_pos = encoder.data[2]
@@ -127,12 +127,12 @@ def left(clicks, speed):
     while((abs(fl_pos - encoder.data[0]) < clicks) and (abs(fr_pos - encoder.data[1]) < clicks) and (abs(rl_pos - encoder.data[2]) < clicks) and (abs(rr_pos - encoder.data[3]) < clicks)):
         pub_direction(-speed,0,0)
         sleep(0.001)
-        encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+        encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None)
     pub_direction(0,0,0)
 
 def spin(clicks):
     global encoder
-    encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+    encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None)
     fl_pos = encoder.data[0]
     fr_pos = encoder.data[1]
     rl_pos = encoder.data[2]
@@ -140,30 +140,30 @@ def spin(clicks):
     while((abs(fl_pos - encoder.data[0]) < clicks) and (abs(fr_pos - encoder.data[1]) < clicks) and (abs(rl_pos - encoder.data[2]) < clicks) and (abs(rr_pos - encoder.data[3]) < clicks)):
         pub_direction(50,0,0)
         sleep(0.001)
-        encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None)
+        encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None)
     pub_direction(0,0,0)
 
 
 def right(clicks, speed):
     global fr_encoder
-    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+    fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pos = fr_encoder
     while(abs(pos - fr_encoder) < clicks):
         pub_direction(speed,0,0)
         sleep(0.001)
-        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Twist, timeout=None).data[1]
+        fr_encoder = rospy.wait_for_message('/locomotion/encoder', Int32MultiArray, timeout=None).data[1]
     pub_direction(0,0,0)
 
-def callback(data):
-    print(str(data.data[0]) + ' ' + str(data.data[1]) + ' ' + str(data.data[2]) + ' ' + str(data.data[3]))
-    fl_encoder = data.data[0]
-    fr_encoder = data.data[1]
-    rl_encoder = data.data[2]
-    rr_encoder = data.data[3]
+#def callback(data):
+#    print(str(data.data[0]) + ' ' + str(data.data[1]) + ' ' + str(data.data[2]) + ' ' + str(data.data[3]))
+#    fl_encoder = data.data[0]
+#    fr_encoder = data.data[1]
+#    rl_encoder = data.data[2]
+#    rr_encoder = data.data[3]
 
 # not needed 
-def start_callback(data):
-    pass
+#def start_callback(data):
+#    pass
 
 # initialize things
 fl_encoder = 0
@@ -171,7 +171,7 @@ fr_encoder = 0
 rl_encoder = 0
 rr_encoder = 0
 
-delay = 1
+delay = 0.3
 
 global cmd_vel_msg
 global cmd_servo_pos_msg
@@ -190,8 +190,8 @@ cmd_servo_pos_pub = rospy.Publisher('/duckstorage/cmd_servo_pos', String, queue_
 cmd_solenoid_pos_pub = rospy.Publisher('/duckstorage/cmd_solenoid_pos', Bool, queue_size=10)
 cmd_left_servo_pub = rospy.Publisher('/feeding/cmd_left_servo_pos', String, queue_size=10)
 cmd_right_servo_pub = rospy.Publisher('/feeding/cmd_right_servo_pos', String, queue_size=10)
-sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
-start_sub = rospy.Subscriber('/start', Bool, start_callback)
+#sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
+#start_sub = rospy.Subscriber('/start', Bool, start_callback)
 
 # initialize node
 rospy.init_node('talker', anonymous=True)
@@ -201,9 +201,11 @@ start = True
 while(start):
     start = not rospy.wait_for_message('/start', Bool, timeout=None).data
     sleep(0.1)
+    print('WAIT FOR START')
 
 # Extend the trailer at the beginning
-# extend_trailer()
+print('***START***')
+#extend_trailer()
 sleep(delay)
 forward(3200, 100)
 sleep(delay)
@@ -245,7 +247,7 @@ right(400, 75)
 sleep(delay)
 turn_right()
 sleep(delay)
-right(900, 50)
+right(500, 50)
 sleep(delay)
 left(200, 60)
 sleep(delay)
@@ -285,8 +287,8 @@ left(500, 50)
 sleep(delay)
 right(400, 75)
 sleep(delay)
-# drop trailer
-forward(2600, 100)
+extend_trailer()
+forward(2600, 150)
 sleep(delay)
 forward(300, 50)
 sleep(delay)
