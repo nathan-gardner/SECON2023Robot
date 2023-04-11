@@ -34,6 +34,7 @@ import rospy
 from std_msgs.msg import Int32MultiArray
 from std_msgs.msg import Bool
 from std_msgs.msg import String
+from std_msgs.msg import UInt8
 from geometry_msgs.msg import Twist
 
 
@@ -178,11 +179,13 @@ global cmd_servo_pos_msg
 global cmd_solenoid_pos_msg
 global cmd_left_servo_pub_msg
 global cmd_right_servo_pub_msg
+global cmd_MotorState_pub_msg
 cmd_vel_msg = Twist()
 cmd_servo_pos_msg = String()
 cmd_solenoid_pos_msg = Bool()
 cmd_left_servo_pub_msg = String()
 cmd_right_servo_pub_msg = String()
+cmd_MotorState_pub_msg = UInt8()
 
 # initislize publishers and subscribers 
 cmd_vel_pub = rospy.Publisher('/locomotion/cmd_vel', Twist, queue_size=10)
@@ -190,6 +193,7 @@ cmd_servo_pos_pub = rospy.Publisher('/duckstorage/cmd_servo_pos', String, queue_
 cmd_solenoid_pos_pub = rospy.Publisher('/duckstorage/cmd_solenoid_pos', Bool, queue_size=10)
 cmd_left_servo_pub = rospy.Publisher('/feeding/cmd_left_servo_pos', String, queue_size=10)
 cmd_right_servo_pub = rospy.Publisher('/feeding/cmd_right_servo_pos', String, queue_size=10)
+cmd_MotorState_pub = rospy.Publisher('/consumption/cmdMotorState', UInt8, queue_size=10)
 #sub = rospy.Subscriber('/locomotion/encoder', Int32MultiArray, callback)
 #start_sub = rospy.Subscriber('/start', Bool, start_callback)
 
