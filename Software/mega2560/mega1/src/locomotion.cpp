@@ -326,7 +326,7 @@ void init(ros::NodeHandle* nh)
   //nh->advertise(motorState);
   nh->advertise(encoder);
   nh->subscribe(cmd_vel);
-  nh->advertise(velocity);
+  //nh->advertise(velocity);
 }
 
 }  // namespace locomotion
