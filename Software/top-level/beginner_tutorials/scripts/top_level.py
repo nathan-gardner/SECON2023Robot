@@ -37,6 +37,13 @@ from std_msgs.msg import String
 from std_msgs.msg import UInt8
 from geometry_msgs.msg import Twist
 
+def start_consumption():
+    cmd_MotorState_pub_msg.data = 255
+    cmd_MotorState_pub.publish(cmd_MotorState_pub_msg)
+
+def stop_consumption():
+    cmd_MotorState_pub_msg.data = 255
+    cmd_MotorState_pub.publish(cmd_MotorState_pub_msg)
 
 def pub_direction(x, y, z):
     cmd_vel_msg.linear.x = x
