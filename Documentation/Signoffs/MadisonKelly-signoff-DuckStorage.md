@@ -1,5 +1,7 @@
 # Duck Storage and Delivery Subsystem Signoff
 
+This subsystem was not implemented in the competition due to changes made with consumption.
+
 ## Function of the Subsystem
 
 Throughout each round of the competition, the robot will need to intake up to 17 items, 10 of which are ducks, via the consumption subsystem. These ducks that are collected will need to be ~~sorted and~~ stored until they are dropped off at their proper location on the playing board. The storage subsystem’s main function is to take in the ducks from the sorting subsystem, store them in their respective location, and drop them off at their proper location on the playing board. The ducks will be held in a corral connected to the back of the robot. When the predetermined path is completed, the robot will go to the duck pond and eject the corral via a rack and pinion mechanism.
