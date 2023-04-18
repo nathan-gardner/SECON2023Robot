@@ -300,13 +300,11 @@ sleep(delay)
 left(200,100)
 sleep(delay)
 
-
 # forward to first recycling
 forward(6100, 100)
 sleep(delay)
 backward(6200, 100)
 sleep(delay)
-
 
 # second pass
 right(900, 125)
@@ -318,7 +316,6 @@ sleep(delay)
 backward(6400, 100)
 sleep(delay)
 stop_consumption()
-
 sleep(delay)
 
 # third pass
