@@ -1,6 +1,7 @@
 # Duck Storage and Delivery Subsystem Signoff
 
-This subsystem was not implemented in the competition due to changes made with consumption.
+This subsystem was not implemented in the competition due to changes made with 
+consumption.
 
 ## Function of the Subsystem
 

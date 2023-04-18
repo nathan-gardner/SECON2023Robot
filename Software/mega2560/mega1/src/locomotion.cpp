@@ -25,7 +25,7 @@ volatile float enc_vel_i[4] = { 0, 0, 0, 0 };
 volatile float xyz[4] = { 0, 0, 0, 0 };
 
 int error_count[4] = { 0, 0, 0, 0 };
-bool startCheck = false;
+//bool startCheck = false;
 bool newDir = false;
 
 float deltaT = 0;
@@ -82,7 +82,7 @@ void cmdVelCallback(const geometry_msgs::Twist& cmd_vel)
   xyz[2] = rear_left_speed;
   xyz[3] = rear_right_speed;
 
-  startCheck = false;
+  //startCheck = false;
 
   error_count[0] = 0;
   error_count[1] = 0;
@@ -95,7 +95,7 @@ void set_locomotion_speed()
   // variable which will hold the pwr (-255 to 255) which will be written to the motors, (front left, front right, rear left, rear right)
   int pwr[4];
   pi_control(enc_vel, pwr, xyz);
-  
+  /*
   // Check that we are making progress towards goal
   for (int i = 0; i<4; i++){
     if(abs(xyz[i] - enc_vel[i]) < 5){
@@ -113,6 +113,7 @@ void set_locomotion_speed()
       xyz[3] = 0;
     }
   }
+  */
   // set motor speeds
   set_motor_speed(FRONT_LEFT_PIN1, FRONT_LEFT_PIN2, FRONT_LEFT_SPEED_PIN, pwr[0]);
   set_motor_speed(FRONT_RIGHT_PIN1, FRONT_RIGHT_PIN2, FRONT_RIGHT_SPEED_PIN, pwr[1]);
