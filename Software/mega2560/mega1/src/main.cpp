@@ -57,11 +57,8 @@ void loop()
   locomotion::set_locomotion_speed();
   feeding::maestro.setTargetMiniSSC(2, feeding::u8_rightFeedingServoPos);
   feeding::maestro.setTargetMiniSSC(3, feeding::u8_leftFeedingServoPos);
-  //locomotion::velocity.publish(&locomotion::af32_velocity);
   locomotion::encoder.publish(&locomotion::i32_motorPosData);
   start::start.publish(&start::b_start);
-  //consumption::motorState.publish(&consumption::u8_stateMotorConsumption);
-  //locomotion::motorState.publish(&locomotion::t_stateMotorLocomotion);
   nh.spinOnce();
   delay(150);
 }
