@@ -38,46 +38,79 @@ $\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
 
 ### **Duck Storage and Delivery:**
+
+The project was rescoped before the competition and the duck storage and delivery subsystem did not make it into the final implementation. This decision was made unanimously by the team at the competition. It was determined the the duck storage and delivery system, while well designed and theoretically functional, could not be reliably implemented before the competition. 
+
 - The trailer extends from the back of the robot at the beginning of each run
-- The trailer is big enough to hold all ten ducks. (**ADD PHOTO**)
+
+- The trailer is big enough to hold all ten ducks.
+
 - The team found that the servos not only had enough torque to roll the trailer off the back of the robot, but to also hold the trailer in place during the run.
+
 - The solenoids’ function has now been exchanged in order to allow the robot to straighten itself out by backing up against the wall. In the opposite orientation, the solenoids prevent the trailer to go back onto the robot and back-drive the servo motors.
+
 - The team has found that the gears have no issues staying “meshed” with the rack, so there was no need for the 3D printed enclosure.
-- The steel ball transfer used to allow the trailer to roll behind the robot was not able to be mounted in the same way as shown in the signoff due to the wheel placements changing. It now sits up much higher, so the team attached some plastic sheeting on the back of the trailer in order to keep the ducks from “escaping” the trailer.(***ADD PHOTO***)
+
+- The steel ball transfer used to allow the trailer to roll behind the robot was not able to be mounted in the same way as shown in the signoff due to the wheel placements changing. It now sits up much higher, so the team attached some plastic sheeting on the back of the trailer in order to keep the ducks from “escaping” the trailer.
+
 - Due to shipping issues and sensors not coming in, the team changed the path plan, so the original idea for making a full 180 turn is not necessary. Therefore, that constraint is obsolete.
+
 - The rack and pinion is located inside the robot. Therefore, it is not a pinching hazard.
 
-### **Power:**
+### **Power: (MADISON AND MARK ANALYSIS)**
+
 - The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs.
+
 - The output of the battery is regulated by the DC-DC Converter and provides a constant 11.97 V to sufficiently power all components.
+
 - Fuses were not needed in the final design, but were replaced with a current limiting circuit on the locomotion motors in order to ensure the components do not experience a brown out.
+
 - The 6 V loads were delivered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. (**ADD PICS OF RIPPLE VOLTAGE BEING GONE**)
+
 - The inductive load from the motors was not found to be an issue, so the team decided to not add the capacitors on the input of the motors.
+
 - The team is using a 12 V bus and a 6 V bus. There was no need for a 6 V bus.
+
 - The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.25 V to supply the Jetson.
 
 ### **Low-Level Controller:**
-- The arduinos had more than enough GPIO especially with all of the sensors not being shipped in and able to be used. The team was able to cut down to using only one arduino instead of the expected two arduinos.
+
+- The Arduinos had more than enough GPIO especially with all of the sensors not being shipped in and able to be used. The team was able to cut down to using only one Arduino instead of the expected two Arduinos. This saved space in the final implementation and simplified the final implemented design. 
 
 ### **Top-Level Controller:**
+
 - The top-level controller is being fed about 5.23 V (have picture) from the battery via the barrel jack.
-- **NEEDS TO HAVE SOMETHING HERE ABOUT THE COMPUTATION SPEED**
+
+- The communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
 
 ### **Consumption:**
-- Due to current limitations, the team has decided to switch to use a spare locomotion motor for picking up the items. It has enough torque to pick up each item, even multiples at once (**ADD VIDEO**)
+
+The project was rescoped before the competition and the consumption subsystem did not make it into the final implementation. This decision was made unanimously by the team at the competition. The team decided to transition the consumption subsystem into the delivery subsystem. The direction of the motor was changed to push instead of consume, and the subsystem was used to push what items had been collected into the recycling area.
+
+- The team did not use the initially purchased 6 V motor (because it was too slow), and used a faster motor that was available in the capstone lab. 
+
 - Many variations of spokes have been tested in order to see which ones work the best, and the following spokes were chosen. (***ADD PICS AS WELL AS TALK ABOUT EACH OF THEM**)
-- The use of the locomotion motor has been proven sufficient to pick up multiple items, but at a much slower speed than the expected 1.1 second per item. (**TALK ABOUT HOW LONG IT ACTUALLY TAKES**)
+
 - **HOW BIG IS THE CONSUMPTION**. The consumption mechanism is large enough for a duck to be consumed as well as the pedestals.
-- As mentioned previously, the path of the robot has changed due to the vision subsystem not being able to be implemented. Due to this, the time to intake items has increased slightly
+
+- As mentioned previously, the path of the robot has changed due to the vision subsystem not being able to be implemented. 
+
 - There are three walls surrounding the intake in order to protect anyone from moving parts.
 
 ### **Fireworks:**
+
 - The robot has the force necessary to flip the switch without issue (***ADD VIDEO***)
 
 ## **Measures of Success from Project Proposal**
+
 - Due to the lack of sensors coming in the mail, the team will be unable to detect and start the round from the LED indicator. However, the team replaced this functionality with a start/stop switch. This start/stop switch is fully functional, as is the emergency stop button on every trial. (***ADD VIDEO***)
+
 - The robot is able to drop the chips on each trial run. (***ADD VIDEO***)
-- The robot is able to pick up all 10 ducks and hold them in the duck trailer. However, due to the lack of sensors, the pond has to be estimated using the motor encoders. (***Need to find out how many times the robot can do this out of 10 trials**)
+
+- The robot is able to pick up all 10 ducks and hold them in the duck trailer. However, due to the lack of sensors, the pond has to be estimated using the motor encoders. (***Need to find out how many times the robot can do this out of 6 trials**)
+
 - The robot can flip the switch from right to left ** out of 10 trials. The python script has been written as well as the video has been made as of March 10, 2023.
+
 - Due to the sorting subsystem being cut, the pedestals will no longer be held inside the robot and instead will go to the trailer with the ducks. Nor will they be stacked and placed on the playing field anywhere.
+
 - Since the pedestals are not being sorted at all, they will go with the ducks into the duck pond.
