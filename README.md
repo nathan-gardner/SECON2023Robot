@@ -30,7 +30,7 @@ This project was the closest ever integration of the Mechanical Engineering Depa
 Below are some images that show the team's progress so far on the project.
 
 ### **Playing Field**
-![image](https://user-images.githubusercontent.com/30758520/202878257-abfdcb97-adcb-41a7-911d-a3a19630d73c.png)
+![image](https://user-images.githubusercontent.com/30758520/233140795-096c867a-2866-42e6-b423-b5c373aa2efe.png)
 
 ## **Consumption Subsystem:**
 
