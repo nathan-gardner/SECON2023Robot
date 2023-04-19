@@ -30,7 +30,23 @@ This project was the closest ever integration of the Mechanical Engineering Depa
 Below are some images that show the team's progress so far on the project.
 
 ### **Playing Field**
+
 ![image](https://user-images.githubusercontent.com/30758520/233140795-096c867a-2866-42e6-b423-b5c373aa2efe.png)
+
+#### Description of Arena:
+
+- Feeding areas - green and red rectangles in the left corners of the arena
+- Starting area - White square in the bottom center of the arena
+- Duck Pond - Blue circle in the middle of the top section of the arena
+- Recycling areas - Striped white rectangles in the right corners of the arena
+- Fireworks switch - Silver rectangle on the right side of the arena
+- Inner circles - Three located to the left and right of the starting area, as well as in the middle of the duck pond
+
+#### Areas utilized during competition
+
+- Feeding areas - Most of our teams points came from correctly delivering the food chips to the feeding areas consistently.  
+- Recycling areas - Where the robot pushed loose and randomly placed items to gain points. 
+- Duck pond - Ducks ended up in the duck pond during competition. This counted for points on the scoreboard. 
 
 ## **Consumption Subsystem:**
 
@@ -39,8 +55,6 @@ Below are some images that show the team's progress so far on the project.
 
 ### **Consumption CAD Model**
 ![IntakeMechanismFrontAngle](https://user-images.githubusercontent.com/30758520/201001842-7290913f-ed47-4942-937a-cfcf2d664771.png)
-
-*Video not avaliable yet*
 
 ## **About Us**
 
