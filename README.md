@@ -14,7 +14,7 @@ The team placed fourth out of thirty six schools in the competiton, which is the
 
 The signoffs include function of the subsystem, constraints, buildable schematics, analysis, and bill of materials.
 
-## **Salient Outcomes (updated 11/30/2022)**
+## **Salient Outcomes**
 
 * The team has been able to submit a detailed project proposal which defined the scope, constraints, and stakeholders for the project
 * The team created a conceptual design document which laid out how the team will conceptually approach design and led the team into detailed design signoffs. 
