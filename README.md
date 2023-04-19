@@ -12,7 +12,7 @@ The autonomous tasks the robot may attempt include the following: Feed manatees 
 
 The robot was rescoped throughout the year and just before the competition to be able to meet objective and once we know opponents capabilities at the competition. The final robot implemented was able to feed manatees and alligators the correct food chips, relocate ducks to the duck pond, and to push remaining items to the recycling areas. 
 
-The team placed fourth out of thirty six schools in the competiton, which is the second best performance in Tennessee Tech history.
+The team placed fourth out of thirty six schools in the competition, which is the second best performance in Tennessee Tech history. The team sees this as a success considering the ordering setbacks experienced by all the Capstone teams during the Spring 2023 semester, and the scope changes that were necessary to meet deadlines for the competition. 
 
 ## **Capabilities**
 
@@ -46,19 +46,26 @@ Below are some images that show the team's progress so far on the project.
 - Fireworks switch - Silver rectangle on the right side of the arena
 - Inner circles - Three located to the left and right of the starting area, as well as in the middle of the duck pond
 
-#### **Areas utilized during competition**
+#### **Areas utilized for points during competition**
 
 - Feeding areas - Most of our teams points came from correctly delivering the food chips to the feeding areas consistently.  
 - Recycling areas - Where the robot pushed loose and randomly placed items to gain points. 
 - Duck pond - Ducks ended up in the duck pond during competition. This counted for points on the scoreboard. 
 
-## **Consumption Subsystem:**
+## **Subsystems**
+- [Feeding](/Documentation/Signoffs/LukeMcGill-signoff-Feeding.md) - Delivered chips to correct area using servos.
+- [Locomotion](/Documentation/Signoffs/LukeMcGill-signoff-Locomotion.md) - Transported robot using mecanum wheels.
+- [Power](/Documentation/Signoffs/MarkBeech-MadisonKelly-signoff-Power.md) - Powered every system with two 6V batteries and a 12 V battery.
+- [Low-level Controller](/Documentation/Signoffs/NathanGardner-signoff-LowlevelController.md) - Arduino Mega2560 was selected as the main motor controller. 
+- [Top-level Controller](/Documentation/Signoffs/NathanGardner-signoff-ToplevelController.md) - Nvidia Jetson selected for computation power as compared to Raspberry Pi.
+- [Delivery System](/Documentation/Signoffs/Team2-signoff-ConsumptionSubsystem.md) - pushed objects outward when near a recycling area.
 
-### **Electrical Schematic for Consumption Schematic**
-![image](https://user-images.githubusercontent.com/30758520/203184746-a586aec1-197b-4342-a30f-c6afef5b303f.png)
-
-### **Consumption CAD Model**
-![IntakeMechanismFrontAngle](https://user-images.githubusercontent.com/30758520/201001842-7290913f-ed47-4942-937a-cfcf2d664771.png)
+## **Cut Subsystems with explanation**
+- [Vision](/Documentation/Signoffs/Fatima-signoff-vision.md) - Sensors were not received in time for building. The team ordered LIDAR sensor and color sensors and they never arrived.
+- [Duck Storage](/Documentation/Signoffs/MadisonKelly-signoff-DuckStorage.md) - Subsystem cut as part of the rollback a few days before the competition. We did not have consistency in delivering the ducks stored to the duck pond reliably. A risk reward analysis was done and it was voted on by the team to remove the subsystem entirely. 
+- [Pedestal Storage and Delivery](/Documentation/Signoffs/MadisonKelly-signoff-PedestalStorageAndDelivery.md) - Parts were not received in time for building. 
+- [Sorting](/Documentation/Signoffs/MarkBeech-signoff-Sorting.md) - Parts were not received in time for building. Sorting was cut when rescoping once we realized we were not receiving parts for many of the subsystems we ordered. 
+- [Consumption -> Delivery Subsystem](/Documentation/Signoffs/Team2-signoff-ConsumptionSubsystem.md) - Rescoped 24 hours before the competition. The function was transitioned from consumption into the robot to ejection into the recycling area.  
 
 ## **About Us**
 
