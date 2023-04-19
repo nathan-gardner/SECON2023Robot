@@ -1,4 +1,4 @@
-# **IEEE Southeast con robotics competition**
+# **IEEE SoutheastCon Robotics Competition**
 
 ## **Executive Summary**
 
