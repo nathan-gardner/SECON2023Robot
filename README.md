@@ -1,5 +1,9 @@
 # **IEEE SoutheastCon Robotics Competition**
 
+## **Final CAD Model for Competition Robot**
+
+![image](/Documentation/Images/finalcadmodel.png)
+
 ## **Executive Summary**
 
 The purpose of this project is to build a robot that will be sent to the SoutheastCon student competition in Orlando, Florida. This robot will represent Tennessee Technological University to schools around the Southeastern United States. This document will include further details on the team’s design for the project.
@@ -8,7 +12,7 @@ The autonomous tasks the robot may attempt include the following: Feed manatees 
 
 The robot was rescoped throughout the year and just before the competition to be able to meet objective and once we know opponents capabilities at the competition. The final robot implemented was able to feed manatees and alligators the correct food chips, relocate ducks to the duck pond, and to push remaining items to the recycling areas. 
 
-The team placed fourth out of thirty six schools in the competiton, which is the second best performance in Tennessee Tech history. 
+The team placed fourth out of thirty six schools in the competiton, which is the second best performance in Tennessee Tech history.
 
 ## **Capabilities**
 
@@ -33,7 +37,7 @@ Below are some images that show the team's progress so far on the project.
 
 ![image](https://user-images.githubusercontent.com/30758520/233140795-096c867a-2866-42e6-b423-b5c373aa2efe.png)
 
-#### Description of Arena:
+#### **Description of Arena:**
 
 - Feeding areas - green and red rectangles in the left corners of the arena
 - Starting area - White square in the bottom center of the arena
@@ -42,7 +46,7 @@ Below are some images that show the team's progress so far on the project.
 - Fireworks switch - Silver rectangle on the right side of the arena
 - Inner circles - Three located to the left and right of the starting area, as well as in the middle of the duck pond
 
-#### Areas utilized during competition
+#### **Areas utilized during competition**
 
 - Feeding areas - Most of our teams points came from correctly delivering the food chips to the feeding areas consistently.  
 - Recycling areas - Where the robot pushed loose and randomly placed items to gain points. 
