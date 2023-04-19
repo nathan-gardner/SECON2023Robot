@@ -10,13 +10,32 @@ The results of the experiments should be in the proper format. Data that is best
 ## **Constraints from Signoffs:**
 
 ### **Feeding:**
-- The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.(****PUT PICTURE BELOW***)
+- The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
+
+The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
+
+![image](/Documentation/Images/finalcadmodel.png)
+
+Below is the final experimentation taken during the competition, we consistently delivered food chips as outlined in our project proposal. 
+
+![image](/Documentation/Images/experiment_table.png)
+
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
 
 ### **Locomotion:**
 - **Weigh the robot**
+
+The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
+
 - **Need to see how fast the robot can go**
-- The motors have enough torque to move the robot. However, there have been instances of browning out in the event that the robot hits the walls of the playing field. To fix this, the team plans to make portions of the robot lighter as well as having fail-safe coding in order to ensure there are no brown outs in the competition.
+
+***Max Speed***
+
+$\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 1.24 \frac{feet}{sec} \gt 0.0677 \frac{meter}{sec} = 0.222 \frac{feet}{second}\ (minimum\ speed\ requirement)$
+
+***Typical Competition Speed***
+
+$\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
 
 ### **Duck Storage and Delivery:**
 - The trailer extends from the back of the robot at the beginning of each run
