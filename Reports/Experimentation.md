@@ -89,7 +89,7 @@ The project was rescoped before the competition and the consumption subsystem di
 
 - The team did not use the initially purchased 6 V motor (because it was too slow), and used a faster motor that was available in the capstone lab. 
 
-- Many variations of spokes have been tested in order to see which ones work the best, and the following spokes were chosen. (***ADD PICS AS WELL AS TALK ABOUT EACH OF THEM**)
+- Many variations of spokes have been tested in order to see which ones work the best. The only spokes that made it into the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
 
 - **HOW BIG IS THE CONSUMPTION**. The consumption mechanism is large enough for a duck to be consumed as well as the pedestals.
 
