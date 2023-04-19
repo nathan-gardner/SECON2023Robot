@@ -18,6 +18,8 @@ The team placed fourth out of thirty six schools in the competition, which is th
 
 The signoffs include function of the subsystem, constraints, buildable schematics, analysis, and bill of materials.
 
+The path that this robot follows is defined in [top_level.py](/Software/top-level/top_level_package/scripts/top_level.py) and is all relative to the starting area. The distance is measured using encoder clicks and directions are published within the ROS computation graph. This means the robot cannot observe its surroundings and react to its surroundings, but can only go point to point based on the code within that top_level.py file. This was fine for our street sweeper implementation, and was a necessity in design because none of our vision sensors that we ordered came in the mail. This path implementation was reliable across runs. The direction publications were formatted as ROS Twist messages which gave direction and velocity in rotations per minute. The RPM was maintained on the Arduino using a custom PID controller written in C++. 
+
 ## **Salient Outcomes**
 
 * The team has been able to submit a detailed project proposal which defined the scope, constraints, and stakeholders for the project
