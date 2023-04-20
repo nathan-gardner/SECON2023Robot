@@ -110,7 +110,7 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The output of the battery is regulated by the DC-DC Converter and provides nearly a constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
-The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system. The multimeter measured 11.94 V or 11.95 V each trial. This was sufficient for the purpose of this supply.
+The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output. The multimeter measured 11.94 V or 11.95 V each trial. This was sufficient for the purpose of this supply.
 
 ![image](https://user-images.githubusercontent.com/112428796/233485301-ef483440-b9e7-4346-90b2-16bede1f2558.png)
 
@@ -125,7 +125,7 @@ The multimeter was used to verify the output voltage of the DC/DC regulator whil
 
 - Fuses were not implemented in the final design.
 
-- The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. 
+- The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. Measurements were taken with an osciloscope before and after adding a the filter circuit.
 
 Before filtering:
 
@@ -134,6 +134,8 @@ Before filtering:
 After Filtering:
 
 ![image](https://user-images.githubusercontent.com/112428796/233485550-aee62d63-ce5a-4c24-92ce-f285168b67c4.png)
+
+The noise after adding the filter is slightly better than without the filter. The amplitude is slightly lower and the noise dampens much quicker than before.
 
 
 - The inductive load from the motors did not seem to be an issue, so the team decided to not add the capacitors on the input of the motors.
