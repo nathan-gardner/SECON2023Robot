@@ -86,14 +86,22 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as 2 6 V batteries.
 
-- The output of the battery is regulated by the DC-DC Converter and provides a constant 11.94 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
+- The output of the battery is regulated by the DC-DC Converter and provides nearly a constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
+
+The multimeter was used to verify the output voltage of the DC/DC regulator. 11.94 V was sufficient for the purpose of this supply.
+
 ![image](https://user-images.githubusercontent.com/112428796/233485301-ef483440-b9e7-4346-90b2-16bede1f2558.png)
 
 
 - Fuses were not implemented in the final design.
 
 - The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. 
+
+Before filtering:
+
 ![image](https://user-images.githubusercontent.com/112428796/233485511-202565f5-ed1d-4c17-b028-e54fba6b84a1.png)
+
+After Filtering:
 
 ![image](https://user-images.githubusercontent.com/112428796/233485550-aee62d63-ce5a-4c24-92ce-f285168b67c4.png)
 
@@ -105,6 +113,8 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 - The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
 
 The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was cause by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
+
+The multimeter was connected to the output of the buck converter to verify.
 
 ![image](https://user-images.githubusercontent.com/112428796/233485365-55536ce3-dec1-4e8b-aae2-10ea04deed95.png)
 
