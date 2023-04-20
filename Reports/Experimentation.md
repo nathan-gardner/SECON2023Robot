@@ -55,14 +55,14 @@ The food chip dispensers can be seen in the image below. They are located on the
 
 Below is the final experimentation taken during the competition, we consistently delivered food chips as outlined in our project proposal. 
 
-| Round | Green chip | Red chip |
-| ----- | ---------- | -------- |
-| 1     | 3          | 3        |
-| 2     | 3          | 3        |
-| 3     | 2          | 3        |
-| 4     | 2          | 2        |
-| 5     | 3          | 3        |
-| 6     | 2          | 2        |
+| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond |
+| ----- | ---------- | -------- | ---------------- | ------------ | --------- |
+| 1     | 3          | 3        | 1                | 4            | 0         |
+| 2     | 3          | 3        | 0                | 0            | 0         |
+| 3     | 2          | 3        | 0                | 0            | 0         |
+| 4     | 2          | 2        | 4                | 6            | 0         |
+| 5     | 3          | 3        | 4                | 1            | 0         |
+| 6     | 2          | 2        | 1                | 2            | 1         |
 
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
 
@@ -215,14 +215,14 @@ chips to both the manatees and alligators.
 
 This was accomplished in the first two rounds of the competition, but was not accomplished in the later rounds of the competition. 
 
-| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond |
-| ----- | ---------- | -------- | ---------------- | ------------ | --------- |
-| 1     | 3          | 3        | 1                | 4            | 0         |
-| 2     | 3          | 3        | 0                | 0            | 0         |
-| 3     | 2          | 3        | 0                | 0            | 0         |
-| 4     | 2          | 2        | 4                | 6            | 0         |
-| 5     | 3          | 3        | 4                | 1            | 0         |
-| 6     | 2          | 2        | 1                | 2            | 1         |
+| Round | Green chip | Red chip |
+| ----- | ---------- | -------- |
+| 1     | 3          | 3        |
+| 2     | 3          | 3        |
+| 3     | 2          | 3        |
+| 4     | 2          | 2        |
+| 5     | 3          | 3        |
+| 6     | 2          | 2        |
 
 ### **Fireworks:** 
 - Shall design an autonomous robot that will be able to flip
