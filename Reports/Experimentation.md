@@ -115,7 +115,8 @@ The project was rescoped before the competition and the consumption subsystem di
 - The robot's path was altered to push as many objects as possible into the recycle bin, instead of placing any remaining items into the recycle bin
 
 ## **Shall Statements**
-POWER: 
+
+### **Power:** 
 
 - Shall design an autonomous robot with a single start
 button, allowing the robot to start moving through its
@@ -133,8 +134,15 @@ that has a positive operation. The button shall not be a
 graphical representation or a flat switch based on NFPA
 79 - 10.7.2. [1] This constraint addresses the need for the
 addition of practical engineering standards.
+- Shall abide by the Department of Energy Standard 79
+FR 7845 in the team’s purchase or design of wall warts
+for energy conservation and efficiency. [3] This constraint
+addresses an ethical consideration by better ensuring the
+safety of the team and all others interacting with the robot
+as well as the addition of ethical standards.
 
-???
+### **???:**
+
 - Shall represent knowledge using IEEE standard IEEE
 1872-2015 Ontologies for Robotics and Automation used
 to represent knowledge about the typography of the arena.
@@ -143,14 +151,13 @@ between the landwards in the area and what is known.
 It should not change during the competition, so it can be
 predefined. [2]
 
-
-Feeding:
+### **Feeding:**
 
 - Shall design an autonomous robot that will earn all
 possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
 
-Duck Storage:
+### **Duck Storage:**
 - Shall design a robot which can find and move 90% of
 the ducks into a holding area connected to the robot.
 - Shall locate the duck pond in the center of the arena
@@ -158,14 +165,14 @@ within plus or minus one inch of error tolerance.
 - Shall transport and place 90% of the ducks stored inside
 the holding area to their final location in the duck pond.
 
-Fireworks: 
+### **Fireworks:** 
 - Shall design an autonomous robot that will be able to flip
 a switch from left to right.
 - Shall design an animated fireworks MPEG video and
 write a Python script that will play the video when
 activated by the switch.
 
-Pedestal Storage:
+### *** Pedestal Storage: ***
 - Shall find and move at least five pedestals into an internal
 holding area inside the robot.
 - Shall assemble one statue that is three pedestals tall and
@@ -180,15 +187,7 @@ internal holding area inside the robot.
 - Shall move the extra pedestals obtained over the five
 required pedestals in the recycling area.
 
-Power:
-- Shall abide by the Department of Energy Standard 79
-FR 7845 in the team’s purchase or design of wall warts
-for energy conservation and efficiency. [3] This constraint
-addresses an ethical consideration by better ensuring the
-safety of the team and all others interacting with the robot
-as well as the addition of ethical standards.
-
-Chassis
+### **Chassis:**
 - Chassis will be designed with an aluminum frame. Alu-
 minum is abundantly available under the earth’s surface
 and mining can be offset with post-mining rehabilitation
