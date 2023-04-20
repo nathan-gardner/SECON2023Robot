@@ -88,10 +88,18 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The output of the battery is regulated by the DC-DC Converter and provides nearly a constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
-The multimeter was used to verify the output voltage of the DC/DC regulator. 11.94 V was sufficient for the purpose of this supply.
+The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system. The multimeter measured 11.94 V or 11.95 V each trial. This was sufficient for the purpose of this supply.
 
 ![image](https://user-images.githubusercontent.com/112428796/233485301-ef483440-b9e7-4346-90b2-16bede1f2558.png)
 
+| Trial | Voltage (V) |
+| ------ | ------- |
+| 1      | 11.94   |
+| 2      | 11.94   |
+| 3      | 11.95   |
+| 4      | 11.95   |
+| 5      | 11.95   |
+| 6      | 11.95   |
 
 - Fuses were not implemented in the final design.
 
@@ -114,7 +122,16 @@ After Filtering:
 
 The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was cause by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
 
-The multimeter was connected to the output of the buck converter to verify.
+The multimeter was connected to the output of the buck converter while connected to the rest of the system to verify.
+
+| Trial | Voltage (V) |
+| ------ | ------- |
+| 1      | 5.213   |
+| 2      | 5.212   |
+| 3      | 5.212   |
+| 4      | 5.212   |
+| 5      | 5.212   |
+| 6      | 5.212   |
 
 ![image](https://user-images.githubusercontent.com/112428796/233485365-55536ce3-dec1-4e8b-aae2-10ea04deed95.png)
 
