@@ -233,18 +233,21 @@ button, allowing the robot to start moving through its
 environment.
 
     - The start button was implemented as a start switch. This starts the path for the robot. This is shown in the full round video at the top of this document. 
+    
 - The robot will have a single emergency stop button at a
 point that is easily accessible and can be safely reached,
 which will shut down all physical movement performed
 by the robot in the case of an emergency.
 
     - The E-stop button is easily accessible on the top of the robot. The switch cuts all power to the dc motors for locomotion and delivery. his is shown in the full round video at the top of this document.
+
 - Shall create an easily reachable (not blocked by motors,
 chassis, wheels, or any other object) emergency cut off
 switch to allow the team to disable the robot in the case
 of an emergency.
 
     - The E-stop button is easily accessible on the top of the robot. his is shown in the full round video at the top of this document.
+
 - Shall have a self-latching emergency stop push-button
 that has a positive operation. The button shall not be a
 graphical representation or a flat switch based on NFPA
