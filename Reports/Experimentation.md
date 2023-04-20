@@ -187,16 +187,17 @@ We ended up using encoder distances to represent the movement and position in th
 possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
 
-
-
 ### **Fireworks:** 
 - Shall design an autonomous robot that will be able to flip
 a switch from left to right.
+
+(**ADD FIREWORKS FLIP SWITCH VIDEO**)
+
 - Shall design an animated fireworks MPEG video and
 write a Python script that will play the video when
 activated by the switch.
 
-
+This fireworks video was created, and won second place in a separate competition for most creative fireworks video. It was judged based on creativity and school spirit. 
 
 ### **Chassis:**
 - Chassis will be designed with an aluminum frame. Alu-
