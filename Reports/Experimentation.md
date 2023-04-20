@@ -64,6 +64,25 @@ Below is the final experimentation taken during the competition, we consistently
 | 5     | 3          | 3        | 4                | 1            | 0         |
 | 6     | 2          | 2        | 1                | 2            | 1         |
 
+Below is the number of points scored in each round of the competition. If we had integrated the all functionality targeted after the rescope, we would have scored 86 points each round. 
+
+Recycling: $2\ points * 17\ objects = 34\ points$
+
+Feeding: $6\ correct chips * 7\ points = 42 \ points$
+
+Fireworks: $1\ fireworks\ switch\ flip * 10\ points = 10\ points$
+
+Total: $86\ points$
+
+| Round | Grand Total |
+| ----- | ----------- |
+| 1     | 52          |
+| 2     | 42          |
+| 3     | 35          |
+| 4     | 48          |
+| 5     | 52          |
+| 6     | 39          |
+
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
 
 ### **Locomotion:**
