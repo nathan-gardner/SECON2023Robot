@@ -116,7 +116,7 @@ The project was rescoped before the competition and the consumption subsystem di
 - Since the pedestals are not being sorted at all, they will go with the ducks into the duck pond.
 
 ## **Shall Statements**
-Shall design an autonomous robot with a single start
+- Shall design an autonomous robot with a single start
 button, allowing the robot to start moving through its
 environment.
 - The robot will have a single emergency stop button at a
