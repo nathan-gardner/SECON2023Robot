@@ -89,7 +89,7 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The team is using a Regulated 12 V bus, a 12 V bus, and a 6 V bus.
 
-- The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.25 V to supply the Jetson from the regulated 12 V output.
+- The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
 
 ### **Low-Level Controller:**
 
