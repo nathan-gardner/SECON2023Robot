@@ -110,7 +110,7 @@ The project was rescoped before the competition and the consumption subsystem di
 
 - The robot was unable to flip the light switch during the six competition rounds. The python script has been written as well as the video has been made as of March 10, 2023.
 
-- Due to the sorting, consumption, and pedestal storage subsystems being cut, the pedestals will no longer be comsumed, sorted, or stacked.
+- Due to the sorting, consumption, and pedestal storage subsystems being cut or repurposed, the pedestals will no longer be comsumed, sorted, or stacked.
 
 - The robot's path was altered to push as many objects as possible into the recycle bin, instead of placing any remaining items into the recycle bin
 
