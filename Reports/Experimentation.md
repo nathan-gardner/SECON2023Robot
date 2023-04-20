@@ -57,7 +57,7 @@ The project was rescoped before the competition and the duck storage and deliver
 
 - The rack and pinion is located inside the robot. Therefore, it is not a pinching hazard.
 
-### **Power: (MADISON AND MARK ANALYSIS)**
+### **Power:**
 
 - The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs.
 
@@ -114,3 +114,66 @@ The project was rescoped before the competition and the consumption subsystem di
 - Due to the sorting subsystem being cut, the pedestals will no longer be held inside the robot and instead will go to the trailer with the ducks. Nor will they be stacked and placed on the playing field anywhere.
 
 - Since the pedestals are not being sorted at all, they will go with the ducks into the duck pond.
+
+## **Shall Statements**
+Shall design an autonomous robot with a single start
+button, allowing the robot to start moving through its
+environment.
+- The robot will have a single emergency stop button at a
+point that is easily accessible and can be safely reached,
+which will shut down all physical movement performed
+by the robot in the case of an emergency.
+- Shall create an easily reachable (not blocked by motors,
+chassis, wheels, or any other object) emergency cut off
+switch to allow the team to disable the robot in the case
+of an emergency.
+- Shall have a self-latching emergency stop push-button
+that has a positive operation. The button shall not be a
+graphical representation or a flat switch based on NFPA
+79 - 10.7.2. [1] This constraint addresses the need for the
+addition of practical engineering standards.
+- Shall represent knowledge using IEEE standard IEEE
+1872-2015 Ontologies for Robotics and Automation used
+to represent knowledge about the typography of the arena.
+This ontology will be used to represent relationships
+between the landwards in the area and what is known.
+It should not change during the competition, so it can be
+predefined. [2]
+- Shall design an autonomous robot that will earn all
+possible points for delivering 100% of the correct food
+chips to both the manatees and alligators.
+- Shall design a robot which can find and move 90% of
+the ducks into a holding area connected to the robot.
+- Shall locate the duck pond in the center of the arena
+within plus or minus one inch of error tolerance.
+- Shall transport and place 90% of the ducks stored inside
+the holding area to their final location in the duck pond.
+- Shall design an autonomous robot that will be able to flip
+a switch from left to right.
+- Shall design an animated fireworks MPEG video and
+write a Python script that will play the video when
+activated by the switch.
+- Shall find and move at least five pedestals into an internal
+holding area inside the robot.
+- Shall assemble one statue that is three pedestals tall and
+one statue that is two pedestals tall using all five pedestals
+obtained in order to maximize points obtained based on
+discussion in weekly meetings.
+- Shall place statues entirely inside the white inner circles
+within plus or minus one inch of error tolerance.
+- Shall place remaining unused pedestals that are held after
+the five required pedestals have been obtained within the
+internal holding area inside the robot.
+- Shall move the extra pedestals obtained over the five
+required pedestals in the recycling area.
+- Shall abide by the Department of Energy Standard 79
+FR 7845 in the team’s purchase or design of wall warts
+for energy conservation and efficiency. [3] This constraint
+addresses an ethical consideration by better ensuring the
+safety of the team and all others interacting with the robot
+as well as the addition of ethical standards.
+- Chassis will be designed with an aluminum frame. Alu-
+minum is abundantly available under the earth’s surface
+and mining can be offset with post-mining rehabilitation
+and efficient recycling. This constraint will lessen the
+broader impact the team has on the environment.
