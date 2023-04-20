@@ -9,6 +9,43 @@ The results of the experiments should be in the proper format. Data that is best
 
 ## **Constraints from Signoffs:**
 
+### **Cut Subsystems and Justification**
+
+The following subsystems have been cut since the beginning of the project:
+- Sorting
+    - Due to size constraints and the parts for this subsystem not arriving, this subsystem was cut.
+- Duck Storage and Delivery
+    - The project was rescoped before the competition and the duck storage and delivery subsystem did not make it into the final implementation. This decision was made unanimously by the team at the competition. It was determined that the duck storage and delivery system, while well designed and theoretically functional, could not be reliably implemented before the competition. 
+- Pedestal Storage and Delivery
+    - Due to size constraints and the parts for this subsystem not arriving, this subsystem was cut.
+- Vison
+    - Due to the parts for this subsystem not arriving, this subsystem was cut.
+- Consumption (repurposed - now called Delivery Subsystem)
+    - The project was rescoped before the competition and the consumption subsystem did not make it into the final implementation. This decision was made unanimously by the team at the competition. The team decided to transition the consumption subsystem into the delivery subsystem. The direction of the motor was changed to push instead of consume, and the subsystem was used to push what items had been collected into the recycling area.
+
+
+The following shall statements were closely related to these subsystems and therefore will not be discussed in this experimental analysis document:
+
+- Shall design a robot which can find and move 90% of
+the ducks into a holding area connected to the robot.
+- Shall locate the duck pond in the center of the arena
+within plus or minus one inch of error tolerance.
+- Shall transport and place 90% of the ducks stored inside
+the holding area to their final location in the duck pond.
+- Shall find and move at least five pedestals into an internal
+holding area inside the robot.
+- Shall assemble one statue that is three pedestals tall and
+one statue that is two pedestals tall using all five pedestals
+obtained in order to maximize points obtained based on
+discussion in weekly meetings.
+- Shall place statues entirely inside the white inner circles
+within plus or minus one inch of error tolerance.
+- Shall place remaining unused pedestals that are held after
+the five required pedestals have been obtained within the
+internal holding area inside the robot.
+- Shall move the extra pedestals obtained over the five
+required pedestals in the recycling area.
+
 ### **Feeding:**
 - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
@@ -37,25 +74,6 @@ $\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
 
-### **Duck Storage and Delivery:**
-
-The project was rescoped before the competition and the duck storage and delivery subsystem did not make it into the final implementation. This decision was made unanimously by the team at the competition. It was determined the the duck storage and delivery system, while well designed and theoretically functional, could not be reliably implemented before the competition. 
-
-- The trailer extends from the back of the robot at the beginning of each run
-
-- The trailer is big enough to hold all ten ducks.
-
-- The team found that the servos not only had enough torque to roll the trailer off the back of the robot, but to also hold the trailer in place during the run.
-
-- The solenoids’ function has now been exchanged in order to allow the robot to straighten itself out by backing up against the wall. In the opposite orientation, the solenoids prevent the trailer to go back onto the robot and back-drive the servo motors.
-
-- The team has found that the gears have no issues staying “meshed” with the rack, so there was no need for the 3D printed enclosure.
-
-- The steel ball transfer used to allow the trailer to roll behind the robot was not able to be mounted in the same way as shown in the signoff due to the wheel placements changing. It now sits up much higher, so the team attached some plastic sheeting on the back of the trailer in order to keep the ducks from “escaping” the trailer.
-
-- Due to shipping issues and sensors not coming in, the team changed the path plan, so the original idea for making a full 180 turn is not necessary. Therefore, that constraint is obsolete.
-
-- The rack and pinion is located inside the robot. Therefore, it is not a pinching hazard.
 
 ### **Power:**
 
@@ -83,9 +101,7 @@ The project was rescoped before the competition and the duck storage and deliver
 
 - The communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
 
-### **Consumption:**
-
-The project was rescoped before the competition and the consumption subsystem did not make it into the final implementation. This decision was made unanimously by the team at the competition. The team decided to transition the consumption subsystem into the delivery subsystem. The direction of the motor was changed to push instead of consume, and the subsystem was used to push what items had been collected into the recycling area.
+### **Delivery Subsystem (was called Consumption):**
 
 - The team did not use the initially purchased 6 V motor (because it was too slow), and used a faster motor that was available in the capstone lab. 
 
@@ -157,13 +173,7 @@ predefined. [2]
 possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
 
-### **Duck Storage:**
-- Shall design a robot which can find and move 90% of
-the ducks into a holding area connected to the robot.
-- Shall locate the duck pond in the center of the arena
-within plus or minus one inch of error tolerance.
-- Shall transport and place 90% of the ducks stored inside
-the holding area to their final location in the duck pond.
+
 
 ### **Fireworks:** 
 - Shall design an autonomous robot that will be able to flip
@@ -172,20 +182,7 @@ a switch from left to right.
 write a Python script that will play the video when
 activated by the switch.
 
-### *** Pedestal Storage: ***
-- Shall find and move at least five pedestals into an internal
-holding area inside the robot.
-- Shall assemble one statue that is three pedestals tall and
-one statue that is two pedestals tall using all five pedestals
-obtained in order to maximize points obtained based on
-discussion in weekly meetings.
-- Shall place statues entirely inside the white inner circles
-within plus or minus one inch of error tolerance.
-- Shall place remaining unused pedestals that are held after
-the five required pedestals have been obtained within the
-internal holding area inside the robot.
-- Shall move the extra pedestals obtained over the five
-required pedestals in the recycling area.
+
 
 ### **Chassis:**
 - Chassis will be designed with an aluminum frame. Alu-
