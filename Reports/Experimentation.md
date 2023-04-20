@@ -77,19 +77,22 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 ### **Power:**
 
-- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs.
+- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as 2 6 V batteries.
 
-- The output of the battery is regulated by the DC-DC Converter and provides a constant 11.97 V to sufficiently power all components.
+- The output of the battery is regulated by the DC-DC Converter and provides a constant 11.94 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
+(**INSERT PICTURE OF MULTIMETER**)
 
-- Fuses were not needed in the final design, but were replaced with a current limiting circuit on the locomotion motors in order to ensure the components do not experience a brown out.
+- Fuses were not implemented in the final design.
 
-- The 6 V loads were delivered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. (**ADD PICS OF RIPPLE VOLTAGE BEING GONE**)
+- The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. (**ADD PICS OF RIPPLE VOLTAGE BEING GONE**)
 
-- The inductive load from the motors was not found to be an issue, so the team decided to not add the capacitors on the input of the motors.
+- The inductive load from the motors did not seem to be an issue, so the team decided to not add the capacitors on the input of the motors.
 
-- The team is using a Regulated 12 V bus, a 12 V bus, and a 6 V bus.
+- The main power bus in the robot was supplied from the two 6 V batteries in series. This bus was connected to all the DC motor drivers. The first 6 V battery was used to power the 6 V motor driver for the delivery subsystem.  Seperate connections were made for powering the Jetson and the servo motors, which were powered from the 12 V battery.
 
 - The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
+
+(**INSERT PICTURE OF MULTIMETER**)
 
 ### **Low-Level Controller:**
 
@@ -137,19 +140,24 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 - Shall design an autonomous robot with a single start
 button, allowing the robot to start moving through its
 environment.
+    - The start button was implemented as a start switch. This starts the path for the robot 
 - The robot will have a single emergency stop button at a
 point that is easily accessible and can be safely reached,
 which will shut down all physical movement performed
 by the robot in the case of an emergency.
+    - The E-stop button is easily accessible on the top of the robot. The switch cuts all power to the dc motors for locomotion and delivery.
 - Shall create an easily reachable (not blocked by motors,
 chassis, wheels, or any other object) emergency cut off
 switch to allow the team to disable the robot in the case
 of an emergency.
+    - The E-stop button is easily accessible on the top of the robot.
 - Shall have a self-latching emergency stop push-button
 that has a positive operation. The button shall not be a
 graphical representation or a flat switch based on NFPA
 79 - 10.7.2. [1] This constraint addresses the need for the
 addition of practical engineering standards.
+    - The E-stop button chosen meets these specifications.
+(**Insert image/video of this switch working**)
 - Shall abide by the Department of Energy Standard 79
 FR 7845 in the team’s purchase or design of wall warts
 for energy conservation and efficiency. [3] This constraint
