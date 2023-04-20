@@ -79,7 +79,7 @@ The project was rescoped before the competition and the duck storage and deliver
 
 ### **Top-Level Controller:**
 
-- The top-level controller is being fed about 5.23 V (have picture) from the battery via the barrel jack.
+- The top-level controller is being fed about 5.23 V ***(have picture)*** from the battery via the barrel jack.
 
 - The communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
 
@@ -99,23 +99,24 @@ The project was rescoped before the competition and the consumption subsystem di
 
 ### **Fireworks:**
 
-- The robot has the force necessary to flip the switch without issue (***ADD VIDEO***)
+- The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition (***ADD VIDEO***)
 
 ## **Measures of Success from Project Proposal**
+- The team rescoped and decided not to start using the LED indicator to instead focus on other subsystems. A start switch was added to replace this functionality. (***ADD VIDEO***)
 
-- Due to the lack of sensors coming in the mail, the team will be unable to detect and start the round from the LED indicator. However, the team replaced this functionality with a start/stop switch. This start/stop switch is fully functional, as is the emergency stop button on every trial. (***ADD VIDEO***)
+- The robot was unable to drop all the chips in the correct location on each competition run. (***ADD VIDEO***) (***Insert table showing how many chips were counted***)
 
-- The robot is able to drop the chips on each trial run. (***ADD VIDEO***)
+- The project rescoped to remove duck storage and therefore did not collect and store any ducks.
 
-- The robot is able to pick up all 10 ducks and hold them in the duck trailer. However, due to the lack of sensors, the pond has to be estimated using the motor encoders. (***Need to find out how many times the robot can do this out of 6 trials**)
+- The robot was unable to flip the light switch during the six competition rounds. The python script has been written as well as the video has been made as of March 10, 2023.
 
-- The robot can flip the switch from right to left ** out of 10 trials. The python script has been written as well as the video has been made as of March 10, 2023.
+- Due to the sorting, consumption, and pedestal storage subsystems being cut, the pedestals will no longer be comsumed, sorted, or stacked.
 
-- Due to the sorting subsystem being cut, the pedestals will no longer be held inside the robot and instead will go to the trailer with the ducks. Nor will they be stacked and placed on the playing field anywhere.
-
-- Since the pedestals are not being sorted at all, they will go with the ducks into the duck pond.
+- The robot's path was altered to push as many objects as possible into the recycle bin, instead of placing any remaining items into the recycle bin
 
 ## **Shall Statements**
+POWER: 
+
 - Shall design an autonomous robot with a single start
 button, allowing the robot to start moving through its
 environment.
@@ -132,6 +133,8 @@ that has a positive operation. The button shall not be a
 graphical representation or a flat switch based on NFPA
 79 - 10.7.2. [1] This constraint addresses the need for the
 addition of practical engineering standards.
+
+???
 - Shall represent knowledge using IEEE standard IEEE
 1872-2015 Ontologies for Robotics and Automation used
 to represent knowledge about the typography of the arena.
@@ -139,20 +142,30 @@ This ontology will be used to represent relationships
 between the landwards in the area and what is known.
 It should not change during the competition, so it can be
 predefined. [2]
+
+
+Feeding:
+
 - Shall design an autonomous robot that will earn all
 possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
+
+Duck Storage:
 - Shall design a robot which can find and move 90% of
 the ducks into a holding area connected to the robot.
 - Shall locate the duck pond in the center of the arena
 within plus or minus one inch of error tolerance.
 - Shall transport and place 90% of the ducks stored inside
 the holding area to their final location in the duck pond.
+
+Fireworks: 
 - Shall design an autonomous robot that will be able to flip
 a switch from left to right.
 - Shall design an animated fireworks MPEG video and
 write a Python script that will play the video when
 activated by the switch.
+
+Pedestal Storage:
 - Shall find and move at least five pedestals into an internal
 holding area inside the robot.
 - Shall assemble one statue that is three pedestals tall and
@@ -166,12 +179,16 @@ the five required pedestals have been obtained within the
 internal holding area inside the robot.
 - Shall move the extra pedestals obtained over the five
 required pedestals in the recycling area.
+
+Power:
 - Shall abide by the Department of Energy Standard 79
 FR 7845 in the team’s purchase or design of wall warts
 for energy conservation and efficiency. [3] This constraint
 addresses an ethical consideration by better ensuring the
 safety of the team and all others interacting with the robot
 as well as the addition of ethical standards.
+
+Chassis
 - Chassis will be designed with an aluminum frame. Alu-
 minum is abundantly available under the earth’s surface
 and mining can be offset with post-mining rehabilitation
