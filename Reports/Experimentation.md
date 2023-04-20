@@ -46,6 +46,9 @@ required pedestals in the recycling area.
 
 ## **Constraints from Signoffs:**
 
+## **Full run from competition:**
+https://www.youtube.com/watch?v=IqyCZeEZ9IM&t=77s
+
 ### **Feeding:**
 - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
@@ -184,7 +187,7 @@ Both 6 V batteries in series.
 
 ### **Top-Level Controller:**
 
-- The top-level controller is being fed about 5.2 V ***(have picture)*** from the battery and through a buck converter via the barrel jack.
+- The top-level controller is being fed about 5.2 V from the battery and through a buck converter via the barrel jack.
 
 - The serial communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
 
@@ -207,9 +210,9 @@ In the final implementation in the competition, no ducks or pedestals were consu
 - The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition (***ADD VIDEO***)
 
 ## **Measures of Success from Project Proposal**
-- The team rescoped and decided not to start using the LED indicator to instead focus on other subsystems. A start switch was added to replace this functionality. (***ADD VIDEO***)
+- The team rescoped and decided not to start using the LED indicator to instead focus on other subsystems. A start switch was added to replace this functionality. 
 
-- The robot was unable to drop all the chips in the correct location on every competition run. (***ADD VIDEO***) (***Insert table showing how many chips were counted***)
+- The robot was unable to drop all the chips in the correct location on every competition run. A table showing all points scored is shown in the feeding section under the shall statements.
 
 - The project rescoped to remove duck storage and therefore did not collect and store any ducks. They will instead be pushed to the recycle bin
 
@@ -226,22 +229,26 @@ In the final implementation in the competition, no ducks or pedestals were consu
 - Shall design an autonomous robot with a single start
 button, allowing the robot to start moving through its
 environment.
-    - The start button was implemented as a start switch. This starts the path for the robot 
+
+    - The start button was implemented as a start switch. This starts the path for the robot. This is shown in the full round video at the top of this document. 
 - The robot will have a single emergency stop button at a
 point that is easily accessible and can be safely reached,
 which will shut down all physical movement performed
 by the robot in the case of an emergency.
-    - The E-stop button is easily accessible on the top of the robot. The switch cuts all power to the dc motors for locomotion and delivery.
+
+    - The E-stop button is easily accessible on the top of the robot. The switch cuts all power to the dc motors for locomotion and delivery. his is shown in the full round video at the top of this document.
 - Shall create an easily reachable (not blocked by motors,
 chassis, wheels, or any other object) emergency cut off
 switch to allow the team to disable the robot in the case
 of an emergency.
-    - The E-stop button is easily accessible on the top of the robot.
+
+    - The E-stop button is easily accessible on the top of the robot. his is shown in the full round video at the top of this document.
 - Shall have a self-latching emergency stop push-button
 that has a positive operation. The button shall not be a
 graphical representation or a flat switch based on NFPA
 79 - 10.7.2. [1] This constraint addresses the need for the
 addition of practical engineering standards.
+
     - The E-stop button chosen meets these specifications.
     
 ![image](https://user-images.githubusercontent.com/112428796/233485670-f1d4f3da-88d5-4cbe-b57c-d3cf5355f9d6.png)
@@ -255,6 +262,8 @@ addresses an ethical consideration by better ensuring the
 safety of the team and all others interacting with the robot
 as well as the addition of ethical standards.
 
+    - The wall wart bought with the TalentCell battery abides by this standard.
+
 ### **Software:**
 
 - Shall represent knowledge using IEEE standard IEEE
@@ -265,7 +274,7 @@ between the landmarks in the area and what is known.
 It should not change during the competition, so it can be
 predefined. [2]
 
-We ended up using encoder distances to represent the movement and position in the arena. This was written during the conceptual design when we had been considering using SLAM to navigate the arena area. 
+    - We ended up using encoder distances to represent the movement and position in the arena. This was written during the conceptual design when we had been considering using SLAM to navigate the arena area. 
 
 ### **Feeding:**
 
@@ -273,7 +282,7 @@ We ended up using encoder distances to represent the movement and position in th
 possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
 
-This was accomplished in the first two rounds of the competition, but was not accomplished in the later rounds of the competition. 
+    - This was accomplished in the first two rounds of the competition, but was not accomplished in the later rounds of the competition. 
 
 | Round | Green chip | Red chip |
 | ----- | ---------- | -------- |
@@ -294,7 +303,7 @@ a switch from left to right.
 write a Python script that will play the video when
 activated by the switch.
 
-This fireworks video was created, and won second place in a separate competition for most creative fireworks video. It was judged based on creativity and school spirit. 
+    - This fireworks video was created, and won second place in a separate competition for most creative fireworks video. It was judged based on creativity and school spirit. 
 
 ### **Chassis:**
 - Chassis will be designed with an aluminum frame. Alu-
@@ -303,5 +312,4 @@ and mining can be offset with post-mining rehabilitation
 and efficient recycling. This constraint will lessen the
 broader impact the team has on the environment.
 
-Aluminum is also a light and rigid metal, so it is a good
-material to use for a rigid chassis frame. 
+    - The chassis was constructed using Aluminum extrusion 80 x 20.
