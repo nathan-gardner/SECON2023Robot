@@ -154,6 +154,30 @@ The multimeter was connected to the output of the buck converter while connected
 
 ![image](https://user-images.githubusercontent.com/112428796/233485365-55536ce3-dec1-4e8b-aae2-10ea04deed95.png)
 
+Further measurements were made on the 6 V batteries to verify the voltages of the batteries with just one of the batteries and both in series.
+
+One of the 6 V batteries
+
+| Trial | Voltage (V) |
+| ------ | ------- |
+| 1      | 6.68   |
+| 2      | 6.68   |
+| 3      | 6.63   |
+| 4      | 6.62   |
+| 5      | 6.62   |
+| 6      | 6.61   |
+
+Both 6 V batteries in series.
+
+| Trial | Voltage (V) |
+| ------ | ------- |
+| 1      | 13.09   |
+| 2      | 13.09   |
+| 3      | 13.09   |
+| 4      | 13.09   |
+| 5      | 13.08   |
+| 6      | 13.08   |
+
 ### **Low-Level Controller:**
 
 - The Arduinos had more than enough GPIO especially with all of the sensors not being shipped in time. The team was able to cut down to using only one Arduino instead of the expected two Arduinos from the original detailed design. This saved space in the final implementation and simplified the final implemented design. 
