@@ -169,15 +169,17 @@ addresses an ethical consideration by better ensuring the
 safety of the team and all others interacting with the robot
 as well as the addition of ethical standards.
 
-### **???:**
+### **Software:**
 
 - Shall represent knowledge using IEEE standard IEEE
 1872-2015 Ontologies for Robotics and Automation used
 to represent knowledge about the typography of the arena.
 This ontology will be used to represent relationships
-between the landwards in the area and what is known.
+between the landmarks in the area and what is known.
 It should not change during the competition, so it can be
 predefined. [2]
+
+We ended up using encoder distances to represent the movement and position in the arena. This was written during the conceptual design when we had been considering using SLAM to navigate the arena area. 
 
 ### **Feeding:**
 
