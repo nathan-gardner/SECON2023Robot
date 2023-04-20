@@ -46,8 +46,7 @@ required pedestals in the recycling area.
 
 ## **Constraints from Signoffs:**
 
-## **Full run from competition:**
-https://www.youtube.com/watch?v=IqyCZeEZ9IM&t=77s
+## **Full run from competition [here](https://www.youtube.com/watch?v=IqyCZeEZ9IM&t=77s)**
 
 ### **Feeding:**
 - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
@@ -159,7 +158,7 @@ The multimeter was connected to the output of the buck converter while connected
 
 ![image](https://user-images.githubusercontent.com/112428796/233485365-55536ce3-dec1-4e8b-aae2-10ea04deed95.png)
 
-Further measurements were made on the 6 V batteries to verify the voltages of the batteries with just one of the batteries and both in series. The batteries were connected to the system as a whole
+Further measurements were made on the 6 V batteries to verify the voltages of the batteries with just one of the batteries and both in series. The batteries were connected to the system as a whole.
 
 One of the 6 V batteries
 
@@ -209,20 +208,22 @@ In the final implementation in the competition, no ducks or pedestals were consu
 
 ### **Fireworks:**
 
-- The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition (***ADD VIDEO***)
+- The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition 
+
+Video Demonstration of the Fireworks Switch [here](https://www.youtube.com/watch?v=TUixtoiBSds)
 
 ## **Measures of Success from Project Proposal**
 - The team rescoped and decided not to start using the LED indicator to instead focus on other subsystems. A start switch was added to replace this functionality. 
 
 - The robot was unable to drop all the chips in the correct location on every competition run. A table showing all points scored is shown in the feeding section under the shall statements.
 
-- The project rescoped to remove duck storage and therefore did not collect and store any ducks. They will instead be pushed to the recycle bin
+- The project was rescoped to remove duck storage and therefore did not collect and store any ducks. They will instead be pushed to the recycle area.
 
 - The robot was unable to flip the light switch during the six competition rounds. The python script has been written as well as the video has been made as of March 10, 2023.
 
 - Due to the sorting, consumption, and pedestal storage subsystems being cut or repurposed, the pedestals will no longer be consumed, sorted, or stacked. Instead, pedestals will be pushed to recycling just like the ducks.
 
-- The robot's path was altered to push as many objects as possible into the recycle bin, instead of placing any remaining items into the recycle bin
+- The robot's path was altered to push as many objects as possible into the recycle area, instead of placing any remaining items into the recycle area.
 
 ## **Shall Statements**
 
@@ -302,14 +303,12 @@ chips to both the manatees and alligators.
 - Shall design an autonomous robot that will be able to flip
 a switch from left to right.
 
-(**ADD FIREWORKS FLIP SWITCH VIDEO**)
-
 - Shall design an animated fireworks MPEG video and
 write a Python script that will play the video when
 activated by the switch.
 
     - This fireworks video was created, and won second place in a separate competition for most creative fireworks video. It was judged based on creativity and school spirit. 
-
+    
 ### **Chassis:**
 - Chassis will be designed with an aluminum frame. Alu-
 minum is abundantly available under the earth’s surface
