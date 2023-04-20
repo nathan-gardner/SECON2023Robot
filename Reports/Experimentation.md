@@ -106,11 +106,11 @@ The project was rescoped before the competition and the consumption subsystem di
 
 - The robot was unable to drop all the chips in the correct location on each competition run. (***ADD VIDEO***) (***Insert table showing how many chips were counted***)
 
-- The project rescoped to remove duck storage and therefore did not collect and store any ducks.
+- The project rescoped to remove duck storage and therefore did not collect and store any ducks. They will instead be pushed to the recycle bin
 
 - The robot was unable to flip the light switch during the six competition rounds. The python script has been written as well as the video has been made as of March 10, 2023.
 
-- Due to the sorting, consumption, and pedestal storage subsystems being cut or repurposed, the pedestals will no longer be comsumed, sorted, or stacked.
+- Due to the sorting, consumption, and pedestal storage subsystems being cut or repurposed, the pedestals will no longer be comsumed, sorted, or stacked. Instead, pedestals will be pushed to recycling just like the ducks.
 
 - The robot's path was altered to push as many objects as possible into the recycle bin, instead of placing any remaining items into the recycle bin
 
