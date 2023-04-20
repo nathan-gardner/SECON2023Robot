@@ -93,13 +93,13 @@ The undercurrent message was actually a general error message, and the issue was
 
 ### **Low-Level Controller:**
 
-- The Arduinos had more than enough GPIO especially with all of the sensors not being shipped in and able to be used. The team was able to cut down to using only one Arduino instead of the expected two Arduinos. This saved space in the final implementation and simplified the final implemented design. 
+- The Arduinos had more than enough GPIO especially with all of the sensors not being shipped in time. The team was able to cut down to using only one Arduino instead of the expected two Arduinos from the original detailed design. This saved space in the final implementation and simplified the final implemented design. 
 
 ### **Top-Level Controller:**
 
-- The top-level controller is being fed about 5.23 V ***(have picture)*** from the battery via the barrel jack.
+- The top-level controller is being fed about 5.2 V ***(have picture)*** from the battery and through a buck converter via the barrel jack.
 
-- The communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
+- The serial communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
 
 ### **Delivery Subsystem (was called Consumption):**
 
@@ -107,11 +107,13 @@ The undercurrent message was actually a general error message, and the issue was
 
 - Many variations of spokes have been tested in order to see which ones work the best. The only spokes that made it into the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
 
-- **HOW BIG IS THE CONSUMPTION**. The consumption mechanism is large enough for a duck to be consumed as well as the pedestals.
+- The size of the final consumption implementation was 5.25"x9.25"x11.75" (LxWxH). The consumption mechanism is large enough for a duck to be consumed as well as the pedestals.
 
-- As mentioned previously, the path of the robot has changed due to the vision subsystem not being able to be implemented. 
+In the final implementation in the competition, no ducks or pedestals were consumed. The motor direction of the consumption motor was reversed and the consumption was converted into a pusher. The robot collected objects in the arena on the consumption ramp, and then the spokes pushed out the objects into the recycling. 
 
-- There are three walls surrounding the intake in order to protect anyone from moving parts.
+- As mentioned previously, the path of the robot has changed due to the vision subsystem not being able to be implemented. The path created was based on encoder clicks and was always relative to the starting area. The robot did a point by point path driving in directions for a curtain number of encoder clicks. 
+
+- There are three walls surrounding the intake in order to protect any limbs from moving parts. This was a safety feature implementation based on considerations made during detailed design. 
 
 ### **Fireworks:**
 
@@ -120,13 +122,13 @@ The undercurrent message was actually a general error message, and the issue was
 ## **Measures of Success from Project Proposal**
 - The team rescoped and decided not to start using the LED indicator to instead focus on other subsystems. A start switch was added to replace this functionality. (***ADD VIDEO***)
 
-- The robot was unable to drop all the chips in the correct location on each competition run. (***ADD VIDEO***) (***Insert table showing how many chips were counted***)
+- The robot was unable to drop all the chips in the correct location on every competition run. (***ADD VIDEO***) (***Insert table showing how many chips were counted***)
 
 - The project rescoped to remove duck storage and therefore did not collect and store any ducks. They will instead be pushed to the recycle bin
 
 - The robot was unable to flip the light switch during the six competition rounds. The python script has been written as well as the video has been made as of March 10, 2023.
 
-- Due to the sorting, consumption, and pedestal storage subsystems being cut or repurposed, the pedestals will no longer be comsumed, sorted, or stacked. Instead, pedestals will be pushed to recycling just like the ducks.
+- Due to the sorting, consumption, and pedestal storage subsystems being cut or repurposed, the pedestals will no longer be consumed, sorted, or stacked. Instead, pedestals will be pushed to recycling just like the ducks.
 
 - The robot's path was altered to push as many objects as possible into the recycle bin, instead of placing any remaining items into the recycle bin
 
