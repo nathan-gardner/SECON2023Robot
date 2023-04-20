@@ -81,15 +81,15 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The output of the battery is regulated by the DC-DC Converter and provides a constant 11.97 V to sufficiently power all components.
 
-- Fuses were not needed in the final design, but were replaced with a current limiting circuit on the locomotion motors in order to ensure the components do not experience a brown out.
-
 - The 6 V loads were delivered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. (**ADD PICS OF RIPPLE VOLTAGE BEING GONE**)
 
 - The inductive load from the motors was not found to be an issue, so the team decided to not add the capacitors on the input of the motors.
 
 - The team is using a Regulated 12 V bus, a 12 V bus, and a 6 V bus.
 
-- The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
+- The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
+
+The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was cause by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
 
 ### **Low-Level Controller:**
 
