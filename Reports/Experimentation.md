@@ -186,6 +186,8 @@ addition of practical engineering standards.
     
 ![image](https://user-images.githubusercontent.com/112428796/233485670-f1d4f3da-88d5-4cbe-b57c-d3cf5355f9d6.png)
 
+Video demonstration of E-stop [here](https://www.youtube.com/watch?v=tuQbhPMOLbw).
+
 - Shall abide by the Department of Energy Standard 79
 FR 7845 in the team’s purchase or design of wall warts
 for energy conservation and efficiency. [3] This constraint
