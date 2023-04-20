@@ -7,8 +7,6 @@ The results of the experiments should be in the proper format. Data that is best
 
 # **Experimental Analysis**
 
-## **Constraints from Signoffs:**
-
 ### **Cut Subsystems and Justification**
 
 The following subsystems have been cut since the beginning of the project:
@@ -45,6 +43,8 @@ the five required pedestals have been obtained within the
 internal holding area inside the robot.
 - Shall move the extra pedestals obtained over the five
 required pedestals in the recycling area.
+
+## **Constraints from Signoffs:**
 
 ### **Feeding:**
 - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
