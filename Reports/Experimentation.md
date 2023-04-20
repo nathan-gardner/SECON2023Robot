@@ -55,7 +55,14 @@ The food chip dispensers can be seen in the image below. They are located on the
 
 Below is the final experimentation taken during the competition, we consistently delivered food chips as outlined in our project proposal. 
 
-![image](/Documentation/Images/experiment_table.png)
+| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond |
+| ----- | ---------- | -------- | ---------------- | ------------ | --------- |
+| 1     | 3          | 3        | 1                | 4            | 0         |
+| 2     | 3          | 3        | 0                | 0            | 0         |
+| 3     | 2          | 3        | 0                | 0            | 0         |
+| 4     | 2          | 2        | 4                | 6            | 0         |
+| 5     | 3          | 3        | 4                | 1            | 0         |
+| 6     | 2          | 2        | 1                | 2            | 1         |
 
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
 
@@ -187,6 +194,17 @@ We ended up using encoder distances to represent the movement and position in th
 possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
 
+This was accomplished in the first two rounds of the competition, but was not accomplished in the later rounds of the competition. 
+
+| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond |
+| ----- | ---------- | -------- | ---------------- | ------------ | --------- |
+| 1     | 3          | 3        | 1                | 4            | 0         |
+| 2     | 3          | 3        | 0                | 0            | 0         |
+| 3     | 2          | 3        | 0                | 0            | 0         |
+| 4     | 2          | 2        | 4                | 6            | 0         |
+| 5     | 3          | 3        | 4                | 1            | 0         |
+| 6     | 2          | 2        | 1                | 2            | 1         |
+
 ### **Fireworks:** 
 - Shall design an autonomous robot that will be able to flip
 a switch from left to right.
@@ -205,3 +223,6 @@ minum is abundantly available under the earth’s surface
 and mining can be offset with post-mining rehabilitation
 and efficient recycling. This constraint will lessen the
 broader impact the team has on the environment.
+
+Aluminum is also a light and rigid metal, so it is a good
+material to use for a rigid chassis frame. 
