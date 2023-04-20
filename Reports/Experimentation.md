@@ -90,7 +90,9 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The main power bus in the robot was supplied from the two 6 V batteries in series. This bus was connected to all the DC motor drivers. The first 6 V battery was used to power the 6 V motor driver for the delivery subsystem.  Seperate connections were made for powering the Jetson and the servo motors, which were powered from the 12 V battery.
 
-- The team was having issues with the Jetson giving an undercurrent message from the USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
+- The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
+
+The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was cause by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
 
 (**INSERT PICTURE OF MULTIMETER**)
 
