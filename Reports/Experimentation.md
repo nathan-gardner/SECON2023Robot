@@ -78,6 +78,8 @@ Total: $86\ points$
 | 5     | 52          |
 | 6     | 39          |
 
+![image](https://user-images.githubusercontent.com/30758520/233694043-275d64be-87a2-4914-8785-920ce69120bd.png)
+
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
 
 ### **Locomotion:**
