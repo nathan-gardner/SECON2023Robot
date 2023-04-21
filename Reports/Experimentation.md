@@ -148,31 +148,11 @@ The multimeter was connected to the output of the buck converter while connected
 
 ![image](https://user-images.githubusercontent.com/30758520/233697833-3bc1f7bb-657a-4d66-8486-f8fc0813a44f.png)
 
-Further measurements were made on the 6 V batteries to verify the voltages of the batteries with just one of the batteries and both in series. The batteries were connected to the system as a whole.
+Further measurements were made on the 6 V batteries to verify the voltages of the batteries with just one of the batteries and both in series. The batteries were connected to the system as a whole and they were under load.
 
-**NOTE: MAKE THESE CHARTS**
+![image](https://user-images.githubusercontent.com/30758520/233715824-52d89ee1-65dc-4fc7-add1-e70f3f5c88bc.png)
 
-One of the 6 V batteries
-
-| Trial | Voltage (V) |
-| ------ | ------- |
-| 1      | 6.62   |
-| 2      | 6.61   |
-| 3      | 6.518   |
-| 4      | 6.519   |
-| 5      | 6.518   |
-| 6      | 6.517   |
-
-Both 6 V batteries in series.
-
-| Trial | Voltage (V) |
-| ------ | ------- |
-| 1      | 13.09   |
-| 2      | 13.09   |
-| 3      | 13.00   |
-| 4      | 13.00   |
-| 5      | 12.99   |
-| 6      | 12.98   |
+![image](https://user-images.githubusercontent.com/30758520/233715856-2fdab99d-5e7d-44c8-afff-877f455ce1a9.png)
 
 ## **Delivery Subsystem (was called Consumption) results:**
 
