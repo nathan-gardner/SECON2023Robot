@@ -50,6 +50,8 @@ The food chip dispensers can be seen in the image below. They are located on the
 
 Below is the final experimentation taken during the competition, we consistently delivered food chips as outlined in our project proposal. 
 
+![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
+
 | Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond |
 | ----- | ---------- | -------- | ---------------- | ------------ | --------- |
 | 1     | 3          | 3        | 1                | 4            | 0         |
@@ -69,6 +71,8 @@ Fireworks: $1\ fireworks\ switch\ flip * 10\ points = 10\ points$
 
 Total: $86\ points$
 
+![image](https://user-images.githubusercontent.com/30758520/233694043-275d64be-87a2-4914-8785-920ce69120bd.png)
+
 | Round | Grand Total |
 | ----- | ----------- |
 | 1     | 52          |
@@ -77,8 +81,6 @@ Total: $86\ points$
 | 4     | 48          |
 | 5     | 52          |
 | 6     | 39          |
-
-![image](https://user-images.githubusercontent.com/30758520/233694043-275d64be-87a2-4914-8785-920ce69120bd.png)
 
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
 
