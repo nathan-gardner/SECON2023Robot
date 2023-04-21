@@ -110,14 +110,7 @@ The multimeter was used to verify the output voltage of the DC/DC regulator whil
 
 ![image](https://user-images.githubusercontent.com/112428796/233485301-ef483440-b9e7-4346-90b2-16bede1f2558.png)
 
-| Trial | Voltage (V) |
-| ------ | ------- |
-| 1      | 11.94   |
-| 2      | 11.94   |
-| 3      | 11.95   |
-| 4      | 11.95   |
-| 5      | 11.95   |
-| 6      | 11.95   |
+![image](https://user-images.githubusercontent.com/30758520/233697768-1222fc35-a843-4835-bbf4-a49ae48e5283.png)
 
 - Fuses were not implemented in the final design.
 
@@ -144,14 +137,7 @@ The undercurrent message was actually a general error message, and the issue was
 
 The multimeter was connected to the output of the buck converter while connected to the rest of the system to verify.
 
-| Trial | Voltage (V) |
-| ------ | ------- |
-| 1      | 5.213   |
-| 2      | 5.212   |
-| 3      | 5.212   |
-| 4      | 5.212   |
-| 5      | 5.212   |
-| 6      | 5.212   |
+![image](https://user-images.githubusercontent.com/30758520/233697833-3bc1f7bb-657a-4d66-8486-f8fc0813a44f.png)
 
 ![image](https://user-images.githubusercontent.com/112428796/233485365-55536ce3-dec1-4e8b-aae2-10ea04deed95.png)
 
