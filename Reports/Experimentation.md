@@ -84,7 +84,7 @@ The food chip dispensers can be seen in the image below. They are located on the
 
 Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
 
-![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
+![image](https://user-images.githubusercontent.com/30758520/233709956-6bf99dc6-b242-4860-a47f-503b10eb8f78.png)
 
 | Round | Green chip | Red chip |
 | ----- | ---------- | -------- |
@@ -201,6 +201,10 @@ In the final implementation in the competition, no ducks or pedestals were consu
 - As mentioned previously, the path of the robot has changed due to the vision subsystem not being able to be implemented. The path created was based on encoder clicks and was always relative to the starting area. The robot did a point by point path driving in directions for a curtain number of encoder clicks. 
 
 - There are three walls surrounding the intake in order to protect any limbs from moving parts. This was a safety feature implementation based on considerations made during detailed design. 
+
+The chart below conveys the efectiveness of the delivery subsystem on the robot. 
+
+![image](https://user-images.githubusercontent.com/30758520/233710010-64f2d292-e386-41c6-a8b7-ac739a465b59.png)
 
 ## **Fireworks results:**
 
