@@ -39,16 +39,9 @@ required pedestals in the recycling area.
 
 ## **Constraints from Signoffs:**
 
-## **Full run from competition [here](https://www.youtube.com/watch?v=IqyCZeEZ9IM&t=77s)**
+### **Full run from competition [here](https://www.youtube.com/watch?v=IqyCZeEZ9IM&t=77s)**
 
-### **Feeding:**
-- The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
-
-The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
-
-![image](/Documentation/Images/finalcadmodel.png)
-
-Below is the final experimentation taken during the competition, we consistently delivered food chips as outlined in our project proposal. 
+## **General results from runs at the competition**
 
 ![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
 
@@ -82,9 +75,29 @@ Total: $86\ points$
 | 5     | 52          |
 | 6     | 39          |
 
-- Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips.
+## **Feeding results:**
+- The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
-### **Locomotion:**
+The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
+
+![image](/Documentation/Images/finalcadmodel.png)
+
+Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
+
+![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
+
+| Round | Green chip | Red chip |
+| ----- | ---------- | -------- |
+| 1     | 3          | 3        |
+| 2     | 3          | 3        |
+| 3     | 2          | 3        |
+| 4     | 2          | 2        |
+| 5     | 3          | 3        |
+| 6     | 2          | 2        |
+
+- Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips during the competition. Servos purchased met requirements based on analysis performed in sign offs.
+
+## **Locomotion results:**
 - **Weigh the robot**
 
 The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
@@ -100,7 +113,7 @@ $\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
 
 
-### **Power:**
+## **Power results:**
 
 - The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as 2 6 V batteries.
 
@@ -165,17 +178,17 @@ Both 6 V batteries in series.
 | 5      | 12.99   |
 | 6      | 12.98   |
 
-### **Low-Level Controller:**
+## **Low-Level Controller results:**
 
 - The Arduinos had more than enough GPIO especially with all of the sensors not being shipped in time. The team was able to cut down to using only one Arduino instead of the expected two Arduinos from the original detailed design. This saved space in the final implementation and simplified the final implemented design. 
 
-### **Top-Level Controller:**
+## **Top-Level Controller results:**
 
 - The top-level controller is being fed about 5.2 V from the battery and through a buck converter via the barrel jack.
 
 - The serial communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
 
-### **Delivery Subsystem (was called Consumption):**
+## **Delivery Subsystem (was called Consumption) results:**
 
 - The team did not use the initially purchased 6 V motor (because it was too slow), and used a faster motor that was available in the capstone lab. 
 
@@ -189,7 +202,7 @@ In the final implementation in the competition, no ducks or pedestals were consu
 
 - There are three walls surrounding the intake in order to protect any limbs from moving parts. This was a safety feature implementation based on considerations made during detailed design. 
 
-### **Fireworks:**
+## **Fireworks results:**
 
 - The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition 
 
