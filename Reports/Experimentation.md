@@ -102,7 +102,7 @@ Below is the final experimentation taken during the competition, we consistently
 
 The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
 
-- **Need to see how fast the robot can go**
+This means the final weight of the robot was within specification defined in the constraints for the project. 
 
 ***Max Speed***
 
@@ -112,22 +112,19 @@ $\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
 
-
 ## **Power results:**
 
-- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as 2 6 V batteries.
+- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as 2 6 V MightMax batteries connected in series.
 
-- The output of the battery is regulated by the DC-DC Converter and provides nearly a constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
+- The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
-The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output. The multimeter measured 11.94 V or 11.95 V each trial. This was sufficient for the purpose of this supply.
-
-![image](https://user-images.githubusercontent.com/112428796/233485301-ef483440-b9e7-4346-90b2-16bede1f2558.png)
+The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output. The multimeter measured 11.94 V or 11.95 V each trial. 
 
 ![image](https://user-images.githubusercontent.com/30758520/233697768-1222fc35-a843-4835-bbf4-a49ae48e5283.png)
 
 - Fuses were not implemented in the final design.
 
-- The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converters as well as the filtering circuits in order to filter the ripple voltage on the output. Measurements were taken with an osciloscope before and after adding a the filter circuit.
+- The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converter outputs as well as the filtering circuits in order to filter the ripple voltage on the output. Measurements were taken with an oscilloscope before and after adding a the filter circuit.
 
 Before filtering:
 
@@ -137,24 +134,23 @@ After Filtering:
 
 ![image](https://user-images.githubusercontent.com/112428796/233485550-aee62d63-ce5a-4c24-92ce-f285168b67c4.png)
 
-The noise after adding the filter is slightly better than without the filter. The amplitude is slightly lower and the noise dampens much quicker than before.
+The noise after adding the filter is less significant than without the filter. The amplitude is slightly lower and the noise dampens much quicker.
 
+- The inductive load from the motors did not seem to be an issue, so the team decided to not add the capacitors on the power input to the motors.
 
-- The inductive load from the motors did not seem to be an issue, so the team decided to not add the capacitors on the input of the motors.
+- The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created\ for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
 
-- The main power bus in the robot was supplied from the two 6 V batteries in series. This bus was connected to all the DC motor drivers. The first 6 V battery was used to power the 6 V motor driver for the delivery subsystem.  Seperate connections were made for powering the Jetson and the servo motors, which were powered from the 12 V battery.
+- The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output instead of from the 5 V USB output on the TalentCall battery.
 
-- The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output.
-
-The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was cause by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
+The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was caused by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
 
 The multimeter was connected to the output of the buck converter while connected to the rest of the system to verify.
 
 ![image](https://user-images.githubusercontent.com/30758520/233697833-3bc1f7bb-657a-4d66-8486-f8fc0813a44f.png)
 
-![image](https://user-images.githubusercontent.com/112428796/233485365-55536ce3-dec1-4e8b-aae2-10ea04deed95.png)
-
 Further measurements were made on the 6 V batteries to verify the voltages of the batteries with just one of the batteries and both in series. The batteries were connected to the system as a whole.
+
+**NOTE: MAKE THESE CHARTS**
 
 One of the 6 V batteries
 
@@ -178,37 +174,25 @@ Both 6 V batteries in series.
 | 5      | 12.99   |
 | 6      | 12.98   |
 
-## **Low-Level Controller results:**
-
-- The Arduinos had more than enough GPIO especially with all of the sensors not being shipped in time. The team was able to cut down to using only one Arduino instead of the expected two Arduinos from the original detailed design. This saved space in the final implementation and simplified the final implemented design. 
-
-## **Top-Level Controller results:**
-
-- The top-level controller is being fed about 5.2 V from the battery and through a buck converter via the barrel jack.
-
-- The serial communication between the Arduino and Jetson ran a 115200 baud, which is the max speed that can be reliably accomplished with the Arduino Mega2560. 
-
 ## **Delivery Subsystem (was called Consumption) results:**
 
-- The team did not use the initially purchased 6 V motor (because it was too slow), and used a faster motor that was available in the capstone lab. 
+- The team did not use the initially purchased 6 V motor. The initially purchases motor was too slow and allowed items to fall down through the consumption before it hit it again. The team used a faster 6 V motor that was available in the capstone lab. 
 
 - Many variations of spokes have been tested in order to see which ones work the best. The only spokes that made it into the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
 
-- The size of the final consumption implementation was 5.25"x9.25"x11.75" (LxWxH). The consumption mechanism is large enough for a duck to be consumed as well as the pedestals.
+- The size of the final consumption implementation was 5.25"x9.25"x11.75" (LxWxH). The consumption mechanism is large enough for a duck to be consumed as well as the pedestals, while also being within specification for the robot size set by the competition.
 
-In the final implementation in the competition, no ducks or pedestals were consumed. The motor direction of the consumption motor was reversed and the consumption was converted into a pusher. The robot collected objects in the arena on the consumption ramp, and then the spokes pushed out the objects into the recycling. 
-
-- As mentioned previously, the path of the robot has changed due to the vision subsystem not being able to be implemented. The path created was based on encoder clicks and was always relative to the starting area. The robot did a point by point path driving in directions for a curtain number of encoder clicks. 
+Note: In the final implementation in the competition, no ducks or pedestals were consumed. The motor direction of the consumption motor was reversed and the consumption was converted into a pusher. The robot collected objects in the arena on the consumption ramp, and then the spokes pushed out the objects into the recycling. 
 
 - There are three walls surrounding the intake in order to protect any limbs from moving parts. This was a safety feature implementation based on considerations made during detailed design. 
 
-The chart below conveys the efectiveness of the delivery subsystem on the robot. 
+The chart below conveys the effectiveness of the delivery subsystem on the robot. 
 
 ![image](https://user-images.githubusercontent.com/30758520/233710010-64f2d292-e386-41c6-a8b7-ac739a465b59.png)
 
 ## **Fireworks results:**
 
-- The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition 
+- The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition. 
 
 Video Demonstration of the Fireworks Switch [here](https://www.youtube.com/watch?v=TUixtoiBSds)
 
