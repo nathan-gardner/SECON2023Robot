@@ -47,14 +47,14 @@ For each run, there were ten ducks and seven pedestals randomly distributed on t
 
 ![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
 
-| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond | Grand Total |
-| ----- | ---------- | -------- | ---------------- | ------------ | --------- | ----------- |
-| 1     | 3          | 3        | 1                | 4            | 0         | 52          |
-| 2     | 3          | 3        | 0                | 0            | 0         | 42          |
-| 3     | 2          | 3        | 0                | 0            | 0         | 35          |
-| 4     | 2          | 2        | 4                | 6            | 0         | 48          |
-| 5     | 3          | 3        | 4                | 1            | 0         | 52          |
-| 6     | 2          | 2        | 1                | 2            | 1         | 39          |
+| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond | Grand Total Points |
+| ----- | ---------- | -------- | ---------------- | ------------ | --------- | ------------------ |
+| 1     | 3          | 3        | 1                | 4            | 0         | 52                 |
+| 2     | 3          | 3        | 0                | 0            | 0         | 42                 |
+| 3     | 2          | 3        | 0                | 0            | 0         | 35                 |
+| 4     | 2          | 2        | 4                | 6            | 0         | 48                 |
+| 5     | 3          | 3        | 4                | 1            | 0         | 52                 |
+| 6     | 2          | 2        | 1                | 2            | 1         | 39                 |
 
 Below is the number of points scored in each round of the competition. If we had integrated the all functionality targeted after the rescope, we would have scored 86 points each round. 
 
