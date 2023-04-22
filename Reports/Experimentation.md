@@ -120,9 +120,10 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 - The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
-The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output. The multimeter measured 11.94 V or 11.95 V each trial. 
+The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output. The multimeter measured 
+4 V or 11.95 V each trial. 
 
-![image](https://user-images.githubusercontent.com/30758520/233697768-1222fc35-a843-4835-bbf4-a49ae48e5283.png)
+![image](https://user-images.githubusercontent.com/30758520/233793598-dbe7725d-6852-40ce-ad32-802ec22b6154.png)
 
 - Fuses were not implemented in the final design.
 
