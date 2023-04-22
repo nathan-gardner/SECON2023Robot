@@ -41,7 +41,9 @@ required pedestals in the recycling area.
 
 ### **Full run from competition [here](https://www.youtube.com/watch?v=IqyCZeEZ9IM&t=77s)**
 
-## **General results from runs at the competition**
+## **General results from runs at the competition:**
+
+For each run, there were ten ducks and seven pedestals randomly distributed on the arena as well as six food chips (3 red and 3 green) that the team could pre-load before the run started. The team had three minutes after the start switch was flipped to get as many points as possible. The results from these runs are shown below.
 
 ![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
 
@@ -98,7 +100,7 @@ Below is the final experimentation taken during the competition, we consistently
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips during the competition. Servos purchased met requirements based on analysis performed in sign offs.
 
 ## **Locomotion results:**
-- **Weigh the robot**
+- **Weight of the robot**
 
 The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
 
@@ -114,7 +116,7 @@ $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ ro
 
 ## **Power results:**
 
-- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as 2 6 V MightMax batteries connected in series.
+- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
 
 - The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
@@ -138,7 +140,7 @@ The noise after adding the filter is less significant than without the filter. T
 
 - The inductive load from the motors did not seem to be an issue, so the team decided to not add the capacitors on the power input to the motors.
 
-- The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created\ for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
+- The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
 
 - The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output instead of from the 5 V USB output on the TalentCall battery.
 
@@ -158,7 +160,7 @@ Further measurements were made on the 6 V batteries to verify the voltages of th
 
 - The team did not use the initially purchased 6 V motor. The initially purchases motor was too slow and allowed items to fall down through the consumption before it hit it again. The team used a faster 6 V motor that was available in the capstone lab. 
 
-- Many variations of spokes have been tested in order to see which ones work the best. The only spokes that made it into the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
+- Many variations of spokes have been tested in order to see which ones work the best. The only spokes that were used in the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
 
 - The size of the final consumption implementation was 5.25"x9.25"x11.75" (LxWxH). The consumption mechanism is large enough for a duck to be consumed as well as the pedestals, while also being within specification for the robot size set by the competition.
 
@@ -181,7 +183,7 @@ Video Demonstration of the Fireworks Switch [here](https://www.youtube.com/watch
 
 - The robot was unable to drop all the chips in the correct location on every competition run. A table showing all points scored is shown in the feeding section under the shall statements.
 
-- The project was rescoped to remove duck storage and therefore did not collect and store any ducks. They will instead be pushed to the recycle area.
+- The project was rescoped to remove duck storage and therefore did not collect and store any ducks. They were instead be pushed to the recycle area.
 
 - The robot was unable to flip the light switch during the six competition rounds. The python script has been written as well as the video has been made as of March 10, 2023.
 
