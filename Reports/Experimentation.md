@@ -47,14 +47,14 @@ For each run, there were ten ducks and seven pedestals randomly distributed on t
 
 ![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
 
-| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond |
-| ----- | ---------- | -------- | ---------------- | ------------ | --------- |
-| 1     | 3          | 3        | 1                | 4            | 0         |
-| 2     | 3          | 3        | 0                | 0            | 0         |
-| 3     | 2          | 3        | 0                | 0            | 0         |
-| 4     | 2          | 2        | 4                | 6            | 0         |
-| 5     | 3          | 3        | 4                | 1            | 0         |
-| 6     | 2          | 2        | 1                | 2            | 1         |
+| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond | Grand Total |
+| ----- | ---------- | -------- | ---------------- | ------------ | --------- | ----------- |
+| 1     | 3          | 3        | 1                | 4            | 0         | 52          |
+| 2     | 3          | 3        | 0                | 0            | 0         | 42          |
+| 3     | 2          | 3        | 0                | 0            | 0         | 35          |
+| 4     | 2          | 2        | 4                | 6            | 0         | 48          |
+| 5     | 3          | 3        | 4                | 1            | 0         | 52          |
+| 6     | 2          | 2        | 1                | 2            | 1         | 39          |
 
 Below is the number of points scored in each round of the competition. If we had integrated the all functionality targeted after the rescope, we would have scored 86 points each round. 
 
@@ -68,15 +68,6 @@ Total: $86\ points$
 
 ![image](https://user-images.githubusercontent.com/30758520/233694043-275d64be-87a2-4914-8785-920ce69120bd.png)
 
-| Round | Grand Total |
-| ----- | ----------- |
-| 1     | 52          |
-| 2     | 42          |
-| 3     | 35          |
-| 4     | 48          |
-| 5     | 52          |
-| 6     | 39          |
-
 ## **Feeding results:**
 - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
@@ -87,15 +78,6 @@ The food chip dispensers can be seen in the image below. They are located on the
 Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
 
 ![image](https://user-images.githubusercontent.com/30758520/233709956-6bf99dc6-b242-4860-a47f-503b10eb8f78.png)
-
-| Round | Green chip | Red chip |
-| ----- | ---------- | -------- |
-| 1     | 3          | 3        |
-| 2     | 3          | 3        |
-| 3     | 2          | 3        |
-| 4     | 2          | 2        |
-| 5     | 3          | 3        |
-| 6     | 2          | 2        |
 
 - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips during the competition. Servos purchased met requirements based on analysis performed in sign offs.
 
@@ -256,15 +238,6 @@ possible points for delivering 100% of the correct food
 chips to both the manatees and alligators.
 
     - This was accomplished in the first two rounds of the competition, but was not accomplished in the later rounds of the competition. 
-
-| Round | Green chip | Red chip |
-| ----- | ---------- | -------- |
-| 1     | 3          | 3        |
-| 2     | 3          | 3        |
-| 3     | 2          | 3        |
-| 4     | 2          | 2        |
-| 5     | 3          | 3        |
-| 6     | 2          | 2        |
 
 ### **Fireworks:** 
 - Shall design an autonomous robot that will be able to flip
