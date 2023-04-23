@@ -195,7 +195,9 @@ The electronic schematic for the controller subsystem is attached below. It incl
 
 ![image](https://user-images.githubusercontent.com/30758520/205386333-307d3d5e-cace-4cad-994e-097fc7fba361.png)
 
-Electronic Schematic Files: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/NathanGardner-signoff-Controller/Documentation/Electrical/Schematics/Sources)
+Electronic Schematic Files: [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrical/Schematics/Sources)
+
+Final implementation electrical pin connections on the Arduino Mega are defined in the [source code](/Software/mega2560/mega1/) as C defines. 
 
 ## Analysis
 
