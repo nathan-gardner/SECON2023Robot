@@ -69,9 +69,40 @@ Below are some images that show the team's progress so far on the project.
 - [Sorting](/Documentation/Signoffs/MarkBeech-signoff-Sorting.md) - Parts were not received in time for building. Sorting was cut when rescoping once we realized we were not receiving parts for many of the subsystems we ordered. 
 - [Consumption -> Delivery Subsystem](/Documentation/Signoffs/Team2-signoff-ConsumptionSubsystem.md) - Rescoped 24 hours before the competition. The function was transitioned from consumption into the robot to ejection into the recycling area.  
 
+## **Experimentation**
+
+For each run, there were ten ducks and seven pedestals randomly distributed on the arena as well as six food chips (3 red and 3 green) that the team could pre-load before the run started. The team had three minutes after the start switch was flipped to get as many points as possible. The results from these runs are shown below.
+
+![image](https://user-images.githubusercontent.com/30758520/233695916-4d6cd822-c135-4ab4-8c09-e996e37ffa73.png)
+
+| Round | Green chip | Red chip | Cylinder Recycle | Duck Recycle | Duck Pond | Grand Total Points |
+| ----- | ---------- | -------- | ---------------- | ------------ | --------- | ------------------ |
+| 1     | 3          | 3        | 1                | 4            | 0         | 52                 |
+| 2     | 3          | 3        | 0                | 0            | 0         | 42                 |
+| 3     | 2          | 3        | 0                | 0            | 0         | 35                 |
+| 4     | 2          | 2        | 4                | 6            | 0         | 48                 |
+| 5     | 3          | 3        | 4                | 1            | 0         | 52                 |
+| 6     | 2          | 2        | 1                | 2            | 1         | 39                 |
+
+Below is the number of points scored in each round of the competition. If we had integrated the all functionality targeted after the rescope, we would have scored 86 points each round. 
+
+Recycling: $2\ points * 17\ objects = 34\ points$
+
+Feeding: $6\ correct chips * 7\ points = 42 \ points$
+
+Fireworks: $1\ fireworks\ switch\ flip * 10\ points = 10\ points$
+
+Total: $86\ points$
+
+![image](https://user-images.githubusercontent.com/30758520/233694043-275d64be-87a2-4914-8785-920ce69120bd.png)
+
+**Full experimentation document available [here](https://github.com/nathan-gardner/SECON2023Robot/blob/main/Reports/Experimentation.md).**
+
 ## **About Us**
 
 ### **IEEE Hardware Team**
+
+**ECE team**
 
 Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead/ Captain for the Southeastcon Robotics Competition Hardware Team. Nathan is working on the main controller subsystem and will be working on software implementation for the robot. 
 
@@ -83,6 +114,13 @@ Luke McGill is an undergraduate Electrical Engineering student and is currently 
 
 Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University. Mark is a member of the Southeastcon Robotics Competition Hardware Team. Mark was responsible for the Sorting subsystem signoff. Mark is responsible for the sorting subsystem at this time.
 
+**ME team**
+
+Grayson Vermillion
+
+Carlos Salvatierra is an undergraduate Mechanical Engineering student at Tennessee Technological University. Carlos is a member of the Southeastcon Robotics Competition Hardware Team. Carlos is responsible for creating the robot chassis and drivetrain. Carlos has years of experience working with and leading various high level robotics teams in the past.
+
+Ethan Lewis
 
 ### **Faculty Supervisor**
 
