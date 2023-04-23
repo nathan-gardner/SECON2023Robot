@@ -2,12 +2,17 @@
 
 ## Function of the Subsystem
 
+This subsystem went through a major redesign shortly before the competition to ensure reliability and as many points as possible when competing. Changes implemented are described below. 
+
 The consumption subsystem’s main goal is to pick up any duck and pedestal that is in the predetermined path of the robot. Throughout the competition, the robot will make a complete path through the entire playing field that will be predetermined and designed by the team and come in contact with all of the ducks and pedestals that are present. The robot will need to pick these items up in order to later sort them and place them in their proper locations that are discussed within other subsystems. 
 
+The consumption needed to be repurposed due to a lack of implementation time and to create a more reliable and robust system. The consumption was converted into a delivery system and the direction of the motors were reversed to that the robot could collect items in its path, and then spit them out in the recycling area for points. 
+
 ### Function:
-- Intake the object via three rows of spinning shafts with spokes
-- Spokes (flexible material held in place with set screws on a D-profile carbon steel shaft) will push objects against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot with motion from a DC brushed motor
-- Worst case scenerio of three ducks analyzed below
+- Intake the object via ~~three~~ two rows of spinning shafts with spokes
+- ~~Spokes (flexible material held in place with set screws on a D-profile carbon steel shaft) will push objects against the body of the robot and take the captured ducks and pedestals upwards towards the top of the robot with motion from a DC brushed motor~~
+- Spokes (flexible material held in place with set screws on a D-profile carbon steel shaft) will push objects out of the robot after they have been collected and the robot is near the recycling area
+- Worst case scenario of three ducks analyzed below
 
 ## Constraints
 
