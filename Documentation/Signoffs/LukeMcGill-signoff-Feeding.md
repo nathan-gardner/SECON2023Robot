@@ -26,6 +26,8 @@ The competition rules allow for the feeding chips to be preloaded into the robot
 
 ## Buildable Schematic
 
+**Initial buildable schematic**
+
 ![image](https://user-images.githubusercontent.com/112424739/215866478-37b8d6f1-c0f0-4542-9adf-73eb05a63cd0.png)
 
 A closer look at the plate that the chips will sit on is below.
@@ -35,6 +37,12 @@ A closer look at the plate that the chips will sit on is below.
 The layout of the chassis is below showing the major subsystems and their placement within the robot. This subsystem is titled "chip dispenser" or "chips". 
 
 ![chassis](https://user-images.githubusercontent.com/112424739/216873478-79e741be-d40a-422f-9905-b26dc7f066d7.png)
+
+**Final implementation buildable schematic**
+
+The chip dispensers can be seen near the top of the robot. They are the cups that are connected to servos. 
+
+![image](/Documentation/Images/finalcadmodel.png)
 
 Below are images showing how all of the subsystems, including the feeding subsystem will fit into the robot.
 
