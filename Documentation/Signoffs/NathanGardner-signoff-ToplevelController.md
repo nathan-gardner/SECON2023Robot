@@ -38,6 +38,8 @@ In summary, these constraints are as follows:
 
 The 40-pin header connection design is represented in the vision sensor network sign off, and not in the top-level controller sign off. The rest of the connections in the top level controller are represented here. 
 
+One Arduino Mega controller ended up being needed for implementation with subsystems that needed to be cut due to ordering issues.  
+
 ## Analysis
 
 The top-level controller will need to be analyzed in terms of the constraints: power, size, and GPIO. 

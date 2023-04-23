@@ -1,4 +1,4 @@
-# Documentation README
+# Documentation
 
 ## Signoffs
 
@@ -7,7 +7,7 @@ Signoffs are the detailed design documents for the project. They include detaile
 
 ## Final set of prints (final design artifacts)
 
-Coming in Capstone II...
+![image](/Documentation/Images/finalcadmodel.png)
 
 ### 3D Models
 
@@ -17,29 +17,29 @@ The 3D models section will be updated throughout the project to reflect what has
 
 ### Wiring Schematics
 
-Electrical wiring schematics avaliable [here](/Documentation/Electrical/Schematics/).
+Electrical wiring schematics available [here](/Documentation/Electrical/Schematics/).
 
 The wiring schematics section will be updated throughout the project to reflect what has been signed off and designed. 
 
 #### PCB files
 
-Electrical wiring PCBs avaliable [here](/Documentation/Electrical/PCB/).
+Electrical wiring PCBs available [here](/Documentation/Electrical/PCB/).
 
 The PCB files section will be updated throughout the project to reflect what has been signed off and designed. 
 
 ## Final BOM
 
-Coming in Capstone II...
+Final BOM available [here](/Documentation/BOM/TotalBOM_Final.pdf).
 
 ## Datasheet 
 
 Each subsystems datasheet is essentially the signoff for that subsystem. The final datasheet will be created near the end of the project when the design is complete.
 
-Final Datasheet Coming in Capstone II...
+Final Datasheets for each subsystem available [here](/Documentation/Signoffs/).
 
 ## The project poster
 
-Coming in Capstone II...
+Final poster available [here](/Documentation/Poster/IEEE%20SECON%20Hardware%20Competition%20Team%20Final%20Poster.pdf).
 
 ## Detailed photos of the project
 
