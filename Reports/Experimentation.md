@@ -245,7 +245,7 @@ Before filtering:
 
 After Filtering:
 
-![image](https://user-images.githubusercontent.com/112428796/234081654-20ab78d1-cbdf-4362-9c25-3487d520b8fb.png)
+![image](https://user-images.githubusercontent.com/112428796/234083083-928fcb9b-e57c-4e92-90bf-c679c3733fd7.png)
 
 ![image](https://user-images.githubusercontent.com/112428796/234081461-93ca6361-ae00-4f6c-8cb7-88f769f47894.png)
 
