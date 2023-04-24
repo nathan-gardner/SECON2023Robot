@@ -90,7 +90,7 @@ The number of trials for this experiment was the number of round played at the c
 
 - **Results** 
 
--  The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
+The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
 The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
 
@@ -104,9 +104,9 @@ Below is the final experimentation taken during the competition, we consistently
 
 - **Interpretation**
 
-- Feeding was able to meet a high standard, but was unable to meet the 100% standard written in our project proposal. It can be seen from the results above that many of the points scored in the competition were from the feeding mechanism. 
+Feeding was able to meet a high standard, but was unable to meet the 100% standard written in our project proposal. It can be seen from the results above that many of the points scored in the competition were from the feeding mechanism. 
 
-- In hindsight, the expectation for feeding from the project proposal was too high a standard, because it was very unlikely that this could have delivered the chips correctly in every attempt. 
+In hindsight, the expectation for feeding from the project proposal was too high a standard, because it was very unlikely that this could have delivered the chips correctly in every attempt. 
 
 ## **Locomotion results:**
 
@@ -200,9 +200,9 @@ The multimeter measured
 
 ![image](https://user-images.githubusercontent.com/30758520/233793598-dbe7725d-6852-40ce-ad32-802ec22b6154.png)
 
-- Fuses were not implemented in the final design.
+Fuses were not implemented in the final design.
 
-- The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converter outputs as well as the filtering circuits in order to filter the ripple voltage on the output. Measurements were taken with an oscilloscope before and after adding a the filter circuit.
+The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converter outputs as well as the filtering circuits in order to filter the ripple voltage on the output. Measurements were taken with an oscilloscope before and after adding a the filter circuit.
 
 Before filtering:
 
@@ -214,7 +214,7 @@ After Filtering:
 
 The noise after adding the filter is less significant than without the filter. The amplitude is slightly lower and the noise dampens much quicker.
 
-- The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
+The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
 
 The multimeter was connected to the output of the buck converter while connected to the rest of the system to verify.
 
@@ -252,13 +252,13 @@ The number of trials for this experiment was the number of round played at the c
 
 - **Results** 
 
-- Many variations of spokes have been tested in order to see which ones work the best. The only spokes that were used in the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
+Many variations of spokes have been tested in order to see which ones work the best. The only spokes that were used in the final implementation were curved TPU spokes, and those can be seen in the final total robot CAD model in this document. 
 
-- The size of the final delivery implementation was 5.25"x9.25"x11.75" (LxWxH). The delivery mechanism is large enough for a duck to be consumed as well as the pedestals, while also being within specification for the robot size set by the competition.
+The size of the final delivery implementation was 5.25"x9.25"x11.75" (LxWxH). The delivery mechanism is large enough for a duck to be consumed as well as the pedestals, while also being within specification for the robot size set by the competition.
 
 Note: In the final implementation in the competition, no ducks or pedestals were consumed. The motor direction of the delivery motor was reversed and the consumption was converted into a pusher. The robot collected objects in the arena on the consumption ramp, and then the spokes pushed out the objects into the recycling. 
 
-- There are three walls surrounding the intake in order to protect any limbs from moving parts. This was a safety feature implementation based on considerations made during detailed design. 
+There are three walls surrounding the intake in order to protect any limbs from moving parts. This was a safety feature implementation based on considerations made during detailed design. 
 
 The chart below conveys the effectiveness of the delivery subsystem on the robot. 
 
@@ -291,9 +291,9 @@ The number of trials for this experiment was the number of round played at the c
 
 - **Results** 
 
-- The robot did not flip the switch during the competition, but did have the force needed to flip the switch.
+The robot did not flip the switch during the competition, but did have the force needed to flip the switch.
 
-- The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition. 
+The robot has the force necessary to flip the switch without issue, though it did not flip the switch during the competition. 
 
 Video Demonstration of the Fireworks Switch [here](https://www.youtube.com/watch?v=TUixtoiBSds)
 
