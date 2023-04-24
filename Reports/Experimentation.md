@@ -175,6 +175,30 @@ Total: $86\ points$
 
 ## **Power results:**
 
+- **Purpose of Experiment**
+
+
+
+- **Description**
+
+
+
+- **Expectation (Prediction)**
+
+
+
+- **Number of trials** 
+
+
+
+- **Results** 
+
+
+
+- **Interpretation**
+
+
+
 - The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
 
 - The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
