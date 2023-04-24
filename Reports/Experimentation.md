@@ -177,33 +177,29 @@ Total: $86\ points$
 
 - **Purpose of Experiment**
 
-
+    The purpose of these experiments are to verify that the power subsystem will supply the proper voltage to the subsystems that require a certain voltage level.
 
 - **Description**
 
-
+    The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output.
 
 - **Expectation (Prediction)**
 
-
+The team expects that the voltage output of the DC/DC regulator while connected to the entire system to be a steady 12 V output.
 
 - **Number of trials** 
 
-
+The number of trials for this experiment was 6 for consistency throughout the analysis.
 
 - **Results** 
-
-
+ 
+The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
 - **Interpretation**
 
+ The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
 
-
-- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
-
-- The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
-
-The multimeter was used to verify the output voltage of the DC/DC regulator while connected to the entire system to make sure the regulator output a steady 12 V output. The multimeter measured 
+The multimeter measured 
 4 V or 11.95 V each trial. 
 
 ![image](https://user-images.githubusercontent.com/30758520/233793598-dbe7725d-6852-40ce-ad32-802ec22b6154.png)
