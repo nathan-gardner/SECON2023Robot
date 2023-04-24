@@ -233,7 +233,7 @@ It was expected that the noise would be eliminated after the filter was applied.
 
 - **Number of trials** 
 
-5
+Five different trials were run.
 
 - **Results** 
 
@@ -253,7 +253,7 @@ After Filtering:
 
 - **Interpretation**
 
-The noise after adding the filter is less significant than without the filter. The amplitude is slightly lower and the noise signal overall is cleaner. The peak of the noise before was around 225 mV whereas after the filter it was around 175 mV.
+The noise after adding the filter is less significant than without the filter. Though the filter did not eliminate noise, but the peak to peak voltage is significantly lower and the noise signal overall is cleaner. The peak to peak voltage of the noise before the filter was around 400 mV whereas after the filter it was 150 mV or lower per trial.
 
 
 ## **Delivery Subsystem (was called Consumption) results:**
