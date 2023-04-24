@@ -69,19 +69,47 @@ Total: $86\ points$
 ![image](https://user-images.githubusercontent.com/30758520/233694043-275d64be-87a2-4914-8785-920ce69120bd.png)
 
 ## **Feeding results:**
-- The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
-The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
+- **Purpose of Experiment**
 
-![image](/Documentation/Images/finalcadmodel.png)
+    For this experiment, the team intends to measure the accuracy of the chip feeding mechanism implemented on the robot. 
 
-Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
+- **Description**
 
-![image](https://user-images.githubusercontent.com/30758520/233709956-6bf99dc6-b242-4860-a47f-503b10eb8f78.png)
+    Experimentation was conducted during the runs at the competition. 
 
-- Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips during the competition. Servos purchased met requirements based on analysis performed in sign offs.
+    For each run, there were ten ducks and seven pedestals randomly distributed on the arena as well as six food chips (3 red and 3 green) that the team could pre-load before the run started. The team had three minutes after the start switch was flipped to get as many points as possible. The robot had to navigate the field autonomously and no one could intervene on the robot in anyway or the round would end. 
+
+- **Expectation (Prediction)**
+
+    The expectation for this experiment was to consistently delivery food chips reliably. The team tested the robot in the build up to the competition and the robot was able to reliably deliver the food chips with error only on every third run. 
+
+- **Number of trials** 
+
+    The number of trials for this experiment was the number of round played at the competition, which was 6. 
+
+- **Results** 
+
+    - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
+
+    The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
+
+    ![image](/Documentation/Images/finalcadmodel.png)
+
+    Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
+
+    ![image](https://user-images.githubusercontent.com/30758520/233709956-6bf99dc6-b242-4860-a47f-503b10eb8f78.png)
+
+    - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips during the competition. Servos purchased met requirements based on analysis performed in sign offs.
+
+- **Interpretation**
+
+    - Feeding was able to meet a high standard, but was unable to meet the 100% standard written in our project proposal. It can be seen from the results above that many of the points scored in the competition were from the feeding mechanism. 
+
+    - In hindsight, the expectation for feeding from the project proposal was too high a standard, because it was very unlikely that this could have delivered the chips correctly in every attempt. 
 
 ## **Locomotion results:**
+
 - **Weight of the robot**
 
 The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
