@@ -175,9 +175,11 @@ Experimentation above shows that the speed of the robot in the arena satisfied t
 
 ## **Power results:**
 
+### **Experiment #1: Battery Voltages**
+
 - **Purpose of Experiment**
 
-The purpose of these experiments are to verify that the power subsystem will supply the proper voltage to the subsystems that require a certain voltage level.
+The purpose of this experiment was to verify that the power subsystem will supply the proper voltage to the subsystems that require a certain voltage level.
 
 - **Description**
 
@@ -195,24 +197,9 @@ The number of trials for this experiment was 6 for consistency throughout the an
  
 The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
-The multimeter measured 
-4 V or 11.95 V each trial. 
+The multimeter measured around 11.95 V each trial. 
 
 ![image](https://user-images.githubusercontent.com/30758520/233793598-dbe7725d-6852-40ce-ad32-802ec22b6154.png)
-
-Fuses were not implemented in the final design.
-
-The 6 V servos were powered via a buck converter. As you can see below, there is a photo of both the buck converter outputs as well as the filtering circuits in order to filter the ripple voltage on the output. Measurements were taken with an oscilloscope before and after adding a the filter circuit.
-
-Before filtering:
-
-![image](https://user-images.githubusercontent.com/112428796/233485511-202565f5-ed1d-4c17-b028-e54fba6b84a1.png)
-
-After Filtering:
-
-![image](https://user-images.githubusercontent.com/112428796/233485550-aee62d63-ce5a-4c24-92ce-f285168b67c4.png)
-
-The noise after adding the filter is less significant than without the filter. The amplitude is slightly lower and the noise dampens much quicker.
 
 The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
 
@@ -228,7 +215,43 @@ Further measurements were made on the 6 V batteries to verify the voltages of th
 
 - **Interpretation**
 
- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
+The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
+
+### **Experiment #2: Buck Converter Noise**
+
+- **Purpose of Experiment**
+
+One of the constraints for this subsystem was that noise from the buck converters would be eliminated. LC filters were added to reduce this noise.
+
+- **Description**
+
+Measurements were taken using an osciloscope that was connected across the output of the buck converter both before and after the filter.
+
+- **Expectation (Prediction)**
+
+It was expected that the noise would be eliminated after the filter was applied.
+
+- **Number of trials** 
+
+1
+
+- **Results** 
+
+Before filtering:
+
+![image](https://user-images.githubusercontent.com/112428796/233485511-202565f5-ed1d-4c17-b028-e54fba6b84a1.png)
+
+After Filtering:
+
+![image](https://user-images.githubusercontent.com/112428796/233485550-aee62d63-ce5a-4c24-92ce-f285168b67c4.png)
+
+
+
+
+- **Interpretation**
+
+The noise after adding the filter is less significant than without the filter. The amplitude is slightly lower and the noise signal overall is cleaner. The peak of the noise before was around 225 mV whereas after the filter it was around 175 mV.
+
 
 ## **Delivery Subsystem (was called Consumption) results:**
 
