@@ -233,9 +233,11 @@ It was expected that the noise would be eliminated after the filter was applied.
 
 - **Number of trials** 
 
-1
+5
 
 - **Results** 
+
+Below is images of the noise before and after the filter was applied. The image for after the filter is the best result.
 
 Before filtering:
 
@@ -243,8 +245,9 @@ Before filtering:
 
 After Filtering:
 
-![image](https://user-images.githubusercontent.com/112428796/233485550-aee62d63-ce5a-4c24-92ce-f285168b67c4.png)
+# ***PASTE NEW IMAGE HERE***
 
+# ***INSERT GRAPH HERE***
 
 
 
