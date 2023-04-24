@@ -69,7 +69,7 @@ All electrical circuits will be implemented via soldered breadboard.
 
 **Final implementation electrical schematic**
 
-![image](https://user-images.githubusercontent.com/30758520/233852409-3f59dfae-301a-49db-b77f-37c920d68ec5.png)
+![image](https://user-images.githubusercontent.com/112428796/234061383-324d6fa9-3a07-45b8-a4f3-23e3d00f8cbd.png)
 
 ## **Analysis**
 
