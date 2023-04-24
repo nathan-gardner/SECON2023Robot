@@ -195,10 +195,6 @@ The number of trials for this experiment was 6 for consistency throughout the an
  
 The output of the TalentCell battery is regulated by the DC-DC Converter and provides a nearly constant 12 V to sufficiently power all components connected to it including the buck converter to the servo motors and the buck converter connected to the Jetson.
 
-- **Interpretation**
-
- The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
-
 The multimeter measured 
 4 V or 11.95 V each trial. 
 
@@ -218,13 +214,7 @@ After Filtering:
 
 The noise after adding the filter is less significant than without the filter. The amplitude is slightly lower and the noise dampens much quicker.
 
-- The inductive load from the motors did not seem to be an issue, so the team decided to not add the capacitors on the power input to the motors.
-
 - The main power bus in the robot was supplied from two 6 V MightyMax batteries in series. This bus was connected to all the locomotion DC motor drivers. One of these 6 V battery was used to power the 6 V motor driver for the delivery subsystem. A separate bus was created for powering the Jetson and the servo motors, and it was supplied from the 12 V TalentCell battery. All power connections had a common ground. 
-
-- The team was having issues with the Jetson giving an undercurrent message from the 5 V USB output despite the analysis showing that it would be enough. The decision was made to implement another buck converter in order to deliver 5.20 V to supply the Jetson from the regulated 12 V output instead of from the 5 V USB output on the TalentCall battery.
-
-The undercurrent message was actually a general error message, and the issue was an undervoltage condition. This was caused by the large amount of current the Jetson draws and the resistance of the charging wire inducing a voltage drop across the wire. This is the reason that the team set the buck converter to generate 5.20 V to supply the Jetson. 
 
 The multimeter was connected to the output of the buck converter while connected to the rest of the system to verify.
 
@@ -235,6 +225,10 @@ Further measurements were made on the 6 V batteries to verify the voltages of th
 ![image](https://user-images.githubusercontent.com/30758520/233715824-52d89ee1-65dc-4fc7-add1-e70f3f5c88bc.png)
 
 ![image](https://user-images.githubusercontent.com/30758520/233715856-2fdab99d-5e7d-44c8-afff-877f455ce1a9.png)
+
+- **Interpretation**
+
+ The battery is sufficient in providing 12 V and over 2 A to meet the robot’s needs. This was achieved with the original 12 V TalentCell battery as well as two 6 V MightMax batteries connected in series.
 
 ## **Delivery Subsystem (was called Consumption) results:**
 
