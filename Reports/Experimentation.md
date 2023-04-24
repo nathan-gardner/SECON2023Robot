@@ -245,9 +245,9 @@ Before filtering:
 
 After Filtering:
 
-# ***PASTE NEW IMAGE HERE***
+![image](https://user-images.githubusercontent.com/112428796/234081121-9ce0e621-2a78-405a-a1ad-167217dab056.png)
 
-# ***INSERT GRAPH HERE***
+![image](https://user-images.githubusercontent.com/112428796/234081008-a8075eb1-2632-4436-9327-4690a55f6684.png)
 
 
 
