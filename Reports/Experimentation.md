@@ -90,15 +90,15 @@ Total: $86\ points$
 
 - **Results** 
 
-    - The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
+    -  The design has been changed to two separate cups with two separate servo motors in order to simplify the design. The cups are only big enough to hold the chips, and are mounted on the servo motors which are mounted on the outer edge of the robot, thus saving much needed space inside the robot.
 
-    The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
+        The food chip dispensers can be seen in the image below. They are located on the top crossbar of the robots chassis. They consist of a cup connected to a servo motor.
 
-    ![image](/Documentation/Images/finalcadmodel.png)
+        ![image](/Documentation/Images/finalcadmodel.png)
 
-    Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
+        Below is the final experimentation taken during the competition, we consistently delivered food chips, but did not meet the idealized goal of delivering 100% of the food chips correctly all of the time. 
 
-    ![image](https://user-images.githubusercontent.com/30758520/233709956-6bf99dc6-b242-4860-a47f-503b10eb8f78.png)
+        ![image](https://user-images.githubusercontent.com/30758520/233709956-6bf99dc6-b242-4860-a47f-503b10eb8f78.png)
 
     - Since the design has been simplified in order to save time, the servos do not need to have as much torque. However, they have much more than sufficient torque needed to flip the cups and dump the chips during the competition. Servos purchased met requirements based on analysis performed in sign offs.
 
@@ -110,19 +110,68 @@ Total: $86\ points$
 
 ## **Locomotion results:**
 
-- **Weight of the robot**
+### **Experiment #1: Weight**
 
-The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
+- **Purpose of Experiment**
 
-This means the final weight of the robot was within specification defined in the constraints for the project. 
+    The purpose of this experiment was to measure the weight of the robot. This was too confirm that the weight constraint from the locomotion sign off was met in the final implementation. 
 
-***Max Speed***
+- **Description**
 
-$\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 1.24 \frac{feet}{sec} \gt 0.0677 \frac{meter}{sec} = 0.222 \frac{feet}{second}\ (minimum\ speed\ requirement)$
+    The weight was a constraint of the locomotion subsystem due to the weight limitation of the mecanum wheels that we purchased. This weight constraint was that the robot needed to be < 10.376 kg.
 
-***Typical Competition Speed***
+- **Expectation (Prediction)**
 
-$\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
+    Due to the analysis doe in the sign off for locomotion, the team was confident that the robot met the weight constraint that is being tested in this experiment. The expectation for this experiment was that the robot would fall within the weight constraint defined. 
+
+- **Number of trials** 
+
+    The team weighed the robot six times on the scale in the machine shop in the basement of Brown and the robot weighed 14 pounds. 
+
+- **Results** 
+
+    - **Weight of the robot**
+
+    The final competition robot weight was $14\ pounds\ or\ 6.35029\ kg\ \lt\ \approx\ 10.376\ kg$. 
+
+    This means the final weight of the robot was within specification defined in the constraints for the project. 
+
+
+- **Interpretation**
+
+    It can be seen that the robot fell well within the weight constraints defined in the sign off for locomotion. This constraint has been verified to have been met in the final implementation. 
+
+### **Experiment #2: Velocity**
+
+- **Purpose of Experiment**
+
+    The purpose of this experiment was to verify that the velocity achieved in the arena is greater than the minimum required speed defined in the locomotion sign off.
+
+- **Description**
+
+    Locomotion subsystem speed was set using a PID controller running on the Arduino Mega2560. The speed was represented in rotations per minute (RPM). 
+
+- **Expectation (Prediction)**
+
+    The expectation from this experiment is that the robot moved faster than the minimum speed defined in the locomotion sign off. 
+
+- **Number of trials** 
+
+    The number of trials for this experiment was 6 for each round completed in the competition. 
+
+- **Results** 
+
+    ***Max Speed***
+
+    $\frac{150\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 1.24 \frac{feet}{sec} \gt 0.0677 \frac{meter}{sec} = 0.222 \frac{feet}{second}\ (minimum\ speed\ requirement)$
+
+    ***Typical Competition Speed***
+
+    $\frac{100\ rotations}{1\ min} * \frac{1\ min}{60\ sec} * \frac{48\pi\ mm}{1\ rotation} * \frac{0.00328084\ feet}{mm} = 0.825 \frac{feet}{sec}$
+
+- **Interpretation**
+
+    Experimentation above shows that the speed of the robot in the arena satisfied the minimum speed requirement defined in the locomotion sign off. 
 
 ## **Power results:**
 
