@@ -24,8 +24,7 @@ The two motor encoders will tell the low level microcontroller how fast the moto
 ### Electrical Schematic
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/locomotion_schematic.jpg)
 
-The electrical schematic can be found here:
-https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrical/Schematics/Sources/Locomotion
+The electrical schematic can be found [here](https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrical/Schematics/Sources/Locomotion):
 
 ### Locomotion Assembly
 ![image](https://github.com/nathan-gardner/CapstoneRepo/blob/main/Documentation/Images/LocomotionSystem/assembly_side_view.jpg)
@@ -36,7 +35,7 @@ https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/Electrica
 
 Each motor will have a motor mount. The mount will attach to the motor by two screws. The motor and mount assembly will attach to the chassis by four screws. Please note that the chassis has not been designed yet, so the model does not show the final product, rather how the motor assebmly will be mounted.
 
-The CAD model for the motor and wheel assembly can be found here:
+The CAD model for the motor and wheel assembly can be found here.
 https://github.com/nathan-gardner/CapstoneRepo/tree/main/Documentation/3D%20Models/LocomotionSystem
 
 
