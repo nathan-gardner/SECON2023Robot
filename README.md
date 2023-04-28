@@ -16,16 +16,13 @@ The team placed fourth out of thirty six schools in the competition, which is th
 
 ## **Capabilities**
 
-The signoffs include function of the subsystem, constraints, buildable schematics, analysis, and bill of materials.
+The [signoffs](/Documentation/Signoffs/) include function of the subsystem, constraints, buildable schematics, analysis, and bill of materials.
+
+Capabilities of this project are described in signoffs with clear indication of what subsystem progressed through the research phase, which made it into development, and which subsystem were implemented into the robot which went to competition.
 
 The path that this robot follows is defined in [top_level.py](/Software/top-level/top_level_package/scripts/top_level.py) and is all relative to the starting area. The distance is measured using encoder clicks and directions are published within the ROS computation graph. This means the robot cannot observe its surroundings and react to its surroundings, but can only go point to point based on the code within that top_level.py file. This was fine for our street sweeper implementation, and was a necessity in design because none of our vision sensors that we ordered came in the mail. This path implementation was reliable across runs. The direction publications were formatted as ROS Twist messages which gave direction and velocity in rotations per minute. The RPM was maintained on the Arduino using a custom PID controller written in C++. 
 
 ## **Salient Outcomes**
-
-* The team has been able to submit a detailed project proposal which defined the scope, constraints, and stakeholders for the project
-* The team created a conceptual design document which laid out how the team will conceptually approach design and led the team into detailed design signoffs. 
-* The team has been able to successfully get a signoff approved on the most critical subsystem for the project
-  * This is a sort of vertical vacuum cleaner that has been implemented previously in vex robot competitions. It is a very interesting design and has been proven to work. [Demonstration Link](https://youtu.be/RCfMzZY3lC0?t=230)
 
 The team believes that one salient outcome of this project is a platform for understanding robot operating system for future SECON competitions at Tennessee Tech, and other robotics projects undertaken by capstone groups at the University. This is specifically referring to the TCP/IP network communication established in this project between the Jetson Nano and Arduino Mega2560. 
 
