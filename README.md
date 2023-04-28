@@ -33,12 +33,13 @@ This project was the closest ever integration of the Mechanical Engineering Depa
 
 ## **Project Demonstration & Images**
 
-
-### **Playing Field**
-
-![image](https://user-images.githubusercontent.com/30758520/233140795-096c867a-2866-42e6-b423-b5c373aa2efe.png)
+### **Video of Robot at Competition**
 
 Video of robot at competition during the first round of semi-finals available [here](https://www.youtube.com/watch?v=IqyCZeEZ9IM).
+
+### **Robot image**
+
+![image](/Documentation/Images/robot.png)
 
 #### **Description of Arena:**
 
@@ -100,6 +101,12 @@ Total: $86\ points$
 **Full experimentation document available [here](https://github.com/nathan-gardner/SECON2023Robot/blob/main/Reports/Experimentation.md).**
 
 ## **About Us**
+
+### **Team Image**
+
+![image](/Documentation/Images/teamimage.jpg)
+
+**Names from left to right:** Grayson Vermillion, Carlos Salvatierra, Ethan Lewis, Mark Beech, Luke McGill, Nathan Gardner, and Madison Kelly.
 
 ### **IEEE Hardware Team**
 
