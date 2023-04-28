@@ -33,11 +33,12 @@ This project was the closest ever integration of the Mechanical Engineering Depa
 
 ## **Project Demonstration & Images**
 
-Below are some images that show the team's progress so far on the project.
 
 ### **Playing Field**
 
 ![image](https://user-images.githubusercontent.com/30758520/233140795-096c867a-2866-42e6-b423-b5c373aa2efe.png)
+
+Video of robot at competition during the first round of semi-finals available [here](https://www.youtube.com/watch?v=IqyCZeEZ9IM).
 
 #### **Description of Arena:**
 
