@@ -1,4 +1,4 @@
-# **IEEE SoutheastCon Robotics Competition**
+# **SECON2023Robot - IEEE SoutheastCon Robotics Competition**
 
 ## **Final CAD Model for Competition Robot**
 
