@@ -9,11 +9,11 @@ Initial PlatformIO project created in testing. This was used to setup ROSSerial 
 Operating system: 22.04.1-Ubuntu
 IDE: VSCode
 Extensions: PlatformIO
-Required installations: ROS Melodic
+Required installations: ROS Melodic, rosserial
 
 ## How to Install
 
-Tutorials and links for installation can be found below:
+Step by step instructions for installation can be found below:
 
 [VSCode](https://code.visualstudio.com/Download)
 
