@@ -40,6 +40,8 @@ Video of robot at competition during the first round of semi-finals available [h
 
 ![image](/Documentation/Images/robot.png)
 
+More images of the robot available [here](/Documentation/Images/robot/).
+
 #### **Description of Arena:**
 
 - Feeding areas - green and red rectangles in the left corners of the arena
