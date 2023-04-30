@@ -109,15 +109,15 @@ Total: $86\ points$
 
 **ECE team**
 
-Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead/ Captain for the Southeastcon Robotics Competition Hardware Team. Nathan is working on the main controller subsystem and will be working on software implementation for the robot. 
+Nathan Gardner is an undergraduate Computer Engineering student and is currently a Senior at Tennessee Technological University. Nathan is Team Lead/ Captain for the Southeastcon Robotics Competition Hardware Team. Nathan was responsible for the low-level and top-level controller subsystems and worked on most of the  software implementation for the robot. 
 
-Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team. Madison is responsible for the storage subsystems and is partially responsible for the power subsystem along with Mark Beech.
+Madison Kelly is an undergraduate Electrical Engineering students and is currently a senior at Tennessee Technological University. Madison is the Project Manager for the Southeastcon Robotics Competition Hardware Team. Madison was responsible for the storage subsystems and was partially responsible for the power subsystem along with Mark Beech.
 
 Fatima Al-Heji is an undergraduate Computer Engineering student and is currently a senior at Tennessee Technological University.
 
-Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University.
+Luke McGill is an undergraduate Electrical Engineering student and is currently a Senior at Tennessee Technological University. Luke was responsible for the locomotion and feeding subsystems. Luke also worked on the software implementation for the robot.
 
-Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University. Mark was responsible for the sorting subsystem and is partially responsible for the power subsystem along with Madison Kelly.
+Mark Beech is an undergraduate Electrical Engineering student and is currently a senior at Tennessee Technological University. Mark was responsible for the sorting subsystem and was partially responsible for the power subsystem along with Madison Kelly.
 
 **ME team**
 
