@@ -111,10 +111,31 @@ Obviously try your hardest to follow best engineering practices when building up
     - Project work across disciplines (electrical, computer, and mechanical engineering)
 
 # Luke McGill
+Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
 
-- Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
-- What unanticipated problems occurred? 
-- What would you do differently if you were to do it over again? 
-- What “best practices” have you identified? 
-- What words of wisdom would you pass on to future students?
-- What new knowledge or skills did you acquire throughout capstone.
+- The team had good communication during the design of the project. We all collaborated and helped each other out wherever.
+- The ECE team and the ME team had some difficulties lining up our designs. We could have communicated better and planned our work accordingly.
+
+What unanticipated problems occurred? 
+
+- We had some issues ordering parts. Some ordered parts never arrived, causing us to have to change our design in some areas.
+
+What would you do differently if you were to do it over again? 
+
+- I would have chosen a more powerful power supply. We underestimated the load that the robot would take. A larger power supply would have solved several issues that we had to work around.
+- Several of our parts were not very good quality. The power busses we chose were not best suited for small wires like the ones we were using. I also would have chosen different perf boards. The ones we chose had rails instead of individually adressable holes for soldering.
+
+What “best practices” have you identified? 
+
+- Debugging as you go is so important. If you wait to test your project until after you have completed a large chunk, it is much more difficult to identify issues.
+- Tape every single exposed wire. This will prevent any accidental shorts.
+- Use flyback diodes on all components that draw any significant power.
+
+What words of wisdom would you pass on to future students?
+
+- Try your best. You will be suprised of what you are capable of when you put your all into something. Even when you hit a wall, keep attacking the problem and eventually you will find a solution.
+- Be willing to put in the work for your capstone project. Don't settle for having a mediocre project when it could have been a great project given the work be put in.
+
+What new knowledge or skills did you acquire throughout capstone.
+- I furthur developed my software skills. I learned a little about ROS. I also helped implement a PID controller in c++ which was a new concept to me.
+- I learned how good teamwork can help, as well how poor planning and communication can hurt the project.
