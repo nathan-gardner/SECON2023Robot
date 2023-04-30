@@ -11,12 +11,43 @@
 
 # Mark Beech
 
-- Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
-- What unanticipated problems occurred? 
-- What would you do differently if you were to do it over again? 
-- What “best practices” have you identified? 
-- What words of wisdom would you pass on to future students?
-- What new knowledge or skills did you acquire throughout capstone.
+Reflect on the project, both technical and organizational. What went well? What didn’t 
+go well? 
+
+- Our teamwork and communication was very good across the team. We worked together well and got the job done. Our team's designs were well thought out and were rarely half baked during the detail design phase especially. 
+- Our ability to work in parallel in the prototype and experimentation phase was not the best. We could work as a group just fine, but when it came to splitting up the work we struggled to divide the work well. Later in the project lifecycle, we had the tendency to rush things and not think things through as much as we did in the detail design phase. This was mainly due to the time crunch of the competition deadline.
+
+What unanticipated problems occurred? 
+
+- The ordering issues were not anticipated at all. I thought some stuff may have shown up late, but I never expected to not get entire subsystems worth of parts. There were also many problems the team ran into at the competition in Orlando such as bricked arduinos, torque issues, path issues, and last minute redesigns.
+- There were many issues with solder joints and other connections as well as routing wires within the small chassis of the robot that quickly became a headache.
+
+What would you do differently if you were to do it over again? 
+
+- The team worked very well together, but I wish we were able to work in parallel much better. Typically, we would all work on the same one or two tasks. This slowed our progress quite a bit in hindsight.
+- I would not buy a battery with a current limit to control motors in robotics. Going ahead and designing seperate power sources for the controllers and the motors would have saved a lot of headache.
+- The wires in the robot were a complete mess due to the rush and it ended up causing many problems when it came to debugging anything wrong with the robot. This issue also caused the robot to not function properly sometimes due to solder joints being bad or wires falling out that we could not see or get to easily.
+
+What “best practices” have you identified? 
+
+- Planning and communication within the team are keys to success. 
+- Always double check everything including schematic designs, code, and solder jobs.
+- Never assume something will work the first time
+- Good decumentation and color coding is a lifesaver for debugging
+
+
+What words of wisdom would you pass on to future students?
+
+- Be sure to think things through with how one part of a design could effect other parts of the design that most would not think is connected in any way.
+- If something doesn't work, it doesn't mean it was pointless. Usually, you learn something valuable even from the failures that come with designing anything.
+- It is better to think something through than rush to try to implement it.
+
+What new knowledge or skills did you acquire throughout capstone.
+
+- The importance of the planning phase.
+- Basics of ROS and Linux
+- How to present a technical topic well
+- How buck/boost converters work
 
 # Nathan Gardner
 
