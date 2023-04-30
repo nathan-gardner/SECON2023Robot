@@ -3,22 +3,33 @@
 # Madison Kelly
 
 Reflect on the project, both technical and organizational. What went well? What didn’t go well? 
+
 - I believe our teamwork was very good and we worked well together. 
 - I think making quick decisions to cut subsystems that were not working properly could have improved.
+
 What unanticipated problems occurred? 
+
 - There were many issues that occurred during the competition in Orlando including fried arduinos and completely redesigning the power subsystem. I was proud that the team was able to overcome these problems given the time constraint.
 - There were also many issues with ordering. 
+
 What would you do differently if you were to do it over again? 
+
 - I would not chose a battery with a current limit.
 - I would make sure we got a chassis to do practice runs as early as possible.
+
 What “best practices” have you identified? 
+
 - Check the schematic designs that were made in the initial planning of the project when building the actual robot. 
 - Make sure you document everything.
 - Label voltages of the wires.
+
 What words of wisdom would you pass on to future students?
+
 - Use your resources! 
 - Go for the more ambitious plan at first, and then scale back. You never know what might work and what might not.
+
 What new knowledge or skills did you acquire throughout capstone.
+
 - Importance of knowing the theory of the electrical components you plan to use. 
 - Technical knowledge of different components.
 - How to overcome problems that seem insurmountable.
