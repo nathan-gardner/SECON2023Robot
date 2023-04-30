@@ -14,6 +14,8 @@ The robot was rescoped throughout the year and just before the competition to be
 
 The team placed fourth out of thirty six schools in the competition, which is the second best performance in Tennessee Tech history. The team sees this as a success considering the ordering setbacks experienced by all the Capstone teams during the Spring 2023 semester, and the scope changes that were necessary to meet deadlines for the competition. 
 
+Full rules document available [here](/Documentation/IEEE-SoutheastCon-2023-Hardware-Competition-Rules-v3.0.pdf).
+
 ## **Capabilities**
 
 The [signoffs](/Documentation/Signoffs/) include function of the subsystem, constraints, buildable schematics, analysis, and bill of materials.
