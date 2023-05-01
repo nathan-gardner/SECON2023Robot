@@ -172,3 +172,5 @@ The [Images](/Documentation/Images) folder contains images of the subsystems.
 We will use language and Google (.clang-format) standard programming practices when writing software. We will document our code using Doxygen markdown and commenting style for readability. 
 
 [Software](/Software/)
+
+_Note: This repository was publicly archived on April 30th, 2023_
